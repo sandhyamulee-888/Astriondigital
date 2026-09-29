@@ -1,0 +1,81 @@
+.theme-toggle-segmented {
+  display: inline-flex;
+  align-items: center;
+  background-color: var(--bg-tertiary);
+  border: 1px solid var(--border-light);
+  border-radius: 9999px;
+  padding: 3px;
+  gap: 2px;
+  position: relative;
+  transition: all var(--transition-fast);
+  user-select: none;
+}
+
+.theme-segment-btn {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 6px;
+  padding: 5px 12px;
+  border-radius: 9999px;
+  font-size: 0.75rem;
+  font-weight: 600;
+  font-family: var(--font-sans);
+  color: var(--text-tertiary);
+  background: transparent;
+  border: none;
+  cursor: pointer;
+  transition: all 0.25s cubic-bezier(0.16, 1, 0.3, 1);
+  line-height: 1;
+}
+
+.theme-btn-icon {
+  flex-shrink: 0;
+  transition: transform 0.25s ease, color 0.25s ease;
+}
+
+.theme-btn-label {
+  letter-spacing: 0.02em;
+}
+
+.theme-segment-btn:hover {
+  color: var(--text-primary);
+}
+
+.theme-segment-btn:hover .theme-btn-icon {
+  transform: scale(1.1);
+}
+
+/* Active State - Light Mode */
+.theme-segment-btn.is-active {
+  background-color: #FFFFFF;
+  color: var(--brand-blue);
+  box-shadow: 0 2px 8px rgba(16, 17, 20, 0.08), 0 1px 2px rgba(16, 17, 20, 0.04);
+}
+
+/* Active State - Dark Mode */
+[data-theme="dark"] .theme-toggle-segmented {
+  background-color: rgba(255, 255, 255, 0.06);
+  border-color: rgba(255, 255, 255, 0.12);
+}
+
+[data-theme="dark"] .theme-segment-btn {
+  color: #94A3B8;
+}
+
+[data-theme="dark"] .theme-segment-btn:hover {
+  color: #FFFFFF;
+}
+
+[data-theme="dark"] .theme-segment-btn.is-active {
+  background-color: var(--brand-blue);
+  color: #FFFFFF;
+  box-shadow: 0 0 14px rgba(28, 117, 189, 0.5), 0 2px 6px rgba(0, 0, 0, 0.4);
+}
+
+/* Compact version (icon only) */
+.theme-toggle-segmented.compact .theme-segment-btn {
+  padding: 6px;
+  width: 28px;
+  height: 28px;
+}

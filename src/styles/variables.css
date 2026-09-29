@@ -1,0 +1,157 @@
+:root {
+  /* Surface Colors */
+  --bg-primary: #FFFFFF;
+  --bg-secondary: #F7F8FA;
+  --bg-tertiary: #EDF0F5;
+  --bg-card: #FFFFFF;
+  --bg-card-hover: #F9FAFC;
+
+  /* Header Backgrounds */
+  --header-bg: rgba(255, 255, 255, 0.92);
+  --header-bg-scrolled: rgba(255, 255, 255, 0.98);
+
+  /* Dark Sections Surface Colors (always dark sections like XENedion / FinalCTA) */
+  --bg-dark: #0A0B0D;
+  --bg-dark-surface: #111317;
+  --bg-dark-elevated: #181B22;
+  --bg-dark-card: #14171E;
+  --bg-dark-card-hover: #1C212B;
+
+  /* Text Colors */
+  --text-primary: #101114;
+  --text-secondary: #475060;
+  --text-tertiary: #758092;
+  --text-muted: #9BA4B5;
+
+  /* Inverse Text Colors (on Dark) */
+  --text-inverse-primary: #FFFFFF;
+  --text-inverse-secondary: #C8D0DC;
+  --text-inverse-tertiary: #8490A4;
+  --text-inverse-muted: #5C677A;
+
+  /* Brand Identity - Exact Official Logo Colors */
+  --brand-blue: rgb(28, 117, 189);
+  --brand-blue-hover: rgb(21, 95, 155);
+  --brand-blue-light: rgba(28, 117, 189, 0.08);
+  --brand-blue-border: rgba(28, 117, 189, 0.28);
+  --brand-blue-glow: rgba(28, 117, 189, 0.2);
+
+  --brand-orange: rgb(235, 100, 62);
+  --brand-orange-hover: rgb(215, 82, 45);
+  --brand-orange-light: rgba(235, 100, 62, 0.1);
+  --brand-orange-border: rgba(235, 100, 62, 0.3);
+  --brand-orange-glow: rgba(235, 100, 62, 0.25);
+
+  /* Brand Signature Gradients (Blue to Orange matching ribbon logo) */
+  --brand-gradient: linear-gradient(135deg, rgb(28, 117, 189) 0%, rgb(235, 100, 62) 100%);
+  --brand-gradient-h: linear-gradient(90deg, rgb(28, 117, 189) 0%, rgb(235, 100, 62) 100%);
+  --brand-gradient-glow: linear-gradient(90deg, rgba(28, 117, 189, 0.25) 0%, rgba(235, 100, 62) 0.25% 100%);
+
+  /* Primary & Secondary Brand Accents */
+  --accent-primary: rgb(28, 117, 189);
+  --accent-primary-hover: rgb(21, 95, 155);
+  --accent-primary-light: rgba(28, 117, 189, 0.08);
+  --accent-primary-border: rgba(28, 117, 189, 0.25);
+  
+  --accent-secondary: rgb(235, 100, 62);
+  --accent-secondary-hover: rgb(215, 82, 45);
+  --accent-secondary-light: rgba(235, 100, 62, 0.1);
+  --accent-secondary-border: rgba(235, 100, 62, 0.3);
+
+  /* Semantic Compatibility Aliases */
+  --accent-cyan: rgb(235, 100, 62);
+  --accent-cyan-light: rgba(235, 100, 62, 0.12);
+  --accent-cyan-glow: rgba(235, 100, 62, 0.25);
+  --accent-glow: rgba(28, 117, 189, 0.16);
+
+  /* Borders & Dividers */
+  --border-light: rgba(16, 17, 20, 0.08);
+  --border-medium: rgba(16, 17, 20, 0.14);
+  --border-subtle: rgba(16, 17, 20, 0.05);
+  --border-focus: rgb(28, 117, 189);
+  
+  --border-dark: rgba(255, 255, 255, 0.08);
+  --border-dark-medium: rgba(255, 255, 255, 0.16);
+  --border-dark-glow: rgba(28, 117, 189, 0.4);
+
+  /* Typography */
+  --font-display: 'Space Grotesk', -apple-system, BlinkMacSystemFont, sans-serif;
+  --font-sans: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+  --font-mono: 'IBM Plex Mono', 'SF Mono', Consolas, monospace;
+
+  /* Layout & Geometry */
+  --max-width: 1320px;
+  --container-padding: 32px;
+  --header-height: 86px;
+  --header-height-scrolled: 58px;
+  
+  /* Corner Radii - Restrained & Enterprise */
+  --radius-xs: 2px;
+  --radius-sm: 4px;
+  --radius-md: 6px;
+  --radius-lg: 10px;
+
+  /* Transitions */
+  --transition-fast: 150ms cubic-bezier(0.16, 1, 0.3, 1);
+  --transition-normal: 250ms cubic-bezier(0.16, 1, 0.3, 1);
+  --transition-smooth: 400ms cubic-bezier(0.16, 1, 0.3, 1);
+  --transition-slow: 700ms cubic-bezier(0.16, 1, 0.3, 1);
+
+  /* Shadows - Minimal & Sophisticated */
+  --shadow-subtle: 0 1px 3px rgba(16, 17, 20, 0.04);
+  --shadow-dropdown: 0 12px 36px rgba(16, 17, 20, 0.08), 0 2px 8px rgba(16, 17, 20, 0.04);
+  --shadow-dark-card: 0 8px 30px rgba(0, 0, 0, 0.35);
+}
+
+/* ========================================================
+   DARK THEME SYSTEM TOKENS (Palantir / Obsidian Aesthetic)
+   ======================================================== */
+[data-theme="dark"] {
+  /* Dark Mode Surface Colors - Deep Obsidian & Sleek Palantir Slate */
+  --bg-primary: #090A0F;
+  --bg-secondary: #0E1118;
+  --bg-tertiary: #151923;
+  --bg-card: #11151F;
+  --bg-card-hover: #171D2B;
+
+  /* Header Backgrounds */
+  --header-bg: rgba(9, 10, 15, 0.88);
+  --header-bg-scrolled: rgba(9, 10, 15, 0.96);
+
+  /* Text Colors */
+  --text-primary: #F8FAFC;
+  --text-secondary: #94A3B8;
+  --text-tertiary: #64748B;
+  --text-muted: #475569;
+
+  /* Borders & Dividers */
+  --border-light: rgba(255, 255, 255, 0.09);
+  --border-medium: rgba(255, 255, 255, 0.16);
+  --border-subtle: rgba(255, 255, 255, 0.06);
+
+  /* Shadows */
+  --shadow-subtle: 0 2px 6px rgba(0, 0, 0, 0.5);
+  --shadow-dropdown: 0 18px 48px rgba(0, 0, 0, 0.7), 0 4px 12px rgba(0, 0, 0, 0.5);
+
+  /* Brand Accents adjustments for dark background vibrancy */
+  --brand-blue-light: rgba(28, 117, 189, 0.18);
+  --brand-blue-border: rgba(28, 117, 189, 0.42);
+  --brand-blue-glow: rgba(28, 117, 189, 0.35);
+
+  --brand-orange-light: rgba(235, 100, 62, 0.18);
+  --brand-orange-border: rgba(235, 100, 62, 0.42);
+  --brand-orange-glow: rgba(235, 100, 62, 0.35);
+
+  --accent-primary-light: rgba(28, 117, 189, 0.18);
+  --accent-primary-border: rgba(28, 117, 189, 0.42);
+  --accent-secondary-light: rgba(235, 100, 62, 0.18);
+  --accent-secondary-border: rgba(235, 100, 62, 0.42);
+}
+
+@media (max-width: 768px) {
+  :root {
+    --container-padding: 20px;
+    --header-height: 72px;
+    --header-height-scrolled: 56px;
+  }
+}

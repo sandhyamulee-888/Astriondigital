@@ -1,0 +1,138 @@
+.final-cta-section {
+  background-color: var(--bg-dark);
+  color: var(--text-inverse-primary);
+  position: relative;
+  overflow: hidden;
+  text-align: center;
+  padding-top: 140px;
+  padding-bottom: 140px;
+}
+
+/* Background Subtle Technology Grid Lines */
+.cta-tech-grid-bg {
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  pointer-events: none;
+  opacity: 0.15;
+}
+
+.tech-grid-line {
+  position: absolute;
+  background-color: #FFFFFF;
+}
+
+.line-h-1 {
+  top: 25%;
+  left: 0;
+  right: 0;
+  height: 1px;
+}
+
+.line-h-2 {
+  bottom: 25%;
+  left: 0;
+  right: 0;
+  height: 1px;
+}
+
+.line-v-1 {
+  left: 20%;
+  top: 0;
+  bottom: 0;
+  width: 1px;
+}
+
+.line-v-2 {
+  right: 20%;
+  top: 0;
+  bottom: 0;
+  width: 1px;
+}
+
+/* Ambient Radial Luminous Glow */
+.cta-ambient-glow {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  width: 750px;
+  height: 480px;
+  background: radial-gradient(circle, rgba(28, 117, 189, 0.22) 0%, rgba(235, 100, 62, 0.1) 45%, transparent 70%);
+  filter: blur(60px);
+  pointer-events: none;
+  z-index: 1;
+}
+
+.final-cta-container {
+  position: relative;
+  z-index: 2;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  max-width: 860px;
+}
+
+.cta-pre-label {
+  justify-content: center;
+  margin-bottom: 24px;
+  color: var(--brand-orange);
+}
+
+.cta-status-dot {
+  width: 6px;
+  height: 6px;
+  border-radius: 50%;
+  background-color: var(--brand-orange);
+  box-shadow: 0 0 8px var(--brand-orange-glow);
+  animation: pulseSlow 2s infinite;
+}
+
+.cta-headline {
+  font-family: var(--font-display);
+  font-size: clamp(2.5rem, 5vw, 4.25rem);
+  font-weight: 700;
+  line-height: 1.08;
+  letter-spacing: -0.03em;
+  color: #FFFFFF;
+  margin-bottom: 12px;
+}
+
+.cta-subheading {
+  font-family: var(--font-display);
+  font-size: clamp(1.5rem, 3vw, 2.25rem);
+  font-weight: 500;
+  color: var(--brand-orange);
+  margin-bottom: 24px;
+}
+
+.cta-desc {
+  font-size: 1.125rem;
+  line-height: 1.6;
+  color: var(--text-inverse-secondary);
+  max-width: 640px;
+  margin-bottom: 44px;
+}
+
+.cta-action-wrap {
+  margin-bottom: 56px;
+}
+
+.cta-meta-bar {
+  display: flex;
+  align-items: center;
+  gap: 16px;
+  color: var(--text-inverse-muted);
+  font-size: 0.75rem;
+  flex-wrap: wrap;
+  justify-content: center;
+}
+
+@media (max-width: 768px) {
+  .final-cta-section {
+    padding-top: 80px;
+    padding-bottom: 80px;
+  }
+}

@@ -1,0 +1,178 @@
+.solutions-section {
+  background-color: var(--bg-primary);
+  border-bottom: 1px solid var(--border-light);
+}
+
+.capabilities-grid {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 20px;
+}
+
+.capability-card {
+  display: flex;
+  flex-direction: column;
+  background-color: var(--bg-card);
+  border: 1px solid var(--border-light);
+  border-radius: var(--radius-sm);
+  padding: 36px 30px;
+  position: relative;
+  overflow: hidden;
+  height: 100%;
+  box-shadow: var(--shadow-subtle);
+  transition: transform 320ms cubic-bezier(0.16, 1, 0.3, 1),
+              box-shadow 320ms cubic-bezier(0.16, 1, 0.3, 1),
+              border-color 320ms cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+/* Palantir-Style Radial Spotlight Glow on Hover */
+.capability-card::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  height: 140px;
+  background: radial-gradient(80% 120px at 50% 0%, rgba(28, 117, 189, 0.12), transparent 75%);
+  opacity: 0;
+  transition: opacity 300ms ease;
+  pointer-events: none;
+}
+
+.capability-card:hover {
+  transform: translateY(-8px) scale(1.008);
+  border-color: rgba(28, 117, 189, 0.45);
+  box-shadow: 0 24px 48px -12px rgba(28, 117, 189, 0.18), 0 4px 16px rgba(16, 17, 20, 0.04);
+  z-index: 10;
+}
+
+.capability-card:hover::before {
+  opacity: 1;
+}
+
+.capability-card-inner {
+  display: flex;
+  flex-direction: column;
+  height: 100%;
+}
+
+.capability-top {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin-bottom: 24px;
+}
+
+.capability-number {
+  font-size: 0.8125rem;
+  font-weight: 600;
+  color: var(--accent-primary);
+}
+
+.capability-arrow-wrap {
+  width: 32px;
+  height: 32px;
+  border-radius: var(--radius-xs);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background-color: var(--bg-secondary);
+  transition: all var(--transition-fast);
+}
+
+.capability-arrow {
+  color: var(--text-tertiary);
+  transition: all var(--transition-fast);
+}
+
+.capability-card:hover .capability-arrow-wrap {
+  background-color: var(--accent-primary);
+}
+
+.capability-card:hover .capability-arrow {
+  color: #FFFFFF;
+  transform: translate(2px, -2px);
+}
+
+.capability-body {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+}
+
+.capability-title {
+  font-size: 1.25rem;
+  font-weight: 600;
+  line-height: 1.25;
+  color: var(--text-primary);
+  margin-bottom: 8px;
+  letter-spacing: -0.02em;
+  transition: color var(--transition-fast);
+}
+
+.capability-card:hover .capability-title {
+  color: var(--accent-primary);
+}
+
+.capability-tagline {
+  font-size: 0.75rem;
+  color: var(--text-tertiary);
+  margin-bottom: 14px;
+  font-weight: 500;
+}
+
+.capability-desc {
+  font-size: 0.875rem;
+  line-height: 1.6;
+  color: var(--text-secondary);
+  transition: color var(--transition-fast);
+}
+
+.capability-card:hover .capability-desc {
+  color: var(--text-primary);
+}
+
+.capability-bottom {
+  margin-top: 32px;
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+}
+
+.capability-explore-text {
+  font-size: 0.8125rem;
+  font-weight: 600;
+  color: var(--text-tertiary);
+  transition: color var(--transition-fast);
+}
+
+.capability-hairline {
+  width: 0%;
+  height: 2px;
+  background: var(--brand-gradient-h);
+  transition: width var(--transition-normal);
+}
+
+.capability-card:hover .capability-explore-text {
+  color: var(--accent-primary);
+}
+
+.capability-card:hover .capability-hairline {
+  width: 100%;
+}
+
+@media (max-width: 1200px) {
+  .capabilities-grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+@media (max-width: 640px) {
+  .capabilities-grid {
+    grid-template-columns: 1fr;
+  }
+  
+  .capability-card {
+    padding: 28px 20px;
+  }
+}

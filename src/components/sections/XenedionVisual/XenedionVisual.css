@@ -1,0 +1,262 @@
+.xenedion-visual-container {
+  background-color: var(--bg-dark-surface);
+  border: 1px solid var(--border-dark-medium);
+  border-radius: var(--radius-sm);
+  padding: 32px;
+  position: relative;
+  overflow: hidden;
+  box-shadow: var(--shadow-dark-card);
+}
+
+.visual-top-bar {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  padding-bottom: 24px;
+  border-bottom: 1px solid var(--border-dark);
+  margin-bottom: 28px;
+  flex-wrap: wrap;
+}
+
+.system-chip {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  padding: 4px 10px;
+  background-color: rgba(255, 255, 255, 0.04);
+  border: 1px solid var(--border-dark);
+  border-radius: var(--radius-xs);
+}
+
+.chip-icon {
+  color: var(--accent-cyan);
+}
+
+.system-chip span {
+  font-size: 0.6875rem;
+  color: var(--text-inverse-tertiary);
+}
+
+.erp-diagram-layout {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 36px;
+  align-items: stretch;
+}
+
+/* Modules Selector Grid */
+.modules-mesh-grid {
+  display: flex;
+  flex-direction: column;
+}
+
+.mesh-section-label {
+  font-size: 0.6875rem;
+  letter-spacing: 0.08em;
+  color: var(--accent-cyan);
+  margin-bottom: 16px;
+}
+
+.modules-buttons-grid {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 8px;
+}
+
+.module-chip-btn {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  padding: 10px 14px;
+  background-color: rgba(255, 255, 255, 0.03);
+  border: 1px solid var(--border-dark);
+  border-radius: var(--radius-xs);
+  text-align: left;
+  transition: all var(--transition-fast);
+  cursor: pointer;
+}
+
+.chip-icon-wrap {
+  display: flex;
+  align-items: center;
+  color: var(--text-inverse-tertiary);
+  transition: color var(--transition-fast);
+}
+
+.chip-title {
+  font-family: var(--font-sans);
+  font-size: 0.8125rem;
+  font-weight: 500;
+  color: var(--text-inverse-secondary);
+  transition: color var(--transition-fast);
+}
+
+.module-chip-btn:hover {
+  background-color: rgba(28, 117, 189, 0.14);
+  border-color: rgba(28, 117, 189, 0.4);
+}
+
+.module-chip-btn:hover .chip-icon-wrap,
+.module-chip-btn:hover .chip-title {
+  color: #FFFFFF;
+}
+
+.module-chip-btn.active {
+  background-color: rgba(235, 100, 62, 0.14);
+  border-color: var(--brand-orange);
+}
+
+.module-chip-btn.active .chip-icon-wrap {
+  color: var(--brand-orange);
+}
+
+.module-chip-btn.active .chip-title {
+  color: #FFFFFF;
+  font-weight: 600;
+}
+
+/* Central Architecture Inspection Panel */
+.core-inspect-panel {
+  background-color: var(--bg-dark-card);
+  border: 1px solid var(--border-dark);
+  border-radius: var(--radius-xs);
+  padding: 24px;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  position: relative;
+}
+
+.core-inspect-panel::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  height: 2px;
+  background: var(--brand-gradient-h);
+}
+
+.core-hub-header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding-bottom: 16px;
+  border-bottom: 1px solid var(--border-dark);
+  margin-bottom: 20px;
+}
+
+.core-brand-tag {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+
+.core-pulse-dot {
+  width: 6px;
+  height: 6px;
+  border-radius: 50%;
+  background-color: var(--brand-orange);
+  box-shadow: 0 0 8px var(--brand-orange-glow);
+  animation: pulseSlow 2s infinite;
+}
+
+.telemetry-text {
+  font-size: 0.6875rem;
+  color: var(--text-inverse-muted);
+}
+
+.module-display-top {
+  margin-bottom: 12px;
+}
+
+.display-category {
+  font-size: 0.6875rem;
+  color: var(--brand-orange);
+  letter-spacing: 0.08em;
+  margin-bottom: 4px;
+}
+
+.display-title {
+  font-family: var(--font-display);
+  font-size: 1.5rem;
+  font-weight: 600;
+  color: #FFFFFF;
+  letter-spacing: -0.02em;
+}
+
+.display-desc {
+  font-size: 0.9375rem;
+  line-height: 1.6;
+  color: var(--text-inverse-secondary);
+  margin-bottom: 24px;
+}
+
+.core-bus-specs {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+  padding: 16px;
+  background-color: rgba(0, 0, 0, 0.3);
+  border: 1px solid var(--border-dark);
+  border-radius: var(--radius-xs);
+  margin-bottom: 24px;
+}
+
+.spec-row {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  font-size: 0.75rem;
+}
+
+.spec-key {
+  color: var(--text-inverse-tertiary);
+}
+
+.spec-val {
+  color: rgb(135, 195, 240);
+  font-weight: 500;
+}
+
+.data-stream-status {
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
+}
+
+.stream-ping {
+  font-size: 0.625rem;
+  color: var(--text-inverse-muted);
+  letter-spacing: 0.08em;
+}
+
+.stream-meter {
+  height: 3px;
+  background-color: rgba(255, 255, 255, 0.08);
+  border-radius: 2px;
+  overflow: hidden;
+}
+
+.stream-bar-fill {
+  height: 100%;
+  width: 65%;
+  background: var(--brand-gradient-h);
+  animation: dataPacketHorizontal 2.5s infinite;
+}
+
+@media (max-width: 900px) {
+  .erp-diagram-layout {
+    grid-template-columns: 1fr;
+  }
+}
+
+@media (max-width: 600px) {
+  .xenedion-visual-container {
+    padding: 20px;
+  }
+
+  .modules-buttons-grid {
+    grid-template-columns: 1fr;
+  }
+}

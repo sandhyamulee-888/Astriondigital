@@ -1,0 +1,145 @@
+.hero-section {
+  position: relative;
+  padding-top: calc(var(--header-height) + 64px);
+  padding-bottom: 96px;
+  background-color: var(--bg-primary);
+  border-bottom: 1px solid var(--border-light);
+  overflow: hidden;
+}
+
+.hero-container {
+  display: grid;
+  grid-template-columns: 1.15fr 0.85fr;
+  align-items: center;
+  gap: 64px;
+}
+
+.hero-content {
+  display: flex;
+  flex-direction: column;
+}
+
+.hero-label {
+  margin-bottom: 24px;
+}
+
+.hero-label-indicator {
+  width: 7px;
+  height: 7px;
+  border-radius: 50%;
+  background-color: var(--brand-orange);
+  box-shadow: 0 0 8px var(--brand-orange-glow);
+}
+
+.hero-headline {
+  font-size: clamp(2.75rem, 5vw, 4.5rem);
+  font-weight: 700;
+  line-height: 1.05;
+  letter-spacing: -0.04em;
+  color: var(--text-primary);
+  margin-bottom: 24px;
+}
+
+.hero-lead {
+  font-size: clamp(1.125rem, 1.8vw, 1.375rem);
+  line-height: 1.6;
+  color: var(--text-secondary);
+  max-width: 620px;
+  margin-bottom: 40px;
+}
+
+.hero-cta-group {
+  display: flex;
+  align-items: center;
+  gap: 16px;
+  flex-wrap: wrap;
+  margin-bottom: 48px;
+}
+
+.hero-pillars {
+  display: flex;
+  align-items: center;
+  gap: 20px;
+  padding-top: 32px;
+  border-top: 1px solid var(--border-light);
+  flex-wrap: wrap;
+}
+
+.pillar-item {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+
+.pillar-num {
+  color: var(--accent-primary);
+  font-weight: 600;
+}
+
+.pillar-text {
+  font-size: 0.875rem;
+  font-weight: 500;
+  color: var(--text-secondary);
+}
+
+.pillar-divider {
+  color: var(--border-medium);
+  font-family: var(--font-mono);
+}
+
+.hero-visual-col {
+  display: flex;
+  justify-content: center;
+}
+
+@media (max-width: 1024px) {
+  .hero-container {
+    grid-template-columns: 1fr;
+    gap: 48px;
+  }
+
+  .hero-visual-col {
+    order: 2;
+  }
+}
+
+@media (max-width: 768px) {
+  .hero-section {
+    padding-top: calc(var(--header-height) + 32px);
+    padding-bottom: 64px;
+  }
+
+  .hero-headline {
+    font-size: clamp(2.125rem, 8vw, 2.75rem);
+    letter-spacing: -0.03em;
+    line-height: 1.12;
+  }
+
+  .hero-lead {
+    font-size: 1.0625rem;
+    margin-bottom: 32px;
+  }
+
+  .hero-cta-group {
+    flex-direction: column;
+    align-items: stretch;
+  }
+
+  .hero-pillars {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 12px;
+  }
+
+  .pillar-divider {
+    display: none;
+  }
+}
+
+@media (max-width: 480px) {
+  .hero-headline {
+    font-size: 1.625rem;
+    letter-spacing: -0.025em;
+    line-height: 1.18;
+  }
+}
