@@ -3,16 +3,90 @@ import { BrowserRouter, Routes, Route, useLocation } from 'react-router-dom';
 import Header from './components/common/Header/Header';
 import Footer from './components/common/Footer/Footer';
 import ScrollProgressBar from './components/common/ScrollProgressBar/ScrollProgressBar';
-import HomePage from './pages/HomePage';
+
+// 1. Home
+import HomePage from './pages/Home/HomePage';
+
+// 2. About
+import AboutPage from './pages/About/AboutPage';
+import VisionMissionPage from './pages/About/VisionMissionPage';
+import ApproachPage from './pages/About/ApproachPage';
+import LeadershipPage from './pages/About/LeadershipPage';
+import PartnersPage from './pages/About/PartnersPage';
+
+// 3. Solutions
+import SolutionsPage from './pages/Solutions/SolutionsPage';
+import SolutionDetailPage from './pages/Solutions/SolutionDetailPage';
+import DigitalTransformationPage from './pages/Solutions/DigitalTransformationPage';
+import AIIntelligentAutomationPage from './pages/Solutions/AIIntelligentAutomationPage';
+import SoftwareDevelopmentPage from './pages/Solutions/SoftwareDevelopmentPage';
+import ERPSolutionsPage from './pages/Solutions/ERPSolutionsPage';
+import CybersecurityPage from './pages/Solutions/CybersecurityPage';
+import CloudInfrastructurePage from './pages/Solutions/CloudInfrastructurePage';
+import DataBIPage from './pages/Solutions/DataBIPage';
+import IntegrationAPIPage from './pages/Solutions/IntegrationAPIPage';
+
+// 4. XENedion ERP
+import XenedionPage from './pages/Xenedion/XenedionPage';
+import XenedionModulesPage from './pages/Xenedion/XenedionModulesPage';
+import XenedionIndustriesPage from './pages/Xenedion/XenedionIndustriesPage';
+import XenedionAIPage from './pages/Xenedion/XenedionAIPage';
+import XenedionIntegrationsPage from './pages/Xenedion/XenedionIntegrationsPage';
+import XenedionImplementationPage from './pages/Xenedion/XenedionImplementationPage';
+import XenedionPartnerProgramPage from './pages/Xenedion/XenedionPartnerProgramPage';
+
+// 5. Industries
+import IndustriesPage from './pages/Industries/IndustriesPage';
+import IndustryDetailPage from './pages/Industries/IndustryDetailPage';
+import ManufacturingPage from './pages/Industries/ManufacturingPage';
+import DistributionPage from './pages/Industries/DistributionPage';
+import RetailPage from './pages/Industries/RetailPage';
+import LogisticsPage from './pages/Industries/LogisticsPage';
+import ProfessionalServicesPage from './pages/Industries/ProfessionalServicesPage';
+import AutomotivePage from './pages/Industries/AutomotivePage';
+import OtherIndustriesPage from './pages/Industries/OtherIndustriesPage';
+
+// 6. Insights
+import InsightsPage from './pages/Insights/InsightsPage';
+import BlogPage from './pages/Insights/BlogPage';
+import CaseStudiesPage from './pages/Insights/CaseStudiesPage';
+import ResourcesPage from './pages/Insights/ResourcesPage';
+
+// Contact & Strategic Briefings
+import ContactPage from './pages/Contact/ContactPage';
+
+// Legal & Governance
+import LegalPage from './pages/Legal/LegalPage';
+
+// Fallback
 import PlaceholderPage from './pages/PlaceholderPage';
+
 import './App.css';
 
-// Scroll restoration component
+// Scroll restoration & document title management
 function ScrollToTop() {
   const { pathname } = useLocation();
 
   useEffect(() => {
     window.scrollTo(0, 0);
+
+    if (pathname === '/') {
+      document.title = 'Astrion Digital — Engineering Intelligence into Every Enterprise';
+    } else if (pathname.startsWith('/about')) {
+      document.title = 'About Astrion Digital — Enterprise Software Products';
+    } else if (pathname.startsWith('/xenedion')) {
+      document.title = 'XENedion ERP — One Platform. Your Entire Business.';
+    } else if (pathname.startsWith('/solutions')) {
+      document.title = 'Solutions & Capabilities — Astrion Digital';
+    } else if (pathname.startsWith('/industries')) {
+      document.title = 'Industries — Astrion Digital';
+    } else if (pathname.startsWith('/insights')) {
+      document.title = 'Insights & Publications — Astrion Digital';
+    } else if (pathname.startsWith('/contact')) {
+      document.title = 'Contact & Strategic Briefings — Astrion Digital';
+    } else {
+      document.title = 'Astrion Digital — Engineering Intelligence into Every Enterprise';
+    }
   }, [pathname]);
 
   return null;
@@ -27,59 +101,61 @@ export default function App() {
         <Header />
         
         <Routes>
-          {/* Main Homepage */}
+          {/* 1. Home */}
           <Route path="/" element={<HomePage />} />
 
-          {/* About Routes */}
-          <Route path="/about" element={<PlaceholderPage title="About Astrion" section="About" />} />
-          <Route path="/about/vision-mission" element={<PlaceholderPage title="Vision & Mission" section="About" />} />
-          <Route path="/about/approach" element={<PlaceholderPage title="Our Approach" section="About" />} />
-          <Route path="/about/leadership" element={<PlaceholderPage title="Leadership" section="About" />} />
-          <Route path="/about/partners" element={<PlaceholderPage title="Strategic Partners" section="About" />} />
+          {/* 2. About Routes */}
+          <Route path="/about" element={<AboutPage />} />
+          <Route path="/about/vision-mission" element={<VisionMissionPage />} />
+          <Route path="/about/approach" element={<ApproachPage />} />
+          <Route path="/about/leadership" element={<LeadershipPage />} />
+          <Route path="/about/partners" element={<PartnersPage />} />
 
-          {/* Solutions Routes */}
-          <Route path="/solutions" element={<PlaceholderPage title="All Capabilities & Solutions" section="Solutions" />} />
-          <Route path="/solutions/digital-transformation" element={<PlaceholderPage title="Enterprise Digital Transformation" section="Solutions" />} />
-          <Route path="/solutions/ai-intelligent-automation" element={<PlaceholderPage title="AI & Intelligent Automation" section="Solutions" />} />
-          <Route path="/solutions/software-development" element={<PlaceholderPage title="Enterprise Software Development" section="Solutions" />} />
-          <Route path="/solutions/erp" element={<PlaceholderPage title="ERP Solutions" section="Solutions" />} />
-          <Route path="/solutions/cybersecurity" element={<PlaceholderPage title="Cybersecurity & Zero-Trust" section="Solutions" />} />
-          <Route path="/solutions/cloud-infrastructure" element={<PlaceholderPage title="Cloud & Infrastructure" section="Solutions" />} />
-          <Route path="/solutions/data-business-intelligence" element={<PlaceholderPage title="Data & Business Intelligence" section="Solutions" />} />
-          <Route path="/solutions/integration-api" element={<PlaceholderPage title="Integration & API Solutions" section="Solutions" />} />
+          {/* 3. Solutions Routes */}
+          <Route path="/solutions" element={<SolutionsPage />} />
+          <Route path="/solutions/digital-transformation" element={<DigitalTransformationPage />} />
+          <Route path="/solutions/ai-intelligent-automation" element={<AIIntelligentAutomationPage />} />
+          <Route path="/solutions/software-development" element={<SoftwareDevelopmentPage />} />
+          <Route path="/solutions/erp" element={<ERPSolutionsPage />} />
+          <Route path="/solutions/cybersecurity" element={<CybersecurityPage />} />
+          <Route path="/solutions/cloud-infrastructure" element={<CloudInfrastructurePage />} />
+          <Route path="/solutions/data-business-intelligence" element={<DataBIPage />} />
+          <Route path="/solutions/integration-api" element={<IntegrationAPIPage />} />
+          <Route path="/solutions/:id" element={<SolutionDetailPage />} />
 
-          {/* XENedion ERP Platform Routes */}
-          <Route path="/xenedion" element={<PlaceholderPage title="XENedion ERP Platform" section="XENedion ERP" />} />
-          <Route path="/xenedion/modules" element={<PlaceholderPage title="XENedion Modules" section="XENedion ERP" />} />
-          <Route path="/xenedion/industries" element={<PlaceholderPage title="XENedion Industry Blueprints" section="XENedion ERP" />} />
-          <Route path="/xenedion/ai-automation" element={<PlaceholderPage title="XENedion AI & Automation" section="XENedion ERP" />} />
-          <Route path="/xenedion/integrations" element={<PlaceholderPage title="XENedion Integrations & APIs" section="XENedion ERP" />} />
-          <Route path="/xenedion/implementation" element={<PlaceholderPage title="XENedion Implementation Methodology" section="XENedion ERP" />} />
-          <Route path="/xenedion/partner-program" element={<PlaceholderPage title="XENedion Partner Program" section="XENedion ERP" />} />
+          {/* 4. XENedion ERP Platform Routes */}
+          <Route path="/xenedion" element={<XenedionPage />} />
+          <Route path="/xenedion/modules" element={<XenedionModulesPage />} />
+          <Route path="/xenedion/industries" element={<XenedionIndustriesPage />} />
+          <Route path="/xenedion/ai-automation" element={<XenedionAIPage />} />
+          <Route path="/xenedion/integrations" element={<XenedionIntegrationsPage />} />
+          <Route path="/xenedion/implementation" element={<XenedionImplementationPage />} />
+          <Route path="/xenedion/partner-program" element={<XenedionPartnerProgramPage />} />
 
-          {/* Industries Routes */}
-          <Route path="/industries" element={<PlaceholderPage title="All Industries" section="Industries" />} />
-          <Route path="/industries/manufacturing" element={<PlaceholderPage title="Manufacturing Solutions" section="Industries" />} />
-          <Route path="/industries/distribution" element={<PlaceholderPage title="Distribution Solutions" section="Industries" />} />
-          <Route path="/industries/retail" element={<PlaceholderPage title="Retail Solutions" section="Industries" />} />
-          <Route path="/industries/logistics" element={<PlaceholderPage title="Logistics & Fleet Solutions" section="Industries" />} />
-          <Route path="/industries/professional-services" element={<PlaceholderPage title="Professional Services Solutions" section="Industries" />} />
-          <Route path="/industries/automotive" element={<PlaceholderPage title="Automotive Tier-1 Solutions" section="Industries" />} />
-          <Route path="/industries/other" element={<PlaceholderPage title="Specialized Enterprise Industries" section="Industries" />} />
+          {/* 5. Industries Routes */}
+          <Route path="/industries" element={<IndustriesPage />} />
+          <Route path="/industries/manufacturing" element={<ManufacturingPage />} />
+          <Route path="/industries/distribution" element={<DistributionPage />} />
+          <Route path="/industries/retail" element={<RetailPage />} />
+          <Route path="/industries/logistics" element={<LogisticsPage />} />
+          <Route path="/industries/professional-services" element={<ProfessionalServicesPage />} />
+          <Route path="/industries/automotive" element={<AutomotivePage />} />
+          <Route path="/industries/other" element={<OtherIndustriesPage />} />
+          <Route path="/industries/:id" element={<IndustryDetailPage />} />
 
-          {/* Insights Routes */}
-          <Route path="/insights" element={<PlaceholderPage title="Insights & Research" section="Insights" />} />
-          <Route path="/insights/blog" element={<PlaceholderPage title="Technical Journal & Blog" section="Insights" />} />
-          <Route path="/insights/case-studies" element={<PlaceholderPage title="Transformation Case Studies" section="Insights" />} />
-          <Route path="/insights/resources" element={<PlaceholderPage title="Architecture Resources & Whitepapers" section="Insights" />} />
+          {/* 6. Insights Routes */}
+          <Route path="/insights" element={<InsightsPage />} />
+          <Route path="/insights/blog" element={<BlogPage />} />
+          <Route path="/insights/case-studies" element={<CaseStudiesPage />} />
+          <Route path="/insights/resources" element={<ResourcesPage />} />
 
           {/* Contact Route */}
-          <Route path="/contact" element={<PlaceholderPage title="Contact & Strategic Briefings" section="Contact" />} />
+          <Route path="/contact" element={<ContactPage />} />
 
           {/* Legal Routes */}
-          <Route path="/privacy" element={<PlaceholderPage title="Privacy Policy" section="Legal" />} />
-          <Route path="/terms" element={<PlaceholderPage title="Terms of Service" section="Legal" />} />
-          <Route path="/security" element={<PlaceholderPage title="Security Governance" section="Legal" />} />
+          <Route path="/privacy" element={<LegalPage docType="privacy" />} />
+          <Route path="/terms" element={<LegalPage docType="terms" />} />
+          <Route path="/security" element={<LegalPage docType="security" />} />
 
           {/* Catch-all Fallback */}
           <Route path="*" element={<PlaceholderPage title="Page Not Found" section="Astrion" />} />

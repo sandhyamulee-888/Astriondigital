@@ -1,11 +1,17 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
-import { ArrowUpRight, CheckCircle2 } from 'lucide-react';
+import { ArrowUpRight, CheckCircle2, TrendingUp, Sparkles, Zap } from 'lucide-react';
 import { CASE_STUDIES } from '../../../data/caseStudies';
 import SectionHeader from '../../common/SectionHeader/SectionHeader';
 import Button from '../../common/Button/Button';
 import ScrollReveal, { StaggerContainer, StaggerItem } from '../../common/Motion/ScrollReveal';
 import './CaseStudiesSection.css';
+
+const ROI_METRICS = {
+  'industrial-manufacturing-modernization': { roi: '+38% Velocity', sub: 'Multi-Plant Sync' },
+  'global-distribution-fulfillment': { roi: '99.98% Accuracy', sub: 'Zero Order Fallout' },
+  'enterprise-fleet-logistics': { roi: '-24% Latency', sub: 'Autonomous Routing' }
+};
 
 export default function CaseStudiesSection() {
   const featured = CASE_STUDIES.find((cs) => cs.featured);
@@ -13,10 +19,12 @@ export default function CaseStudiesSection() {
 
   return (
     <section className="section case-studies-section" id="case-studies" aria-labelledby="case-studies-heading">
+      <div className="case-studies-glow" aria-hidden="true" />
+
       <div className="container">
         <ScrollReveal yOffset={28}>
           <SectionHeader
-            label="06 / CUSTOMER IMPACT"
+            label="INSIGHTS // CASE STUDIES"
             title="Transformation in practice."
             description="Examine representative enterprise transformation architectures. Each engagement reflects our focus on engineering resilience, deterministic outcomes, and measurable operational efficiency."
             action={
@@ -36,8 +44,18 @@ export default function CaseStudiesSection() {
               <div className="featured-case-card">
                 <div className="featured-case-inner">
                   <div className="featured-meta-bar">
-                    <span className="mono-label featured-tag">{featured.tag}</span>
+                    <span className="mono-label featured-tag">
+                      <Sparkles size={12} className="tag-sparkle" />
+                      {featured.tag}
+                    </span>
                     <span className="mono-tag featured-industry">{featured.industry}</span>
+                  </div>
+
+                  <div className="featured-roi-badge">
+                    <TrendingUp size={16} className="roi-icon" />
+                    <span className="roi-stat">{ROI_METRICS[featured.id]?.roi}</span>
+                    <span className="roi-divider mono-tag">/</span>
+                    <span className="roi-sub mono-tag">{ROI_METRICS[featured.id]?.sub}</span>
                   </div>
 
                   <h3 className="featured-case-title">{featured.title}</h3>
@@ -86,6 +104,11 @@ export default function CaseStudiesSection() {
                   <div className="preview-meta">
                     <span className="mono-label preview-tag">{item.tag}</span>
                     <span className="mono-tag preview-industry">{item.industry}</span>
+                  </div>
+
+                  <div className="preview-roi-pill">
+                    <Zap size={13} className="preview-roi-icon" />
+                    <span className="mono-tag preview-roi-val">{ROI_METRICS[item.id]?.roi}</span>
                   </div>
 
                   <h4 className="preview-title">{item.title}</h4>

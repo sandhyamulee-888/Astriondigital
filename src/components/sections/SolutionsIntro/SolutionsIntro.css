@@ -1,0 +1,215 @@
+.solutions-intro-section {
+  position: relative;
+  background-color: #FFFFFF;
+  border-top: 1px solid var(--border-light);
+  border-bottom: 1px solid var(--border-light);
+  overflow: hidden;
+  padding-top: 108px;
+  padding-bottom: 108px;
+}
+
+.solutions-intro-bg {
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  z-index: 1;
+  pointer-events: none;
+  overflow: hidden;
+}
+
+.solutions-intro-bg-img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  object-position: center top;
+  opacity: 0.28;
+  filter: saturate(1.1) brightness(1.02);
+}
+
+.solutions-intro-overlay {
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: linear-gradient(
+    180deg,
+    rgba(255, 255, 255, 0.94) 0%,
+    rgba(248, 250, 252, 0.88) 50%,
+    rgba(255, 255, 255, 0.96) 100%
+  );
+}
+
+.solutions-intro-glow {
+  position: absolute;
+  top: 20%;
+  right: -5%;
+  width: 500px;
+  height: 500px;
+  background: radial-gradient(circle, rgba(28, 117, 189, 0.08) 0%, rgba(235, 100, 62, 0.04) 50%, transparent 70%);
+  filter: blur(70px);
+}
+
+.solutions-intro-container {
+  position: relative;
+  z-index: 2;
+}
+
+.solutions-intro-card {
+  background: rgba(255, 255, 255, 0.92);
+  border: 1px solid var(--border-medium);
+  border-radius: var(--radius-md);
+  padding: 52px 48px;
+  box-shadow: 0 16px 40px -10px rgba(15, 23, 42, 0.06), 0 2px 6px rgba(15, 23, 42, 0.03);
+  backdrop-filter: blur(16px);
+  -webkit-backdrop-filter: blur(16px);
+}
+
+.solutions-intro-header {
+  max-width: 880px;
+  margin-bottom: 44px;
+}
+
+.intro-badge {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  margin-bottom: 16px;
+  color: var(--brand-blue);
+  font-weight: 700;
+  letter-spacing: 0.08em;
+}
+
+.solutions-intro-title {
+  font-size: clamp(2rem, 3.8vw, 3.125rem);
+  font-weight: 700;
+  line-height: 1.12;
+  letter-spacing: -0.035em;
+  color: var(--text-primary);
+  margin-bottom: 18px;
+}
+
+.solutions-intro-lead {
+  font-size: 1.125rem;
+  line-height: 1.65;
+  color: var(--text-secondary);
+  margin-bottom: 32px;
+}
+
+.solutions-intro-actions {
+  display: flex;
+  align-items: center;
+  gap: 16px;
+  flex-wrap: wrap;
+}
+
+/* Quick 8-Pillar Capability Preview */
+.solutions-pillars-preview {
+  border-top: 1px solid var(--border-light);
+  padding-top: 32px;
+}
+
+.preview-bar-title {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  font-weight: 600;
+  color: var(--text-tertiary);
+  margin-bottom: 18px;
+  flex-wrap: wrap;
+  gap: 8px;
+}
+
+.preview-note {
+  color: var(--brand-blue);
+}
+
+.pillars-chips-grid {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 12px;
+}
+
+.pillar-chip-link {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 14px 16px;
+  background: #F8FAFC;
+  border: 1px solid var(--border-light);
+  border-radius: var(--radius-xs);
+  transition: all var(--transition-fast);
+}
+
+.pillar-chip-link:hover {
+  background: #FFFFFF;
+  border-color: rgba(28, 117, 189, 0.4);
+  transform: translateY(-2px);
+  box-shadow: 0 6px 16px rgba(28, 117, 189, 0.1);
+}
+
+.chip-icon {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  color: var(--brand-blue);
+  margin-right: 10px;
+  flex-shrink: 0;
+  transition: transform var(--transition-fast), color var(--transition-fast);
+}
+
+.pillar-chip-link:hover .chip-icon {
+  color: var(--brand-orange);
+  transform: scale(1.15);
+}
+
+.chip-label {
+  font-family: var(--font-sans);
+  font-size: 0.8125rem;
+  font-weight: 600;
+  color: var(--text-primary);
+  flex: 1;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  margin-right: 6px;
+}
+
+.chip-arrow {
+  color: var(--text-tertiary);
+  flex-shrink: 0;
+  transition: transform var(--transition-fast), color var(--transition-fast);
+}
+
+.pillar-chip-link:hover .chip-arrow {
+  color: var(--brand-blue);
+  transform: translate(2px, -2px);
+}
+
+@media (max-width: 1100px) {
+  .pillars-chips-grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+@media (max-width: 768px) {
+  .solutions-intro-section {
+    padding-top: 64px;
+    padding-bottom: 64px;
+  }
+
+  .solutions-intro-card {
+    padding: 28px 20px;
+  }
+
+  .solutions-intro-actions {
+    flex-direction: column;
+    align-items: stretch;
+  }
+
+  .pillars-chips-grid {
+    grid-template-columns: 1fr;
+  }
+}

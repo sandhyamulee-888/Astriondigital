@@ -2,11 +2,9 @@ import React, { useState, useEffect, useRef } from 'react';
 import { Link, useLocation } from 'react-router-dom';
 import { Menu, ChevronDown } from 'lucide-react';
 import { NAV_ITEMS } from '../../../data/navigation';
-import { useTheme } from '../../../context/ThemeContext';
 import MegaMenu from '../MegaMenu/MegaMenu';
 import MobileNav from '../MobileNav/MobileNav';
 import Button from '../Button/Button';
-import ThemeToggle from '../ThemeToggle/ThemeToggle';
 import './Header.css';
 
 export default function Header() {
@@ -55,7 +53,6 @@ export default function Header() {
   };
 
   const activeItem = NAV_ITEMS.find((item) => item.id === activeMenuId);
-  const { theme } = useTheme();
 
   return (
     <>
@@ -65,10 +62,10 @@ export default function Header() {
         onMouseLeave={handleMouseLeave}
       >
         <div className="container header-container">
-          {/* Logo / Wordmark on Left (Switches based on theme) */}
+          {/* Logo / Official Astrion Brand */}
           <Link to="/" className="brand-logo" aria-label="Astrion Digital Homepage">
             <img 
-              src={theme === 'dark' ? '/logo-dark.png' : '/logo.png'} 
+              src="/logo.png" 
               alt="Astrion Digital" 
               className="brand-logo-img" 
             />
@@ -101,17 +98,15 @@ export default function Header() {
             </ul>
           </nav>
 
-          {/* Theme Selector & CTA on Right */}
+          {/* Action CTA on Right */}
           <div className="header-actions">
-            <ThemeToggle className="header-theme-toggle" />
-
             <Button
               to="/contact"
               variant="primary"
               size="sm"
               className="header-cta"
             >
-              Let's Talk
+              Schedule Briefing
             </Button>
 
             {/* Mobile Hamburger Button */}

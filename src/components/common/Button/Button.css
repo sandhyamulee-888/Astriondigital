@@ -11,87 +11,114 @@
   transition: all var(--transition-fast);
   white-space: nowrap;
   line-height: 1;
+  position: relative;
+  overflow: hidden;
 }
 
 .btn-sm {
   padding: 8px 16px;
   font-size: 0.875rem;
-  height: 36px;
+  height: 38px;
 }
 
 .btn-md {
   padding: 12px 22px;
   font-size: 0.9375rem;
-  height: 44px;
+  height: 46px;
 }
 
 .btn-lg {
   padding: 16px 28px;
   font-size: 1rem;
   height: 52px;
+  font-weight: 600;
 }
 
-/* Primary Button */
+/* Primary Button with Crisp Light Elevation */
 .btn-primary {
-  background-color: var(--accent-primary);
+  background: linear-gradient(135deg, rgb(28, 117, 189) 0%, rgb(21, 95, 155) 100%);
   color: #FFFFFF;
-  border: 1px solid var(--accent-primary);
+  border: 1px solid rgba(28, 117, 189, 0.4);
+  box-shadow: 0 4px 14px rgba(28, 117, 189, 0.28), inset 0 1px 0 rgba(255, 255, 255, 0.25);
 }
 
 .btn-primary:hover {
-  background-color: var(--accent-primary-hover);
-  border-color: var(--accent-primary-hover);
-  transform: translateY(-1px);
+  background: linear-gradient(135deg, rgb(35, 130, 205) 0%, rgb(24, 105, 170) 100%);
+  border-color: rgb(28, 117, 189);
+  transform: translateY(-2px);
+  box-shadow: 0 8px 20px rgba(28, 117, 189, 0.35);
+  color: #FFFFFF;
 }
 
-/* Secondary Button */
+/* Radiant Orange Variant */
+.btn-orange {
+  background: linear-gradient(135deg, rgb(235, 100, 62) 0%, rgb(215, 82, 45) 100%);
+  color: #FFFFFF;
+  border: 1px solid rgba(235, 100, 62, 0.4);
+  box-shadow: 0 4px 14px rgba(235, 100, 62, 0.28), inset 0 1px 0 rgba(255, 255, 255, 0.25);
+}
+
+.btn-orange:hover {
+  background: linear-gradient(135deg, rgb(245, 115, 78) 0%, rgb(225, 92, 55) 100%);
+  transform: translateY(-2px);
+  box-shadow: 0 8px 20px rgba(235, 100, 62, 0.35);
+  color: #FFFFFF;
+}
+
+/* Secondary Button - Crisp White Card Style */
 .btn-secondary {
-  background-color: var(--bg-secondary);
+  background-color: #FFFFFF;
   color: var(--text-primary);
-  border: 1px solid var(--border-light);
+  border: 1px solid var(--border-medium);
+  box-shadow: 0 1px 3px rgba(15, 23, 42, 0.05);
 }
 
 .btn-secondary:hover {
-  background-color: var(--bg-tertiary);
-  border-color: var(--border-medium);
-  transform: translateY(-1px);
+  background-color: var(--bg-secondary);
+  border-color: var(--accent-primary);
+  color: var(--accent-primary);
+  transform: translateY(-2px);
+  box-shadow: 0 6px 16px rgba(15, 23, 42, 0.08);
 }
 
 /* Outline Button */
 .btn-outline {
   background-color: transparent;
+  color: var(--accent-primary);
+  border: 1px solid var(--accent-primary-border);
+}
+
+.btn-outline:hover {
+  background-color: var(--brand-blue-light);
+  border-color: var(--accent-primary);
+  color: var(--accent-primary-hover);
+  transform: translateY(-1px);
+}
+
+/* Dark Primary / Dark Outline compatibility fallback */
+.btn-dark-primary {
+  background: var(--brand-gradient);
+  color: #FFFFFF;
+  border: 1px solid var(--accent-primary);
+  font-weight: 600;
+  box-shadow: 0 4px 14px rgba(28, 117, 189, 0.25);
+}
+
+.btn-dark-primary:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 8px 20px rgba(28, 117, 189, 0.35);
+}
+
+.btn-dark-outline {
+  background-color: #FFFFFF;
   color: var(--text-primary);
   border: 1px solid var(--border-medium);
 }
 
-.btn-outline:hover {
-  background-color: var(--bg-secondary);
-  border-color: var(--text-primary);
-}
-
-/* Dark Outline Button */
-.btn-dark-outline {
-  background-color: transparent;
-  color: var(--text-inverse-primary);
-  border: 1px solid var(--border-dark-medium);
-}
-
 .btn-dark-outline:hover {
-  background-color: rgba(255, 255, 255, 0.08);
-  border-color: #FFFFFF;
-}
-
-/* Dark Primary Button */
-.btn-dark-primary {
-  background-color: #FFFFFF;
-  color: var(--bg-dark);
-  border: 1px solid #FFFFFF;
-  font-weight: 600;
-}
-
-.btn-dark-primary:hover {
-  background-color: #F1F3F5;
-  transform: translateY(-1px);
+  background-color: var(--bg-secondary);
+  border-color: var(--accent-primary);
+  color: var(--accent-primary);
 }
 
 /* Ghost Button */

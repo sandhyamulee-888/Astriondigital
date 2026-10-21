@@ -2,14 +2,11 @@ import React, { useState, useEffect } from 'react';
 import { Link } from 'react-router-dom';
 import { ChevronDown, X, ArrowRight } from 'lucide-react';
 import { NAV_ITEMS } from '../../../data/navigation';
-import { useTheme } from '../../../context/ThemeContext';
 import Button from '../Button/Button';
-import ThemeToggle from '../ThemeToggle/ThemeToggle';
 import './MobileNav.css';
 
 export default function MobileNav({ isOpen, onClose }) {
   const [expandedSection, setExpandedSection] = useState(null);
-  const { theme } = useTheme();
 
   // Lock body scroll and handle Escape key
   useEffect(() => {
@@ -44,13 +41,12 @@ export default function MobileNav({ isOpen, onClose }) {
       <div className="mobile-nav-header">
         <Link to="/" className="mobile-nav-brand" onClick={onClose}>
           <img 
-            src={theme === 'dark' ? '/logo-dark.png' : '/logo.png'} 
+            src="/logo.png" 
             alt="Astrion Digital" 
             className="mobile-brand-logo-img" 
           />
         </Link>
         <div className="mobile-nav-header-actions">
-          <ThemeToggle compact={true} />
           <button 
             className="mobile-close-btn"
             onClick={onClose}
@@ -133,7 +129,7 @@ export default function MobileNav({ isOpen, onClose }) {
 
           <div className="mobile-footer-info">
             <span className="mono-tag">ASTRION DIGITAL</span>
-            <p className="mobile-tagline">Engineering intelligence into every enterprise.</p>
+            <p className="mobile-tagline">The Company Behind Intelligent Enterprise Software.</p>
           </div>
         </div>
       </div>

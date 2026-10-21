@@ -1,70 +1,86 @@
 import React from 'react';
 import { motion } from 'framer-motion';
+import { ShieldCheck, Cpu, Database, Sparkles, Activity } from 'lucide-react';
 import Button from '../../common/Button/Button';
 import HeroVisual from '../HeroVisual/HeroVisual';
+import { HERO_CONTENT } from '../../../data/about';
 import './Hero.css';
 
 export default function Hero() {
+  const kpis = [
+    { value: '99.99%', label: 'Platform Availability SLA', icon: <Activity size={14} /> },
+    { value: '< 12ms', label: 'Deterministic Consensus', icon: <Cpu size={14} /> },
+    { value: '11+', label: 'Integrated ERP Subsystems', icon: <Database size={14} /> },
+    { value: 'SOC-2', label: 'Enterprise Security Architecture', icon: <ShieldCheck size={14} /> }
+  ];
+
   return (
     <section className="hero-section" aria-label="Astrion Digital Enterprise Overview">
+      {/* Dynamic Ambient Background Glows */}
+      <div className="hero-ambient-glow-left" aria-hidden="true" />
+      <div className="hero-ambient-glow-right" aria-hidden="true" />
+      <div className="hero-grid-pattern" aria-hidden="true" />
+
       <div className="container hero-container">
-        {/* Left Column: Typography Dominance with Palantir Entrance */}
+        {/* Left Column: Modern Enterprise SaaS Presentation */}
         <motion.div 
           className="hero-content"
           initial={{ opacity: 0, y: 24 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.75, ease: [0.16, 1, 0.3, 1] }}
         >
-          <div className="hero-label mono-label">
-            <span className="hero-label-indicator"></span>
-            ASTRION DIGITAL / ENTERPRISE TECHNOLOGY
+          {/* Top Live Beacon Badge */}
+          <div className="hero-status-pill">
+            <span className="hero-status-indicator"></span>
+            <span className="mono-tag status-text">
+              ENTERPRISE PLATFORM ARCHITECTURE // v4.2 LIVE
+            </span>
           </div>
 
           <h1 className="hero-headline">
-            Engineering intelligence into every enterprise.
+            Engineering Intelligence into{' '}
+            <span className="hero-gradient-text">Every Enterprise</span>
           </h1>
 
+          <div className="hero-subhead-pill mono-tag">
+            <Sparkles size={13} className="pill-sparkle" />
+            <span>{HERO_CONTENT.subhead}</span>
+          </div>
+
           <p className="hero-lead">
-            Astrion Digital brings together transformation, AI, enterprise software,
-            cloud, cybersecurity, data and connected platforms to help organisations
-            build what comes next.
+            {HERO_CONTENT.lead}
           </p>
 
           <div className="hero-cta-group">
             <Button
-              to="/solutions"
+              to="/xenedion"
               variant="primary"
               size="lg"
               icon="arrow"
             >
-              Explore Our Solutions
+              Discover XENedion ERP
             </Button>
             <Button
-              to="/xenedion"
+              to="/about"
               variant="secondary"
               size="lg"
               icon="external"
             >
-              Discover XENedion ERP
+              Brand Architecture &amp; Overview
             </Button>
           </div>
 
-          {/* Enterprise Metrics Bar / Architecture Pillars */}
-          <div className="hero-pillars">
-            <div className="pillar-item">
-              <span className="pillar-num mono-tag">01</span>
-              <span className="pillar-text">Autonomous AI Workflows</span>
-            </div>
-            <div className="pillar-divider">/</div>
-            <div className="pillar-item">
-              <span className="pillar-num mono-tag">02</span>
-              <span className="pillar-text">Connected ERP Core</span>
-            </div>
-            <div className="pillar-divider">/</div>
-            <div className="pillar-item">
-              <span className="pillar-num mono-tag">03</span>
-              <span className="pillar-text">Zero-Trust Cloud Mesh</span>
-            </div>
+          {/* Interactive Enterprise Metric / KPI Strip */}
+          <div className="hero-kpi-bar">
+            {kpis.map((kpi, idx) => (
+              <div key={idx} className="kpi-item">
+                <div className="kpi-top">
+                  <span className="kpi-icon">{kpi.icon}</span>
+                  <span className="kpi-val">{kpi.value}</span>
+                </div>
+                <span className="kpi-label mono-tag">{kpi.label}</span>
+              </div>
+            ))}
           </div>
         </motion.div>
 

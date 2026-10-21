@@ -1,80 +1,86 @@
 :root {
-  /* Surface Colors */
+  /* ========================================================
+     ASTRION PREMIUM ENTERPRISE LIGHT DESIGN SYSTEM
+     Clean, high-contrast, modern Silicon Valley executive light theme
+     ======================================================== */
+
+  /* Pure Surface & Background Colors */
   --bg-primary: #FFFFFF;
-  --bg-secondary: #F7F8FA;
-  --bg-tertiary: #EDF0F5;
+  --bg-secondary: #F8FAFC;
+  --bg-tertiary: #F1F5F9;
   --bg-card: #FFFFFF;
-  --bg-card-hover: #F9FAFC;
+  --bg-card-hover: #F8FAFC;
+  --bg-card-elevated: #FFFFFF;
 
   /* Header Backgrounds */
-  --header-bg: rgba(255, 255, 255, 0.92);
+  --header-bg: rgba(255, 255, 255, 0.88);
   --header-bg-scrolled: rgba(255, 255, 255, 0.98);
 
-  /* Dark Sections Surface Colors (always dark sections like XENedion / FinalCTA) */
-  --bg-dark: #0A0B0D;
-  --bg-dark-surface: #111317;
-  --bg-dark-elevated: #181B22;
-  --bg-dark-card: #14171E;
-  --bg-dark-card-hover: #1C212B;
+  /* Clean Light Theme Section Variants */
+  --bg-section-alt: #F8FAFC;
+  --bg-section-soft: #F1F5F9;
+  --bg-section-accent: rgba(28, 117, 189, 0.04);
 
-  /* Text Colors */
-  --text-primary: #101114;
-  --text-secondary: #475060;
-  --text-tertiary: #758092;
-  --text-muted: #9BA4B5;
+  /* High-Contrast Modern Slate Text Hierarchy */
+  --title-color: #0F172A;
+  --text-primary: #0F172A;
+  --text-secondary: #334155;
+  --text-tertiary: #64748B;
+  --text-muted: #94A3B8;
 
-  /* Inverse Text Colors (on Dark) */
+  /* Inverse Text */
   --text-inverse-primary: #FFFFFF;
-  --text-inverse-secondary: #C8D0DC;
-  --text-inverse-tertiary: #8490A4;
-  --text-inverse-muted: #5C677A;
+  --text-inverse-secondary: #F8FAFC;
+  --text-inverse-tertiary: #E2E8F0;
+  --text-inverse-muted: #94A3B8;
 
-  /* Brand Identity - Exact Official Logo Colors */
+  /* Official Brand Colors */
   --brand-blue: rgb(28, 117, 189);
   --brand-blue-hover: rgb(21, 95, 155);
   --brand-blue-light: rgba(28, 117, 189, 0.08);
-  --brand-blue-border: rgba(28, 117, 189, 0.28);
-  --brand-blue-glow: rgba(28, 117, 189, 0.2);
+  --brand-blue-border: rgba(28, 117, 189, 0.22);
+  --brand-blue-glow: rgba(28, 117, 189, 0.16);
 
   --brand-orange: rgb(235, 100, 62);
   --brand-orange-hover: rgb(215, 82, 45);
-  --brand-orange-light: rgba(235, 100, 62, 0.1);
-  --brand-orange-border: rgba(235, 100, 62, 0.3);
-  --brand-orange-glow: rgba(235, 100, 62, 0.25);
+  --brand-orange-light: rgba(235, 100, 62, 0.08);
+  --brand-orange-border: rgba(235, 100, 62, 0.22);
+  --brand-orange-glow: rgba(235, 100, 62, 0.16);
 
-  /* Brand Signature Gradients (Blue to Orange matching ribbon logo) */
+  /* Brand Signature Gradients */
   --brand-gradient: linear-gradient(135deg, rgb(28, 117, 189) 0%, rgb(235, 100, 62) 100%);
   --brand-gradient-h: linear-gradient(90deg, rgb(28, 117, 189) 0%, rgb(235, 100, 62) 100%);
-  --brand-gradient-glow: linear-gradient(90deg, rgba(28, 117, 189, 0.25) 0%, rgba(235, 100, 62) 0.25% 100%);
+  --brand-gradient-glow: linear-gradient(90deg, rgba(28, 117, 189, 0.12) 0%, rgba(235, 100, 62, 0.12) 100%);
+  --brand-subtle-gradient: linear-gradient(180deg, #FFFFFF 0%, #F8FAFC 100%);
+  --brand-mesh-gradient: radial-gradient(circle at 50% -20%, rgba(28, 117, 189, 0.08) 0%, rgba(235, 100, 62, 0.04) 45%, transparent 75%);
 
   /* Primary & Secondary Brand Accents */
   --accent-primary: rgb(28, 117, 189);
   --accent-primary-hover: rgb(21, 95, 155);
   --accent-primary-light: rgba(28, 117, 189, 0.08);
-  --accent-primary-border: rgba(28, 117, 189, 0.25);
-  
+  --accent-primary-border: rgba(28, 117, 189, 0.22);
+
   --accent-secondary: rgb(235, 100, 62);
   --accent-secondary-hover: rgb(215, 82, 45);
-  --accent-secondary-light: rgba(235, 100, 62, 0.1);
-  --accent-secondary-border: rgba(235, 100, 62, 0.3);
+  --accent-secondary-light: rgba(235, 100, 62, 0.08);
+  --accent-secondary-border: rgba(235, 100, 62, 0.22);
 
-  /* Semantic Compatibility Aliases */
-  --accent-cyan: rgb(235, 100, 62);
-  --accent-cyan-light: rgba(235, 100, 62, 0.12);
-  --accent-cyan-glow: rgba(235, 100, 62, 0.25);
-  --accent-glow: rgba(28, 117, 189, 0.16);
+  /* Semantic Aliases */
+  --accent-cyan: rgb(28, 117, 189);
+  --accent-cyan-light: rgba(28, 117, 189, 0.08);
+  --accent-cyan-glow: rgba(28, 117, 189, 0.14);
+  --accent-glow: rgba(28, 117, 189, 0.12);
 
-  /* Borders & Dividers */
-  --border-light: rgba(16, 17, 20, 0.08);
-  --border-medium: rgba(16, 17, 20, 0.14);
-  --border-subtle: rgba(16, 17, 20, 0.05);
+  /* Clean Crisp Borders & Dividers */
+  --border-light: rgba(15, 23, 42, 0.08);
+  --border-medium: rgba(15, 23, 42, 0.14);
+  --border-subtle: rgba(15, 23, 42, 0.04);
   --border-focus: rgb(28, 117, 189);
-  
-  --border-dark: rgba(255, 255, 255, 0.08);
-  --border-dark-medium: rgba(255, 255, 255, 0.16);
-  --border-dark-glow: rgba(28, 117, 189, 0.4);
 
-  /* Typography */
+  --border-card: rgba(15, 23, 42, 0.08);
+  --border-card-hover: rgba(28, 117, 189, 0.35);
+
+  /* Modern Typography */
   --font-display: 'Space Grotesk', -apple-system, BlinkMacSystemFont, sans-serif;
   --font-sans: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
   --font-mono: 'IBM Plex Mono', 'SF Mono', Consolas, monospace;
@@ -83,13 +89,15 @@
   --max-width: 1320px;
   --container-padding: 32px;
   --header-height: 86px;
-  --header-height-scrolled: 58px;
-  
-  /* Corner Radii - Restrained & Enterprise */
-  --radius-xs: 2px;
-  --radius-sm: 4px;
-  --radius-md: 6px;
-  --radius-lg: 10px;
+  --header-height-scrolled: 64px;
+
+  /* Corner Radii */
+  --radius-xs: 6px;
+  --radius-sm: 10px;
+  --radius-md: 14px;
+  --radius-lg: 18px;
+  --radius-xl: 24px;
+  --radius-full: 9999px;
 
   /* Transitions */
   --transition-fast: 150ms cubic-bezier(0.16, 1, 0.3, 1);
@@ -97,61 +105,75 @@
   --transition-smooth: 400ms cubic-bezier(0.16, 1, 0.3, 1);
   --transition-slow: 700ms cubic-bezier(0.16, 1, 0.3, 1);
 
-  /* Shadows - Minimal & Sophisticated */
-  --shadow-subtle: 0 1px 3px rgba(16, 17, 20, 0.04);
-  --shadow-dropdown: 0 12px 36px rgba(16, 17, 20, 0.08), 0 2px 8px rgba(16, 17, 20, 0.04);
-  --shadow-dark-card: 0 8px 30px rgba(0, 0, 0, 0.35);
-}
+  /* Premium Light Shadows */
+  --shadow-xs: 0 1px 2px rgba(15, 23, 42, 0.04);
+  --shadow-sm: 0 1px 3px rgba(15, 23, 42, 0.06), 0 1px 2px rgba(15, 23, 42, 0.04);
+  --shadow-subtle: 0 1px 3px rgba(15, 23, 42, 0.04), 0 1px 2px rgba(15, 23, 42, 0.02);
+  --shadow-card: 0 4px 16px rgba(15, 23, 42, 0.05), 0 1px 2px rgba(15, 23, 42, 0.04);
+  --shadow-md: 0 8px 24px rgba(15, 23, 42, 0.06);
+  --shadow-lg: 0 16px 36px rgba(15, 23, 42, 0.08);
+  --shadow-xl: 0 24px 48px rgba(15, 23, 42, 0.1);
+  --shadow-hover: 0 16px 36px -8px rgba(28, 117, 189, 0.14), 0 4px 12px rgba(15, 23, 42, 0.04);
+  --shadow-dropdown: 0 16px 40px rgba(15, 23, 42, 0.1), 0 1px 4px rgba(15, 23, 42, 0.06);
 
-/* ========================================================
-   DARK THEME SYSTEM TOKENS (Palantir / Obsidian Aesthetic)
-   ======================================================== */
-[data-theme="dark"] {
-  /* Dark Mode Surface Colors - Deep Obsidian & Sleek Palantir Slate */
-  --bg-primary: #090A0F;
-  --bg-secondary: #0E1118;
-  --bg-tertiary: #151923;
-  --bg-card: #11151F;
-  --bg-card-hover: #171D2B;
+  /* Spacing Scale */
+  --space-1: 4px;
+  --space-2: 8px;
+  --space-3: 12px;
+  --space-4: 16px;
+  --space-5: 20px;
+  --space-6: 24px;
+  --space-8: 32px;
+  --space-10: 40px;
+  --space-12: 48px;
+  --space-16: 64px;
+  --space-20: 80px;
+  --space-24: 96px;
 
-  /* Header Backgrounds */
-  --header-bg: rgba(9, 10, 15, 0.88);
-  --header-bg-scrolled: rgba(9, 10, 15, 0.96);
+  /* Typography Scale */
+  --font-size-xs: 0.75rem;
+  --font-size-sm: 0.875rem;
+  --font-size-base: 1rem;
+  --font-size-lg: 1.125rem;
+  --font-size-xl: 1.25rem;
+  --font-size-2xl: 1.5rem;
+  --font-size-3xl: 1.875rem;
+  --font-size-4xl: 2.25rem;
 
-  /* Text Colors */
-  --text-primary: #F8FAFC;
-  --text-secondary: #94A3B8;
-  --text-tertiary: #64748B;
-  --text-muted: #475569;
+  /* Font Weights */
+  --font-weight-normal: 400;
+  --font-weight-medium: 500;
+  --font-weight-semibold: 600;
+  --font-weight-bold: 700;
 
-  /* Borders & Dividers */
-  --border-light: rgba(255, 255, 255, 0.09);
-  --border-medium: rgba(255, 255, 255, 0.16);
-  --border-subtle: rgba(255, 255, 255, 0.06);
+  /* Line Heights */
+  --line-height-tight: 1.2;
+  --line-height-normal: 1.5;
+  --line-height-relaxed: 1.65;
 
-  /* Shadows */
-  --shadow-subtle: 0 2px 6px rgba(0, 0, 0, 0.5);
-  --shadow-dropdown: 0 18px 48px rgba(0, 0, 0, 0.7), 0 4px 12px rgba(0, 0, 0, 0.5);
-
-  /* Brand Accents adjustments for dark background vibrancy */
-  --brand-blue-light: rgba(28, 117, 189, 0.18);
-  --brand-blue-border: rgba(28, 117, 189, 0.42);
-  --brand-blue-glow: rgba(28, 117, 189, 0.35);
-
-  --brand-orange-light: rgba(235, 100, 62, 0.18);
-  --brand-orange-border: rgba(235, 100, 62, 0.42);
-  --brand-orange-glow: rgba(235, 100, 62, 0.35);
-
-  --accent-primary-light: rgba(28, 117, 189, 0.18);
-  --accent-primary-border: rgba(28, 117, 189, 0.42);
-  --accent-secondary-light: rgba(235, 100, 62, 0.18);
-  --accent-secondary-border: rgba(235, 100, 62, 0.42);
+  /* Semantic Aliases */
+  --color-bg: var(--bg-primary);
+  --color-surface: var(--bg-card);
+  --color-surface-subtle: var(--bg-secondary);
+  --color-surface-muted: var(--bg-tertiary);
+  --color-border: var(--border-light);
+  --color-border-hover: var(--border-card-hover);
+  --color-primary: var(--brand-blue);
+  --color-primary-hover: var(--brand-blue-hover);
+  --color-primary-light: var(--brand-blue-light);
+  --color-secondary: var(--brand-orange);
+  --color-secondary-hover: var(--brand-orange-hover);
+  --color-secondary-light: var(--brand-orange-light);
+  --color-text-primary: var(--text-primary);
+  --color-text-secondary: var(--text-secondary);
+  --color-text-tertiary: var(--text-tertiary);
+  --color-text-muted: var(--text-muted);
 }
 
 @media (max-width: 768px) {
   :root {
     --container-padding: 20px;
     --header-height: 72px;
-    --header-height-scrolled: 56px;
+    --header-height-scrolled: 58px;
   }
 }

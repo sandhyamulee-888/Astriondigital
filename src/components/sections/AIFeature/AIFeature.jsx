@@ -13,7 +13,7 @@ export default function AIFeature() {
       id: 0,
       name: 'Enterprise Data',
       icon: <Database size={20} />,
-      badge: 'LAYER 01 // INGESTION',
+      badge: 'INGESTION LAYER',
       tech: 'Lakehouses, ERP Ledgers, Telemetry & IoT',
       desc: 'Raw relational databases, document repositories, and streaming real-time event topics indexed with lineage tracking.'
     },
@@ -21,7 +21,7 @@ export default function AIFeature() {
       id: 1,
       name: 'AI Models',
       icon: <Brain size={20} />,
-      badge: 'LAYER 02 // REASONING',
+      badge: 'REASONING LAYER',
       tech: 'Domain LLMs, RAG Pipelines & Embeddings',
       desc: 'Private fine-tuned language models and predictive regressors evaluated against deterministic accuracy guardrails.'
     },
@@ -29,7 +29,7 @@ export default function AIFeature() {
       id: 2,
       name: 'Automation',
       icon: <Cpu size={20} />,
-      badge: 'LAYER 03 // EXECUTION',
+      badge: 'EXECUTION LAYER',
       tech: 'Autonomous Agents, Event Loops & Bots',
       desc: 'Orchestrated execution routines translating model inferences into structured API commands without manual entry.'
     },
@@ -37,7 +37,7 @@ export default function AIFeature() {
       id: 3,
       name: 'Business Workflows',
       icon: <Workflow size={20} />,
-      badge: 'LAYER 04 // INTEGRATION',
+      badge: 'INTEGRATION LAYER',
       tech: 'ERP Triggers, Procurement & Fulfillment',
       desc: 'Contextual integration with human-in-the-loop approval thresholds, audit journals, and state validation.'
     },
@@ -45,7 +45,7 @@ export default function AIFeature() {
       id: 4,
       name: 'Decisions & Actions',
       icon: <CheckCircle size={20} />,
-      badge: 'LAYER 05 // OUTCOME',
+      badge: 'OUTCOME LAYER',
       tech: 'Deterministic Outcomes & Real-Time Impact',
       desc: 'Automated inventory rebalancing, dynamic quote generation, predictive maintenance dispatches, and ledger reconciliation.'
     }
@@ -56,7 +56,7 @@ export default function AIFeature() {
       <div className="container">
         <ScrollReveal yOffset={28}>
           <SectionHeader
-            label="05 / ARTIFICIAL INTELLIGENCE"
+            label="AI & INTELLIGENT AUTOMATION"
             title="AI that works inside the enterprise."
             description="Astrion bridges the chasm between experimental machine learning prototypes and dependable enterprise production. We build deterministic AI architectures that operate directly within transactional workflows."
             action={

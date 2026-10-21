@@ -1,5 +1,5 @@
 import React, { useEffect, useRef, useState } from 'react';
-import { ArrowRight } from 'lucide-react';
+import { ArrowRight, Compass, Cpu, Layers, TrendingUp } from 'lucide-react';
 import ScrollReveal from '../../common/Motion/ScrollReveal';
 import './TransformationStatement.css';
 
@@ -22,10 +22,10 @@ export default function TransformationStatement() {
   }, []);
 
   const steps = [
-    { num: '01', title: 'Strategy', desc: 'Enterprise alignment & feasibility' },
-    { num: '02', title: 'Technology', desc: 'Resilient modular architecture' },
-    { num: '03', title: 'Implementation', desc: 'Deterministic engineering rollout' },
-    { num: '04', title: 'Optimisation', desc: 'Telemetry & continuous evolution' }
+    { icon: <Compass size={18} />, title: 'Strategy', desc: 'Enterprise alignment & feasibility' },
+    { icon: <Cpu size={18} />, title: 'Technology', desc: 'Resilient modular architecture' },
+    { icon: <Layers size={18} />, title: 'Implementation', desc: 'Deterministic engineering rollout' },
+    { icon: <TrendingUp size={18} />, title: 'Optimisation', desc: 'Telemetry & continuous evolution' }
   ];
 
   return (
@@ -52,7 +52,7 @@ export default function TransformationStatement() {
               {steps.map((step, idx) => (
                 <div key={idx} className="pipeline-step-item">
                   <div className="step-marker">
-                    <span className="step-circle">{step.num}</span>
+                    <span className="step-circle">{step.icon}</span>
                   </div>
                   <div className="step-content">
                     <h3 className="step-title">{step.title}</h3>

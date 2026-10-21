@@ -12,7 +12,7 @@ export default function InsightsSection() {
       <div className="container">
         <ScrollReveal>
           <SectionHeader
-            label="07 / INSIGHTS"
+            label="INSIGHTS // PUBLICATIONS & RESOURCES"
             title="Ideas for the next enterprise era."
             description="In-depth architectural analysis, transformation playbooks, and strategic perspectives curated by Astrion technologists."
             action={

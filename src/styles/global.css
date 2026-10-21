@@ -32,13 +32,61 @@ body {
   outline-offset: 3px;
 }
 
-/* Typography Hierarchy */
-h1, h2, h3, h4, h5, h6 {
+/* Typography Hierarchy — All Titles & Headings strictly #0F172A */
+h1, h2, h3, h4, h5, h6,
+.section-heading,
+.section-title,
+.hero-headline,
+.inner-hero-title,
+.hub-title,
+.solution-page-title,
+.block-title,
+.narrative-headline,
+.cta-headline,
+.cta-subheading,
+.featured-case-title,
+.preview-title,
+.ind-display-name,
+.ind-display-headline,
+.sector-headline,
+.xenedion-feat-title,
+.xenedion-sub-title,
+.article-title,
+.cs-full-title,
+.case-study-hero-title,
+.placeholder-title,
+.contact-hero-title,
+.form-title,
+.doc-main-title,
+.doc-section-title,
+.capability-title,
+.diff-title,
+.solutions-intro-title,
+.step-title,
+.product-subheading,
+.highlight-title,
+.display-title,
+.why-title,
+.value-title,
+.subpage-title,
+.vm-card-title,
+.partner-title,
+.resource-title,
+.faq-heading {
   font-family: var(--font-display);
   font-weight: 600;
   line-height: 1.15;
   letter-spacing: -0.025em;
-  color: var(--text-primary);
+  color: #0F172A;
+}
+
+h1 a, h2 a, h3 a, h4 a, h5 a, h6 a,
+.section-heading a,
+.section-title a,
+.capability-title a,
+.hub-card-title a,
+.insight-card-title a {
+  color: #0F172A;
 }
 
 p {
@@ -74,7 +122,7 @@ ul, ol {
 .mono-label {
   font-family: var(--font-mono);
   font-size: 0.8125rem;
-  font-weight: 500;
+  font-weight: 600;
   letter-spacing: 0.08em;
   text-transform: uppercase;
   color: var(--accent-primary);
@@ -101,39 +149,20 @@ ul, ol {
 }
 
 .section {
-  padding-top: 120px;
-  padding-bottom: 120px;
+  padding-top: 108px;
+  padding-bottom: 108px;
   position: relative;
 }
 
+.section-alt {
+  background-color: var(--bg-secondary);
+  border-top: 1px solid var(--border-light);
+  border-bottom: 1px solid var(--border-light);
+}
+
 .section-tight {
-  padding-top: 80px;
-  padding-bottom: 80px;
-}
-
-/* Dark Section Backgrounds */
-.theme-dark {
-  background-color: var(--bg-dark);
-  color: var(--text-inverse-primary);
-}
-
-.theme-dark h1,
-.theme-dark h2,
-.theme-dark h3,
-.theme-dark h4 {
-  color: var(--text-inverse-primary);
-}
-
-.theme-dark p {
-  color: var(--text-inverse-secondary);
-}
-
-.theme-dark .mono-label {
-  color: var(--accent-cyan);
-}
-
-.theme-dark .mono-tag {
-  color: var(--text-inverse-tertiary);
+  padding-top: 72px;
+  padding-bottom: 72px;
 }
 
 /* 12-Column Desktop Grid System */
@@ -145,29 +174,27 @@ ul, ol {
 
 /* Common Section Header Component Styles */
 .section-header {
-  margin-bottom: 56px;
+  margin-bottom: 52px;
 }
 
 .section-header .mono-label {
-  margin-bottom: 14px;
+  margin-bottom: 12px;
 }
 
 .section-header .section-title {
   font-size: clamp(2rem, 3.5vw, 3.25rem);
   font-weight: 600;
-  max-width: 820px;
+  max-width: 840px;
   letter-spacing: -0.03em;
+  color: var(--text-primary);
 }
 
 .section-header .section-desc {
-  font-size: 1.1875rem;
+  font-size: 1.125rem;
   max-width: 680px;
   margin-top: 16px;
   color: var(--text-secondary);
-}
-
-.theme-dark .section-header .section-desc {
-  color: var(--text-inverse-secondary);
+  line-height: 1.6;
 }
 
 /* Thin divider lines */
@@ -177,19 +204,13 @@ ul, ol {
   width: 100%;
 }
 
-.hairline-dark {
-  height: 1px;
-  background-color: var(--border-dark);
-  width: 100%;
-}
-
 /* Interactive Link / Action with Arrow */
 .arrow-link {
   display: inline-flex;
   align-items: center;
   gap: 8px;
   font-family: var(--font-sans);
-  font-weight: 500;
+  font-weight: 600;
   font-size: 0.9375rem;
   color: var(--accent-primary);
   transition: gap var(--transition-fast), color var(--transition-fast);
@@ -200,30 +221,22 @@ ul, ol {
   gap: 12px;
 }
 
-.theme-dark .arrow-link {
-  color: var(--brand-orange);
-}
-
-.theme-dark .arrow-link:hover {
-  color: var(--brand-orange-hover);
-}
-
 /* Responsive adjustments */
 @media (max-width: 1024px) {
   .section {
-    padding-top: 88px;
-    padding-bottom: 88px;
+    padding-top: 80px;
+    padding-bottom: 80px;
   }
 }
 
 @media (max-width: 768px) {
   .section {
-    padding-top: 64px;
-    padding-bottom: 64px;
+    padding-top: 60px;
+    padding-bottom: 60px;
   }
   
   .section-header {
-    margin-bottom: 36px;
+    margin-bottom: 32px;
   }
 }
 
@@ -236,3 +249,164 @@ ul, ol {
     scroll-behavior: auto !important;
   }
 }
+
+/* ========================================================
+   GLOBAL INNER PAGES DESIGN FOUNDATION
+   ======================================================== */
+.inner-page {
+  min-height: 100vh;
+  background-color: var(--bg-primary);
+}
+
+.inner-hero-section {
+  position: relative;
+  padding-top: calc(var(--header-height) + 40px);
+  padding-bottom: 64px;
+  background-color: var(--bg-secondary);
+  border-bottom: 1px solid var(--border-light);
+  overflow: hidden;
+}
+
+.inner-hero-bg {
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  pointer-events: none;
+  overflow: hidden;
+}
+
+.inner-hero-bg-img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  object-position: center top;
+  opacity: 0.25;
+}
+
+.inner-hero-overlay {
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: linear-gradient(
+    180deg,
+    rgba(255, 255, 255, 0.94) 0%,
+    rgba(248, 250, 252, 0.90) 100%
+  );
+}
+
+.inner-hero-container {
+  position: relative;
+  z-index: 2;
+}
+
+.inner-breadcrumb {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  margin-bottom: 20px;
+  font-size: 0.75rem;
+  letter-spacing: 0.06em;
+  flex-wrap: wrap;
+}
+
+.inner-breadcrumb a {
+  color: var(--text-tertiary);
+  transition: color var(--transition-fast);
+}
+
+.inner-breadcrumb a:hover {
+  color: var(--brand-blue);
+}
+
+.breadcrumb-slash {
+  color: var(--border-medium);
+}
+
+.breadcrumb-current {
+  color: var(--brand-blue);
+  font-weight: 700;
+}
+
+.inner-hero-content {
+  max-width: 900px;
+}
+
+.inner-hero-badge {
+  margin-bottom: 16px;
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  background: rgba(28, 117, 189, 0.08);
+  border: 1px solid rgba(28, 117, 189, 0.22);
+  color: var(--brand-blue);
+  padding: 6px 14px;
+  border-radius: var(--radius-sm);
+  font-size: 0.75rem;
+  font-weight: 600;
+  letter-spacing: 0.06em;
+}
+
+.badge-dot {
+  width: 6px;
+  height: 6px;
+  border-radius: 50%;
+  background-color: var(--brand-orange);
+  display: inline-block;
+  box-shadow: 0 0 6px var(--brand-orange-glow);
+}
+
+.inner-hero-title {
+  font-size: clamp(2.25rem, 4vw, 3.25rem);
+  font-weight: 700;
+  letter-spacing: -0.035em;
+  line-height: 1.12;
+  color: var(--text-primary);
+  margin-bottom: 20px;
+}
+
+.inner-hero-lead {
+  font-size: clamp(1.0625rem, 1.35vw, 1.25rem);
+  line-height: 1.6;
+  color: var(--text-secondary);
+  max-width: 800px;
+}
+
+/* Global Commitment / CTA Banner */
+.commitment-card {
+  background: #FFFFFF;
+  border: 1px solid var(--border-light);
+  border-left: 4px solid var(--brand-orange);
+  border-radius: var(--radius-lg);
+  padding: 40px;
+  box-shadow: var(--shadow-card);
+  margin-top: 64px;
+}
+
+.commitment-header {
+  margin-bottom: 16px;
+}
+
+.commitment-header .mono-label {
+  color: var(--brand-orange);
+  font-size: 0.75rem;
+  margin-bottom: 8px;
+}
+
+.commitment-header h3 {
+  font-size: 1.75rem;
+  font-weight: 700;
+  color: var(--text-primary);
+}
+
+.commitment-text {
+  font-size: 1rem;
+  color: var(--text-secondary);
+  line-height: 1.6;
+  max-width: 750px;
+  margin-bottom: 24px;
+}
+

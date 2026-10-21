@@ -1,8 +1,16 @@
 import React, { useEffect, useRef, useState } from 'react';
+import { Search, Layout, Cpu, Sparkles } from 'lucide-react';
 import { APPROACH_PHASES } from '../../../data/approach';
 import SectionHeader from '../../common/SectionHeader/SectionHeader';
 import ScrollReveal, { StaggerContainer, StaggerItem } from '../../common/Motion/ScrollReveal';
 import './ApproachSection.css';
+
+const PHASE_ICONS = [
+  <Search size={18} key="discover" />,
+  <Layout size={18} key="design" />,
+  <Cpu size={18} key="build" />,
+  <Sparkles size={18} key="evolve" />
+];
 
 export default function ApproachSection() {
   const sectionRef = useRef(null);
@@ -27,7 +35,7 @@ export default function ApproachSection() {
       <div className="container">
         <ScrollReveal yOffset={28}>
           <SectionHeader
-            label="04 / HOW WE WORK"
+            label="HOW WE WORK"
             title="From complexity to measurable transformation."
             description="Astrion structures enterprise initiatives into four continuous engineering phases that convert strategic ambiguity into scalable, production-tested software."
           />
@@ -41,10 +49,10 @@ export default function ApproachSection() {
 
           <StaggerContainer staggerDelay={0.09} className="timeline-phases-grid">
             {APPROACH_PHASES.map((item, idx) => (
-              <StaggerItem key={item.num} className="phase-node">
+              <StaggerItem key={item.phase || idx} className="phase-node">
                 <div className="phase-marker-row">
                   <div className="phase-number-badge">
-                    <span className="mono-tag phase-num">{item.num}</span>
+                    <span className="mono-tag phase-num">{PHASE_ICONS[idx]}</span>
                   </div>
                   <div className="phase-step-name mono-label">{item.phase}</div>
                 </div>

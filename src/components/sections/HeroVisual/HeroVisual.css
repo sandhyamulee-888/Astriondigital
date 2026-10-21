@@ -12,54 +12,103 @@
   width: 100%;
   height: auto;
   overflow: visible;
-  filter: drop-shadow(0 16px 32px rgba(16, 17, 20, 0.04));
+  filter: drop-shadow(0 20px 36px rgba(15, 23, 42, 0.06));
 }
 
+/* Center ASTRION Core Typography */
 .svg-center-text {
   font-family: var(--font-display);
   font-weight: 700;
   font-size: 13px;
-  fill: var(--text-primary);
+  fill: #0F172A;
   letter-spacing: 0.06em;
 }
 
 .svg-center-subtext {
   font-family: var(--font-mono);
-  font-weight: 500;
+  font-weight: 600;
   font-size: 8px;
-  fill: var(--accent-primary);
+  fill: var(--brand-blue);
   letter-spacing: 0.08em;
 }
 
+/* Peripheral Nodes Typography */
 .svg-node-label {
   font-family: var(--font-mono);
   font-size: 11px;
   font-weight: 500;
-  fill: var(--text-secondary);
+  fill: #334155;
   transition: all var(--transition-fast);
+  user-select: none;
 }
 
 .svg-node-label.active {
-  fill: var(--accent-primary);
-  font-weight: 600;
+  fill: #0F172A;
+  font-weight: 700;
 }
 
 .node-group:hover .svg-node-label {
-  fill: var(--accent-primary);
+  fill: #0F172A;
+  font-weight: 700;
 }
 
+/* Flow Line Animation */
+.flow-line {
+  stroke-dasharray: 4 8;
+  animation: flowPacket 2.5s linear infinite;
+}
+
+@keyframes flowPacket {
+  to {
+    stroke-dashoffset: -24;
+  }
+}
+
+/* Interactive Node Pulses */
+.anim-pulse {
+  animation: nodePulse 2.5s infinite ease-in-out;
+}
+
+@keyframes nodePulse {
+  0%, 100% {
+    transform: scale(1);
+    opacity: 1;
+  }
+  50% {
+    transform: scale(1.15);
+    opacity: 0.85;
+  }
+}
+
+.anim-glow {
+  transition: all var(--transition-fast);
+}
+
+.node-group.active .anim-glow,
+.node-group:hover .anim-glow {
+  filter: drop-shadow(0 0 10px rgba(28, 117, 189, 0.35));
+}
+
+/* Clean Telemetry Badge */
 .visual-telemetry-badge {
-  margin-top: 16px;
-  background-color: var(--bg-secondary);
-  border: 1px solid var(--border-light);
-  border-radius: var(--radius-xs);
-  padding: 8px 16px;
+  margin-top: 18px;
+  background-color: #FFFFFF;
+  border: 1px solid var(--border-medium);
+  border-radius: var(--radius-sm);
+  padding: 10px 18px;
   display: flex;
   align-items: center;
   justify-content: space-between;
   gap: 16px;
   width: 100%;
-  max-width: 480px;
+  max-width: 520px;
+  box-shadow: 0 4px 16px rgba(15, 23, 42, 0.04);
+  transition: all var(--transition-fast);
+}
+
+.visual-telemetry-badge:hover {
+  border-color: rgba(28, 117, 189, 0.3);
+  box-shadow: 0 6px 20px rgba(28, 117, 189, 0.08);
 }
 
 @media (max-width: 600px) {
@@ -67,7 +116,7 @@
     flex-direction: column;
     align-items: flex-start;
     gap: 6px;
-    padding: 10px 12px;
+    padding: 10px 14px;
   }
 }
 
@@ -83,16 +132,19 @@
   border-radius: 50%;
   background-color: #10B981;
   box-shadow: 0 0 8px rgba(16, 185, 129, 0.6);
-  animation: pulseSlow 2s infinite;
+  animation: beaconPulse 2s infinite;
 }
 
 .telemetry-live {
   font-size: 0.6875rem;
-  font-weight: 600;
-  color: var(--text-primary);
+  font-weight: 700;
+  color: #0F172A;
+  letter-spacing: 0.06em;
 }
 
-.telemetry-details span {
-  font-size: 0.6875rem;
-  color: var(--accent-primary);
+.telemetry-stat-text {
+  font-size: 0.75rem;
+  font-weight: 600;
+  color: var(--brand-blue);
+  letter-spacing: 0.04em;
 }

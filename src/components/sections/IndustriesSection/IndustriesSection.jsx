@@ -1,5 +1,4 @@
 import React, { useState } from 'react';
-import { Link } from 'react-router-dom';
 import { ArrowRight, ChevronDown, CheckCircle2 } from 'lucide-react';
 import { INDUSTRIES } from '../../../data/industries';
 import SectionHeader from '../../common/SectionHeader/SectionHeader';
@@ -22,7 +21,7 @@ export default function IndustriesSection() {
       <div className="container">
         <ScrollReveal>
           <SectionHeader
-            label="03 / INDUSTRIES"
+            label="INDUSTRIES"
             title="Built around how industries actually operate."
             description="Astrion engineers sector-specific technology architectures tailored to complex operating workflows, supply networks, and strict compliance regimes."
           />
@@ -43,7 +42,6 @@ export default function IndustriesSection() {
                   className={`industry-nav-btn ${isActive ? 'active' : ''}`}
                   onClick={() => setActiveIndustryId(ind.id)}
                 >
-                  <span className="ind-nav-num mono-tag">{ind.num}</span>
                   <span className="ind-nav-name">{ind.name}</span>
                   <ArrowRight size={16} className="ind-nav-arrow" />
                 </button>
@@ -56,7 +54,7 @@ export default function IndustriesSection() {
             <div className="industry-display-inner" key={selectedIndustry.id}>
               <div className="ind-display-top">
                 <span className="mono-label ind-display-num">
-                  {selectedIndustry.num} / SECTOR BLUEPRINT
+                  SECTOR BLUEPRINT
                 </span>
                 <h3 className="ind-display-name">{selectedIndustry.name}</h3>
                 <h4 className="ind-display-headline">{selectedIndustry.headline}</h4>
@@ -117,7 +115,6 @@ export default function IndustriesSection() {
                     aria-expanded={isExpanded}
                   >
                     <span className="ind-accordion-title-wrap">
-                      <span className="mono-tag ind-accordion-num">{ind.num}</span>
                       <span className="ind-accordion-name">{ind.name}</span>
                     </span>
                     <ChevronDown
