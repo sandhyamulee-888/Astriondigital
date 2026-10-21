@@ -39,7 +39,7 @@ export default function ApproachPage() {
             </div>
 
             <h1 className="inner-hero-title">
-              Our Approach: From strategic discovery to continuous autonomous scale.
+              Our Approach: From strategic discovery to continuous autonomous scale .
             </h1>
 
             <p className="inner-hero-lead">
