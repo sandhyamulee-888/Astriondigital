@@ -5,14 +5,14 @@ export default function HeroVisual() {
   const [activeNode, setActiveNode] = useState(null);
 
   const nodes = [
-    { id: 'ai', label: 'AI Models', x: 300, y: 70, type: 'intelligence', latency: '12ms', proto: 'Tensor/gRPC', desc: 'Predictive neural routing & enterprise agents' },
-    { id: 'cloud', label: 'Cloud & Infra', x: 100, y: 140, type: 'infrastructure', latency: '4ms', proto: 'BGP/K8s', desc: 'Hybrid-cloud orchestration & zero-downtime mesh' },
-    { id: 'data', label: 'Data Lakehouse', x: 500, y: 140, type: 'data', latency: '8ms', proto: 'Apache Iceberg', desc: 'Real-time streaming telemetry & unified storage' },
-    { id: 'integration', label: 'API Mesh', x: 80, y: 280, type: 'network', latency: '2ms', proto: 'GraphQL/EDA', desc: 'Sub-millisecond distributed enterprise event bus' },
-    { id: 'apps', label: 'Core Apps', x: 520, y: 280, type: 'application', latency: '5ms', proto: 'HTTPS/REST', desc: 'Mission-critical distributed enterprise software' },
-    { id: 'security', label: 'Cybersecurity', x: 130, y: 420, type: 'security', latency: '1ms', proto: 'mTLS/Zero-Trust', desc: 'Zero-trust cryptographic identity fabric' },
-    { id: 'automation', label: 'Intelligent Bots', x: 470, y: 420, type: 'automation', latency: '15ms', proto: 'Event Loops', desc: 'Autonomous background workflow automation' },
-    { id: 'xenedion', label: 'XENedion ERP', x: 300, y: 470, type: 'platform', latency: '3ms', proto: 'Core Ledger', desc: 'Unified transactional ERP backbone & operations' },
+    { id: 'ai', label: 'AI Models', x: 300, y: 70, type: 'intelligence', timing: 'Real-Time', proto: 'Tensor/gRPC', desc: 'Predictive neural routing & enterprise agents' },
+    { id: 'cloud', label: 'Cloud & Infra', x: 100, y: 140, type: 'infrastructure', timing: 'High-Speed', proto: 'BGP/K8s', desc: 'Hybrid-cloud orchestration & zero-downtime mesh' },
+    { id: 'data', label: 'Data Lakehouse', x: 500, y: 140, type: 'data', timing: 'Streaming', proto: 'Apache Iceberg', desc: 'Real-time streaming telemetry & unified storage' },
+    { id: 'integration', label: 'API Mesh', x: 80, y: 280, type: 'network', timing: 'Event-Driven', proto: 'GraphQL/EDA', desc: 'High-throughput distributed enterprise event bus' },
+    { id: 'apps', label: 'Core Apps', x: 520, y: 280, type: 'application', timing: 'High-Availability', proto: 'HTTPS/REST', desc: 'Mission-critical distributed enterprise software' },
+    { id: 'security', label: 'Cybersecurity', x: 130, y: 420, type: 'security', timing: 'Zero-Trust', proto: 'mTLS/Zero-Trust', desc: 'Zero-trust cryptographic identity fabric' },
+    { id: 'automation', label: 'Intelligent Bots', x: 470, y: 420, type: 'automation', timing: 'Automated', proto: 'Event Loops', desc: 'Autonomous background workflow automation' },
+    { id: 'xenedion', label: 'XENedion ERP', x: 300, y: 470, type: 'platform', timing: 'Synchronous', proto: 'Core Ledger', desc: 'Unified transactional ERP backbone & operations' },
   ];
 
   const centerNode = { label: 'ASTRION', x: 300, y: 270 };
@@ -158,18 +158,19 @@ export default function HeroVisual() {
         })}
       </svg>
 
-      {/* Clean Enterprise Telemetry Info Strip */}
-      <div className="visual-telemetry-badge">
-        <div className="telemetry-indicator">
-          <span className="telemetry-dot"></span>
-          <span className="telemetry-live mono-tag">OPERATIONAL ARCHITECTURE ACTIVE</span>
-        </div>
-        <div className="telemetry-details">
-          <span className="mono-tag telemetry-stat-text">
-            {currentNode 
-              ? `${currentNode.label} // ${currentNode.proto} (${currentNode.latency})` 
-              : '8 Connected Enterprise Nodes // 99.999% SLA'
-            }
+      {/* Simple Trust Metrics Strip */}
+      <div className="visual-telemetry-badge" style={{ justifyContent: 'center' }}>
+        <div className="telemetry-details" style={{ display: 'flex', alignItems: 'center', justifyContent: 'center', gap: '14px', flexWrap: 'wrap', width: '100%' }}>
+          <span className="mono-tag" style={{ color: '#10b981', fontWeight: 600, letterSpacing: '0.04em' }}>
+            ✓ 100% Real-Time Sync
+          </span>
+          <span style={{ color: 'rgba(255, 255, 255, 0.25)' }}>|</span>
+          <span className="mono-tag" style={{ color: '#00d2ff', fontWeight: 600, letterSpacing: '0.04em' }}>
+            ✓ Cloud-Based &amp; Secure
+          </span>
+          <span style={{ color: 'rgba(255, 255, 255, 0.25)' }}>|</span>
+          <span className="mono-tag" style={{ color: '#ff6b35', fontWeight: 600, letterSpacing: '0.04em' }}>
+            ✓ Built to Scale
           </span>
         </div>
       </div>

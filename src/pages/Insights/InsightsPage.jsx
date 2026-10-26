@@ -44,29 +44,29 @@ export default function InsightsPage() {
           <div className="inner-hero-content">
             <div className="mono-label inner-hero-badge">
               <span className="badge-dot"></span>
-              INSIGHTS // RESEARCH, ARCHITECTURE & CASE STUDIES
+              INSIGHTS // PRACTICAL GUIDES &amp; CASE STUDIES
             </div>
 
             <h1 className="inner-hero-title">
-              Engineering intelligence for enterprise technology leaders.
+              Practical Guides, ERP Insights &amp; Customer Stories
             </h1>
 
             <p className="inner-hero-lead">
-              Practical architectural breakdowns, modernization playbooks, and verified case studies written by Astrion's principal architects and systems engineers.
+              Learn how growing businesses modernize their operations with XENedion ERP. Explore practical guides, real customer success stories, and expert resources on finance, inventory, and business automation.
             </p>
 
             <div className="insights-quick-nav">
               <Link to="/insights/blog" className="quick-nav-pill mono-tag">
                 <Terminal size={14} />
-                <span>TECHNICAL BLOG</span>
+                <span>ARTICLES &amp; UPDATES</span>
               </Link>
               <Link to="/insights/case-studies" className="quick-nav-pill mono-tag">
                 <FileText size={14} />
-                <span>CASE STUDIES</span>
+                <span>CUSTOMER SUCCESS STORIES</span>
               </Link>
               <Link to="/insights/resources" className="quick-nav-pill mono-tag">
                 <BookOpen size={14} />
-                <span>ARCHITECTURE RESOURCES</span>
+                <span>GUIDES &amp; WHITEPAPERS</span>
               </Link>
             </div>
           </div>
@@ -80,11 +80,11 @@ export default function InsightsPage() {
           {/* Section 1: Featured Architecture Articles */}
           <div className="insights-section-header">
             <div>
-              <span className="mono-tag section-eyebrow">LATEST PUBLICATIONS</span>
-              <h2 className="section-title">Architectural Perspectives &amp; Whitepapers</h2>
+              <span className="mono-tag section-eyebrow">LATEST RESOURCES</span>
+              <h2 className="section-title">ERP Guides, Best Practices &amp; Articles</h2>
             </div>
             <Link to="/insights/blog" className="section-view-all mono-tag">
-              <span>EXPLORE ALL ESSAYS</span>
+              <span>VIEW ALL ARTICLES</span>
               <ArrowRight size={14} />
             </Link>
           </div>
@@ -94,10 +94,6 @@ export default function InsightsPage() {
               <div key={item.id} className="insight-card">
                 <div className="insight-card-meta">
                   <span className="insight-category-badge mono-tag">{item.category}</span>
-                  <span className="insight-read-time mono-tag">
-                    <Clock size={12} />
-                    {item.readTime}
-                  </span>
                 </div>
 
                 <span className="insight-label mono-tag">{item.label}</span>
@@ -120,11 +116,11 @@ export default function InsightsPage() {
           {/* Section 2: Transformation Case Studies Highlight */}
           <div className="insights-section-header case-studies-margin">
             <div>
-              <span className="mono-tag section-eyebrow">PROVEN TRANSFORMATIONS</span>
-              <h2 className="section-title">Verified Enterprise Deployments</h2>
+              <span className="mono-tag section-eyebrow">CUSTOMER SUCCESS STORIES</span>
+              <h2 className="section-title">Real Results from Real Businesses</h2>
             </div>
             <Link to="/insights/case-studies" className="section-view-all mono-tag">
-              <span>VIEW ALL CASE STUDIES</span>
+              <span>VIEW ALL STORIES</span>
               <ArrowRight size={14} />
             </Link>
           </div>
@@ -168,27 +164,27 @@ export default function InsightsPage() {
           {/* Section 3: Architecture Playbooks & Downloads */}
           <div className="resources-banner-box">
             <div className="resources-banner-content">
-              <span className="mono-tag resources-eyebrow">ENTERPRISE PLAYBOOKS</span>
-              <h3>Download Reference Architectures &amp; Migration Guides</h3>
+              <span className="mono-tag resources-eyebrow">FREE DOWNLOADS</span>
+              <h3>Get Free Implementation Checklists &amp; Migration Guides</h3>
               <p>
-                Access comprehensive blueprints for zero-trust cloud infrastructure, event-driven data streaming, and XENedion ERP core integration protocols.
+                Download step-by-step checklists, ROI calculators, and plain-English guides for moving your finance, inventory, and operations into XENedion — without disrupting your day-to-day business.
               </p>
               <div className="resources-actions">
                 <Button to="/insights/resources" variant="primary" size="md" icon="arrow">
-                  Access Engineering Resources
+                  Browse Free Resources
                 </Button>
               </div>
             </div>
             <div className="resources-graphic" aria-hidden="true">
               <div className="graphic-blueprint-card">
-                <Terminal size={20} className="blueprint-icon" />
-                <div className="blueprint-title mono-tag">STRANGLER_FIG_SPEC_V2.4</div>
+                <BookOpen size={20} className="blueprint-icon" />
+                <div className="blueprint-title mono-tag">ERP MIGRATION CHECKLIST</div>
                 <div className="blueprint-bar"></div>
                 <div className="blueprint-bar short"></div>
               </div>
               <div className="graphic-blueprint-card offset">
                 <Database size={20} className="blueprint-icon" />
-                <div className="blueprint-title mono-tag">ZERO_TRUST_MESH_SPEC</div>
+                <div className="blueprint-title mono-tag">ROI CALCULATOR GUIDE</div>
                 <div className="blueprint-bar"></div>
                 <div className="blueprint-bar medium"></div>
               </div>

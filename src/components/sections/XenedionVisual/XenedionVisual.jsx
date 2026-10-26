@@ -8,17 +8,17 @@ import { XENEDION_DATA } from '../../../data/xenedion';
 import './XenedionVisual.css';
 
 const MODULE_METRICS = {
-  crm: { kpi: '100% Pipeline Visibility', latency: '1.8ms', speed: 'Live Lead Routing' },
-  sales: { kpi: 'Automated Rev-Rec', latency: '2.1ms', speed: 'Instant Approvals' },
-  orders: { kpi: 'Zero Order Fallout', latency: '1.4ms', speed: 'Dynamic Allocation' },
-  purchasing: { kpi: '3-Way Match Verified', latency: '3.0ms', speed: 'Automated PO Dispatch' },
-  vendor: { kpi: '99.8% SLA Adherence', latency: '2.5ms', speed: 'Automated RFQ Portal' },
-  inventory: { kpi: 'Multi-Site Real-Time', latency: '1.2ms', speed: 'Predictive Reorder' },
-  warehouse: { kpi: 'Wave Pick Optimization', latency: '2.0ms', speed: 'Zero Discrepancy' },
-  finance: { kpi: 'Continuous Real-Time Close', latency: '0.8ms', speed: 'Strict Multi-Currency' },
-  hr: { kpi: 'Single Workforce Record', latency: '2.2ms', speed: 'Automated Payroll Sync' },
-  logistics: { kpi: 'Carrier Mesh API', latency: '3.4ms', speed: 'Dynamic Route Optimization' },
-  analytics: { kpi: 'Sub-second OLAP Telemetry', latency: '1.1ms', speed: 'Real-time Vector Aggs' }
+  crm: { kpi: 'Comprehensive Pipeline Visibility', protocol: 'mTLS 1.3 Event Stream', speed: 'Live Lead Routing' },
+  sales: { kpi: 'Automated Rev-Rec', protocol: 'Deterministic Event Bus', speed: 'Instant Approvals' },
+  orders: { kpi: 'Synchronized Allocation', protocol: 'mTLS 1.3 Event Stream', speed: 'Dynamic Routing' },
+  purchasing: { kpi: '3-Way Match Verified', protocol: 'Deterministic Event Bus', speed: 'Automated PO Dispatch' },
+  vendor: { kpi: 'Continuous SLA Tracking', protocol: 'mTLS 1.3 Event Stream', speed: 'Automated RFQ Portal' },
+  inventory: { kpi: 'Multi-Site Real-Time', protocol: 'Deterministic Event Bus', speed: 'Predictive Reorder' },
+  warehouse: { kpi: 'Wave Pick Optimization', protocol: 'mTLS 1.3 Event Stream', speed: 'Guided Workflows' },
+  finance: { kpi: 'Continuous Real-Time Close', protocol: 'Deterministic Ledger', speed: 'Multi-Currency Core' },
+  hr: { kpi: 'Single Workforce Record', protocol: 'mTLS 1.3 Event Stream', speed: 'Automated Payroll Sync' },
+  logistics: { kpi: 'Carrier Mesh API', protocol: 'Deterministic Event Bus', speed: 'Dynamic Route Optimization' },
+  analytics: { kpi: 'Continuous OLAP Telemetry', protocol: 'Streaming Ingestion', speed: 'Real-time Aggregations' }
 };
 
 export default function XenedionVisual() {
@@ -54,7 +54,7 @@ export default function XenedionVisual() {
     setTimeout(() => setSimulating(false), 1200);
   };
 
-  const currentMetrics = MODULE_METRICS[selectedModule.id] || { kpi: 'Real-time Operational Sync', latency: '2.4ms', speed: 'Event-Driven' };
+  const currentMetrics = MODULE_METRICS[selectedModule.id] || { kpi: 'Real-time Operational Sync', protocol: 'Deterministic Event Bus', speed: 'Event-Driven' };
 
   return (
     <div className="xenedion-visual-container" aria-label="XENedion ERP Interactive Module Showcase">
@@ -75,7 +75,7 @@ export default function XenedionVisual() {
 
         <div className="top-bar-right mono-tag">
           <span className="ping-dot"></span>
-          <span>11 CONNECTED SUBSYSTEMS // ZERO LATENCY DRIFT</span>
+          <span>11 CONNECTED SUBSYSTEMS // REAL-TIME SYNCHRONIZATION</span>
         </div>
       </div>
 
@@ -154,8 +154,8 @@ export default function XenedionVisual() {
                 <span className="spec-val-highlight mono-tag">{currentMetrics.kpi}</span>
               </div>
               <div className="spec-row">
-                <span className="spec-key mono-tag">Event Dispatch Latency:</span>
-                <span className="spec-val mono-tag">&lt; {currentMetrics.latency} (mTLS 1.3)</span>
+                <span className="spec-key mono-tag">Event Dispatch Channel:</span>
+                <span className="spec-val mono-tag">{currentMetrics.protocol}</span>
               </div>
               <div className="spec-row">
                 <span className="spec-key mono-tag">Workflow Engine:</span>

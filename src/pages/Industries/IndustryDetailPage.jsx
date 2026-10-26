@@ -25,7 +25,7 @@ import './IndustryDetailPage.css';
 // Rich industry-specific extended details
 const INDUSTRY_DETAILS = {
   manufacturing: {
-    heroMetric: '35% reduction in production cycle lead times & 99.4% BOM accuracy',
+    heroMetric: 'Accelerated production cycle lead times and synchronized BOM accuracy',
     challenges: [
       'Disjointed shop-floor telemetry disconnected from enterprise financial ledgers',
       'Unplanned machine downtime caused by reactive rather than predictive maintenance',
@@ -33,7 +33,7 @@ const INDUSTRY_DETAILS = {
       'Manual quality inspection bottlenecks slowing dispatch and increasing scrap rates'
     ],
     architecture: [
-      { step: '01', title: 'Shop-Floor Telemetry', desc: 'IoT sensor arrays and PLC connectors ingest machine status, cycle times, and vibration metrics in sub-second intervals.' },
+      { step: '01', title: 'Shop-Floor Telemetry', desc: 'IoT sensor arrays and PLC connectors ingest machine status, cycle times, and vibration metrics in real-time intervals.' },
       { step: '02', title: 'Edge Event Processing', desc: 'Local gateways filter anomalies, calculate real-time OEE, and detect impending component fatigue.' },
       { step: '03', title: 'XENedion MES Sync', desc: 'Continuous bidirectional sync automatically triggers work order updates, inventory depletion, and dynamic labor scheduling.' },
       { step: '04', title: 'Closed-Loop Quality', desc: 'Automated vision inspections update lot records, preventing non-conforming batches from moving to packaging.' }
@@ -45,7 +45,7 @@ const INDUSTRY_DETAILS = {
     ]
   },
   distribution: {
-    heroMetric: '99.8% order fulfillment accuracy with sub-minute cross-dock routing',
+    heroMetric: 'High-precision order fulfillment with automated cross-dock routing',
     challenges: [
       'Fragmented warehouse management leading to stockouts and duplicate inventory buffers',
       'Inefficient manual pick-and-pack routing causing fulfillment delays in high-volume hubs',
@@ -65,7 +65,7 @@ const INDUSTRY_DETAILS = {
     ]
   },
   retail: {
-    heroMetric: 'Unified omnichannel inventory ledger with real-time stock sync under 500ms',
+    heroMetric: 'Unified omnichannel inventory ledger with real-time synchronized stock data',
     challenges: [
       'Siloed physical store POS systems unable to reflect online stock in real time',
       'High rate of stockouts and overstock due to inaccurate regional demand forecasting',
@@ -74,18 +74,18 @@ const INDUSTRY_DETAILS = {
     ],
     architecture: [
       { step: '01', title: 'Unified POS & Digital Sync', desc: 'High-throughput event streams capture all transactions across web, mobile app, and physical store POS.' },
-      { step: '02', title: 'Universal Stock Ledger', desc: 'Single source of truth updates available-to-promise (ATP) inventory within 500 milliseconds globally.' },
+      { step: '02', title: 'Universal Stock Ledger', desc: 'Single source of truth updates available-to-promise (ATP) inventory in real-time globally.' },
       { step: '03', title: 'Predictive Demand Sensing', desc: 'Machine learning algorithms analyze seasonal trends, local weather, and promotions to automate reorders.' },
       { step: '04', title: 'Frictionless Omnichannel', desc: 'Store associates fulfill online orders directly from store shelves with intelligent mobile guided workflows.' }
     ],
     useCases: [
-      { title: 'National Apparel & Footwear Chain', result: 'Enabled ship-from-store across 120 locations, reducing regional shipping costs by 28%.' },
+      { title: 'National Apparel & Footwear Chain', result: 'Enabled ship-from-store across regional retail locations, optimizing fulfillment costs.' },
       { title: 'Specialty Electronics Retailer', result: 'Unified customer loyalty profiles and omnichannel warranty tracking.' },
       { title: 'Luxury Goods & Accessories', result: 'Implemented strict serial tracking and VIP customer concierge clienteling workflows.' }
     ]
   },
   logistics: {
-    heroMetric: 'Sub-second freight tracking with 40% reduction in route transit bottlenecks',
+    heroMetric: 'Real-time freight tracking with automated route transit optimization',
     challenges: [
       'Blind spots in transit visibility between carrier dispatch and customer dock delivery',
       'Manual carrier freight billing leading to audit disputes and delayed settlement cycles',
@@ -100,12 +100,12 @@ const INDUSTRY_DETAILS = {
     ],
     useCases: [
       { title: 'Intermodal Freight Operator', result: 'Synchronized rail, ocean, and long-haul trucking container handoffs with real-time tracking.' },
-      { title: 'Last-Mile Delivery Network', result: 'Optimized 3,000+ daily urban delivery stops with real-time dynamic traffic rerouting.' },
+      { title: 'Last-Mile Delivery Network', result: 'Optimized high-density daily urban delivery stops with real-time dynamic traffic rerouting.' },
       { title: 'Hazardous Chemical Transporter', result: 'Enforced full regulatory chain-of-custody logging and automated emergency dispatch protocols.' }
     ]
   },
   'professional-services': {
-    heroMetric: '92% billable consultant utilization with automated multi-currency milestone billing',
+    heroMetric: 'Optimized consultant utilization with automated multi-currency milestone billing',
     challenges: [
       'Low visibility into future consultant availability leading to over-hiring or staffing shortfalls',
       'Manual spreadsheet-based time tracking causing billing disputes and revenue leakage',
@@ -125,7 +125,7 @@ const INDUSTRY_DETAILS = {
     ]
   },
   automotive: {
-    heroMetric: '100% component serialization & zero-defect just-in-sequence (JIS) compliance',
+    heroMetric: 'Comprehensive component serialization and just-in-sequence (JIS) compliance',
     challenges: [
       'Stringent OEM just-in-sequence delivery penalties for line-stoppage errors',
       'Multi-tier supplier component traceability required for recall prevention and audit defense',
@@ -139,7 +139,7 @@ const INDUSTRY_DETAILS = {
       { step: '04', title: 'Automated PPAP & Audit', desc: 'Quality records compile automatically, providing complete audit readiness for OEM compliance inspections.' }
     ],
     useCases: [
-      { title: 'Tier-1 Cockpit & Seating Supplier', result: 'Achieved 100% on-time JIS delivery to 4 major automotive assembly plants with 0 line disruptions.' },
+      { title: 'Tier-1 Cockpit & Seating Supplier', result: 'Achieved consistent on-time JIS delivery to major automotive assembly plants with continuous operational reliability.' },
       { title: 'Electric Vehicle Battery Pack Assembler', result: 'Enforced cell-level thermal testing data capture and automated battery pack genealogy.' },
       { title: 'Chassis & Stamping Manufacturer', result: 'Automated press machine die wear monitoring and closed-loop dimensional inspection.' }
     ]
@@ -228,15 +228,14 @@ export default function IndustryDetailPage({ slugOverride }) {
             </h1>
 
             <p className="inner-hero-lead">
-              {industry.description}
+              {industry.coreProblemSolved || industry.description}
             </p>
 
-            {details.heroMetric && (
-              <div className="industry-metric-badge mono-tag">
-                <Sparkles size={14} className="metric-badge-icon" />
-                <span>BENCHMARK: {details.heroMetric}</span>
-              </div>
-            )}
+            <div className="inner-hero-actions" style={{ marginTop: '24px' }}>
+              <Button to="/contact" variant="primary" size="lg" icon="arrow">
+                Request a Demo
+              </Button>
+            </div>
           </div>
         </div>
       </section>
@@ -244,6 +243,32 @@ export default function IndustryDetailPage({ slugOverride }) {
       {/* Main Content Layout */}
       <section className="section industry-main-section">
         <div className="container industry-layout-container">
+          {/* Challenge ➔ XENedion Solution ➔ Result Formula */}
+          {industry.challenge && (
+            <div className="industry-csr-block" style={{
+              background: '#13151a',
+              border: '1px solid rgba(255, 255, 255, 0.08)',
+              borderRadius: '12px',
+              padding: '32px',
+              marginBottom: '40px'
+            }}>
+              <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fit, minmax(260px, 1fr))', gap: '24px' }}>
+                <div style={{ borderLeft: '3px solid #ef4444', paddingLeft: '16px' }}>
+                  <span className="mono-tag" style={{ color: '#ef4444', fontSize: '0.75rem', fontWeight: 700 }}>THE CHALLENGE</span>
+                  <p style={{ color: '#ddd', fontSize: '0.95rem', marginTop: '8px', lineHeight: 1.5 }}>{industry.challenge}</p>
+                </div>
+                <div style={{ borderLeft: '3px solid #ff6b35', paddingLeft: '16px' }}>
+                  <span className="mono-tag" style={{ color: '#ff6b35', fontSize: '0.75rem', fontWeight: 700 }}>XENEDION SOLUTION</span>
+                  <p style={{ color: '#ddd', fontSize: '0.95rem', marginTop: '8px', lineHeight: 1.5 }}>{industry.solution}</p>
+                </div>
+                <div style={{ borderLeft: '3px solid #10b981', paddingLeft: '16px' }}>
+                  <span className="mono-tag" style={{ color: '#10b981', fontSize: '0.75rem', fontWeight: 700 }}>MEASURABLE RESULT</span>
+                  <p style={{ color: '#ddd', fontSize: '0.95rem', marginTop: '8px', lineHeight: 1.5 }}>{industry.result}</p>
+                </div>
+              </div>
+            </div>
+          )}
+
           <div className="industry-grid-layout">
             
             {/* Primary Column */}
@@ -252,7 +277,7 @@ export default function IndustryDetailPage({ slugOverride }) {
               {/* Sector Challenges & Operational Realities */}
               <div className="industry-content-block">
                 <div className="block-header">
-                  <span className="mono-tag block-eyebrow">CHALLENGES & BOTTLENECKS</span>
+                  <span className="mono-tag block-eyebrow">CHALLENGES &amp; BOTTLENECKS</span>
                   <h2 className="block-title">Key Operational Hurdles in {industry.name}</h2>
                 </div>
                 <div className="challenges-grid">

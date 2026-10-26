@@ -41,21 +41,21 @@ export default function IndustriesPage() {
           <div className="inner-hero-content">
             <div className="mono-label inner-hero-badge">
               <span className="badge-dot"></span>
-              INDUSTRIES // OPERATIONAL SECTOR BLUEPRINTS
+              SECTOR BLUEPRINTS // REAL-WORLD OPERATIONS
             </div>
 
             <h1 className="inner-hero-title">
-              Built around how real-world industries actually operate.
+              Software Built Around How Your Industry Actually Operates
             </h1>
 
             <p className="inner-hero-lead">
-              Astrion engineers domain-specific technology architectures tailored to complex physical operating workflows, fragmented supply chains, and stringent regulatory compliance regimes.
+              Pre-built workflows and templates tailored specifically for Manufacturing, Distribution, Retail, Logistics, Professional Services, and Automotive.
             </p>
           </div>
         </div>
       </section>
 
-      {/* 7 Industry Cards Grid */}
+      {/* Industry Cards Grid */}
       <section className="section">
         <div className="container">
           <div className="industries-grid-list">

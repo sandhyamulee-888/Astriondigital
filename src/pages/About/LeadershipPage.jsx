@@ -31,15 +31,15 @@ export default function LeadershipPage() {
           <div className="inner-hero-content">
             <div className="mono-label inner-hero-badge">
               <Users size={14} />
-              <span>ABOUT // EXECUTIVE ARCHITECTS</span>
+              <span>ABOUT // LEADERSHIP TEAM</span>
             </div>
 
             <h1 className="inner-hero-title">
-              Leadership: Veteran technologists and industrial domain specialists.
+              Leadership: The Team Behind Intelligent Enterprise Software.
             </h1>
 
             <p className="inner-hero-lead">
-              Astrion’s leadership team brings decades of experience architecting distributed enterprise systems, industrial ERP implementations, and production artificial intelligence across global enterprises.
+              Experienced software architects, product engineers, and operational leaders committed to delivering dependable enterprise software platforms that help growing businesses run with clarity.
             </p>
           </div>
         </div>

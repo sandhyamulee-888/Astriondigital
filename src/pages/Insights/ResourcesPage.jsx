@@ -23,7 +23,7 @@ const RESOURCES = [
     type: 'ARCHITECTURE BLUEPRINT',
     format: 'PDF / SPEC (34 PAGES)',
     title: 'The Enterprise Strangler Fig Architecture Blueprint',
-    description: 'A complete step-by-step engineering framework for decoupling monolithic core ERP systems into event-driven services with zero business downtime.',
+    description: 'A complete step-by-step engineering framework for decoupling monolithic core ERP systems into event-driven services with structured risk mitigation and business continuity.',
     topics: ['Event Proxy Architecture', 'Dual-Write Reconciliation', 'Canary Rollout Strategies', 'Database De-coupling Patterns'],
     downloadCount: 'Principal Architect Verified'
   },
@@ -82,15 +82,15 @@ export default function ResourcesPage() {
           <div className="inner-hero-content">
             <div className="mono-label inner-hero-badge">
               <span className="badge-dot"></span>
-              INSIGHTS // REFERENCE ARCHITECTURES &amp; PLAYBOOKS
+              INSIGHTS // GUIDES &amp; WHITEPAPERS
             </div>
 
             <h1 className="inner-hero-title">
-              Enterprise engineering resources and reference architectures.
+              Guides, Whitepapers &amp; Implementation Resources
             </h1>
 
             <p className="inner-hero-lead">
-              Download comprehensive technical blueprints, migration playbooks, and integration specifications authored by Astrion's systems architects.
+              Downloadable implementation checklists, ROI calculators, and product whitepapers to help you plan and execute your technology modernization.
             </p>
           </div>
         </div>

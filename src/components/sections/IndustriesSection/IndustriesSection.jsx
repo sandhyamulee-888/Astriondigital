@@ -1,157 +1,157 @@
 import React, { useState } from 'react';
-import { ArrowRight, ChevronDown, CheckCircle2 } from 'lucide-react';
-import { INDUSTRIES } from '../../../data/industries';
-import SectionHeader from '../../common/SectionHeader/SectionHeader';
+import { Factory, Truck, ShoppingCart, CheckCircle2 } from 'lucide-react';
 import Button from '../../common/Button/Button';
 import { ScrollReveal } from '../../common/Motion/ScrollReveal';
 import './IndustriesSection.css';
 
 export default function IndustriesSection() {
-  const [activeIndustryId, setActiveIndustryId] = useState(INDUSTRIES[0].id);
-  const [mobileExpandedId, setMobileExpandedId] = useState(INDUSTRIES[0].id);
+  const tabs = [
+    {
+      id: 'manufacturing',
+      name: 'Manufacturing',
+      icon: <Factory size={18} />,
+      headline: 'Precision Production & Shop Floor Orchestration',
+      description: 'Plan factory floor shifts, manage raw material stock, minimize machine downtime, and track product quality.',
+      deliverables: [
+        'Shift scheduling and real-time machine capacity planning',
+        'Raw materials BOM traceability and automatic replenishment',
+        'Predictive maintenance telemetry to eliminate unplanned downtime',
+        'End-to-end batch quality tracking and ISO compliance'
+      ],
+      href: '/industries/manufacturing'
+    },
+    {
+      id: 'distribution-logistics',
+      name: 'Distribution & Logistics',
+      icon: <Truck size={18} />,
+      headline: 'Agile Dispatch & Multi-Node Fleet Visibility',
+      description: 'Speed up order dispatch, track fleet routes, and eliminate costly shipping delays.',
+      deliverables: [
+        'Automated pick, pack, and wave order fulfillment workflows',
+        'Real-time GPS vehicle telematics and dynamic route optimization',
+        'Multi-depot inventory visibility with automated balancing',
+        'Carrier rate comparison and instant e-way bill generation'
+      ],
+      href: '/industries/logistics'
+    },
+    {
+      id: 'retail-wholesale',
+      name: 'Retail & Wholesale',
+      icon: <ShoppingCart size={18} />,
+      headline: 'Unified Omni-Channel Commercial Operations',
+      description: 'Keep retail stores, online orders, and backend stock synchronized without overselling.',
+      deliverables: [
+        'Single real-time inventory pool across physical stores and eCommerce',
+        'Point of Sale (POS) offline-first checkout with auto-sync',
+        'Dynamic B2B customer pricing tiers and credit term rules',
+        'Automated replenishment triggers based on seasonal sell-through'
+      ],
+      href: '/industries/retail'
+    }
+  ];
 
-  const selectedIndustry = INDUSTRIES.find((i) => i.id === activeIndustryId) || INDUSTRIES[0];
-
-  const toggleMobileAccordion = (id) => {
-    setMobileExpandedId(mobileExpandedId === id ? null : id);
-  };
+  const [activeTabId, setActiveTabId] = useState(tabs[0].id);
+  const activeTab = tabs.find((t) => t.id === activeTabId) || tabs[0];
 
   return (
     <section className="section industries-section" id="industries" aria-labelledby="industries-heading">
       <div className="container">
-        <ScrollReveal>
-          <SectionHeader
-            label="INDUSTRIES"
-            title="Built around how industries actually operate."
-            description="Astrion engineers sector-specific technology architectures tailored to complex operating workflows, supply networks, and strict compliance regimes."
-          />
+        {/* Section Header */}
+        <ScrollReveal yOffset={24}>
+          <div className="industries-header text-center">
+            <div className="mono-label industries-tag">
+              <span>BUILT FOR YOUR INDUSTRY</span>
+            </div>
+            <h2 id="industries-heading" className="industries-title">
+              Custom-Fit for How Your Business Actually Works.
+            </h2>
+          </div>
         </ScrollReveal>
 
-        {/* Desktop Split Interaction */}
-        <ScrollReveal delay={0.1}>
-          <div className="industries-desktop-layout">
-          {/* Left Vertical Numbered Navigation */}
-          <div className="industries-vertical-nav" role="tablist" aria-label="Industries list">
-            {INDUSTRIES.map((ind) => {
-              const isActive = ind.id === activeIndustryId;
+        {/* Tab Navigation Pill Strip */}
+        <ScrollReveal yOffset={20} delay={0.06}>
+          <div className="industries-tabs-bar" role="tablist" aria-label="Industry tabs">
+            {tabs.map((tab) => {
+              const isActive = tab.id === activeTabId;
               return (
                 <button
-                  key={ind.id}
+                  key={tab.id}
                   role="tab"
                   aria-selected={isActive}
-                  className={`industry-nav-btn ${isActive ? 'active' : ''}`}
-                  onClick={() => setActiveIndustryId(ind.id)}
+                  className={`industry-tab-btn ${isActive ? 'active' : ''}`}
+                  onClick={() => setActiveTabId(tab.id)}
                 >
-                  <span className="ind-nav-name">{ind.name}</span>
-                  <ArrowRight size={16} className="ind-nav-arrow" />
+                  <span className="industry-tab-icon">{tab.icon}</span>
+                  <span className="industry-tab-label">{tab.name}</span>
                 </button>
               );
             })}
           </div>
+        </ScrollReveal>
 
-          {/* Right Dynamic Content Panel */}
-          <div className="industry-content-display">
-            <div className="industry-display-inner" key={selectedIndustry.id}>
-              <div className="ind-display-top">
-                <span className="mono-label ind-display-num">
-                  SECTOR BLUEPRINT
-                </span>
-                <h3 className="ind-display-name">{selectedIndustry.name}</h3>
-                <h4 className="ind-display-headline">{selectedIndustry.headline}</h4>
-                <p className="ind-display-desc">{selectedIndustry.description}</p>
+        {/* Active Tab Panel */}
+        <ScrollReveal yOffset={24} delay={0.1}>
+          <div className="industry-tab-content" key={activeTab.id}>
+            <div className="industry-content-left">
+              <span className="mono-tag industry-active-badge">INDUSTRY BLUEPRINT</span>
+              <h3 className="industry-content-name">{activeTab.name}</h3>
+              <p className="industry-content-lead">{activeTab.description}</p>
+
+              <div className="industry-deliverables-list">
+                {activeTab.deliverables.map((item, idx) => (
+                  <div key={idx} className="deliverable-item">
+                    <CheckCircle2 size={16} className="deliverable-check" />
+                    <span>{item}</span>
+                  </div>
+                ))}
               </div>
 
-              {/* Relevant Capabilities Pills */}
-              <div className="ind-capabilities-block">
-                <span className="mono-tag ind-block-label">RELEVANT CAPABILITIES</span>
-                <div className="ind-chips-row">
-                  {selectedIndustry.capabilities.map((cap, idx) => (
-                    <span key={idx} className="ind-cap-chip">
-                      {cap}
-                    </span>
-                  ))}
-                </div>
-              </div>
-
-              {/* Key Deliverables / Outcomes */}
-              <div className="ind-outcomes-block">
-                <span className="mono-tag ind-block-label">OPERATIONAL CAPABILITIES</span>
-                <ul className="ind-outcomes-list">
-                  {selectedIndustry.outcomes.map((outcome, idx) => (
-                    <li key={idx} className="ind-outcome-item">
-                      <CheckCircle2 size={16} className="ind-check-icon" />
-                      <span>{outcome}</span>
-                    </li>
-                  ))}
-                </ul>
-              </div>
-
-              {/* CTA Button */}
-              <div className="ind-display-cta">
+              <div className="industry-action-row">
                 <Button
-                  to={`/industries/${selectedIndustry.id}`}
+                  to={activeTab.href}
                   variant="primary"
                   size="md"
                   icon="arrow"
                 >
-                  Explore {selectedIndustry.name}
+                  Explore {activeTab.name} Blueprint
+                </Button>
+                <Button
+                  to="/contact"
+                  variant="secondary"
+                  size="md"
+                >
+                  Schedule a Quick Walkthrough
                 </Button>
               </div>
             </div>
-          </div>
-        </div>
-        </ScrollReveal>
 
-        {/* Mobile Accordion View */}
-        <ScrollReveal delay={0.1}>
-          <div className="industries-mobile-accordion">
-            {INDUSTRIES.map((ind) => {
-              const isExpanded = mobileExpandedId === ind.id;
-              return (
-                <div key={ind.id} className="ind-accordion-item">
-                  <button
-                    className={`ind-accordion-trigger ${isExpanded ? 'active' : ''}`}
-                    onClick={() => toggleMobileAccordion(ind.id)}
-                    aria-expanded={isExpanded}
-                  >
-                    <span className="ind-accordion-title-wrap">
-                      <span className="ind-accordion-name">{ind.name}</span>
-                    </span>
-                    <ChevronDown
-                      size={18}
-                      className={`ind-accordion-chevron ${isExpanded ? 'rotated' : ''}`}
-                    />
-                  </button>
-
-                  {isExpanded && (
-                    <div className="ind-accordion-panel">
-                      <h4 className="ind-mobile-headline">{ind.headline}</h4>
-                      <p className="ind-mobile-desc">{ind.description}</p>
-
-                      <div className="ind-mobile-chips">
-                        <span className="mono-tag ind-block-label">CAPABILITIES</span>
-                        <div className="ind-chips-row">
-                          {ind.capabilities.map((cap, idx) => (
-                            <span key={idx} className="ind-cap-chip">{cap}</span>
-                          ))}
-                        </div>
-                      </div>
-
-                      <div className="ind-mobile-cta">
-                        <Button
-                          to={`/industries/${ind.id}`}
-                          variant="primary"
-                          size="sm"
-                          icon="arrow"
-                        >
-                          Explore {ind.name}
-                        </Button>
-                      </div>
-                    </div>
-                  )}
+            <div className="industry-content-right">
+              <div className="industry-preview-card">
+                <div className="preview-card-header">
+                  <div className="preview-dot green"></div>
+                  <div className="preview-dot amber"></div>
+                  <div className="preview-dot blue"></div>
+                  <span className="mono-tag preview-header-title">LIVE OPERATIONS MONITOR</span>
                 </div>
-              );
-            })}
+                <div className="preview-card-body">
+                  <div className="preview-metric-row">
+                    <div className="metric-box">
+                      <span className="mono-tag metric-tag">SYNC STATUS</span>
+                      <span className="metric-status green-text">SYNC: ACTIVE</span>
+                    </div>
+                    <div className="metric-box">
+                      <span className="mono-tag metric-tag">LEDGER INTEGRITY</span>
+                      <span className="metric-status green-text">STOCK RECONCILED: 100%</span>
+                    </div>
+                  </div>
+                  <div className="preview-quote-box">
+                    <p className="preview-quote-text">
+                      &ldquo;Shop-floor operations connected in real time. Automatically alerts managers when raw materials run low or machines require scheduled maintenance.&rdquo;
+                    </p>
+                  </div>
+                </div>
+              </div>
+            </div>
           </div>
         </ScrollReveal>
       </div>

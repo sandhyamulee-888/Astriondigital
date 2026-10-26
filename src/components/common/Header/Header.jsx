@@ -76,6 +76,18 @@ export default function Header() {
             <ul className="nav-list">
               {NAV_ITEMS.map((item) => {
                 const isActive = activeMenuId === item.id;
+                if (!item.megaMenu) {
+                  return (
+                    <li key={item.id} className="nav-item">
+                      <Link 
+                        to={item.href} 
+                        className={`nav-button ${location.pathname === item.href ? 'is-active' : ''}`}
+                      >
+                        <span className="nav-button-label">{item.label}</span>
+                      </Link>
+                    </li>
+                  );
+                }
                 return (
                   <li
                     key={item.id}
@@ -106,7 +118,7 @@ export default function Header() {
               size="sm"
               className="header-cta"
             >
-              Schedule Briefing
+              Request a Demo
             </Button>
 
             {/* Mobile Hamburger Button */}

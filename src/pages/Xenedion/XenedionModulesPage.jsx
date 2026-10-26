@@ -36,9 +36,13 @@ export default function XenedionModulesPage() {
       case 'Vendor Management': return <Briefcase size={18} />;
       case 'Inventory': return <Layers size={18} />;
       case 'Warehouse': return <Package size={18} />;
+      case 'Finance & Accounting':
       case 'Finance': return <DollarSign size={18} />;
+      case 'HR & Payroll':
       case 'HR': return <UserCheck size={18} />;
+      case 'Logistics & Dispatch':
       case 'Logistics': return <Truck size={18} />;
+      case 'Business Intelligence':
       case 'Analytics': return <BarChart3 size={18} />;
       default: return <Cpu size={18} />;
     }
@@ -71,23 +75,87 @@ export default function XenedionModulesPage() {
           <div className="inner-hero-content">
             <div className="mono-label inner-hero-badge">
               <Cpu size={14} />
-              <span>XENEDION // INTEGRATED SUBSYSTEMS</span>
+              <span>XENEDION // ALL MODULES</span>
             </div>
 
             <h1 className="inner-hero-title">
-              Enterprise Operational Modules: Unified under one relational core.
+              Complete ERP Modules for Every Department
             </h1>
 
             <p className="inner-hero-lead">
-              Eliminate software silos. XENedion provides deep vertical capabilities across every corporate function, sharing a single transactional ledger and instantaneous event distribution bus.
+              Eliminate software silos. XENedion provides dedicated modules across finance, inventory, purchasing, sales, and HR—all connected to one central ledger with real-time updates.
             </p>
+
+            <div className="inner-hero-actions">
+              <Button to="/contact" variant="primary" size="lg" icon="arrow">
+                Request a Demo
+              </Button>
+              <Button to="/xenedion" variant="secondary" size="lg">
+                XENedion Overview
+              </Button>
+            </div>
           </div>
         </div>
       </section>
 
-      {/* Modules Grid Section */}
+      {/* 5 Primary Operational Modules Overview */}
+      <section className="section section-alt">
+        <div className="container">
+          <div className="section-header-compact">
+            <div className="mono-label section-tag">CORE PLATFORM PILLARS</div>
+            <h2 className="section-title-compact">Core Modules at a Glance</h2>
+            <p className="section-desc-compact">
+              Each module is designed with straightforward workflows and clear business benefits.
+            </p>
+          </div>
+
+          <div style={{
+            display: 'grid',
+            gridTemplateColumns: 'repeat(auto-fit, minmax(320px, 1fr))',
+            gap: '24px',
+            marginTop: '32px'
+          }}>
+            {XENEDION_DATA.coreModules.map((mod) => (
+              <div key={mod.id} style={{
+                background: '#13151a',
+                border: '1px solid rgba(255, 255, 255, 0.08)',
+                borderRadius: '12px',
+                padding: '24px',
+                display: 'flex',
+                flexDirection: 'column'
+              }}>
+                <h3 style={{ fontSize: '1.2rem', color: '#fff', marginBottom: '8px' }}>{mod.name}</h3>
+                <p style={{ fontSize: '0.88rem', color: '#aaa', marginBottom: '16px' }}>{mod.summary}</p>
+                <ul style={{ listStyle: 'none', padding: 0, margin: 0 }}>
+                  {mod.bullets.map((bullet, idx) => (
+                    <li key={idx} style={{
+                      display: 'flex',
+                      alignItems: 'flex-start',
+                      gap: '8px',
+                      fontSize: '0.84rem',
+                      color: '#ddd',
+                      marginBottom: '8px'
+                    }}>
+                      <CheckCircle2 size={14} style={{ color: '#ff6b35', flexShrink: 0, marginTop: '3px' }} />
+                      <span>{bullet}</span>
+                    </li>
+                  ))}
+                </ul>
+              </div>
+            ))}
+          </div>
+        </div>
+      </section>
+
+      {/* Detailed Modules Grid Section */}
       <section className="section">
         <div className="container">
+          <div className="section-header-compact">
+            <div className="mono-label section-tag">FULL COMPONENT BREAKDOWN</div>
+            <h2 className="section-title-compact">Explore All Operational Modules</h2>
+            <p className="section-desc-compact">Filter by operational function to see how each tool connects to your workflow.</p>
+          </div>
+
           {/* Category Filter */}
           <div className="modules-filter-row">
             {categories.map((cat) => (
@@ -109,34 +177,46 @@ export default function XenedionModulesPage() {
                   <div className="module-icon-wrap">{getIcon(mod.name)}</div>
                   <span className="module-category-tag mono-tag">{mod.category}</span>
                 </div>
-                <h2 className="module-name">{mod.name}</h2>
+                <h3 className="module-name">{mod.name}</h3>
                 <p className="module-desc">{mod.desc}</p>
-                <div className="module-specs-row mono-tag">
-                  <span>REAL-TIME LEDGER SYNC</span>
-                  <span>&lt; 3ms LATENCY</span>
+                
+                {mod.bullets && (
+                  <div style={{ marginTop: '12px', borderTop: '1px solid rgba(255, 255, 255, 0.06)', paddingTop: '10px' }}>
+                    {mod.bullets.map((b, bIdx) => (
+                      <div key={bIdx} style={{ display: 'flex', alignItems: 'center', gap: '6px', fontSize: '0.8rem', color: '#bbb', marginBottom: '4px' }}>
+                        <CheckCircle2 size={12} style={{ color: '#ff6b35' }} />
+                        <span>{b}</span>
+                      </div>
+                    ))}
+                  </div>
+                )}
+                
+                <div className="module-specs-row mono-tag" style={{ marginTop: '12px' }}>
+                  <span>100% REAL-TIME SYNC</span>
+                  <span>SHARED LEDGER</span>
                 </div>
               </div>
             ))}
           </div>
 
-          {/* Module Architecture Highlights */}
+          {/* CTA Box */}
           <div className="commitment-card">
             <div className="commitment-header">
               <div className="mono-label">
                 <CheckCircle2 size={16} />
-                <span>DATA INTEGRITY GUARANTEE</span>
+                <span>CLEAN WORKFLOWS</span>
               </div>
-              <h3>ACID-Compliant Distributed Ledger Sync</h3>
+              <h3>Ready to see how these modules fit your daily routine?</h3>
             </div>
             <p className="commitment-text">
-              When an order is approved in Sales, inventory is instantly reserved across warehouses, procurement schedules are recalibrated, and journal entries post to General Ledger in real-time. Zero nocturnal batch jobs. Zero reconciliation lag.
+              We can configure a demo instance populated with sample workflows from your specific industry—showing you quote-to-cash, inventory reordering, and financial reporting in action.
             </p>
             <div className="commitment-actions">
               <Button to="/contact" variant="primary" size="md" icon="arrow">
-                Request Module Walkthrough
+                Request a Live Demo
               </Button>
-              <Button to="/xenedion/integrations" variant="secondary" size="md">
-                Explore Integrations &amp; APIs
+              <Button to="/xenedion/industries" variant="secondary" size="md">
+                View Industry Blueprints
               </Button>
             </div>
           </div>

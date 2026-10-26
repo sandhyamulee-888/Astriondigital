@@ -48,15 +48,15 @@ export default function XenedionPartnerProgramPage() {
           <div className="inner-hero-content">
             <div className="mono-label inner-hero-badge">
               <Handshake size={14} />
-              <span>XENEDION // GLOBAL ECOSYSTEM NETWORK</span>
+              <span>XENEDION // PARTNER PROGRAM</span>
             </div>
 
             <h1 className="inner-hero-title">
-              XENedion Partner Program: Co-delivering next-gen operational platforms.
+              Partner Program: Grow Your Consulting Practice with XENedion
             </h1>
 
             <p className="inner-hero-lead">
-              Join an elite network of systems integrators, regional resellers, and independent software vendors delivering mission-critical ERP transformations to global enterprises.
+              Build and grow your consulting agency by implementing XENedion for your local enterprise clients with comprehensive training, co-selling resources, and ongoing recurring revenue.
             </p>
           </div>
         </div>

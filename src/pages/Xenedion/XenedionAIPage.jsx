@@ -53,15 +53,15 @@ export default function XenedionAIPage() {
           <div className="inner-hero-content">
             <div className="mono-label inner-hero-badge">
               <Sparkles size={14} />
-              <span>XENEDION // EMBEDDED ENTERPRISE INTELLIGENCE</span>
+              <span>XENEDION // EMBEDDED AI &amp; AUTOMATION</span>
             </div>
 
             <h1 className="inner-hero-title">
-              Embedded AI &amp; Autonomous Automation in XENedion.
+              Embedded AI: Put Everyday Operations on Autopilot
             </h1>
 
             <p className="inner-hero-lead">
-              Moving beyond bolt-on chatbots. XENedion embeds deterministic AI models and agentic automation directly into transactional workflows, automating routine operations and surfacing predictive insights.
+              Smart forecasting to predict inventory shortages, detect duplicate bills, and identify delayed shipments before they hurt your business.
             </p>
           </div>
         </div>

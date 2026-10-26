@@ -32,11 +32,13 @@
   display: block;
 }
 
-.footer-tagline {
-  font-size: 1.125rem;
+.footer-tagline,
+.footer-company-blurb {
+  font-size: 1.0625rem;
   color: var(--text-secondary);
-  margin-bottom: 16px;
-  line-height: 1.5;
+  line-height: 1.62;
+  margin-bottom: 0;
+  max-width: 520px;
 }
 
 .footer-meta-label {
@@ -81,12 +83,17 @@
   margin-bottom: 56px;
 }
 
-/* 5-Column Directory Grid Matching Sitemap */
+/* Multi-Column Directory Grid */
 .footer-columns-grid {
   display: grid;
   grid-template-columns: repeat(5, 1fr);
   gap: 32px;
   margin-bottom: 64px;
+}
+
+.footer-columns-grid.footer-3-cols {
+  grid-template-columns: repeat(3, 1fr);
+  max-width: 820px;
 }
 
 .footer-col {

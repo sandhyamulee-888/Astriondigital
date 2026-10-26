@@ -129,11 +129,61 @@
   color: var(--brand-orange);
 }
 
+.hero-positioning-narrative {
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+  max-width: 640px;
+  margin-bottom: 36px;
+}
+
 .hero-lead {
-  font-size: clamp(1.0625rem, 1.6vw, 1.25rem);
+  font-size: clamp(1.0625rem, 1.45vw, 1.2rem);
+  line-height: 1.62;
+  color: var(--text-primary);
+  font-weight: 450;
+  margin-bottom: 0;
+}
+
+.hero-product-statement {
+  font-size: clamp(0.9375rem, 1.25vw, 1.05rem);
+  line-height: 1.6;
+  color: var(--text-secondary);
+  margin-bottom: 0;
+}
+
+.hero-product-statement strong {
+  color: var(--brand-blue);
+  font-weight: 600;
+}
+
+.hero-foundation-statement {
+  display: flex;
+  align-items: flex-start;
+  gap: 10px;
+  padding: 12px 16px;
+  background: rgba(28, 117, 189, 0.04);
+  border: 1px solid rgba(28, 117, 189, 0.16);
+  border-left: 3px solid var(--brand-orange);
+  border-radius: var(--radius-xs);
+  font-size: 0.8125rem;
+  line-height: 1.55;
+  color: var(--text-secondary);
+  font-weight: 500;
+}
+
+.hero-check-icon {
+  color: var(--brand-orange);
+  flex-shrink: 0;
+  margin-top: 2px;
+}
+
+.hero-subheadline-lead {
+  font-size: clamp(1.0625rem, 1.45vw, 1.25rem);
   line-height: 1.65;
   color: var(--text-secondary);
-  max-width: 640px;
+  font-weight: 450;
+  max-width: 620px;
   margin-bottom: 36px;
 }
 
@@ -142,10 +192,51 @@
   align-items: center;
   gap: 16px;
   flex-wrap: wrap;
-  margin-bottom: 44px;
+  margin-bottom: 36px;
 }
 
-/* KPI Bar */
+/* Proof Bar (Below Buttons) */
+.hero-proof-bar {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  flex-wrap: wrap;
+  padding-top: 24px;
+  border-top: 1px solid var(--border-light);
+}
+
+.proof-bar-item {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  padding: 8px 14px;
+  background: rgba(255, 255, 255, 0.9);
+  backdrop-filter: blur(8px);
+  border: 1px solid var(--border-medium);
+  border-radius: var(--radius-sm);
+  box-shadow: 0 1px 3px rgba(15, 23, 42, 0.04);
+  transition: all var(--transition-fast);
+}
+
+.proof-bar-item:hover {
+  border-color: rgba(28, 117, 189, 0.4);
+  transform: translateY(-1px);
+}
+
+.proof-bar-icon {
+  color: var(--brand-blue);
+  display: flex;
+  align-items: center;
+}
+
+.proof-bar-text {
+  font-size: 0.8125rem;
+  font-weight: 600;
+  color: #0F172A;
+  letter-spacing: -0.01em;
+}
+
+/* KPI Bar (Legacy) */
 .hero-kpi-bar {
   display: grid;
   grid-template-columns: repeat(4, 1fr);

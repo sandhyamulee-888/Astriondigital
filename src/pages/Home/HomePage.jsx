@@ -1,34 +1,30 @@
 import React from 'react';
 import Hero from '../../components/sections/Hero/Hero';
+import ProblemSection from '../../components/sections/ProblemSection/ProblemSection';
 import AboutSection from '../../components/sections/AboutSection/AboutSection';
-import SolutionsIntro from '../../components/sections/SolutionsIntro/SolutionsIntro';
 import XenedionFeature from '../../components/sections/XenedionFeature/XenedionFeature';
 import IndustriesSection from '../../components/sections/IndustriesSection/IndustriesSection';
-import CaseStudiesSection from '../../components/sections/CaseStudiesSection/CaseStudiesSection';
 import FinalCTA from '../../components/sections/FinalCTA/FinalCTA';
 
 export default function HomePage() {
   return (
     <main id="main-content" className="homepage-content">
-      {/* Hero: Strategic Value Proposition & Connected Architecture Visual */}
+      {/* Section 1: Hero (The All-in-One Software to Run Your Entire Business) */}
       <Hero />
 
-      {/* About: Executive Foundation, Pedigree & Key Enterprise Metrics */}
+      {/* Section 2: The Operational Problem You Solve */}
+      <ProblemSection />
+
+      {/* Section 3: Why Astrion Digital (Built for Speed. Designed for Total Clarity) */}
       <AboutSection />
 
-      {/* Solutions: Concise 1-2 Line Intro + Explore Solutions CTA */}
-      <SolutionsIntro />
-
-      {/* XENedion ERP: Flagship Connected Operational Platform */}
+      {/* Section 4: Product Showcase (XENedion ERP) */}
       <XenedionFeature />
 
-      {/* Industries: Operational Sector Blueprints */}
+      {/* Section 5: Industry Blueprints */}
       <IndustriesSection />
 
-      {/* Case Studies: Real-World Transformation Proof Points */}
-      <CaseStudiesSection />
-
-      {/* Final Strategic Conversion CTA */}
+      {/* Section 6: Bottom Call to Action (Closing) */}
       <FinalCTA />
     </main>
   );

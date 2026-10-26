@@ -18,7 +18,7 @@ export default function XenedionImplementationPage() {
     {
       step: '02',
       title: 'Data Migration & Reconciliation',
-      desc: 'Automated data cleansing, legacy ledger extraction, and automated parallel run verification to guarantee zero transaction discrepancies.'
+      desc: 'Automated data cleansing, legacy ledger extraction, and automated parallel run verification to ensure transaction integrity and minimize discrepancies.'
     },
     {
       step: '03',
@@ -27,8 +27,8 @@ export default function XenedionImplementationPage() {
     },
     {
       step: '04',
-      title: 'Go-Live & Hypercare SLA',
-      desc: 'Deterministic cutover protocol with 24/7 dedicated on-call systems engineers and continuous performance monitoring.'
+      title: 'Go-Live & Hypercare Support',
+      desc: 'Deterministic cutover protocol with dedicated technical support and continuous operational monitoring.'
     }
   ];
 
@@ -53,15 +53,15 @@ export default function XenedionImplementationPage() {
           <div className="inner-hero-content">
             <div className="mono-label inner-hero-badge">
               <Target size={14} />
-              <span>XENEDION // RISK-CONTROLLED DEPLOYMENT</span>
+              <span>XENEDION // IMPLEMENTATION PROCESS</span>
             </div>
 
             <h1 className="inner-hero-title">
-              XENedion Implementation: Deterministic rollout with zero operational downtime.
+              Smooth Onboarding: Fast, Reliable ERP Deployment
             </h1>
 
             <p className="inner-hero-lead">
-              ERP implementations fail when migration risks are underestimated. Astrion utilizes a proven, data-reconciled deployment framework that keeps your business running smoothly throughout the transition.
+              Dedicated data migration, step-by-step team training, and go-live assistance to get your team running in weeks without business disruption.
             </p>
           </div>
         </div>
@@ -89,9 +89,9 @@ export default function XenedionImplementationPage() {
             <div className="commitment-header">
               <div className="mono-label">
                 <Award size={16} />
-                <span>ON-TIME &amp; ON-BUDGET GUARANTEE</span>
+                <span>GOVERNED MILESTONE DELIVERY</span>
               </div>
-              <h3>Guaranteed Milestone Delivery with Fixed-Scope Governance</h3>
+              <h3>Structured Milestone Delivery with Fixed-Scope Governance</h3>
             </div>
             <p className="commitment-text">
               We align implementation contracts with verified milestone deliverables. Our automated testing frameworks catch data discrepancies prior to cutover, eliminating costly post-launch remediation.

@@ -12,7 +12,7 @@ export default function XenedionIntegrationsPage() {
   const integrationTypes = [
     {
       title: 'High-Throughput gRPC Event Bus',
-      desc: 'Sub-millisecond internal messaging mesh linking all XENedion modules with strict event ordering and delivery guarantees.',
+      desc: 'High-speed internal messaging mesh linking all XENedion modules with strict event ordering and delivery guarantees.',
       badge: 'INTERNAL FABRIC'
     },
     {
@@ -61,7 +61,7 @@ export default function XenedionIntegrationsPage() {
             </h1>
 
             <p className="inner-hero-lead">
-              Enterprises run on interconnected networks. XENedion features open, resilient API fabrics, high-throughput gRPC streaming, and legacy connectors that guarantee instantaneous synchronization.
+              Enterprises run on interconnected networks. XENedion features open, resilient API fabrics, high-throughput gRPC streaming, and legacy connectors that enable seamless real-time synchronization.
             </p>
           </div>
         </div>
@@ -89,7 +89,7 @@ export default function XenedionIntegrationsPage() {
                 <Zap size={16} />
                 <span>API PERFORMANCE SPECIFICATION</span>
               </div>
-              <h3>50M+ Daily Event Capacity with 99.999% Delivery SLA</h3>
+              <h3>High-Throughput Distributed Event Capacity with Resilient Delivery Architecture</h3>
             </div>
             <p className="commitment-text">
               Built on distributed Kafka clusters and asynchronous message brokers, XENedion handles extreme bursts in transaction volume during peak retail seasons and global supply disruptions without data loss.

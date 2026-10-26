@@ -1,30 +1,35 @@
 export const NAV_ITEMS = [
   {
+    id: 'home',
+    label: 'Home',
+    href: '/'
+  },
+  {
     id: 'about',
     label: 'About',
     href: '/about',
     megaMenu: {
-      tag: 'ABOUT ASTRION DIGITAL',
-      headline: 'The Company Behind Intelligent Enterprise Software.',
+      tag: 'ASTRION DIGITAL // THE COMPANY',
+      headline: 'One Platform to Connect, Automate & Run Your Entire Business.',
       featured: {
-        title: 'Brand Architecture',
-        description: 'Discover the institutional hierarchy connecting parent corporate entity Astrion Digital with flagship platform XENedion.',
+        title: 'About Astrion',
+        description: 'Learn how Astrion Digital builds resilient platforms that eliminate data bottlenecks.',
         href: '/about'
       },
       columns: [
         {
-          heading: 'Organization',
+          heading: 'Company & Vision',
           items: [
-            { title: 'About Astrion', href: '/about', desc: 'Corporate positioning statement, brand architecture & product foundation.' },
-            { title: 'Vision & Mission', href: '/about/vision-mission', desc: 'Guiding principles driving our enterprise solutions.' },
-            { title: 'Our Approach', href: '/about/approach', desc: 'Four-phase transformation model from discovery to evolution.' }
+            { title: 'About Astrion', href: '/about', desc: 'The enterprise software company behind intelligent business technology.' },
+            { title: 'Vision & Mission', href: '/about/vision-mission', desc: 'Developing intelligent software products teams love using.' },
+            { title: 'Our Approach', href: '/about/approach', desc: 'Understand bottlenecks, deploy unified modules, and evolve continuously.' }
           ]
         },
         {
-          heading: 'People & Ecosystem',
+          heading: 'Leadership & Partners',
           items: [
-            { title: 'Leadership', href: '/about/leadership', desc: 'Executive technologists and industry domain specialists.' },
-            { title: 'Partners', href: '/about/partners', desc: 'Global technology alliances and ecosystem integrations.' }
+            { title: 'Leadership', href: '/about/leadership', desc: 'Experienced software architects and operational leaders.' },
+            { title: 'Partners', href: '/about/partners', desc: 'Global cloud infrastructure and certified delivery partners.' }
           ]
         }
       ]
@@ -35,30 +40,30 @@ export const NAV_ITEMS = [
     label: 'Solutions',
     href: '/solutions',
     megaMenu: {
-      tag: 'SOLUTIONS & CAPABILITIES',
-      headline: 'End-to-end technical capabilities engineered for complex enterprise domains.',
+      tag: 'SOLUTIONS // PLATFORM CAPABILITIES',
+      headline: 'Enterprise software capabilities engineered for modern operational growth.',
       featured: {
-        title: 'Enterprise Architecture',
-        description: 'Cohesive multi-tier systems integrating legacy backbones with modern cloud & AI workloads.',
-        href: '/solutions'
+        title: 'Enterprise Digital Transformation',
+        description: 'Modernize core business operations and eliminate spreadsheets without disruption.',
+        href: '/solutions/digital-transformation'
       },
       columns: [
         {
-          heading: 'Transformation & Core Platforms',
+          heading: 'Core Transformation & Platforms',
           items: [
-            { title: 'Enterprise Digital Transformation', href: '/solutions/digital-transformation', desc: 'Holistic operating model modernization.' },
-            { title: 'AI & Intelligent Automation', href: '/solutions/ai-intelligent-automation', desc: 'Agentic workflows, private models & automated ops.' },
-            { title: 'Enterprise Software Development', href: '/solutions/software-development', desc: 'Mission-critical distributed systems.' },
-            { title: 'ERP Solutions & XENedion', href: '/solutions/erp', desc: 'Core operational system consolidation & workflows.' }
+            { title: 'Enterprise Digital Transformation', href: '/solutions/digital-transformation', desc: 'Modernize core operations without business disruption.' },
+            { title: 'AI & Intelligent Automation', href: '/solutions/ai-intelligent-automation', desc: 'Put everyday routine tasks and approvals on autopilot.' },
+            { title: 'Enterprise Software Development', href: '/solutions/software-development', desc: 'Custom software architectures built for high transaction scale.' },
+            { title: 'ERP Solutions', href: '/solutions/erp', desc: 'Centralize your business data into one source of truth.' }
           ]
         },
         {
-          heading: 'Security, Cloud & Systems',
+          heading: 'Cloud, Data & Security',
           items: [
-            { title: 'Cybersecurity & Governance', href: '/solutions/cybersecurity', desc: 'Zero-trust architecture & enterprise governance.' },
-            { title: 'Cloud & Infrastructure', href: '/solutions/cloud-infrastructure', desc: 'Hybrid-cloud orchestration & DevOps automation.' },
-            { title: 'Data & Business Intelligence', href: '/solutions/data-business-intelligence', desc: 'Unified lakehouse architectures & telemetry.' },
-            { title: 'Integration & API Solutions', href: '/solutions/integration-api', desc: 'High-throughput enterprise event buses & mesh.' }
+            { title: 'Cybersecurity', href: '/solutions/cybersecurity', desc: 'Enterprise-grade protection for your sensitive business records.' },
+            { title: 'Cloud & Infrastructure', href: '/solutions/cloud-infrastructure', desc: 'High-uptime cloud performance with speed and zero compromises.' },
+            { title: 'Data & Business Intelligence', href: '/solutions/data-business-intelligence', desc: 'Real-time dashboards for faster, better business decisions.' },
+            { title: 'Integration & API Solutions', href: '/solutions/integration-api', desc: 'Connect your existing software applications effortlessly.' }
           ]
         }
       ]
@@ -71,28 +76,28 @@ export const NAV_ITEMS = [
     badge: 'Platform',
     megaMenu: {
       tag: 'XENEDION ERP // FLAGSHIP PRODUCT',
-      headline: 'XENedion: One Platform. Your Entire Business.',
+      headline: 'One Platform. Your Entire Business.',
       featured: {
-        title: 'Platform Architecture',
-        description: 'An integrated ERP platform connecting core business functions, operations, and cross-organization visibility.',
-        href: '/xenedion/modules'
+        title: 'Platform Overview',
+        description: 'Unite your finance, operations, supply chain, and human resources in one intuitive workspace.',
+        href: '/xenedion'
       },
       columns: [
         {
           heading: 'Core Platform',
           items: [
-            { title: 'Overview', href: '/xenedion', desc: 'Unified architecture for resilient operations.' },
-            { title: 'Modules', href: '/xenedion/modules', desc: '11 integrated enterprise operational modules.' },
-            { title: 'Industries', href: '/xenedion/industries', desc: 'Pre-configured domain templates for manufacturing & trade.' },
-            { title: 'AI & Automation', href: '/xenedion/ai-automation', desc: 'Embedded predictive intelligence & workflow bots.' }
+            { title: 'Overview', href: '/xenedion', desc: 'Centralize your entire company in one intuitive workspace.' },
+            { title: 'Modules', href: '/xenedion/modules', desc: 'Finance, inventory, sales, purchasing, HR, and warehousing.' },
+            { title: 'Industries', href: '/xenedion/industries', desc: 'Ready-to-use workflows configured specifically for your vertical.' },
+            { title: 'AI & Automation', href: '/xenedion/ai-automation', desc: 'Smart forecasting, duplicate bill detection, and automated alerts.' }
           ]
         },
         {
-          heading: 'Adoption & Delivery',
+          heading: 'Deployment & Ecosystem',
           items: [
-            { title: 'Integrations', href: '/xenedion/integrations', desc: 'Real-time bridges to legacy systems and cloud APIs.' },
-            { title: 'Implementation', href: '/xenedion/implementation', desc: 'Structured rollout methodology and risk controls.' },
-            { title: 'Partner Program', href: '/xenedion/partner-program', desc: 'Value-added reseller and certified delivery network.' }
+            { title: 'Integrations', href: '/xenedion/integrations', desc: 'Sync your banking, eCommerce, and logistics tools effortlessly.' },
+            { title: 'Implementation', href: '/xenedion/implementation', desc: 'Smooth onboarding, guided data migration, and team training.' },
+            { title: 'Partner Program', href: '/xenedion/partner-program', desc: 'Build and grow your consulting agency by implementing XENedion.' }
           ]
         }
       ]
@@ -103,29 +108,29 @@ export const NAV_ITEMS = [
     label: 'Industries',
     href: '/industries',
     megaMenu: {
-      tag: 'TARGET INDUSTRIES',
-      headline: 'Deep sector specialization engineered around operational realities.',
+      tag: 'INDUSTRIES // BUILT FOR YOUR SECTOR',
+      headline: 'Pre-configured workflows tailored to how your industry actually works.',
       featured: {
-        title: 'Sector Blueprint',
-        description: 'Industry-specific operational ontologies, compliance guardrails, and pre-built integrations.',
+        title: 'Manufacturing Blueprint',
+        description: 'Connected shop floors, live Bills of Materials, and real-time scrap tracking.',
         href: '/industries/manufacturing'
       },
       columns: [
         {
-          heading: 'Industrial & Supply Chain',
+          heading: 'Production & Trade',
           items: [
-            { title: 'Manufacturing', href: '/industries/manufacturing', desc: 'Smart factory, MES integration and quality tracking.' },
-            { title: 'Distribution', href: '/industries/distribution', desc: 'Omni-channel order routing and fulfillment logistics.' },
-            { title: 'Retail', href: '/industries/retail', desc: 'Unified inventory, POS integration and predictive demand.' },
-            { title: 'Logistics', href: '/industries/logistics', desc: 'Fleet visibility, freight tracking and automated dispatch.' }
+            { title: 'Manufacturing', href: '/industries/manufacturing', desc: 'Connected shop floors and automated Bill of Materials.' },
+            { title: 'Distribution', href: '/industries/distribution', desc: 'Multi-warehouse visibility and faster order fulfillment.' },
+            { title: 'Retail', href: '/industries/retail', desc: 'Unified in-store, warehouse, and online inventory.' }
           ]
         },
         {
-          heading: 'Services & Markets',
+          heading: 'Supply Chain & Services',
           items: [
-            { title: 'Professional Services', href: '/industries/professional-services', desc: 'Resource utilization, milestone billing and compliance.' },
-            { title: 'Automotive', href: '/industries/automotive', desc: 'Tier-1 supply sync, BOM complexity and traceability.' },
-            { title: 'Other Industries', href: '/industries/other', desc: 'Tailored platforms for specialized business domains.' }
+            { title: 'Logistics', href: '/industries/logistics', desc: 'Fleet route optimization and live freight tracking.' },
+            { title: 'Professional Services', href: '/industries/professional-services', desc: 'Real-time project billing and resource allocation.' },
+            { title: 'Automotive', href: '/industries/automotive', desc: 'Parts traceability and dealer supply chain integration.' },
+            { title: 'Other Industries', href: '/industries/other', desc: 'Custom-fit operational platforms for specialized business domains.' }
           ]
         }
       ]
@@ -136,20 +141,20 @@ export const NAV_ITEMS = [
     label: 'Insights',
     href: '/insights',
     megaMenu: {
-      tag: 'STRATEGIC INSIGHTS',
-      headline: 'Technical perspectives, architecture breakdowns, and enterprise briefings.',
+      tag: 'INSIGHTS // PRACTICAL PERSPECTIVES',
+      headline: 'Practical perspectives on modernizing business operations and ERP best practices.',
       featured: {
-        title: 'Enterprise Architecture Journal',
-        description: 'Practical engineering guides for migrating monolithic ERPs to event-driven services.',
-        href: '/insights/blog'
+        title: 'Customer Success Stories',
+        description: 'Real stories of companies cutting admin time, stopping inventory leaks, and scaling fast.',
+        href: '/insights/case-studies'
       },
       columns: [
         {
-          heading: 'Publications & Research',
+          heading: 'Publications & Case Studies',
           items: [
-            { title: 'Blog', href: '/insights/blog', desc: 'Deep-dive technology commentary and architectural essays.' },
-            { title: 'Case Studies', href: '/insights/case-studies', desc: 'Architectural walkthroughs of complex enterprise transformations.' },
-            { title: 'Resources', href: '/insights/resources', desc: 'Whitepapers, reference architectures and maturity benchmarks.' }
+            { title: 'Blog', href: '/insights/blog', desc: 'Practical guides on modernizing operations and supply chains.' },
+            { title: 'Case Studies', href: '/insights/case-studies', desc: 'Real stories of companies cutting admin time and overhead.' },
+            { title: 'Resources', href: '/insights/resources', desc: 'Downloadable implementation checklists and ROI calculators.' }
           ]
         }
       ]

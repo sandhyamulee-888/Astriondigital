@@ -92,7 +92,7 @@ export default function XenedionIndustriesPage() {
                 <Cpu size={16} />
                 <span>RAPID TIME TO VALUE</span>
               </div>
-              <h3>Pre-Configured Data Ontologies Cut Deployment Timelines by 50%</h3>
+              <h3>Pre-Configured Data Ontologies Accelerate Enterprise Deployment Timelines</h3>
             </div>
             <p className="commitment-text">
               Avoid building custom manufacturing execution logic or distribution routing from scratch. XENedion includes tested enterprise templates compliant with industry standards.

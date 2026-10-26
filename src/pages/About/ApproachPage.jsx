@@ -35,33 +35,32 @@ export default function ApproachPage() {
           <div className="inner-hero-content">
             <div className="mono-label inner-hero-badge">
               <Target size={14} />
-              <span>ABOUT // TRANSFORMATION METHODOLOGY</span>
+              <span>HOW WE WORK // PRODUCT-LED EXECUTION</span>
             </div>
 
             <h1 className="inner-hero-title">
-              Our Approach: From strategic discovery to continuous autonomous scale .
+              How We Engineer &amp; Deliver.
             </h1>
 
             <p className="inner-hero-lead">
-              Astrion structures complex enterprise modernization initiatives into four rigorous, iterative phases that eliminate deployment risk and deliver production-grade software on deterministic timelines.
+              A product-led, three-step methodology: Understand Bottlenecks, Deploy Unified Modules, and Evolve Continuously. Engineered to eliminate operational friction and deliver dependable software without the headaches.
             </p>
           </div>
         </div>
       </section>
 
-      {/* 4-Phase Transformation Framework */}
+      {/* 3-Step Delivery Framework */}
       <section className="section">
         <div className="container">
           {/* Phase Selector Tabs */}
           <div className="approach-timeline-tabs">
             {APPROACH_PHASES.map((phase, idx) => (
               <button
-                key={phase.phase || idx}
+                key={idx}
                 className={`timeline-tab-btn ${activePhaseIndex === idx ? 'active' : ''}`}
                 onClick={() => setActivePhaseIndex(idx)}
               >
-                <span className="tab-num mono-tag">PHASE</span>
-                <span className="tab-phase-name">{phase.phase}</span>
+                <span className="tab-phase-name">{phase.title}</span>
               </button>
             ))}
           </div>
@@ -70,7 +69,7 @@ export default function ApproachPage() {
           <div className="approach-deepdive-card">
             <div className="deepdive-header">
               <div className="mono-label deepdive-badge">
-                <span>{activePhase.phase} // ARCHITECTURAL EXECUTION</span>
+                <span>{activePhase.phase}</span>
               </div>
               <h2 className="deepdive-headline">{activePhase.headline}</h2>
               <p className="deepdive-summary">{activePhase.summary}</p>
@@ -79,14 +78,14 @@ export default function ApproachPage() {
             <div className="deepdive-grid">
               {/* Deliverables Checklist */}
               <div className="deepdive-col">
-                <span className="mono-tag deepdive-col-title">KEY ARTIFACTS &amp; DELIVERABLES</span>
+                <span className="mono-tag deepdive-col-title">WHAT WE DELIVER</span>
                 <div className="deliverables-stack">
                   {activePhase.deliverables.map((del, idx) => (
                     <div key={idx} className="deliverable-card">
                       <CheckCircle2 size={16} className="del-check-icon" />
                       <div className="del-text">
                         <h4>{del}</h4>
-                        <span className="mono-tag">Production-Tested Milestone</span>
+                        <span className="mono-tag">Actionable Milestone</span>
                       </div>
                     </div>
                   ))}
@@ -95,27 +94,27 @@ export default function ApproachPage() {
 
               {/* Phase Architectural Safeguards */}
               <div className="deepdive-col">
-                <span className="mono-tag deepdive-col-title">ENGINEERING SAFEGUARDS</span>
+                <span className="mono-tag deepdive-col-title">WHAT YOU CAN EXPECT</span>
                 <div className="safeguards-box">
                   <div className="safeguard-row">
                     <ShieldCheck size={16} className="safeguard-icon" />
                     <div>
-                      <strong>Deterministic Validation</strong>
-                      <p>Automated test suites and end-to-end integration contracts verify every transition.</p>
+                      <strong>{activePhase.safeguards?.title || 'Operational Security'}</strong>
+                      <p>{activePhase.safeguards?.desc || 'Strict data safeguards throughout the process.'}</p>
                     </div>
                   </div>
                   <div className="safeguard-row">
                     <Zap size={16} className="safeguard-icon" />
                     <div>
-                      <strong>Zero Downtime Cutover</strong>
-                      <p>Strangler Fig and canary deployment patterns ensure business continuity.</p>
+                      <strong>Fast, Predictable Timelines</strong>
+                      <p>Weeks to deploy rather than months or years of stalled implementations.</p>
                     </div>
                   </div>
                   <div className="safeguard-row">
                     <Clock size={16} className="safeguard-icon" />
                     <div>
-                      <strong>Continuous Telemetry</strong>
-                      <p>Live observability monitors latency, throughput, and error budgets 24/7/365.</p>
+                      <strong>Dedicated Implementation Team</strong>
+                      <p>Direct access to our platform specialists who guide your team every step of the way.</p>
                     </div>
                   </div>
                 </div>
@@ -123,20 +122,20 @@ export default function ApproachPage() {
             </div>
           </div>
 
-          {/* Complete 4-Phase Visual Overview */}
+          {/* Complete Visual Overview */}
           <div className="approach-all-phases-grid">
             {APPROACH_PHASES.map((item, idx) => (
-              <div key={item.phase || idx} className={`phase-summary-box ${activePhaseIndex === idx ? 'highlighted' : ''}`}>
+              <div key={idx} className={`phase-summary-box ${activePhaseIndex === idx ? 'highlighted' : ''}`}>
                 <div className="phase-summary-top">
                   <span className="mono-label phase-badge-name">{item.phase}</span>
                 </div>
-                <h3 className="phase-summary-title">{item.headline}</h3>
+                <h3 className="phase-summary-title">{item.title}</h3>
                 <p className="phase-summary-desc">{item.summary}</p>
                 <button 
                   className="phase-inspect-btn mono-tag"
                   onClick={() => setActivePhaseIndex(idx)}
                 >
-                  Inspect {item.phase} Phase →
+                  View Details →
                 </button>
               </div>
             ))}
@@ -145,13 +144,13 @@ export default function ApproachPage() {
           {/* CTA Row */}
           <div className="approach-actions-banner">
             <div className="approach-cta-info">
-              <span className="mono-label">READY TO COMMENCE DISCOVERY?</span>
-              <h3>Engage Astrion architects for an initial forensic assessment.</h3>
-              <p>We review your current state architecture, identify bottlenecks, and build your target roadmap.</p>
+              <span className="mono-label">READY TO GET STARTED?</span>
+              <h3>Schedule a workflow walkthrough with our product specialists.</h3>
+              <p>We will review your current systems, show you how XENedion fits, and map out a simple onboarding plan.</p>
             </div>
             <div className="approach-cta-btns">
               <Button to="/contact" variant="primary" size="lg" icon="arrow">
-                Initiate Discovery Phase
+                Request a Demo
               </Button>
             </div>
           </div>

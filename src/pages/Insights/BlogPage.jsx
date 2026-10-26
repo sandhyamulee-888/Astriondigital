@@ -74,10 +74,10 @@ const BLOG_ARTICLES = [
     date: 'Data Engineering Quarterly',
     readTime: '9 min read',
     tags: ['Data Mesh', 'Kafka', 'Apache Flink', 'Real-Time Telemetry'],
-    summary: 'Decentralizing data ownership into domain-oriented data products with sub-second stream processing for global supply chain visibility.',
+    summary: 'Decentralizing data ownership into domain-oriented data products with real-time stream processing for global supply chain visibility.',
     keyTakeaways: [
       'Domain-driven schema ownership preventing centralized data warehouse bottlenecks',
-      'Stream processing pipelines computing rolling metrics with sub-second latency',
+      'Stream processing pipelines computing rolling metrics with real-time stream processing',
       'Automated schema evolution governance with backward-compatibility guarantees',
       'Self-serve data infrastructure provisioning for analytical engineering teams'
     ]
@@ -122,15 +122,15 @@ export default function BlogPage() {
           <div className="inner-hero-content">
             <div className="mono-label inner-hero-badge">
               <span className="badge-dot"></span>
-              INSIGHTS // TECHNICAL JOURNAL &amp; ESSAYS
+              INSIGHTS // ARTICLES &amp; UPDATES
             </div>
 
             <h1 className="inner-hero-title">
-              Technical commentary and architectural engineering essays.
+              Articles &amp; Practical Operational Guides
             </h1>
 
             <p className="inner-hero-lead">
-              Deep dives into distributed systems, event-driven integrations, deterministic AI orchestration, and enterprise cloud resilience written by our practicing engineers.
+              Practical guides on modernizing operations, ERP best practices, and supply chain management.
             </p>
           </div>
         </div>
@@ -173,10 +173,6 @@ export default function BlogPage() {
                 <div className="article-header">
                   <div className="article-meta-row">
                     <span className="mono-tag article-cat-tag">{art.category}</span>
-                    <span className="mono-tag article-time">
-                      <Clock size={12} />
-                      {art.readTime}
-                    </span>
                     <span className="mono-tag article-date">{art.date}</span>
                   </div>
                   <h2 className="article-title">{art.title}</h2>

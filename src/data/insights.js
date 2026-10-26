@@ -1,32 +1,32 @@
 export const INSIGHTS = [
   {
     id: 'decoupling-monoliths',
-    category: 'BLOG',
-    label: 'ARCHITECTURAL PERSPECTIVE',
-    title: 'De-risking Legacy Modernization: The Strangler Fig Pattern in Enterprise ERP',
-    excerpt: 'How modern engineering leaders phase out brittle legacy core systems without halting mission-critical daily transactional operations.',
-    readTime: '7 min read',
-    date: 'Q3 Enterprise Briefing',
+    category: 'PRACTICAL GUIDE',
+    label: 'ERP MODERNIZATION',
+    title: 'How to Replace Spreadsheets Without Disrupting Your Daily Business',
+    excerpt: 'A step-by-step guide on moving your finance, inventory, and operations to modern ERP software — while keeping customer deliveries and daily workflows running without interruption.',
+    readTime: '6 min read',
+    date: 'Operations Guide',
     link: '/insights/blog'
   },
   {
     id: 'agentic-operations',
-    category: 'CASE STUDY',
-    label: 'TRANSFORMATION ANALYSIS',
-    title: 'Productionizing Agentic AI: Moving From Uncontrolled Chatbots to Governed Workflows',
-    excerpt: 'Examining deterministic guardrails, structured JSON output validation, and state machine designs required for enterprise-safe automated decisioning.',
-    readTime: '11 min read',
-    date: 'Technical Whitepaper',
+    category: 'CASE PERSPECTIVE',
+    label: 'BUSINESS AUTOMATION',
+    title: 'How Businesses Eliminate 90% of Manual Admin Work with Smart Automation',
+    excerpt: 'Learn how companies use automated invoice matching, stock reorder triggers, and real-time alerts to cut hundreds of hours of repetitive admin work every month.',
+    readTime: '8 min read',
+    date: 'Automation Guide',
     link: '/insights/case-studies'
   },
   {
     id: 'zero-trust-cloud',
-    category: 'GUIDE / RESOURCE',
-    label: 'EXECUTIVE PLAYBOOK',
-    title: 'The Multi-Tier Enterprise Security Blueprint: Zero-Trust Across Hybrid Infrastructure',
-    excerpt: 'A comprehensive architectural guide covering cryptographic workload identities, automated micro-segmentation, and board-level risk reporting.',
-    readTime: '15 min read',
-    date: 'Architecture Guide',
+    category: 'EXECUTIVE BRIEFING',
+    label: 'DATA SECURITY',
+    title: 'Keeping Your Business Data Safe: A Simple Guide for Company Leaders',
+    excerpt: 'Everything business owners need to know about protecting company records — including user access controls, data encryption, and automated cloud backups — explained in plain English.',
+    readTime: '7 min read',
+    date: 'Security & Cloud Guide',
     link: '/insights/resources'
   }
 ];

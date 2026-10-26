@@ -28,40 +28,40 @@ const DETAILED_CASE_STUDIES = [
       'Single consolidated ERP backbone replacing 5 disconnected legacy systems',
       'Continuous real-time visibility into multi-site raw material allocations',
       'Automated production order routing aligned with machine availability',
-      '35% reduction in production cycle lead times across all operating plants',
-      '99.4% Bill of Materials (BOM) accuracy eliminating manual re-works'
+      'Accelerated production cycle lead times across all operating plants [Metric Pending Verification]',
+      'Near-zero error rate in Bill of Materials (BOM) propagation'
     ],
     technologies: ['XENedion Core Platform', 'Shop-Floor IoT Telemetry', 'Kafka Event Mesh', 'Zero-Trust Cloud'],
-    architectureHighlights: 'Sub-second sensor ingestion pipelines push machine telemetry to edge gateways, continuously calculating OEE and triggering proactive maintenance tickets directly inside the financial ledger.'
+    architectureHighlights: 'Real-time sensor ingestion pipelines push machine telemetry to edge gateways, continuously calculating OEE and triggering proactive maintenance tickets directly inside the financial ledger.'
   },
   {
     id: 'global-distribution-fulfillment',
     industry: 'Wholesale & Logistics Distribution',
     clientType: 'National Consumer Goods Distributor',
     title: 'Real-Time Order Routing & Cross-Dock Orchestration',
-    challenge: 'A high-velocity distribution network processing 40,000+ daily orders suffered from picking bottlenecks, manual carrier allocation, and frequent inventory desynchronization between distribution centers.',
+    challenge: 'A high-velocity distribution network processing large volumes of daily orders suffered from picking bottlenecks, manual carrier allocation, and frequent inventory desynchronization between distribution centers.',
     solution: 'Astrion deployed an intelligent warehouse management and dynamic order mesh, introducing automated wave picking, cross-dock optimization, and dynamic carrier rate comparison.',
     results: [
-      'Sub-minute order allocation across 6 regional fulfillment hubs',
-      '99.8% order picking accuracy using ruggedized mobile guided picking',
+      'Real-time automated order allocation across regional fulfillment hubs',
+      'High-precision order picking accuracy using ruggedized mobile guided picking',
       'Automated EDI 850 / 856 transaction processing with suppliers',
-      '42% reduction in warehouse dwell times for cross-docked shipments'
+      'Significant reduction in warehouse dwell times for cross-docked shipments'
     ],
     technologies: ['Order Mesh Engine', 'Warehouse Management System', 'B2B EDI Gateway', 'Predictive Route AI'],
-    architectureHighlights: 'Dynamic routing engine automatically assesses carrier SLA performance, regional shipping costs, and dock door availability to schedule dispatch without manual intervention.'
+    architectureHighlights: 'Dynamic routing engine automatically assesses carrier performance metrics, regional shipping costs, and dock door availability to schedule dispatch without manual intervention.'
   },
   {
     id: 'enterprise-fleet-logistics',
     industry: 'Supply Chain & Transportation',
     clientType: 'Multi-Modal Freight & Fleet Operator',
     title: 'Autonomous Fleet Telematics & Dynamic Route Optimization',
-    challenge: 'Managing a fleet of 800+ freight vehicles with disparate GPS systems and paper-based proof of delivery resulted in unpredictable customer arrival estimates and delayed freight invoicing.',
+    challenge: 'Managing an expansive fleet of freight vehicles with disparate GPS systems and paper-based proof of delivery resulted in unpredictable customer arrival estimates and delayed freight invoicing.',
     solution: 'Astrion engineered a centralized telematics ingestion pipeline paired with automated electronic proof of delivery (ePOD) and dynamic re-routing algorithms.',
     results: [
-      'Real-time vehicle telemetry tracking with sub-second latency',
+      'Real-time vehicle telemetry tracking with continuous data streaming',
       'Automated electronic proof of delivery triggering instantaneous freight invoicing',
-      'Dynamic weather and traffic rerouting reducing fleet fuel consumption by 14%',
-      '100% regulatory compliance with ELD and driver rest hour mandates'
+      'Dynamic weather and traffic rerouting reducing fleet fuel consumption and idle time',
+      'Full regulatory compliance with ELD and driver rest hour mandates'
     ],
     technologies: ['Telematics Ingestion Pipeline', 'Route Optimization Engine', 'Mobile ePOD Application', 'FinOps Billing Engine'],
     architectureHighlights: 'Direct OBD-II telematics streams are correlated with weather radar and traffic models to calculate dynamic arrival windows, notifying distribution hubs of delays proactively.'
@@ -94,15 +94,15 @@ export default function CaseStudiesPage() {
           <div className="inner-hero-content">
             <div className="mono-label inner-hero-badge">
               <span className="badge-dot"></span>
-              INSIGHTS // VERIFIED TRANSFORMATION CASE STUDIES
+              INSIGHTS // CUSTOMER SUCCESS STORIES
             </div>
 
             <h1 className="inner-hero-title">
-              Architectural walkthroughs of complex enterprise transformations.
+              Customer Success Stories &amp; Case Studies
             </h1>
 
             <p className="inner-hero-lead">
-              Review how Astrion delivers mission-critical core modernization, real-time telemetry pipelines, and unified ERP architectures for leading industry organizations.
+              Real stories of how companies cut administrative time and lowered overhead costs using Astrion platforms.
             </p>
           </div>
         </div>

@@ -8,9 +8,9 @@ import ScrollReveal, { StaggerContainer, StaggerItem } from '../../common/Motion
 import './CaseStudiesSection.css';
 
 const ROI_METRICS = {
-  'industrial-manufacturing-modernization': { roi: '+38% Velocity', sub: 'Multi-Plant Sync' },
-  'global-distribution-fulfillment': { roi: '99.98% Accuracy', sub: 'Zero Order Fallout' },
-  'enterprise-fleet-logistics': { roi: '-24% Latency', sub: 'Autonomous Routing' }
+  'industrial-manufacturing-modernization': { roi: 'Synchronized Ops', sub: 'Multi-Plant Visibility' },
+  'global-distribution-fulfillment': { roi: 'High Precision', sub: 'Order Fulfillment Sync' },
+  'enterprise-fleet-logistics': { roi: 'Optimized Routes', sub: 'Autonomous Dispatch' }
 };
 
 export default function CaseStudiesSection() {

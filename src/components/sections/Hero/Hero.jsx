@@ -1,17 +1,15 @@
 import React from 'react';
 import { motion } from 'framer-motion';
-import { ShieldCheck, Cpu, Database, Sparkles, Activity } from 'lucide-react';
+import { ShieldCheck, Cloud, Activity, Layers } from 'lucide-react';
 import Button from '../../common/Button/Button';
 import HeroVisual from '../HeroVisual/HeroVisual';
-import { HERO_CONTENT } from '../../../data/about';
 import './Hero.css';
 
 export default function Hero() {
-  const kpis = [
-    { value: '99.99%', label: 'Platform Availability SLA', icon: <Activity size={14} /> },
-    { value: '< 12ms', label: 'Deterministic Consensus', icon: <Cpu size={14} /> },
-    { value: '11+', label: 'Integrated ERP Subsystems', icon: <Database size={14} /> },
-    { value: 'SOC-2', label: 'Enterprise Security Architecture', icon: <ShieldCheck size={14} /> }
+  const proofBarItems = [
+    { label: '100% Real-Time Data Sync', icon: <Activity size={16} /> },
+    { label: 'Simple, Scalable Cloud Setup', icon: <Cloud size={16} /> },
+    { label: 'Enterprise-Grade Data Security', icon: <ShieldCheck size={16} /> }
   ];
 
   return (
@@ -22,7 +20,7 @@ export default function Hero() {
       <div className="hero-grid-pattern" aria-hidden="true" />
 
       <div className="container hero-container">
-        {/* Left Column: Modern Enterprise SaaS Presentation */}
+        {/* Left Column: Modern Enterprise Presentation */}
         <motion.div 
           className="hero-content"
           initial={{ opacity: 0, y: 24 }}
@@ -33,22 +31,17 @@ export default function Hero() {
           <div className="hero-status-pill">
             <span className="hero-status-indicator"></span>
             <span className="mono-tag status-text">
-              ENTERPRISE PLATFORM ARCHITECTURE // v4.2 LIVE
+              ENTERPRISE SOFTWARE PRODUCTS
             </span>
           </div>
 
           <h1 className="hero-headline">
-            Engineering Intelligence into{' '}
-            <span className="hero-gradient-text">Every Enterprise</span>
+            The Company Behind{' '}
+            <span className="hero-gradient-text">Intelligent Enterprise Software.</span>
           </h1>
 
-          <div className="hero-subhead-pill mono-tag">
-            <Sparkles size={13} className="pill-sparkle" />
-            <span>{HERO_CONTENT.subhead}</span>
-          </div>
-
-          <p className="hero-lead">
-            {HERO_CONTENT.lead}
+          <p className="hero-subheadline-lead">
+            Astrion Digital develops purposeful technology products that help businesses operate more efficiently, intelligently, and effectively — powered by our flagship platform, XENedion ERP.
           </p>
 
           <div className="hero-cta-group">
@@ -58,27 +51,27 @@ export default function Hero() {
               size="lg"
               icon="arrow"
             >
-              Discover XENedion ERP
+              Explore XENedion ERP
             </Button>
             <Button
-              to="/about"
+              to="/contact"
               variant="secondary"
               size="lg"
-              icon="external"
             >
-              Brand Architecture &amp; Overview
+              Book a Live Demo
             </Button>
           </div>
 
-          {/* Interactive Enterprise Metric / KPI Strip */}
-          <div className="hero-kpi-bar">
-            {kpis.map((kpi, idx) => (
-              <div key={idx} className="kpi-item">
-                <div className="kpi-top">
-                  <span className="kpi-icon">{kpi.icon}</span>
-                  <span className="kpi-val">{kpi.value}</span>
-                </div>
-                <span className="kpi-label mono-tag">{kpi.label}</span>
+          {/* Proof Bar (Below Buttons) */}
+          <div className="hero-proof-bar">
+            {[
+              { label: 'Enterprise Software Products', icon: <Layers size={16} /> },
+              { label: 'XENedion Flagship ERP', icon: <Activity size={16} /> },
+              { label: 'Innovation & Business Tech', icon: <ShieldCheck size={16} /> }
+            ].map((item, idx) => (
+              <div key={idx} className="proof-bar-item">
+                <span className="proof-bar-icon">{item.icon}</span>
+                <span className="proof-bar-text">{item.label}</span>
               </div>
             ))}
           </div>

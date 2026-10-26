@@ -1,50 +1,50 @@
 export const APPROACH_PHASES = [
   {
-    num: '01',
-    phase: 'DISCOVER',
-    headline: 'Current-State Forensic & Objective Alignment',
-    summary: 'We baseline enterprise operations, uncover hidden process friction, and align executive vision with technical feasibility.',
+    phase: 'UNDERSTAND',
+    title: 'Understand the Bottlenecks',
+    headline: 'Understand the Bottlenecks',
+    summary: 'We analyze your daily operational workflows and isolate data silos to see where time and money are being lost.',
     deliverables: [
-      'Business Objectives & Success Metrics',
-      'End-to-End Process Flow Audits',
-      'Technology Landscape & Debt Mapping',
-      'Risk & Governance Assessment'
-    ]
+      'Operational Workflow Mapping',
+      'Data Silo & Bottleneck Identification',
+      'Process Cost & Time Analysis',
+      'Integration & Architecture Audit'
+    ],
+    safeguards: {
+      title: 'No-Disruption Assessment',
+      desc: 'We conduct our workflow review without interrupting your active day-to-day operations.'
+    }
   },
   {
-    num: '02',
-    phase: 'DESIGN',
-    headline: 'Target Architecture & Transformation Roadmap',
-    summary: 'Developing cohesive target state blueprints that balance near-term operational wins with long-term architectural longevity.',
+    phase: 'DEPLOY',
+    title: 'Unified Platform Deployment',
+    headline: 'Unified Platform Deployment',
+    summary: 'We configure clean, integrated software modules tailored to your workflows—connecting finance, inventory, sales, and operations.',
     deliverables: [
-      'Enterprise System Architecture',
-      'User Experience & Workflow Blueprints',
-      'Transformation & Migration Roadmap',
-      'Security & Integration Governance Framework'
-    ]
+      'Tailored ERP & Module Configuration',
+      'Clean Historical Data Migration',
+      'End-to-End System Integration',
+      'Hands-On Staff & Admin Training'
+    ],
+    safeguards: {
+      title: 'Guaranteed Data Integrity',
+      desc: 'Rigorous reconciliation checks ensure zero data loss during cutover to the new system.'
+    }
   },
   {
-    num: '03',
-    phase: 'BUILD',
-    headline: 'Iterative Engineering & Integration Execution',
-    summary: 'Engineering resilient platforms, microservices, and automated workflows using modern DevOps and continuous quality gates.',
-    deliverables: [
-      'Modern Platform & Core Development',
-      'Mission-Critical Applications',
-      'Enterprise Integrations & Event Mesh',
-      'Intelligent Automation Deployment'
-    ]
-  },
-  {
-    num: '04',
     phase: 'EVOLVE',
-    headline: 'Continuous Optimization & Autonomous Growth',
-    summary: 'Sustaining high-throughput operations with telemetry-driven performance tuning, predictive AI, and proactive evolution.',
+    title: 'Continuous Evolution',
+    headline: 'Continuous Evolution',
+    summary: 'Regular updates, continuous improvements, and zero vendor lock-in headaches so your software scales effortlessly as you grow.',
     deliverables: [
-      'Operational Optimization & FinOps',
-      'Telemetry Analytics & SLA Tracking',
-      '24/7 Enterprise Platform Support',
-      'Continuous Innovation & AI Upgrades'
-    ]
+      'Automatic Cloud Upgrades & Feature Drops',
+      'Proactive Performance Monitoring',
+      'Dedicated Enterprise Support',
+      'Long-Term Platform Roadmap'
+    ],
+    safeguards: {
+      title: 'Zero Vendor Lock-In',
+      desc: 'Open standard APIs and full ownership of your enterprise data at all times.'
+    }
   }
 ];

@@ -29,11 +29,11 @@ const LEGAL_DOCS = {
       },
       {
         title: '3. Data Sovereignty & Geographic Residency',
-        content: 'Clients retain full control over data residency jurisdictions. Astrion provisions hybrid-cloud and on-premise infrastructure configurations that guarantee data never leaves authorized regional sovereign boundaries.'
+        content: 'Clients retain full control over data residency jurisdictions. Astrion provisions hybrid-cloud and on-premise infrastructure configurations designed to ensure data remains strictly within authorized regional sovereign boundaries.'
       },
       {
         title: '4. Third-Party Integrations & Sub-Processors',
-        content: 'All third-party cloud infrastructure providers, telemetry brokers, and API vendors engaged by Astrion undergo rigorous SOC 2 Type II and ISO 27001 third-party risk assessments prior to onboarding.'
+        content: 'All third-party cloud infrastructure providers, telemetry brokers, and API vendors engaged by Astrion undergo comprehensive third-party security, encryption, and compliance risk assessments prior to onboarding.'
       }
     ]
   },
@@ -53,7 +53,7 @@ const LEGAL_DOCS = {
       },
       {
         title: '3. Service Level Agreements (SLAs)',
-        content: 'Mission-critical production deployments are supported by Tier-1 enterprise SLAs guaranteeing 99.95% platform availability, sub-15 minute response times for critical incidents, and dedicated escalation engineering.'
+        content: 'Mission-critical production deployments are supported by Tier-1 enterprise SLAs defined in applicable customer contracts, detailing high availability targets, incident response escalation protocols, and dedicated engineering support [Specific SLA Metrics Subject to Contractual Agreement].'
       },
       {
         title: '4. Limitation of Liability & Warranty',
@@ -200,7 +200,7 @@ export default function LegalPage({ docType }) {
                 <div className="doc-footer-assurance">
                   <ShieldCheck size={18} className="doc-shield" />
                   <p>
-                    Astrion Digital adheres to global compliance standards including SOC 2 Type II, ISO 27001, GDPR, and enterprise data encryption mandates. For detailed audit packages or security questionnaires, contact our compliance team.
+                    Astrion Digital aligns its platforms with enterprise security frameworks, least-privilege access controls, and data encryption mandates [Security questionnaires and audit packages subject to business verification]. For compliance inquiries, contact our team.
                   </p>
                 </div>
               </div>

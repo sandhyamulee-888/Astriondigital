@@ -4,33 +4,31 @@ import { ArrowUpRight } from 'lucide-react';
 import './Footer.css';
 
 export default function Footer() {
-  const currentYear = new Date().getFullYear();
-
   return (
     <footer className="site-footer" role="contentinfo">
       <div className="container footer-container">
         {/* Top Brand & Tagline Tier */}
         <div className="footer-top-tier">
           <div className="footer-brand-block">
-            <Link to="/" className="footer-logo">
+            <Link to="/" className="footer-logo" aria-label="Astrion Digital Homepage">
               <img 
                 src="/logo.png" 
                 alt="Astrion Digital" 
                 className="footer-logo-img" 
               />
             </Link>
-            <p className="footer-tagline">
-              The Company Behind Intelligent Enterprise Software.
+            <p className="footer-company-blurb">
+              One Platform. Your Entire Business. Astrion Digital builds modern software that unifies finance, inventory, sales, and operations in real time. Home of XENedion ERP.
             </p>
-            <div className="footer-meta-label mono-tag">
-              ENTERPRISE SOFTWARE PRODUCTS &bull; INNOVATION &bull; BUSINESS TECHNOLOGY
+            <div className="mono-tag" style={{ color: 'var(--brand-orange, #ff6b35)', fontSize: '0.75rem', marginTop: '6px' }}>
+              Enterprise Software Products &bull; Innovation &bull; Business Technology
             </div>
           </div>
 
           <div className="footer-contact-direct">
-            <span className="mono-tag footer-inquiries-label">CONNECT WITH ARCHITECTS</span>
+            <span className="mono-tag footer-inquiries-label">READY TO GET STARTED?</span>
             <Link to="/contact" className="footer-talk-link">
-              <span>Schedule Strategic Briefing</span>
+              <span>Request a Demo</span>
               <ArrowUpRight size={18} />
             </Link>
           </div>
@@ -38,7 +36,7 @@ export default function Footer() {
 
         <div className="footer-divider hairline" />
 
-        {/* 5 Multi-Column Directory Matching Sitemap Hierarchy */}
+        {/* 5 Sitemap Branches Columns */}
         <div className="footer-columns-grid">
           {/* Column 1: About */}
           <div className="footer-col">
@@ -48,8 +46,7 @@ export default function Footer() {
               <li><Link to="/about/vision-mission">Vision &amp; Mission</Link></li>
               <li><Link to="/about/approach">Our Approach</Link></li>
               <li><Link to="/about/leadership">Leadership</Link></li>
-              <li><Link to="/about/partners">Strategic Partners</Link></li>
-              <li><Link to="/contact">Contact &amp; Briefings</Link></li>
+              <li><Link to="/about/partners">Partners</Link></li>
             </ul>
           </div>
 
@@ -63,8 +60,6 @@ export default function Footer() {
               <li><Link to="/solutions/erp">ERP Solutions</Link></li>
               <li><Link to="/solutions/cybersecurity">Cybersecurity</Link></li>
               <li><Link to="/solutions/cloud-infrastructure">Cloud &amp; Infrastructure</Link></li>
-              <li><Link to="/solutions/data-business-intelligence">Data &amp; BI</Link></li>
-              <li><Link to="/solutions/integration-api">Integration &amp; API</Link></li>
             </ul>
           </div>
 
@@ -103,17 +98,7 @@ export default function Footer() {
               <li><Link to="/insights/blog">Blog</Link></li>
               <li><Link to="/insights/case-studies">Case Studies</Link></li>
               <li><Link to="/insights/resources">Resources</Link></li>
-              <li>
-                <a 
-                  href="https://linkedin.com" 
-                  target="_blank" 
-                  rel="noopener noreferrer" 
-                  className="external-footer-link"
-                >
-                  <span>LinkedIn</span>
-                  <ArrowUpRight size={13} />
-                </a>
-              </li>
+              <li><Link to="/contact">Request a Demo</Link></li>
             </ul>
           </div>
         </div>
@@ -123,7 +108,7 @@ export default function Footer() {
         {/* Bottom Legal & Copyright Tier */}
         <div className="footer-bottom-tier">
           <p className="copyright-text">
-            &copy; {currentYear} Astrion Digital Private Limited. All rights reserved. The corporate foundation for intelligent enterprise software and flagship platform XENedion ERP.
+            &copy; 2026 Astrion Digital Private Limited. All rights reserved.
           </p>
 
           <ul className="legal-links">

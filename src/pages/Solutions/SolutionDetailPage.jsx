@@ -24,8 +24,8 @@ export default function SolutionDetailPage({ slugOverride }) {
     window.scrollTo(0, 0);
   }, [slug]);
 
-  // Match the solution by ID
-  const solution = SOLUTIONS.find((s) => s.id === slug);
+  // Match the solution by ID or aliasId
+  const solution = SOLUTIONS.find((s) => s.id === slug || s.aliasId === slug);
 
   if (!solution) {
     // If not found, fallback to solutions index
@@ -60,11 +60,11 @@ export default function SolutionDetailPage({ slugOverride }) {
             <div className="mono-label solution-hero-badge">
               <span className="badge-cat">{solution.categoryLabel}</span>
               <span className="badge-sep">•</span>
-              <span className="badge-tag">{solution.tagline}</span>
+              <span className="badge-tag">{solution.title}</span>
             </div>
 
             <h1 className="solution-page-title">
-              {solution.title}
+              {solution.headline || solution.title}
             </h1>
 
             <p className="solution-page-lead">
@@ -73,10 +73,10 @@ export default function SolutionDetailPage({ slugOverride }) {
 
             <div className="solution-hero-actions">
               <Button to="/contact" variant="primary" size="lg" icon="arrow">
-                Engage Enterprise Specialists
+                Request a Demo
               </Button>
               <Button to="/solutions" variant="outline" size="lg">
-                View All Solutions
+                View All Capabilities
               </Button>
             </div>
           </div>
@@ -91,21 +91,23 @@ export default function SolutionDetailPage({ slugOverride }) {
             {/* Overview Section */}
             <ScrollReveal yOffset={20}>
               <div className="solution-block">
-                <div className="mono-label block-label">CAPABILITY ARCHITECTURE</div>
-                <h2 className="block-title">Deterministic Engineering Overview</h2>
+                <div className="mono-label block-label">CAPABILITY OVERVIEW</div>
+                <h2 className="block-title">How This Solves Your Core Operational Problems</h2>
                 <p className="block-text-lead">{solution.overview}</p>
-                <div className="solution-arch-highlight">
-                  <span className="arch-label mono-tag">CORE ARCHITECTURAL BLUEPRINT</span>
-                  <p className="arch-desc">{solution.architecture}</p>
-                </div>
+                {solution.problemSolved && (
+                  <div className="solution-arch-highlight">
+                    <span className="arch-label mono-tag">THE PROBLEM WE SOLVE</span>
+                    <p className="arch-desc">{solution.problemSolved}</p>
+                  </div>
+                )}
               </div>
             </ScrollReveal>
 
             {/* Scope of Deliverables / Services */}
             <ScrollReveal yOffset={20} delay={0.1}>
               <div className="solution-block">
-                <div className="mono-label block-label">SCOPE &amp; DELIVERABLES</div>
-                <h2 className="block-title">Key Workflows &amp; Technical Capabilities</h2>
+                <div className="mono-label block-label">KEY BENEFITS &amp; FEATURES</div>
+                <h2 className="block-title">What We Deliver for Your Business</h2>
                 <div className="solution-services-grid">
                   {solution.services.map((item, index) => (
                     <div key={index} className="solution-service-card">
@@ -115,7 +117,7 @@ export default function SolutionDetailPage({ slugOverride }) {
                           <h3 className="service-card-title">{item}</h3>
                         </div>
                         <p className="service-card-text">
-                          Production-hardened implementation with continuous telemetry, rigorous security benchmarks, and enterprise SLA conformance.
+                          Configured to fit your daily workflows with zero disruption to active business.
                         </p>
                       </div>
                     </div>
@@ -127,15 +129,15 @@ export default function SolutionDetailPage({ slugOverride }) {
             {/* Enterprise Impact / Outcomes */}
             <ScrollReveal yOffset={20} delay={0.15}>
               <div className="solution-block solution-impact-block">
-                <div className="mono-label block-label">BENCHMARK OUTCOMES</div>
-                <h2 className="block-title">Measurable Enterprise Impact</h2>
+                <div className="mono-label block-label">MEASURABLE RESULTS</div>
+                <h2 className="block-title">The Real Business Impact</h2>
                 <div className="solution-metric-banner">
                   <div className="metric-banner-icon">
                     <Sparkles size={24} />
                   </div>
                   <div className="metric-banner-text">
                     <span className="metric-highlight-value">{solution.metrics}</span>
-                    <span className="metric-highlight-label">Demonstrated across Tier-1 enterprise production deployments</span>
+                    <span className="metric-highlight-label">Proven results across growing enterprises</span>
                   </div>
                 </div>
               </div>
@@ -159,7 +161,7 @@ export default function SolutionDetailPage({ slugOverride }) {
                   </div>
                   <div className="sidebar-meta-item">
                     <span className="meta-label mono-tag">GOVERNANCE LEVEL</span>
-                    <span className="meta-value">Zero-Trust &amp; SOC2 Type II Conformance</span>
+                    <span className="meta-value">Zero-Trust Architecture Controls [Pending Review]</span>
                   </div>
                   <div className="sidebar-meta-item">
                     <span className="meta-label mono-tag">ENGAGEMENT MODEL</span>

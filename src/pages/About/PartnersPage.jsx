@@ -31,15 +31,15 @@ export default function PartnersPage() {
           <div className="inner-hero-content">
             <div className="mono-label inner-hero-badge">
               <Handshake size={14} />
-              <span>ABOUT // GLOBAL TECHNOLOGY ALLIANCES</span>
+              <span>ABOUT // STRATEGIC PARTNERS</span>
             </div>
 
             <h1 className="inner-hero-title">
-              Strategic Partners: Certified integrations with world-leading platforms.
+              Strategic Partners: Global Infrastructure &amp; Implementation Allies.
             </h1>
 
             <p className="inner-hero-lead">
-              Astrion collaborates closely with tier-1 cloud hyper-scalers, data lakehouses, cybersecurity authorities, and enterprise ERP leaders to deliver sovereign, multi-cloud architectures without vendor lock-in.
+              Collaborating with leading cloud infrastructure and regional implementation partners to deliver reliable software deployment worldwide.
             </p>
           </div>
         </div>
@@ -78,9 +78,9 @@ export default function PartnersPage() {
           <div className="ecosystem-banner">
             <div className="ecosystem-text">
               <span className="mono-label">SOVEREIGNTY &amp; OPEN STANDARDS</span>
-              <h3>Zero Proprietary Lock-In Guarantee</h3>
+              <h3>Open Standards &amp; Architecture Portability</h3>
               <p>
-                Our integration architecture relies strictly on industry-standard protocols—OpenAPI, gRPC, OpenTofu, Delta Lake, and Kubernetes—ensuring your enterprise maintains 100% operational portability across all infrastructure environments.
+                Our integration architecture relies strictly on industry-standard protocols—OpenAPI, gRPC, OpenTofu, Delta Lake, and Kubernetes—ensuring your enterprise maintains comprehensive operational portability across all infrastructure environments.
               </p>
             </div>
             <div className="ecosystem-actions">

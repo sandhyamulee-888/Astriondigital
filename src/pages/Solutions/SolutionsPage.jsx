@@ -68,15 +68,15 @@ export default function SolutionsPage() {
           <div className="hub-hero-content">
             <div className="mono-label hub-badge">
               <Layers size={14} />
-              <span>SOLUTIONS &amp; CAPABILITIES</span>
+              <span>ENTERPRISE SOFTWARE CAPABILITIES</span>
             </div>
 
             <h1 className="hub-title">
-              Enterprise Technology Capabilities
+              Software Capabilities Built for Intelligent Operations
             </h1>
 
             <p className="hub-lead">
-              Astrion engineers end-to-end multi-disciplinary software, AI, and platform architectures designed to decouple legacy monoliths, automate mission-critical operations, and guarantee zero-trust resilience.
+              Astrion Digital engineers the technology pillars behind intelligent enterprise software. From our flagship XENedion ERP core to embedded AI automation, bank-grade cloud security, and real-time business intelligence—our platform capabilities eliminate spreadsheet chaos and empower businesses to scale.
             </p>
           </div>
         </div>
@@ -138,7 +138,7 @@ export default function SolutionsPage() {
 
                     {/* Key Capabilities Checklist */}
                     <div className="hub-services-checklist">
-                      <span className="hub-checklist-heading mono-tag">KEY CAPABILITIES &amp; DELIVERABLES</span>
+                      <span className="hub-checklist-heading mono-tag">KEY BENEFITS &amp; CAPABILITIES</span>
                       <ul className="hub-checklist-items">
                         {item.services.map((srv, sIdx) => (
                           <li key={sIdx} className="hub-check-item">
@@ -185,7 +185,7 @@ export default function SolutionsPage() {
                   <span>WHY ENTERPRISES CHOOSE ASTRION</span>
                 </div>
                 <h3 className="hub-diff-title">
-                  Architected for deterministic enterprise production.
+                  Enterprise power without the enterprise headaches.
                 </h3>
               </div>
 
@@ -205,13 +205,13 @@ export default function SolutionsPage() {
           <ScrollReveal yOffset={24} delay={0.15}>
             <div className="hub-bottom-cta">
               <div className="hub-cta-text">
-                <span className="mono-label">ENGAGE WITH ASTRION ARCHITECTS</span>
-                <h3>Need a tailored architectural assessment?</h3>
-                <p>Schedule a confidential briefing with our enterprise systems specialists to evaluate your technology roadmap.</p>
+                <span className="mono-label">READY TO SIMPLIFY OPERATIONS?</span>
+                <h3>Ready to see what Astrion can do for your business?</h3>
+                <p>Schedule a live 15-minute walkthrough to see our software modules in action.</p>
               </div>
               <div className="hub-cta-btn-wrap">
                 <Button to="/contact" variant="primary" size="lg" icon="arrow">
-                  Schedule Strategic Briefing
+                  Request a Demo
                 </Button>
               </div>
             </div>

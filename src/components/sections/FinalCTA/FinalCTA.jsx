@@ -1,5 +1,6 @@
 import React from 'react';
-import { ShieldCheck, Sparkles, Lock } from 'lucide-react';
+import { Link } from 'react-router-dom';
+import { ArrowRight, ShieldCheck, Sparkles, Lock } from 'lucide-react';
 import Button from '../../common/Button/Button';
 import { ScrollReveal } from '../../common/Motion/ScrollReveal';
 import './FinalCTA.css';
@@ -15,22 +16,17 @@ export default function FinalCTA() {
           <div className="cta-status-pill">
             <span className="cta-status-indicator"></span>
             <span className="mono-tag cta-status-text">
-              ARCHITECT SESSIONS ACTIVE // ENTERPRISE ROADMAP CONSULTATIONS
+              DISCOVER XENEDION ERP // LIVE DEMOS AVAILABLE
             </span>
           </div>
 
           <h2 id="cta-heading" className="cta-headline">
-            What could your enterprise{' '}
-            <span className="cta-gradient-word">become next?</span>
+            Ready to Simplify{' '}
+            <span className="cta-gradient-word">How Your Business Operates?</span>
           </h2>
 
-          <p className="cta-subheading">
-            Let’s engineer it together.
-          </p>
-
-          <p className="cta-desc">
-            Connect directly with Astrion enterprise technology architects to explore modernizing
-            your core operations, deploying intelligent automation, or evaluating flagship ERP platform XENedion.
+          <p className="cta-subheading-lead">
+            See how XENedion can save your team hours every week and give you total clarity over your business.
           </p>
 
           <div className="cta-action-wrap">
@@ -41,33 +37,33 @@ export default function FinalCTA() {
               icon="arrow"
               className="cta-primary-btn"
             >
-              Schedule Strategic Briefing
+              Book Your Live Demo
             </Button>
             <Button
-              to="/solutions"
+              to="/contact"
               variant="secondary"
               size="lg"
-              icon="external"
+              icon="arrow"
             >
-              Explore Solutions Portfolio
+              Talk to Our Product Team
             </Button>
           </div>
 
-          {/* Enterprise Governance Trust Badges */}
+          {/* Friendly Trust & Demo Guarantees */}
           <div className="cta-governance-strip">
             <div className="gov-item">
-              <Lock size={14} className="gov-icon" />
-              <span className="mono-tag">CONFIDENTIAL ENTERPRISE ENGAGEMENTS</span>
+              <span style={{ fontSize: '14px', lineHeight: 1 }}>🔒</span>
+              <span className="mono-tag">No Commitments Required</span>
             </div>
-            <div className="gov-divider mono-tag">//</div>
+            <div className="gov-divider mono-tag" style={{ color: 'rgba(15, 23, 42, 0.3)' }}>•</div>
             <div className="gov-item">
-              <ShieldCheck size={14} className="gov-icon" />
-              <span className="mono-tag">NDAS &amp; TAILORED ARCHITECTURAL SESSIONS</span>
+              <span style={{ fontSize: '14px', lineHeight: 1 }}>⚡</span>
+              <span className="mono-tag">Tailored Product Demo</span>
             </div>
-            <div className="gov-divider mono-tag">//</div>
+            <div className="gov-divider mono-tag" style={{ color: 'rgba(15, 23, 42, 0.3)' }}>•</div>
             <div className="gov-item">
-              <Sparkles size={14} className="gov-icon" />
-              <span className="mono-tag">DIRECT ACCESS TO PRINCIPAL ARCHITECTS</span>
+              <span style={{ fontSize: '14px', lineHeight: 1 }}>💬</span>
+              <span className="mono-tag">Direct Access to Product Specialists</span>
             </div>
           </div>
         </ScrollReveal>

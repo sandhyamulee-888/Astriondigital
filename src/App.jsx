@@ -71,11 +71,11 @@ function ScrollToTop() {
     window.scrollTo(0, 0);
 
     if (pathname === '/') {
-      document.title = 'Astrion Digital — Engineering Intelligence into Every Enterprise';
+      document.title = 'Astrion Digital — Run Your Entire Business. One Platform, One System.';
     } else if (pathname.startsWith('/about')) {
-      document.title = 'About Astrion Digital — Enterprise Software Products';
+      document.title = 'About Astrion Digital — Modern ERP Software for Growing Businesses';
     } else if (pathname.startsWith('/xenedion')) {
-      document.title = 'XENedion ERP — One Platform. Your Entire Business.';
+      document.title = 'XENedion ERP — Flagship Enterprise Resource Planning Platform | Astrion Digital';
     } else if (pathname.startsWith('/solutions')) {
       document.title = 'Solutions & Capabilities — Astrion Digital';
     } else if (pathname.startsWith('/industries')) {
@@ -83,9 +83,9 @@ function ScrollToTop() {
     } else if (pathname.startsWith('/insights')) {
       document.title = 'Insights & Publications — Astrion Digital';
     } else if (pathname.startsWith('/contact')) {
-      document.title = 'Contact & Strategic Briefings — Astrion Digital';
+      document.title = 'Book a Free Demo — Astrion Digital';
     } else {
-      document.title = 'Astrion Digital — Engineering Intelligence into Every Enterprise';
+      document.title = 'Astrion Digital — Run Your Entire Business. One Platform, One System.';
     }
   }, [pathname]);
 
@@ -106,25 +106,35 @@ export default function App() {
 
           {/* 2. About Routes */}
           <Route path="/about" element={<AboutPage />} />
+          <Route path="/about/about-astrion" element={<AboutPage />} />
           <Route path="/about/vision-mission" element={<VisionMissionPage />} />
           <Route path="/about/approach" element={<ApproachPage />} />
+          <Route path="/about/our-approach" element={<ApproachPage />} />
           <Route path="/about/leadership" element={<LeadershipPage />} />
           <Route path="/about/partners" element={<PartnersPage />} />
 
           {/* 3. Solutions Routes */}
           <Route path="/solutions" element={<SolutionsPage />} />
           <Route path="/solutions/digital-transformation" element={<DigitalTransformationPage />} />
+          <Route path="/solutions/enterprise-digital-transformation" element={<DigitalTransformationPage />} />
           <Route path="/solutions/ai-intelligent-automation" element={<AIIntelligentAutomationPage />} />
+          <Route path="/solutions/ai-automation" element={<AIIntelligentAutomationPage />} />
           <Route path="/solutions/software-development" element={<SoftwareDevelopmentPage />} />
+          <Route path="/solutions/enterprise-software-development" element={<SoftwareDevelopmentPage />} />
           <Route path="/solutions/erp" element={<ERPSolutionsPage />} />
+          <Route path="/solutions/erp-solutions" element={<ERPSolutionsPage />} />
           <Route path="/solutions/cybersecurity" element={<CybersecurityPage />} />
           <Route path="/solutions/cloud-infrastructure" element={<CloudInfrastructurePage />} />
           <Route path="/solutions/data-business-intelligence" element={<DataBIPage />} />
+          <Route path="/solutions/business-intelligence" element={<DataBIPage />} />
           <Route path="/solutions/integration-api" element={<IntegrationAPIPage />} />
+          <Route path="/solutions/integration-api-solutions" element={<IntegrationAPIPage />} />
           <Route path="/solutions/:id" element={<SolutionDetailPage />} />
 
           {/* 4. XENedion ERP Platform Routes */}
           <Route path="/xenedion" element={<XenedionPage />} />
+          <Route path="/xenedion/overview" element={<XenedionPage />} />
+          <Route path="/xenedion-erp" element={<XenedionPage />} />
           <Route path="/xenedion/modules" element={<XenedionModulesPage />} />
           <Route path="/xenedion/industries" element={<XenedionIndustriesPage />} />
           <Route path="/xenedion/ai-automation" element={<XenedionAIPage />} />
@@ -141,6 +151,7 @@ export default function App() {
           <Route path="/industries/professional-services" element={<ProfessionalServicesPage />} />
           <Route path="/industries/automotive" element={<AutomotivePage />} />
           <Route path="/industries/other" element={<OtherIndustriesPage />} />
+          <Route path="/industries/other-industries" element={<OtherIndustriesPage />} />
           <Route path="/industries/:id" element={<IndustryDetailPage />} />
 
           {/* 6. Insights Routes */}

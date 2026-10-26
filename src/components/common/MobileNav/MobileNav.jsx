@@ -61,6 +61,19 @@ export default function MobileNav({ isOpen, onClose }) {
         <div className="mobile-accordion-list">
           {NAV_ITEMS.map((item) => {
             const isExpanded = expandedSection === item.id;
+            if (!item.megaMenu) {
+              return (
+                <div key={item.id} className="mobile-accordion-item">
+                  <Link
+                    to={item.href}
+                    className="mobile-accordion-trigger"
+                    onClick={onClose}
+                  >
+                    <span className="mobile-trigger-text">{item.label}</span>
+                  </Link>
+                </div>
+              );
+            }
             return (
               <div key={item.id} className="mobile-accordion-item">
                 <button
@@ -124,12 +137,12 @@ export default function MobileNav({ isOpen, onClose }) {
             className="mobile-cta-btn"
             onClick={onClose}
           >
-            Let's Talk
+            Request a Demo
           </Button>
 
           <div className="mobile-footer-info">
             <span className="mono-tag">ASTRION DIGITAL</span>
-            <p className="mobile-tagline">The Company Behind Intelligent Enterprise Software.</p>
+            <p className="mobile-tagline">One Platform. Your Entire Business.</p>
           </div>
         </div>
       </div>
