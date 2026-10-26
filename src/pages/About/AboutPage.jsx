@@ -1,17 +1,17 @@
 import React, { useEffect } from 'react';
 import { Link } from 'react-router-dom';
-import { 
-  ShieldCheck, 
-  Compass, 
-  Target, 
-  Users, 
-  Handshake, 
-  Layers, 
-  CheckCircle2, 
-  ArrowUpRight, 
-  Zap, 
-  Lock, 
-  Globe, 
+import {
+  ShieldCheck,
+  Compass,
+  Target,
+  Users,
+  Handshake,
+  Layers,
+  CheckCircle2,
+  ArrowUpRight,
+  Zap,
+  Lock,
+  Globe,
   Building2,
   Cpu,
   Layers2
@@ -81,7 +81,7 @@ export default function AboutPage() {
               <h2 className="narrative-heading">
                 We build software that connects your entire business — so your teams can move faster and work smarter.
               </h2>
-              
+
               <div className="corporate-statement-block">
                 <p className="statement-lead-para">
                   {ABOUT_ASTRION.lead}
@@ -103,7 +103,7 @@ export default function AboutPage() {
               </div>
             </div>
 
-            {/* Right Column: 4 Key Proof Metrics */}
+            {/* Right Column:  Key Proof Metrics */}
             <div className="about-stats-col">
               <div className="stats-matrix-grid">
                 {ABOUT_ASTRION.stats.map((stat, idx) => (
