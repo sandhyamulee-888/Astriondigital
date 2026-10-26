@@ -47,8 +47,7 @@ export default function AboutSection() {
               <span>WHY ASTRION DIGITAL</span>
             </div>
             <h2 id="why-astrion-heading" className="why-speed-headline">
-              Built for Speed.{' '}
-              <span className="why-speed-gradient">Designed for Total Clarity.</span>
+              Built for Speed Designed for Total Clarity
             </h2>
             <p className="why-speed-subhead">
               Most enterprise software is too slow, too complicated, and takes years to install. We built our platform to give you instant visibility without the headache.

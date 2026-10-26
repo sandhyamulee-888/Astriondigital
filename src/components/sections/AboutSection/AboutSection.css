@@ -54,9 +54,11 @@
 }
 
 .why-speed-gradient {
-  background: linear-gradient(135deg, var(--brand-blue, #1C75BD) 0%, var(--brand-orange, #EB643E) 100%);
-  -webkit-background-clip: text;
-  -webkit-text-fill-color: transparent;
+  color: #0F172A;
+  background: none;
+  -webkit-background-clip: initial;
+  -webkit-text-fill-color: #0F172A;
+  background-clip: initial;
 }
 
 .why-speed-subhead {

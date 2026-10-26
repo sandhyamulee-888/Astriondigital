@@ -7,20 +7,20 @@ export default function ProblemSection() {
   const problems = [
     {
       num: '01',
-      title: 'Data Trapped in Silos',
-      text: 'When finance, sales, and warehouse teams use separate tools, nobody sees the real picture or true inventory.',
+      title: 'Scattered Information',
+      text: 'When sales, finance, and warehouse teams use different apps, nobody has the complete picture or knows exact stock levels.',
       icon: <Database size={24} />
     },
     {
       num: '02',
-      title: 'Costly Manual Busywork',
-      text: 'Copy-pasting data across spreadsheets wastes hundreds of hours every month and creates expensive billing mistakes.',
+      title: 'Hours Lost to Manual Work',
+      text: 'Copying and updating data across multiple spreadsheets wastes valuable hours every week and leads to costly errors.',
       icon: <Clock size={24} />
     },
     {
       num: '03',
-      title: 'Flying Blind on Decisions',
-      text: "Without unified real-time data, leadership can only react to last month's numbers instead of driving proactive growth.",
+      title: 'Hard to Make Fast Decisions',
+      text: 'Without live numbers in one place, managers must rely on outdated reports instead of making quick, confident choices.',
       icon: <EyeOff size={24} />
     }
   ];
@@ -35,10 +35,10 @@ export default function ProblemSection() {
               <span>THE OPERATIONAL CHALLENGE</span>
             </div>
             <h2 id="problem-heading" className="problem-title">
-              Disconnected Tools and Scattered Spreadsheets Are Holding Businesses Back.
+              Using Too Many Apps and Spreadsheets Slows Your Business Down.
             </h2>
             <p className="problem-subtitle" style={{ maxWidth: '720px', margin: '14px auto 0', color: 'var(--text-secondary, #94a3b8)', fontSize: '1.05rem', lineHeight: '1.6' }}>
-              When growing companies rely on fragmented software, operations slow down and communication breaks. Astrion Digital solves this by developing unified, intelligent software products.
+              When teams use different tools for daily work, tasks take longer and mistakes happen. Astrion Digital brings all your operations together into one simple, smart platform.
             </p>
           </div>
         </ScrollReveal>

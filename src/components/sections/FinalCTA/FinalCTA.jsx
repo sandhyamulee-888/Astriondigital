@@ -9,7 +9,6 @@ export default function FinalCTA() {
   return (
     <section className="section final-cta-section" aria-labelledby="cta-heading">
       <div className="cta-ambient-glow" aria-hidden="true"></div>
-      <div className="cta-ambient-mesh" aria-hidden="true"></div>
 
       <div className="container final-cta-container">
         <ScrollReveal yOffset={24}>

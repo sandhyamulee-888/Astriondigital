@@ -17,7 +17,6 @@ export default function Hero() {
       {/* Dynamic Ambient Background Glows */}
       <div className="hero-ambient-glow-left" aria-hidden="true" />
       <div className="hero-ambient-glow-right" aria-hidden="true" />
-      <div className="hero-grid-pattern" aria-hidden="true" />
 
       <div className="container hero-container">
         {/* Left Column: Modern Enterprise Presentation */}

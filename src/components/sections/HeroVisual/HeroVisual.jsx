@@ -157,23 +157,6 @@ export default function HeroVisual() {
           );
         })}
       </svg>
-
-      {/* Simple Trust Metrics Strip */}
-      <div className="visual-telemetry-badge" style={{ justifyContent: 'center' }}>
-        <div className="telemetry-details" style={{ display: 'flex', alignItems: 'center', justifyContent: 'center', gap: '14px', flexWrap: 'wrap', width: '100%' }}>
-          <span className="mono-tag" style={{ color: '#10b981', fontWeight: 600, letterSpacing: '0.04em' }}>
-            ✓ 100% Real-Time Sync
-          </span>
-          <span style={{ color: 'rgba(255, 255, 255, 0.25)' }}>|</span>
-          <span className="mono-tag" style={{ color: '#00d2ff', fontWeight: 600, letterSpacing: '0.04em' }}>
-            ✓ Cloud-Based &amp; Secure
-          </span>
-          <span style={{ color: 'rgba(255, 255, 255, 0.25)' }}>|</span>
-          <span className="mono-tag" style={{ color: '#ff6b35', fontWeight: 600, letterSpacing: '0.04em' }}>
-            ✓ Built to Scale
-          </span>
-        </div>
-      </div>
     </div>
   );
 }

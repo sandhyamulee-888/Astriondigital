@@ -53,7 +53,7 @@ export default function PlaceholderPage({ title }) {
         </div>
 
         {/* =========================================================================
-            1. SPECIFIC SOLUTION ROUTE
+             SPECIFIC SOLUTION ROUTE
            ========================================================================= */}
         {matchedSolution ? (
           <div className="placeholder-content-card">
@@ -94,7 +94,7 @@ export default function PlaceholderPage({ title }) {
           </div>
         ) : matchedIndustry ? (
           /* =========================================================================
-              2. SPECIFIC INDUSTRY ROUTE
+               SPECIFIC INDUSTRY ROUTE
              ========================================================================= */
           <div className="placeholder-content-card">
             <div className="placeholder-badge mono-label">
@@ -138,7 +138,7 @@ export default function PlaceholderPage({ title }) {
           </div>
         ) : rootSection === 'about' && subSlug === 'vision-mission' ? (
           /* =========================================================================
-              3. ABOUT: VISION & MISSION
+               ABOUT: VISION & MISSION
              ========================================================================= */
           <div className="placeholder-content-card">
             <div className="placeholder-badge mono-label">
@@ -183,7 +183,7 @@ export default function PlaceholderPage({ title }) {
           </div>
         ) : rootSection === 'about' && subSlug === 'approach' ? (
           /* =========================================================================
-              4. ABOUT: OUR APPROACH
+               ABOUT: OUR APPROACH
              ========================================================================= */
           <div className="placeholder-content-card">
             <div className="placeholder-badge mono-label">
@@ -227,7 +227,7 @@ export default function PlaceholderPage({ title }) {
           </div>
         ) : rootSection === 'about' && subSlug === 'leadership' ? (
           /* =========================================================================
-              5. ABOUT: LEADERSHIP
+               ABOUT: LEADERSHIP
              ========================================================================= */
           <div className="placeholder-content-card">
             <div className="placeholder-badge mono-label">
@@ -263,7 +263,7 @@ export default function PlaceholderPage({ title }) {
           </div>
         ) : rootSection === 'about' && subSlug === 'partners' ? (
           /* =========================================================================
-              6. ABOUT: PARTNERS
+             ABOUT: PARTNERS
              ========================================================================= */
           <div className="placeholder-content-card">
             <div className="placeholder-badge mono-label">
@@ -305,7 +305,7 @@ export default function PlaceholderPage({ title }) {
           </div>
         ) : (
           /* =========================================================================
-              7. GENERAL SITEMAP HUB / SECTION PAGE
+              GENERAL SITEMAP HUB / SECTION PAGE
              ========================================================================= */
           <div className="placeholder-content-card">
             <div className="placeholder-badge mono-label">
