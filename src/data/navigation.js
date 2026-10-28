@@ -9,11 +9,11 @@ export const NAV_ITEMS = [
     label: 'About',
     href: '/about',
     megaMenu: {
-      tag: 'ASTRION DIGITAL // THE COMPANY',
-      headline: 'One Platform to Connect, Automate & Run Your Entire Business.',
+      tag: 'ASTRION DIGITAL // CORPORATE ENTITY',
+      headline: 'The Company Behind Intelligent Enterprise Software.',
       featured: {
-        title: 'About Astrion',
-        description: 'Learn how Astrion Digital builds resilient platforms that eliminate data bottlenecks.',
+        title: 'About Astrion Digital',
+        description: 'An enterprise software company developing technology products that help businesses operate more efficiently, intelligently, and effectively.',
         href: '/about'
       },
       columns: [
@@ -21,8 +21,8 @@ export const NAV_ITEMS = [
           heading: 'Company & Vision',
           items: [
             { title: 'About Astrion', href: '/about', desc: 'The enterprise software company behind intelligent business technology.' },
-            { title: 'Vision & Mission', href: '/about/vision-mission', desc: 'Developing intelligent software products teams love using.' },
-            { title: 'Our Approach', href: '/about/approach', desc: 'Understand bottlenecks, deploy unified modules, and evolve continuously.' }
+            { title: 'Vision & Mission', href: '/about/vision-mission', desc: 'The corporate foundation and long-term vision powering modern software.' },
+            { title: 'Our Approach', href: '/about/approach', desc: 'Product ownership, continuous innovation, and enduring governance.' }
           ]
         },
         {

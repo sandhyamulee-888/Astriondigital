@@ -1,28 +1,28 @@
 export const HERO_CONTENT = {
   label: 'ASTRION DIGITAL',
-  eyebrow: 'NEXT-GEN ERP PLATFORM',
-  headline: 'The All-in-One Software to Run Your Entire Business.',
-  subhead: 'Finance · Inventory · Sales · Operations — All in One Place',
+  eyebrow: 'CORPORATE BRAND',
+  headline: 'The Company Behind Intelligent Enterprise Software.',
+  subhead: 'Enterprise Software Products | Innovation | Business Technology',
   lead:
-    'Astrion Digital builds modern software that unifies your finance, inventory, sales, and operations in real time. Powered by XENedion, our flagship enterprise ERP platform.',
+    'Astrion Digital Private Limited is an enterprise software company focused on developing technology products that help businesses operate more efficiently, intelligently, and effectively.',
   flagship:
-    'XENedion connects core business functions, eliminates spreadsheet chaos, and gives your team one clear, real-time view of everything.',
+    'Our flagship product, XENedion, is an integrated enterprise resource planning platform designed to connect core business functions, streamline operations, and provide better visibility across the organization.',
   foundation:
-    'Replace messy, disconnected tools with one easy-to-use system — and get up and running in weeks, not months.',
+    'Astrion Digital provides the corporate foundation for XENedion\'s product development, innovation, growth, and long-term vision.',
   ctaPrimary: {
     label: 'Explore XENedion ERP',
     href: '/xenedion'
   },
   ctaSecondary: {
-    label: 'Book a Free Demo',
+    label: 'Book a Live Demo',
     href: '/contact'
   }
 };
 
 export const CORPORATE_BRAND_SECTION = {
-  label: 'SIMPLIFY YOUR OPERATIONS',
-  title: 'One Software Platform to Run Your Entire Business.',
-  description: 'Finance · Inventory · Sales · Operations · HR — unified in real time'
+  label: 'CORPORATE BRAND',
+  title: 'The Company Behind Intelligent Enterprise Software.',
+  description: 'Enterprise Software Products | Innovation | Business Technology'
 };
 
 export const BRAND_ARCHITECTURE = {
@@ -101,8 +101,8 @@ export const ABOUT_ASTRION = {
   label: 'ABOUT ASTRION DIGITAL',
   corporateBrand: 'ASTRION DIGITAL',
   legalName: 'Astrion Digital Private Limited',
-  headline: 'One Platform to Connect, Automate & Run Your Entire Business.',
-  subhead: 'Enterprise Software Products · Innovation · Business Technology',
+  headline: 'The Company Behind Intelligent Enterprise Software.',
+  subhead: 'Enterprise Software Products | Innovation | Business Technology',
   lead:
     'Astrion Digital Private Limited is an enterprise software company focused on developing technology products that help businesses operate more efficiently, intelligently, and effectively.',
   flagshipStatement:

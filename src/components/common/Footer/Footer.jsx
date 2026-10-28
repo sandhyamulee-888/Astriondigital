@@ -18,7 +18,7 @@ export default function Footer() {
               />
             </Link>
             <p className="footer-company-blurb">
-              One Platform. Your Entire Business. Astrion Digital builds modern software that unifies finance, inventory, sales, and operations in real time. Home of XENedion ERP.
+              The Company Behind Intelligent Enterprise Software. Astrion Digital provides the corporate foundation and product engineering for XENedion ERP.
             </p>
             <div className="mono-tag" style={{ color: 'var(--brand-orange, #ff6b35)', fontSize: '0.75rem', marginTop: '6px' }}>
               Enterprise Software Products &bull; Innovation &bull; Business Technology

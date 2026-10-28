@@ -1,14 +1,14 @@
 export const XENEDION_DATA = {
-  tag: 'ENTERPRISE ERP PLATFORM',
+  tag: 'FLAGSHIP ENTERPRISE SOFTWARE PRODUCT',
   productName: 'XENedion',
   tagline: 'One Platform. Your Entire Business.',
-  headline: 'XENedion ERP — Built for Growing Businesses.',
+  headline: 'XENedion ERP — One Platform. Your Entire Business.',
   heroHeadline: 'One Platform. Your Entire Business.',
-  heroSubheadline: 'XENedion is a modern, all-in-one ERP platform that connects your finance, inventory, sales, purchasing, HR, and operations in real time — so every team always works from the same live data.',
-  role: 'All-in-One Enterprise ERP Platform',
-  copy: 'XENedion brings your sales, inventory, finance, and operations together in real time — eliminating messy spreadsheets, data mismatches, and costly manual errors.',
-  corporateFoundation: 'XENedion is built and maintained by Astrion Digital — a dedicated enterprise software company committed to continuous updates, cloud reliability, and long-term customer success.',
-  ctaText: 'Book a Free Demo',
+  heroSubheadline: 'Our flagship product, XENedion, is an integrated enterprise resource planning platform designed to connect core business functions, streamline operations, and provide better visibility across the organization.',
+  role: 'Flagship Enterprise Software Product',
+  copy: 'An integrated enterprise resource planning platform designed to connect core business functions, streamline operations, and provide better visibility across the organization.',
+  corporateFoundation: 'Astrion Digital provides the corporate foundation for XENedion\'s product development, innovation, growth, and long-term vision.',
+  ctaText: 'Book a Live Demo',
   ctaHref: '/contact',
   coreMetrics: [
     {

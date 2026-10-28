@@ -44,11 +44,11 @@ export default function AboutPage() {
           <div className="inner-hero-content">
             <div className="mono-label inner-hero-badge">
               <span className="badge-dot"></span>
-              ENTERPRISE SOFTWARE FOR GROWING BUSINESSES
+              CORPORATE BRAND // ENTERPRISE SOFTWARE PRODUCTS
             </div>
 
             <h1 className="inner-hero-title">
-              One Platform to Connect, Automate & Run Your Entire Business.
+              The Company Behind Intelligent Enterprise Software.
             </h1>
 
             <div className="about-subhead-badge mono-tag">
@@ -56,7 +56,7 @@ export default function AboutPage() {
             </div>
 
             <p className="inner-hero-lead">
-              Astrion Digital builds modern software that brings your finance, inventory, sales, and operations together in real time — helping growing businesses replace messy spreadsheets and disconnected tools with one easy-to-use system.
+              Astrion Digital Private Limited is an enterprise software company focused on developing technology products that help businesses operate more efficiently, intelligently, and effectively — powered by our flagship platform, XENedion.
             </p>
 
             <div className="inner-hero-actions">
@@ -77,9 +77,9 @@ export default function AboutPage() {
           <div className="about-split-grid">
             {/* Left Column: Core Positioning Statement */}
             <div className="about-narrative-col">
-              <div className="mono-label section-tag">WHO WE ARE &amp; WHAT WE BUILD</div>
+              <div className="mono-label section-tag">CORPORATE POSITIONING STATEMENT</div>
               <h2 className="narrative-heading">
-                We build software that connects your entire business — so your teams can move faster and work smarter.
+                Astrion Digital provides the corporate foundation for intelligent enterprise software.
               </h2>
 
               <div className="corporate-statement-block">
@@ -97,9 +97,9 @@ export default function AboutPage() {
 
               <div className="about-callout-quote">
                 <p className="quote-text">
-                  “We establish Astrion as the company behind intelligent software products—giving growing businesses one dependable platform to unite their entire enterprise.”
+                  “It establishes Astrion as the company behind the product, without suggesting that it independently offers consulting, cybersecurity, web development, or other unrelated services.”
                 </p>
-                <span className="quote-author mono-tag">— Astrion Digital Corporate Leadership</span>
+                <span className="quote-author mono-tag">— Strategic Corporate Brand Positioning</span>
               </div>
             </div>
 
@@ -239,36 +239,41 @@ export default function AboutPage() {
           </div>
 
           {/* Why This Positioning Works Card Block */}
-          <div style={{ marginTop: '48px', background: 'rgba(255, 255, 255, 0.03)', border: '1px solid rgba(255, 255, 255, 0.08)', borderRadius: '12px', padding: '32px' }}>
-            <div className="mono-label" style={{ color: '#ff6b35', marginBottom: '8px' }}>
-              WHAT THIS MEANS FOR YOU
+          <div className="why-positioning-block" style={{ marginTop: '48px' }}>
+            <div className="why-header">
+              <div className="mono-label" style={{ color: 'var(--brand-orange)', marginBottom: '8px' }}>
+                STRATEGIC BRAND RATIONALE
+              </div>
+              <h3>
+                Why This Corporate Positioning Works
+              </h3>
             </div>
-            <h3 style={{ fontSize: '1.4rem', fontWeight: 600, color: '#fff', marginBottom: '16px' }}>
-              3 Things You Can Expect From Astrion Digital
-            </h3>
-            <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fit, minmax(280px, 1fr))', gap: '24px' }}>
-              <div style={{ background: 'rgba(0, 0, 0, 0.25)', padding: '20px', borderRadius: '8px', border: '1px solid rgba(255, 255, 255, 0.05)' }}>
-                <div style={{ color: '#00d2ff', fontWeight: 600, fontSize: '0.95rem', marginBottom: '8px' }}>
-                  01 // A Focused Software Product
+            <div className="why-cards-grid">
+              <div className="why-card">
+                <div className="why-num" style={{ color: 'var(--brand-blue)' }}>
+                  01 // Software Product Company Focus
                 </div>
-                <p style={{ color: '#94a3b8', fontSize: '0.9rem', lineHeight: '1.6', margin: 0 }}>
-                  We are not a general IT agency or a consulting firm. We build one powerful product — XENedion — and make it the best ERP for growing businesses.
+                <h4 className="why-title">Clean Product Focus</h4>
+                <p className="why-desc">
+                  It establishes Astrion as the company behind the product, without suggesting that it independently offers consulting, cybersecurity, web development, or other unrelated services.
                 </p>
               </div>
-              <div style={{ background: 'rgba(0, 0, 0, 0.25)', padding: '20px', borderRadius: '8px', border: '1px solid rgba(255, 255, 255, 0.05)' }}>
-                <div style={{ color: '#ff6b35', fontWeight: 600, fontSize: '0.95rem', marginBottom: '8px' }}>
-                  02 // Always Improving, Always Available
+              <div className="why-card">
+                <div className="why-num" style={{ color: 'var(--brand-orange)' }}>
+                  02 // Scalable Multi-Product Future
                 </div>
-                <p style={{ color: '#94a3b8', fontSize: '0.9rem', lineHeight: '1.6', margin: 0 }}>
-                  It allows us to introduce additional software products under Astrion in the future without having to change the company’s core identity or market messaging.
+                <h4 className="why-title">Multi-Product Umbrella</h4>
+                <p className="why-desc">
+                  It also allows you to introduce additional software products under Astrion in the future without having to change the company’s identity or market positioning.
                 </p>
               </div>
-              <div style={{ background: 'rgba(0, 0, 0, 0.25)', padding: '20px', borderRadius: '8px', border: '1px solid rgba(255, 255, 255, 0.05)' }}>
-                <div style={{ color: '#10b981', fontWeight: 600, fontSize: '0.95rem', marginBottom: '8px' }}>
-                  03 // A Long-Term Partner, Not a Vendor
+              <div className="why-card">
+                <div className="why-num" style={{ color: '#10b981' }}>
+                  03 // Dedicated Corporate Foundation
                 </div>
-                <p style={{ color: '#94a3b8', fontSize: '0.9rem', lineHeight: '1.6', margin: 0 }}>
-                  Astrion owns, builds, and supports XENedion end-to-end. That means one team responsible for your success — from day one implementation to ongoing growth.
+                <h4 className="why-title">Enduring Corporate Backing</h4>
+                <p className="why-desc">
+                  Astrion Digital directly owns and develops XENedion, providing the corporate foundation, cloud infrastructure, and sustained vision for long-term customer success.
                 </p>
               </div>
             </div>

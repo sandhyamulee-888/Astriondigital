@@ -40,7 +40,7 @@ export default function Hero() {
           </h1>
 
           <p className="hero-subheadline-lead">
-            Astrion Digital develops purposeful technology products that help businesses operate more efficiently, intelligently, and effectively — powered by our flagship platform, XENedion ERP.
+            Astrion Digital Private Limited is an enterprise software company focused on developing technology products that help businesses operate more efficiently, intelligently, and effectively — powered by our flagship platform, XENedion.
           </p>
 
           <div className="hero-cta-group">
@@ -66,7 +66,7 @@ export default function Hero() {
             {[
               { label: 'Enterprise Software Products', icon: <Layers size={16} /> },
               { label: 'XENedion Flagship ERP', icon: <Activity size={16} /> },
-              { label: 'Innovation & Business Tech', icon: <ShieldCheck size={16} /> }
+              { label: 'Innovation & Business Technology', icon: <ShieldCheck size={16} /> }
             ].map((item, idx) => (
               <div key={idx} className="proof-bar-item">
                 <span className="proof-bar-icon">{item.icon}</span>

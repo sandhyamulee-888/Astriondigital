@@ -71,21 +71,21 @@ function ScrollToTop() {
     window.scrollTo(0, 0);
 
     if (pathname === '/') {
-      document.title = 'Astrion Digital — Run Your Entire Business. One Platform, One System.';
+      document.title = 'Astrion Digital — The Company Behind Intelligent Enterprise Software';
     } else if (pathname.startsWith('/about')) {
-      document.title = 'About Astrion Digital — Modern ERP Software for Growing Businesses';
+      document.title = 'About Astrion Digital — Enterprise Software Products | Innovation | Business Technology';
     } else if (pathname.startsWith('/xenedion')) {
-      document.title = 'XENedion ERP — Flagship Enterprise Resource Planning Platform | Astrion Digital';
+      document.title = 'XENedion ERP — One Platform. Your Entire Business. | Astrion Digital';
     } else if (pathname.startsWith('/solutions')) {
-      document.title = 'Solutions & Capabilities — Astrion Digital';
+      document.title = 'Platform Capabilities & Architecture — Astrion Digital';
     } else if (pathname.startsWith('/industries')) {
-      document.title = 'Industries — Astrion Digital';
+      document.title = 'Industry Blueprints — Astrion Digital';
     } else if (pathname.startsWith('/insights')) {
       document.title = 'Insights & Publications — Astrion Digital';
     } else if (pathname.startsWith('/contact')) {
-      document.title = 'Book a Free Demo — Astrion Digital';
+      document.title = 'Book a Live Demo — Astrion Digital';
     } else {
-      document.title = 'Astrion Digital — Run Your Entire Business. One Platform, One System.';
+      document.title = 'Astrion Digital — The Company Behind Intelligent Enterprise Software';
     }
   }, [pathname]);
 
