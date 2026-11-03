@@ -1,26 +1,23 @@
-import React, { useEffect } from 'react';
-import { Link } from 'react-router-dom';
+import React, { useEffect, useState } from 'react';
+import { Link, useLocation } from 'react-router-dom';
 import { 
-  Database, 
-  Cpu, 
-  ShieldCheck, 
-  Layers, 
-  ArrowUpRight, 
   CheckCircle2, 
-  Sparkles, 
+  ArrowUpRight, 
   Users, 
   TrendingUp, 
   FileText, 
   ShoppingBag, 
   Briefcase, 
+  Layers, 
   Package, 
   DollarSign, 
   UserCheck, 
   Truck, 
   BarChart3, 
-  Network, 
-  Clock, 
-  Zap 
+  Cpu,
+  Database,
+  Zap,
+  ShieldCheck
 } from 'lucide-react';
 import { XENEDION_DATA } from '../../data/xenedion';
 import Button from '../../components/common/Button/Button';
@@ -28,74 +25,133 @@ import XenedionVisual from '../../components/sections/XenedionVisual/XenedionVis
 import ScrollReveal from '../../components/common/Motion/ScrollReveal';
 import './XenedionPage.css';
 
-export default function XenedionPage() {
+export default function XenedionPage({ isSolutionSection = false }) {
+  const location = useLocation();
+  const isSolutionsPath = isSolutionSection || location.pathname.startsWith('/solutions');
+  const [activeCategory, setActiveCategory] = useState('All Modules');
+
   useEffect(() => {
     window.scrollTo(0, 0);
   }, []);
 
+  const scrollToModules = (e) => {
+    if (e) e.preventDefault();
+    const elem = document.getElementById('modules-directory');
+    if (elem) {
+      const yOffset = -90;
+      const y = elem.getBoundingClientRect().top + window.pageYOffset + yOffset;
+      window.scrollTo({ top: y, behavior: 'smooth' });
+    }
+  };
+
+  const categories = [
+    'All Modules',
+    'Customer',
+    'Revenue',
+    'Fulfillment',
+    'Procurement',
+    'Supply Chain',
+    'Operations',
+    'Ledger',
+    'People',
+    'Intelligence'
+  ];
+
+  const getModuleIcon = (id) => {
+    switch (id) {
+      case 'crm': return <Users size={18} />;
+      case 'sales': return <TrendingUp size={18} />;
+      case 'orders': return <FileText size={18} />;
+      case 'purchasing': return <ShoppingBag size={18} />;
+      case 'vendor': return <Briefcase size={18} />;
+      case 'inventory': return <Layers size={18} />;
+      case 'warehouse': return <Package size={18} />;
+      case 'finance': return <DollarSign size={18} />;
+      case 'hr': return <UserCheck size={18} />;
+      case 'logistics': return <Truck size={18} />;
+      case 'analytics': return <BarChart3 size={18} />;
+      default: return <Cpu size={18} />;
+    }
+  };
+
+  const filteredModules = activeCategory === 'All Modules'
+    ? XENEDION_DATA.modules
+    : XENEDION_DATA.modules.filter(m => m.category.toLowerCase() === activeCategory.toLowerCase());
+
   const corePillars = [
     {
-      num: '01',
       title: 'One Shared Single Source of Truth',
-      desc: 'When an order is created, inventory is reserved immediately and accounting records update in real time. No nocturnal syncing. No data lag.'
+      desc: 'When an order is created, inventory is reserved immediately and accounting records update in real time. No nocturnal syncing. No data lag.',
+      icon: <Database size={20} />,
+      accent: 'var(--brand-blue, #1c75bd)',
+      bg: 'rgba(28, 117, 189, 0.08)'
     },
     {
-      num: '02',
       title: 'Built-In Everyday Automation',
-      desc: 'Automatic 3-way invoice matching, smart inventory reorder points, and automated customer notifications eliminate hours of tedious busywork.'
+      desc: 'Automatic 3-way invoice matching, smart inventory reorder points, and automated customer notifications eliminate hours of tedious busywork.',
+      icon: <Zap size={20} />,
+      accent: 'var(--brand-orange, #eb643e)',
+      bg: 'rgba(235, 100, 62, 0.08)'
     },
     {
-      num: '03',
       title: 'Enterprise Security & Permissions',
-      desc: 'Granular role-based access keeps sensitive company salaries, customer pricing, and financial ledgers strictly protected.'
+      desc: 'Granular role-based access keeps sensitive company salaries, customer pricing, and financial ledgers strictly protected.',
+      icon: <ShieldCheck size={20} />,
+      accent: '#10b981',
+      bg: 'rgba(16, 185, 129, 0.08)'
     },
     {
-      num: '04',
       title: 'Fast Deployment in Weeks',
-      desc: 'Ready-to-use industry templates and structured data migration allow your team to go live smoothly in weeks, not multi-year delays.'
+      desc: 'Ready-to-use industry templates and structured data migration allow your team to go live smoothly in weeks, not multi-year delays.',
+      icon: <TrendingUp size={20} />,
+      accent: '#8b5cf6',
+      bg: 'rgba(139, 92, 246, 0.08)'
     }
   ];
 
-  const subpages = [
+  const ecosystemCards = [
     { 
       title: 'All ERP Modules', 
-      href: '/xenedion/modules', 
-      desc: 'Finance, Inventory, Procurement, Sales, HR, Logistics, and Real-Time Business Intelligence.' 
+      href: '#modules-directory',
+      isAnchor: true,
+      desc: 'Finance, inventory, sales, purchasing, HR, and warehousing configured for enterprise control.' 
     },
     { 
       title: 'Industry Blueprints', 
-      href: '/xenedion/industries', 
+      href: '/industries', 
       desc: 'Pre-configured workflows tailored specifically for Manufacturing, Distribution, Retail, and Automotive.' 
     },
     { 
       title: 'Embedded AI & Automation', 
-      href: '/xenedion/ai-automation', 
+      href: '/solutions/ai-intelligent-automation', 
       desc: 'Smart forecasting to predict shortages, detect duplicate bills, and flag shipping delays.' 
     },
     { 
       title: 'Integrations & APIs', 
-      href: '/xenedion/integrations', 
+      href: '/solutions/integration-api', 
       desc: 'Pre-built connectors to sync bank feeds, eCommerce platforms, third-party logistics, and CRM tools.' 
     },
     { 
       title: 'Implementation Process', 
-      href: '/xenedion/implementation', 
+      href: '/about/approach', 
       desc: 'Smooth onboarding with dedicated data migration, step-by-step team training, and go-live assistance.' 
     },
     { 
       title: 'Partner Program', 
-      href: '/xenedion/partner-program', 
+      href: '/about/partners', 
       desc: 'Build and grow your consulting agency by implementing XENedion for your local enterprise clients.' 
     }
   ];
 
   return (
     <div className="inner-page xenedion-page">
-      {/* Top Hero Section with High-Definition ERP Platform Hero */}
+      {/* ========================================================
+          SECTION 1: HERO SECTION
+          ======================================================== */}
       <section className="inner-hero-section xenedion-erp-hero">
         <div className="xenedion-hero-bg-layer" aria-hidden="true">
           <img 
-            src="/images/xenedion-erp-platform-hero.webp" 
+            src="/images/solutions/xenedion-erp-product-3d.webp" 
             alt="XENedion Integrated ERP Platform" 
             className="xenedion-hero-bg-img" 
           />
@@ -105,6 +161,12 @@ export default function XenedionPage() {
           <div className="inner-breadcrumb mono-tag">
             <Link to="/">HOME</Link>
             <span className="breadcrumb-slash">/</span>
+            {isSolutionsPath && (
+              <>
+                <Link to="/solutions">SOLUTIONS</Link>
+                <span className="breadcrumb-slash">/</span>
+              </>
+            )}
             <span className="breadcrumb-current">XENEDION ERP</span>
           </div>
 
@@ -126,23 +188,6 @@ export default function XenedionPage() {
               XENedion is a modern, all-in-one ERP platform that connects your finance, inventory, sales, purchasing, HR, and operations in real time — so every team always works from the same live data. Say goodbye to spreadsheet chaos and disconnected tools.
             </p>
 
-            {/* Core Metrics Proof Bar */}
-            <div className="xenedion-hero-metrics-grid">
-              {XENEDION_DATA.coreMetrics.map((metric, mIdx) => (
-                <div key={mIdx} className="xenedion-hero-metric-card">
-                  <div className="xenedion-hero-metric-val mono-tag">
-                    {metric.value}
-                  </div>
-                  <div className="xenedion-hero-metric-label">
-                    {metric.label}
-                  </div>
-                  <div className="xenedion-hero-metric-desc">
-                    {metric.desc}
-                  </div>
-                </div>
-              ))}
-            </div>
-
             <div className="statement-foundation-callout xenedion-hero-callout">
               <CheckCircle2 size={18} className="callout-icon" />
               <span>Built and continuously maintained by Astrion Digital — a dedicated enterprise software company committed to cloud reliability, regular updates, and long-term customer success.</span>
@@ -152,7 +197,7 @@ export default function XenedionPage() {
               <Button to="/contact" variant="primary" size="lg" icon="arrow">
                 Request a Demo
               </Button>
-              <Button to="/xenedion/modules" variant="secondary" size="lg">
+              <Button onClick={scrollToModules} variant="secondary" size="lg">
                 Explore All Modules
               </Button>
             </div>
@@ -160,8 +205,115 @@ export default function XenedionPage() {
         </div>
       </section>
 
-      {/* Interactive Platform Visual */}
-      <section className="section xenedion-visual-section">
+      {/* ========================================================
+          SECTION 2: CORE ERP MODULES (5 Dark Cards)
+          ======================================================== */}
+      <section className="section section-alt">
+        <div className="container">
+          <div className="section-header-compact">
+            <div className="mono-label section-tag">CORE ERP MODULES</div>
+            <h2 className="section-title-compact">Everything You Need to Run Your Business</h2>
+            <p className="section-desc-compact">
+              Built to replace multiple fragmented subscriptions with one clean, unified platform.
+            </p>
+          </div>
+
+          <div className="core-modules-dark-grid">
+            {XENEDION_DATA.coreModules.map((mod) => (
+              <div key={mod.id} className="core-module-dark-card">
+                <h3>{mod.name}</h3>
+                <p>{mod.summary}</p>
+                <div style={{ marginTop: 'auto' }}>
+                  <span className="core-module-benefits-label mono-tag">
+                    KEY BENEFITS:
+                  </span>
+                  <div className="core-module-benefits-list">
+                    {mod.bullets.map((bullet, bIdx) => (
+                      <div key={bIdx} className="core-module-benefit-item">
+                        <CheckCircle2 size={15} className="core-module-benefit-icon" />
+                        <span>{bullet}</span>
+                      </div>
+                    ))}
+                  </div>
+                </div>
+              </div>
+            ))}
+          </div>
+
+          <div style={{ textAlign: 'center', marginTop: '40px' }}>
+            <Button onClick={scrollToModules} variant="secondary" size="md">
+              View Detailed Module Directory →
+            </Button>
+          </div>
+        </div>
+      </section>
+
+      {/* ========================================================
+          SECTION 3: COMPLETE MODULE DIRECTORY (11 Module Cards)
+          ======================================================== */}
+      <section className="section" id="modules-directory">
+        <div className="container">
+          <div className="section-header-compact">
+            <div className="mono-label section-tag">FULL COMPONENT BREAKDOWN</div>
+            <h2 className="section-title-compact">Explore All Operational Modules</h2>
+            <p className="section-desc-compact">
+              Filter by operational function to see how each tool connects to your workflow.
+            </p>
+          </div>
+
+          {/* Category Filter Pills */}
+          <div className="modules-filter-row">
+            {categories.map((cat) => (
+              <button
+                key={cat}
+                type="button"
+                className={`module-cat-btn ${activeCategory === cat ? 'active' : ''}`}
+                onClick={() => setActiveCategory(cat)}
+              >
+                {cat}
+              </button>
+            ))}
+          </div>
+
+          {/* 11 Module Cards Grid */}
+          <div className="modules-directory-grid">
+            {filteredModules.map((mod) => (
+              <div key={mod.id} className="dir-module-card">
+                <div className="dir-module-top">
+                  <div className="dir-module-icon-wrap">
+                    {getModuleIcon(mod.id)}
+                  </div>
+                  <span className="dir-module-cat-tag mono-tag">
+                    {mod.category}
+                  </span>
+                </div>
+
+                <h3 className="dir-module-title">{mod.name}</h3>
+                <p className="dir-module-desc">{mod.desc}</p>
+
+                <ul className="dir-module-bullets">
+                  {mod.bullets.map((bullet, bIdx) => (
+                    <li key={bIdx} className="dir-module-bullet-item">
+                      <span className="dir-module-bullet-icon" />
+                      <span>{bullet}</span>
+                    </li>
+                  ))}
+                </ul>
+
+                <div className="dir-module-footer mono-tag">
+                  <span>100% REAL-TIME SYNC</span>
+                  <span>SHARED LEDGER</span>
+                </div>
+              </div>
+            ))}
+          </div>
+        </div>
+      </section>
+
+      {/* ========================================================
+          SECTION 4: CONNECTED XENedion ECOSYSTEM (Interactive)
+          ======================================================== */}
+      <section className="section xenedion-visual-section section-alt">
         <div className="container">
           <div className="section-header-compact">
             <div className="mono-label section-tag">ALL OPERATIONS CONNECTED</div>
@@ -177,88 +329,50 @@ export default function XenedionPage() {
         </div>
       </section>
 
-      {/* 5 Core Modules Deep-Dive Cards */}
-      <section className="section section-alt">
-        <div className="container">
-          <div className="section-header-compact">
-            <div className="mono-label section-tag">CORE ERP MODULES</div>
-            <h2 className="section-title-compact">Everything You Need to Run Your Business</h2>
-            <p className="section-desc-compact">
-              Built to replace multiple fragmented subscriptions with one clean, unified platform.
-            </p>
-          </div>
-
-          <div style={{
-            display: 'grid',
-            gridTemplateColumns: 'repeat(auto-fit, minmax(320px, 1fr))',
-            gap: '24px',
-            marginTop: '32px'
-          }}>
-            {XENEDION_DATA.coreModules.map((mod) => (
-              <div key={mod.id} style={{
-                background: '#13151a',
-                border: '1px solid rgba(255, 255, 255, 0.08)',
-                borderRadius: '12px',
-                padding: '28px',
-                display: 'flex',
-                flexDirection: 'column'
-              }}>
-                <h3 style={{ fontSize: '1.25rem', color: '#fff', marginBottom: '10px' }}>{mod.name}</h3>
-                <p style={{ fontSize: '0.9rem', color: '#aaa', marginBottom: '20px', lineHeight: 1.5 }}>
-                  {mod.summary}
-                </p>
-                <div style={{ marginTop: 'auto' }}>
-                  <span className="mono-tag" style={{ color: '#ff6b35', fontSize: '0.75rem', display: 'block', marginBottom: '12px' }}>
-                    KEY BENEFITS:
-                  </span>
-                  <ul style={{ listStyle: 'none', padding: 0, margin: 0 }}>
-                    {mod.bullets.map((bullet, bIdx) => (
-                      <li key={bIdx} style={{
-                        display: 'flex',
-                        alignItems: 'flex-start',
-                        gap: '10px',
-                        fontSize: '0.85rem',
-                        color: '#ddd',
-                        marginBottom: '8px'
-                      }}>
-                        <CheckCircle2 size={15} style={{ color: '#ff6b35', flexShrink: 0, marginTop: '2px' }} />
-                        <span>{bullet}</span>
-                      </li>
-                    ))}
-                  </ul>
-                </div>
-              </div>
-            ))}
-          </div>
-
-          <div style={{ textAlign: 'center', marginTop: '40px' }}>
-            <Button to="/xenedion/modules" variant="secondary" size="md">
-              View Detailed Module Directory →
-            </Button>
-          </div>
-        </div>
-      </section>
-
-      {/* Platform Capabilities & Differentiators */}
-      <section className="section">
+      {/* ========================================================
+          SECTION 5: WHY GROWING COMPANIES CHOOSE XENedion
+          ======================================================== */}
+      <section className="section why-growing-section">
         <div className="container">
           <div className="section-header-compact">
             <div className="mono-label section-tag">THE XENEDION ADVANTAGE</div>
             <h2 className="section-title-compact">Why Growing Companies Choose XENedion</h2>
           </div>
 
-          <div className="xenedion-features-grid">
-            {corePillars.map((feat, fIdx) => (
-              <div key={fIdx} className="xenedion-feature-card">
-                <h3 className="xenedion-feat-title">{feat.title}</h3>
-                <p className="xenedion-feat-desc">{feat.desc}</p>
-              </div>
-            ))}
+          <div className="why-growing-side-by-side">
+            {/* Visual Image Column */}
+            <div className="why-growing-image-col">
+              <img 
+                src="/images/astrion-why-growing-companies.png" 
+                alt="Connected Enterprise Operations, Real-Time Data Synchronization, and Workflow Automation" 
+                className="why-growing-banner-img" 
+              />
+            </div>
+
+            {/* 4 Cards Grid Column (2x2) */}
+            <div className="why-growing-cards-grid">
+              {corePillars.map((feat, fIdx) => (
+                <div key={fIdx} className="xenedion-feature-card">
+                  <div className="feat-card-header">
+                    <div 
+                      className="feat-icon-box"
+                      style={{ color: feat.accent, backgroundColor: feat.bg }}
+                    >
+                      {feat.icon}
+                    </div>
+                  </div>
+                  <h3 className="xenedion-feat-title">{feat.title}</h3>
+                  <p className="xenedion-feat-desc">{feat.desc}</p>
+                </div>
+              ))}
+            </div>
           </div>
         </div>
       </section>
 
-      {/* Sub-Pages Matrix */}
+      {/* ========================================================
+          SECTION 6: XENedion ECOSYSTEM (6 Cards)
+          ======================================================== */}
       <section className="section section-alt">
         <div className="container">
           <div className="section-header-compact">
@@ -267,29 +381,51 @@ export default function XenedionPage() {
           </div>
 
           <div className="xenedion-subpages-grid">
-            {subpages.map((sub, idx) => (
-              <Link key={idx} to={sub.href} className="xenedion-sub-card">
-                <div className="xenedion-sub-top">
-                  <span className="mono-tag">EXPLORE</span>
-                  <ArrowUpRight size={16} className="xenedion-sub-arrow" />
-                </div>
-                <h3 className="xenedion-sub-title">{sub.title}</h3>
-                <p className="xenedion-sub-desc">{sub.desc}</p>
-                <span className="mono-tag xenedion-sub-link">Learn More →</span>
-              </Link>
-            ))}
+            {ecosystemCards.map((sub, idx) => {
+              if (sub.isAnchor) {
+                return (
+                  <a 
+                    key={idx} 
+                    href={sub.href} 
+                    onClick={scrollToModules}
+                    className="xenedion-sub-card"
+                  >
+                    <div className="xenedion-sub-top">
+                      <span className="mono-tag">EXPLORE</span>
+                      <ArrowUpRight size={16} className="xenedion-sub-arrow" />
+                    </div>
+                    <h3 className="xenedion-sub-title">{sub.title}</h3>
+                    <p className="xenedion-sub-desc">{sub.desc}</p>
+                    <span className="mono-tag xenedion-sub-link">Learn More →</span>
+                  </a>
+                );
+              }
+              return (
+                <Link key={idx} to={sub.href} className="xenedion-sub-card">
+                  <div className="xenedion-sub-top">
+                    <span className="mono-tag">EXPLORE</span>
+                    <ArrowUpRight size={16} className="xenedion-sub-arrow" />
+                  </div>
+                  <h3 className="xenedion-sub-title">{sub.title}</h3>
+                  <p className="xenedion-sub-desc">{sub.desc}</p>
+                  <span className="mono-tag xenedion-sub-link">Learn More →</span>
+                </Link>
+              );
+            })}
           </div>
         </div>
       </section>
 
-      {/* Bottom Conversion CTA */}
+      {/* ========================================================
+          SECTION 7: DEMO CTA
+          ======================================================== */}
       <section className="section">
         <div className="container">
           <div className="xenedion-cta-banner">
             <div className="xenedion-cta-text">
               <span className="mono-label">READY FOR A DEMO?</span>
               <h3>See XENedion configured for your specific industry.</h3>
-              <p>Schedule a live 15-minute walkthrough to see how XENedion can unite your operations.</p>
+              <p>Schedule a 15-minute walkthrough to see how XENedion can unite your operations.</p>
             </div>
             <div className="xenedion-cta-actions">
               <Button to="/contact" variant="primary" size="lg" icon="arrow">

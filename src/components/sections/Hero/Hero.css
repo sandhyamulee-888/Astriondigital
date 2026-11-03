@@ -317,13 +317,26 @@
 
 /* Responsiveness */
 @media (max-width: 1024px) {
+  .hero-bg-media-img {
+    width: 100%;
+    opacity: 0.18;
+  }
+
+  .hero-bg-fade-mask {
+    background: linear-gradient(
+      180deg,
+      rgba(255, 255, 255, 0.85) 0%,
+      rgba(255, 255, 255, 0.98) 100%
+    );
+  }
+
   .hero-container {
     grid-template-columns: 1fr;
     gap: 48px;
   }
 
   .hero-visual-col {
-    order: 2;
+    display: none;
   }
 }
 

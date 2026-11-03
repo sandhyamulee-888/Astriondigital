@@ -123,6 +123,9 @@ export default function App() {
           <Route path="/solutions/enterprise-software-development" element={<SoftwareDevelopmentPage />} />
           <Route path="/solutions/erp" element={<ERPSolutionsPage />} />
           <Route path="/solutions/erp-solutions" element={<ERPSolutionsPage />} />
+          <Route path="/solutions/xenedion" element={<ERPSolutionsPage />} />
+          <Route path="/solutions/xenedion-erp" element={<ERPSolutionsPage />} />
+          <Route path="/solutions/xenedion/modules" element={<ERPSolutionsPage />} />
           <Route path="/solutions/cybersecurity" element={<CybersecurityPage />} />
           <Route path="/solutions/cloud-infrastructure" element={<CloudInfrastructurePage />} />
           <Route path="/solutions/data-business-intelligence" element={<DataBIPage />} />
@@ -132,10 +135,10 @@ export default function App() {
           <Route path="/solutions/:id" element={<SolutionDetailPage />} />
 
           {/* 4. XENedion ERP Platform Routes */}
-          <Route path="/xenedion" element={<XenedionPage />} />
-          <Route path="/xenedion/overview" element={<XenedionPage />} />
-          <Route path="/xenedion-erp" element={<XenedionPage />} />
-          <Route path="/xenedion/modules" element={<XenedionModulesPage />} />
+          <Route path="/xenedion" element={<ERPSolutionsPage />} />
+          <Route path="/xenedion/overview" element={<ERPSolutionsPage />} />
+          <Route path="/xenedion-erp" element={<ERPSolutionsPage />} />
+          <Route path="/xenedion/modules" element={<ERPSolutionsPage />} />
           <Route path="/xenedion/industries" element={<XenedionIndustriesPage />} />
           <Route path="/xenedion/ai-automation" element={<XenedionAIPage />} />
           <Route path="/xenedion/integrations" element={<XenedionIntegrationsPage />} />

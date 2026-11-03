@@ -60,7 +60,7 @@ export default function AboutPage() {
             </p>
 
             <div className="inner-hero-actions">
-              <Button to="/xenedion" variant="primary" size="lg" icon="arrow">
+              <Button to="/solutions/erp" variant="primary" size="lg" icon="arrow">
                 Explore XENedion ERP
               </Button>
               <Button to="/contact" variant="secondary" size="lg">
@@ -231,7 +231,7 @@ export default function AboutPage() {
               </ul>
 
               <div className="arch-card-action">
-                <Button to="/xenedion" variant="primary" size="md" icon="arrow">
+                <Button to="/solutions/erp" variant="primary" size="md" icon="arrow">
                   Explore XENedion ERP
                 </Button>
               </div>
@@ -251,7 +251,7 @@ export default function AboutPage() {
             <div className="why-cards-grid">
               <div className="why-card">
                 <div className="why-num" style={{ color: 'var(--brand-blue)' }}>
-                  01 // Software Product Company Focus
+                  Software Product Company Focus
                 </div>
                 <h4 className="why-title">Clean Product Focus</h4>
                 <p className="why-desc">
@@ -260,7 +260,7 @@ export default function AboutPage() {
               </div>
               <div className="why-card">
                 <div className="why-num" style={{ color: 'var(--brand-orange)' }}>
-                  02 // Scalable Multi-Product Future
+                  Scalable Multi-Product Future
                 </div>
                 <h4 className="why-title">Multi-Product Umbrella</h4>
                 <p className="why-desc">
@@ -269,7 +269,7 @@ export default function AboutPage() {
               </div>
               <div className="why-card">
                 <div className="why-num" style={{ color: '#10b981' }}>
-                  03 // Dedicated Corporate Foundation
+                  Dedicated Corporate Foundation
                 </div>
                 <h4 className="why-title">Enduring Corporate Backing</h4>
                 <p className="why-desc">

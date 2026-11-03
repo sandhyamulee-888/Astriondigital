@@ -143,7 +143,6 @@ export default function SolutionDetailPage({ slugOverride }) {
                       </div>
                       <div className="service-card-body">
                         <div className="service-card-header">
-                          <span className="service-card-num mono-tag">0{index + 1}</span>
                           <h3 className="service-card-title">{item}</h3>
                         </div>
                         <p className="service-card-text">

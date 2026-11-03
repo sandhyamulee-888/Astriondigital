@@ -44,60 +44,45 @@ export const NAV_ITEMS = [
       headline: 'Enterprise software capabilities engineered for modern operational growth.',
       featured: {
         title: 'Enterprise Digital Transformation',
-        description: 'Modernize core business operations and eliminate spreadsheets without disruption.',
-        href: '/solutions/digital-transformation'
+        description: 'Manage your entire business from one integrated ERP platform with real-time operational visibility.',
+        href: '/solutions/erp',
+        ctaText: 'Explore',
+        image: '/images/solutions/xenedion-erp-product-3d.webp'
       },
       columns: [
         {
-          heading: 'Core Transformation & Platforms',
+          heading: 'Enterprise Solutions',
           items: [
-            { title: 'Enterprise Digital Transformation', href: '/solutions/digital-transformation', desc: 'Modernize core operations without business disruption.' },
-            { title: 'AI & Intelligent Automation', href: '/solutions/ai-intelligent-automation', desc: 'Put everyday routine tasks and approvals on autopilot.' },
-            { title: 'Enterprise Software Development', href: '/solutions/software-development', desc: 'Custom software architectures built for high transaction scale.' },
-            { title: 'ERP Solutions', href: '/solutions/erp', desc: 'Centralize your business data into one source of truth.' }
+            { 
+              title: 'XENedion ERP', 
+              href: '/solutions/erp', 
+              desc: 'Centralize your business data into one source of truth.' 
+            }
           ]
         },
         {
           heading: 'Cloud, Data & Security',
           items: [
-            { title: 'Cybersecurity', href: '/solutions/cybersecurity', desc: 'Enterprise-grade protection for your sensitive business records.' },
-            { title: 'Cloud & Infrastructure', href: '/solutions/cloud-infrastructure', desc: 'High-uptime cloud performance with speed and zero compromises.' },
-            { title: 'Data & Business Intelligence', href: '/solutions/data-business-intelligence', desc: 'Real-time dashboards for faster, better business decisions.' },
-            { title: 'Integration & API Solutions', href: '/solutions/integration-api', desc: 'Connect your existing software applications effortlessly.' }
-          ]
-        }
-      ]
-    }
-  },
-  {
-    id: 'xenedion',
-    label: 'XENedion ERP',
-    href: '/xenedion',
-    badge: 'Platform',
-    megaMenu: {
-      tag: 'XENEDION ERP // FLAGSHIP PRODUCT',
-      headline: 'One Platform. Your Entire Business.',
-      featured: {
-        title: 'Platform Overview',
-        description: 'Unite your finance, operations, supply chain, and human resources in one intuitive workspace.',
-        href: '/xenedion'
-      },
-      columns: [
-        {
-          heading: 'Core Platform',
-          items: [
-            { title: 'Overview', href: '/xenedion', desc: 'Centralize your entire company in one intuitive workspace.' },
-            { title: 'Modules', href: '/xenedion/modules', desc: 'Finance, inventory, sales, purchasing, HR, and warehousing.' },
-            { title: 'Industries', href: '/xenedion/industries', desc: 'Ready-to-use workflows configured specifically for your vertical.' },
-            { title: 'AI & Automation', href: '/xenedion/ai-automation', desc: 'Smart forecasting, duplicate bill detection, and automated alerts.' }
-          ]
-        },
-        {
-          heading: 'Deployment & Ecosystem',
-          items: [
-            { title: 'Integrations', href: '/xenedion/integrations', desc: 'Sync your banking, eCommerce, and logistics tools effortlessly.' },
-            { title: 'Implementation', href: '/xenedion/implementation', desc: 'Smooth onboarding, guided data migration, and team training.' },
-            { title: 'Partner Program', href: '/xenedion/partner-program', desc: 'Build and grow your consulting agency by implementing XENedion.' }
+            { 
+              title: 'Enterprise Digital Transformation', 
+              href: '/solutions/digital-transformation', 
+              desc: 'Modernize core business operations and bring processes together in one connected platform.' 
+            },
+            { 
+              title: 'AI & Intelligent Automation', 
+              href: '/solutions/ai-intelligent-automation', 
+              desc: 'Automate repetitive tasks, business workflows, and approval processes.' 
+            },
+            { 
+              title: 'Cloud & Infrastructure', 
+              href: '/solutions/cloud-infrastructure', 
+              desc: 'Run enterprise applications on reliable, scalable, high-performance cloud infrastructure.' 
+            },
+            { 
+              title: 'Data & Business Intelligence', 
+              href: '/solutions/data-business-intelligence', 
+              desc: 'Turn business data into real-time insights with dashboards, analytics, and reporting.' 
+            }
           ]
         }
       ]
@@ -119,16 +104,14 @@ export const NAV_ITEMS = [
         {
           heading: 'Production & Trade',
           items: [
-            { title: 'Manufacturing', href: '/industries/manufacturing', desc: 'Connected shop floors and automated Bill of Materials.' },
-            { title: 'Distribution', href: '/industries/distribution', desc: 'Multi-warehouse visibility and faster order fulfillment.' },
-            { title: 'Retail', href: '/industries/retail', desc: 'Unified in-store, warehouse, and online inventory.' }
+            { title: 'Retail', href: '/industries/retail', desc: 'Unified in-store, warehouse, and online inventory.' },
+            { title: 'Distribution', href: '/industries/distribution', desc: 'Multi-warehouse visibility and faster order fulfillment.' }
           ]
         },
         {
           heading: 'Supply Chain & Services',
           items: [
             { title: 'Logistics', href: '/industries/logistics', desc: 'Fleet route optimization and live freight tracking.' },
-            { title: 'Professional Services', href: '/industries/professional-services', desc: 'Real-time project billing and resource allocation.' },
             { title: 'Automotive', href: '/industries/automotive', desc: 'Parts traceability and dealer supply chain integration.' },
             { title: 'Other Industries', href: '/industries/other', desc: 'Custom-fit operational platforms for specialized business domains.' }
           ]

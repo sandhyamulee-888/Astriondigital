@@ -1,22 +1,21 @@
 import React from 'react';
 import { motion } from 'framer-motion';
-import { ShieldCheck, Cloud, Activity, Layers } from 'lucide-react';
+import { ShieldCheck, Activity, Layers } from 'lucide-react';
 import Button from '../../common/Button/Button';
-import HeroVisual from '../HeroVisual/HeroVisual';
 import './Hero.css';
 
 export default function Hero() {
-  const proofBarItems = [
-    { label: '100% Real-Time Data Sync', icon: <Activity size={16} /> },
-    { label: 'Simple, Scalable Cloud Setup', icon: <Cloud size={16} /> },
-    { label: 'Enterprise-Grade Data Security', icon: <ShieldCheck size={16} /> }
-  ];
-
   return (
     <section className="hero-section" aria-label="Astrion Digital Enterprise Overview">
-      {/* Dynamic Ambient Background Glows */}
-      <div className="hero-ambient-glow-left" aria-hidden="true" />
-      <div className="hero-ambient-glow-right" aria-hidden="true" />
+      {/* Background Media with Pure White Seamless Left Transition */}
+      <div className="hero-bg-media" aria-hidden="true">
+        <img 
+          src="/images/astrion-home-hero-bg.jpg" 
+          alt="Astrion Digital Enterprise Software and XENedion ERP Platform" 
+          className="hero-bg-media-img" 
+        />
+        <div className="hero-bg-fade-mask"></div>
+      </div>
 
       <div className="container hero-container">
         {/* Left Column: Modern Enterprise Presentation */}
@@ -45,7 +44,7 @@ export default function Hero() {
 
           <div className="hero-cta-group">
             <Button
-              to="/xenedion"
+              to="/solutions/erp"
               variant="primary"
               size="lg"
               icon="arrow"
@@ -76,15 +75,8 @@ export default function Hero() {
           </div>
         </motion.div>
 
-        {/* Right Column: Interactive Ecosystem Visual */}
-        <motion.div 
-          className="hero-visual-col"
-          initial={{ opacity: 0, scale: 0.95 }}
-          animate={{ opacity: 1, scale: 1 }}
-          transition={{ duration: 0.85, delay: 0.15, ease: [0.16, 1, 0.3, 1] }}
-        >
-          <HeroVisual />
-        </motion.div>
+        {/* Right Column: Clean open spacer to showcase the team and ERP dashboard */}
+        <div className="hero-visual-col" aria-hidden="true" />
       </div>
     </section>
   );
