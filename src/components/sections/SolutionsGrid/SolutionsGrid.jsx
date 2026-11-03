@@ -65,6 +65,14 @@ export default function SolutionsGrid() {
             {filteredSolutions.map((item) => (
               <StaggerItem key={item.id}>
                 <div className="capability-card">
+                  {item.image && (
+                    <div className="capability-card-visual-frame" aria-hidden="true">
+                      <img src={item.image} alt={item.title} className="capability-card-visual-img" loading="lazy" />
+                      <div className="capability-card-visual-tag mono-tag">
+                        <span>{item.categoryLabel}</span>
+                      </div>
+                    </div>
+                  )}
                   <div className="capability-card-inner">
                     {/* Top Meta Bar */}
                     <div className="capability-top">

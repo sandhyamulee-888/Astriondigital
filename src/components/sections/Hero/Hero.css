@@ -1,50 +1,96 @@
 .hero-section {
   position: relative;
-  padding-top: calc(var(--header-height) + 48px);
+  min-height: 640px;
+  padding-top: calc(var(--header-height, 80px) + 36px);
   padding-bottom: 96px;
-  background-color: var(--bg-primary);
+  background-color: #FFFFFF;
   border-bottom: 1px solid var(--border-light);
+  overflow: hidden;
+  display: flex;
+  align-items: center;
+}
+
+/* Background Media & Seamless Pure White Transition */
+.hero-bg-media {
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  pointer-events: none;
+  z-index: 0;
   overflow: hidden;
 }
 
-/* Soft Ambient Lighting */
-.hero-ambient-glow-left {
+.hero-bg-media-img {
   position: absolute;
-  top: -10%;
-  left: -8%;
-  width: 550px;
-  height: 550px;
-  background: radial-gradient(circle, rgba(28, 117, 189, 0.09) 0%, rgba(28, 117, 189, 0.02) 50%, transparent 70%);
-  filter: blur(80px);
-  pointer-events: none;
-  z-index: 0;
+  top: 0;
+  right: 0;
+  width: 62%;
+  height: 100%;
+  object-fit: cover;
+  object-position: right center;
+  opacity: 1;
 }
 
-.hero-ambient-glow-right {
+.hero-bg-fade-mask {
   position: absolute;
-  top: 15%;
-  right: -5%;
-  width: 500px;
-  height: 500px;
-  background: radial-gradient(circle, rgba(235, 100, 62, 0.08) 0%, rgba(235, 100, 62, 0.02) 50%, transparent 70%);
-  filter: blur(90px);
-  pointer-events: none;
-  z-index: 0;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: linear-gradient(
+    90deg,
+    #FFFFFF 0%,
+    #FFFFFF 42%,
+    rgba(255, 255, 255, 0.94) 52%,
+    rgba(255, 255, 255, 0) 70%
+  );
 }
-
 
 .hero-container {
   position: relative;
-  z-index: 1;
+  z-index: 2;
   display: grid;
-  grid-template-columns: 1.12fr 0.88fr;
+  grid-template-columns: 1.15fr 0.85fr;
   align-items: center;
-  gap: 56px;
+  gap: 48px;
+  width: 100%;
 }
 
 .hero-content {
   display: flex;
   flex-direction: column;
+  max-width: 620px;
+}
+
+/* Breadcrumb */
+.hero-breadcrumb {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  margin-bottom: 18px;
+  font-size: 0.75rem;
+  letter-spacing: 0.06em;
+  color: var(--text-tertiary);
+}
+
+.hero-breadcrumb a {
+  color: var(--text-secondary);
+  transition: color var(--transition-fast);
+}
+
+.hero-breadcrumb a:hover {
+  color: var(--brand-blue);
+}
+
+.hero-breadcrumb .breadcrumb-slash {
+  color: var(--border-medium);
+}
+
+.hero-breadcrumb .breadcrumb-current {
+  color: var(--brand-blue);
+  font-weight: 700;
 }
 
 /* Status Pill */
@@ -100,15 +146,14 @@
   display: inline-flex;
   align-items: center;
   gap: 8px;
-  background: #F8FAFC;
-  border: 1px solid var(--border-medium);
-  border-left: 3px solid var(--brand-blue);
+  background: rgba(28, 117, 189, 0.04);
+  border: 1px solid rgba(28, 117, 189, 0.25);
   color: var(--brand-blue);
-  padding: 8px 16px;
-  border-radius: var(--radius-xs);
-  font-size: 0.8125rem;
+  padding: 6px 14px;
+  border-radius: var(--radius-full);
+  font-size: 0.75rem;
   letter-spacing: 0.04em;
-  font-weight: 500;
+  font-weight: 600;
   width: fit-content;
   margin-bottom: 22px;
 }

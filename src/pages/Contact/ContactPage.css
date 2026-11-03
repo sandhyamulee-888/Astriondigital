@@ -13,8 +13,8 @@
    1. HERO SECTION (Centered on Pale Blue-Gray Background)
    ======================================================== */
 .contact-hero-section {
-  padding-top: calc(var(--header-height) + 40px);
-  padding-bottom: 52px;
+  padding-top: calc(var(--header-height) + 32px);
+  padding-bottom: 28px;
   background: linear-gradient(180deg, #F1F5F9 0%, #F8FAFC 100%);
   border-bottom: 1px solid rgba(15, 23, 42, 0.06);
   text-align: center;
@@ -70,7 +70,7 @@
   line-height: 1.65;
   color: #475569;
   max-width: 740px;
-  margin-bottom: 28px;
+  margin-bottom: 0;
 }
 
 /* Trust Indicator Badges Row */
@@ -103,8 +103,8 @@
    2. MAIN CONTENT LAYOUT (Two-Column on Desktop)
    ======================================================== */
 .contact-main-content {
-  padding-top: 48px;
-  padding-bottom: 96px;
+  padding-top: 32px;
+  padding-bottom: 80px;
 }
 
 .contact-grid {

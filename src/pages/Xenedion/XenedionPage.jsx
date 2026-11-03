@@ -17,10 +17,10 @@ import {
   DollarSign, 
   UserCheck, 
   Truck, 
-  BarChart3,
-  Network,
-  Clock,
-  Zap
+  BarChart3, 
+  Network, 
+  Clock, 
+  Zap 
 } from 'lucide-react';
 import { XENEDION_DATA } from '../../data/xenedion';
 import Button from '../../components/common/Button/Button';
@@ -91,11 +91,14 @@ export default function XenedionPage() {
 
   return (
     <div className="inner-page xenedion-page">
-      {/* Top Hero Section */}
-      <section className="inner-hero-section">
-        <div className="inner-hero-bg" aria-hidden="true">
-          <img src="/solutions-bg.jpg" alt="" className="inner-hero-bg-img" />
-          <div className="inner-hero-overlay"></div>
+      {/* Top Hero Section with High-Definition ERP Platform Hero */}
+      <section className="inner-hero-section xenedion-erp-hero">
+        <div className="xenedion-hero-bg-layer" aria-hidden="true">
+          <img 
+            src="/images/xenedion-erp-platform-hero.webp" 
+            alt="XENedion Integrated ERP Platform" 
+            className="xenedion-hero-bg-img" 
+          />
         </div>
 
         <div className="container inner-hero-container">
@@ -105,7 +108,7 @@ export default function XenedionPage() {
             <span className="breadcrumb-current">XENEDION ERP</span>
           </div>
 
-          <div className="inner-hero-content">
+          <div className="inner-hero-content xenedion-hero-content-constrained">
             <div className="mono-label inner-hero-badge">
               <span className="badge-dot"></span>
               FLAGSHIP PRODUCT // XENEDION ERP
@@ -124,35 +127,23 @@ export default function XenedionPage() {
             </p>
 
             {/* Core Metrics Proof Bar */}
-            <div className="hero-metrics-grid" style={{
-              display: 'grid',
-              gridTemplateColumns: 'repeat(auto-fit, minmax(220px, 1fr))',
-              gap: '16px',
-              margin: '28px 0',
-              maxWidth: '880px'
-            }}>
+            <div className="xenedion-hero-metrics-grid">
               {XENEDION_DATA.coreMetrics.map((metric, mIdx) => (
-                <div key={mIdx} style={{
-                  background: 'rgba(255, 255, 255, 0.04)',
-                  border: '1px solid rgba(255, 255, 255, 0.08)',
-                  borderRadius: '8px',
-                  padding: '16px 20px',
-                  backdropFilter: 'blur(10px)'
-                }}>
-                  <div style={{ color: '#ff6b35', fontSize: '1.75rem', fontWeight: 700, fontFamily: 'monospace' }}>
+                <div key={mIdx} className="xenedion-hero-metric-card">
+                  <div className="xenedion-hero-metric-val mono-tag">
                     {metric.value}
                   </div>
-                  <div style={{ fontWeight: 600, fontSize: '0.95rem', color: '#fff', marginTop: '4px' }}>
+                  <div className="xenedion-hero-metric-label">
                     {metric.label}
                   </div>
-                  <div style={{ fontSize: '0.8rem', color: '#999', marginTop: '4px' }}>
+                  <div className="xenedion-hero-metric-desc">
                     {metric.desc}
                   </div>
                 </div>
               ))}
             </div>
 
-            <div className="statement-foundation-callout" style={{ marginBottom: '28px', maxWidth: '880px' }}>
+            <div className="statement-foundation-callout xenedion-hero-callout">
               <CheckCircle2 size={18} className="callout-icon" />
               <span>Built and continuously maintained by Astrion Digital — a dedicated enterprise software company committed to cloud reliability, regular updates, and long-term customer success.</span>
             </div>
