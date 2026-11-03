@@ -104,21 +104,6 @@ export default function ContactPage() {
             <p className="contact-hero-lead">
               Have a question about XENedion ERP or want to see a live demo tailored to your industry? Fill out the form below and our team will get back to you within 24 hours.
             </p>
-
-            <div className="contact-trust-badges">
-              <div className="trust-badge mono-tag">
-                <Clock size={14} className="trust-badge-icon" />
-                <span>Response within 24 Hours</span>
-              </div>
-              <div className="trust-badge mono-tag">
-                <ShieldCheck size={14} className="trust-badge-icon" />
-                <span>100% Confidential &bull; Zero Spam</span>
-              </div>
-              <div className="trust-badge mono-tag">
-                <Sparkles size={14} className="trust-badge-icon" />
-                <span>Free Tailored Product Walkthrough</span>
-              </div>
-            </div>
           </div>
         </div>
       </section>

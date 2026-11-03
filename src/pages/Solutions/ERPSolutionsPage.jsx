@@ -1,6 +1,6 @@
 import React from 'react';
-import SolutionDetailPage from './SolutionDetailPage';
+import XenedionPage from '../Xenedion/XenedionPage';
 
 export default function ERPSolutionsPage() {
-  return <SolutionDetailPage slugOverride="erp" />;
+  return <XenedionPage isSolutionSection={true} />;
 }

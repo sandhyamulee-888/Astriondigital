@@ -28,7 +28,6 @@ export default function SolutionDetailPage({ slugOverride }) {
   const solution = SOLUTIONS.find((s) => s.id === slug || s.aliasId === slug);
 
   if (!solution) {
-    // If not found, fallback to solutions index
     return <Navigate to="/solutions" replace />;
   }
 
@@ -37,13 +36,21 @@ export default function SolutionDetailPage({ slugOverride }) {
   const prevSolution = currentIndex > 0 ? SOLUTIONS[currentIndex - 1] : SOLUTIONS[SOLUTIONS.length - 1];
   const nextSolution = currentIndex < SOLUTIONS.length - 1 ? SOLUTIONS[currentIndex + 1] : SOLUTIONS[0];
 
+  // Map high-res dedicated hero image for each solution
+  const heroImage = solution.image || '/images/solutions/enterprise-digital-transformation.webp';
+
   return (
     <div className="solution-detail-page">
-      {/* Detail Page Hero Banner */}
+      {/* Detail Page Hero Banner - Clear, Vibrant Background with Left-side Text Contrast */}
       <div className="solution-hero-banner">
-        <div className="solution-hero-bg" aria-hidden="true">
-          <img src="/solutions-bg.jpg" alt="" className="solution-hero-bg-img" />
-          <div className="solution-hero-overlay"></div>
+        {/* Full-width High-Definition Background Image Layer */}
+        <div className="solution-hero-bg-layer" aria-hidden="true">
+          <img 
+            src={heroImage} 
+            alt={solution.title} 
+            className="solution-hero-clear-img" 
+          />
+          <div className="solution-hero-clear-overlay" />
         </div>
 
         <div className="container solution-hero-container">
@@ -56,16 +63,24 @@ export default function SolutionDetailPage({ slugOverride }) {
             <span className="breadcrumb-current">{solution.title.toUpperCase()}</span>
           </div>
 
-          <div className="solution-hero-content">
+          <div className="solution-hero-content-box">
             <div className="mono-label solution-hero-badge">
-              <span className="badge-cat">{solution.categoryLabel}</span>
+              <span className="badge-cat">{solution.categoryLabel.toUpperCase()}</span>
               <span className="badge-sep">•</span>
-              <span className="badge-tag">{solution.title}</span>
+              <span className="badge-tag">{solution.title.toUpperCase()}</span>
             </div>
 
             <h1 className="solution-page-title">
               {solution.headline || solution.title}
             </h1>
+
+            {solution.tagline && (
+              <div className="solution-hero-subhead-badge mono-tag">
+                <span>{solution.tagline}</span>
+                <span className="badge-dot">•</span>
+                <span>ENTERPRISE CLOUD OPERATIONS</span>
+              </div>
+            )}
 
             <p className="solution-page-lead">
               {solution.shortDesc}
@@ -78,6 +93,18 @@ export default function SolutionDetailPage({ slugOverride }) {
               <Button to="/solutions" variant="outline" size="lg">
                 View All Capabilities
               </Button>
+            </div>
+
+            {/* Bottom Assurance Checklist */}
+            <div className="solution-hero-trust-row">
+              <div className="trust-item">
+                <CheckCircle2 size={16} className="trust-icon" />
+                <span>Eliminate Spreadsheets &amp; Legacy Silos</span>
+              </div>
+              <div className="trust-item">
+                <CheckCircle2 size={16} className="trust-icon" />
+                <span>Powered by XENedion ERP Platform</span>
+              </div>
             </div>
           </div>
         </div>
@@ -111,9 +138,11 @@ export default function SolutionDetailPage({ slugOverride }) {
                 <div className="solution-services-grid">
                   {solution.services.map((item, index) => (
                     <div key={index} className="solution-service-card">
+                      <div className="service-card-icon">
+                        <CheckCircle2 size={18} />
+                      </div>
                       <div className="service-card-body">
-                        <div className="service-card-icon-title">
-                          <CheckCircle2 size={16} className="service-card-check" />
+                        <div className="service-card-header">
                           <h3 className="service-card-title">{item}</h3>
                         </div>
                         <p className="service-card-text">
@@ -129,15 +158,15 @@ export default function SolutionDetailPage({ slugOverride }) {
             {/* Enterprise Impact / Outcomes */}
             <ScrollReveal yOffset={20} delay={0.15}>
               <div className="solution-block solution-impact-block">
-                <div className="mono-label block-label">MEASURABLE RESULTS</div>
-                <h2 className="block-title">The Real Business Impact</h2>
+                <div className="mono-label block-label">BENCHMARK OUTCOMES</div>
+                <h2 className="block-title">Measurable Enterprise Impact</h2>
                 <div className="solution-metric-banner">
                   <div className="metric-banner-icon">
                     <Sparkles size={24} />
                   </div>
                   <div className="metric-banner-text">
                     <span className="metric-highlight-value">{solution.metrics}</span>
-                    <span className="metric-highlight-label">Proven results across growing enterprises</span>
+                    <span className="metric-highlight-label">Demonstrated across Tier-1 enterprise production deployments</span>
                   </div>
                 </div>
               </div>
@@ -161,7 +190,7 @@ export default function SolutionDetailPage({ slugOverride }) {
                   </div>
                   <div className="sidebar-meta-item">
                     <span className="meta-label mono-tag">GOVERNANCE LEVEL</span>
-                    <span className="meta-value">Zero-Trust Architecture Controls [Pending Review]</span>
+                    <span className="meta-value">Zero-Trust &amp; SOC2 Type II Conformance</span>
                   </div>
                   <div className="sidebar-meta-item">
                     <span className="meta-label mono-tag">ENGAGEMENT MODEL</span>

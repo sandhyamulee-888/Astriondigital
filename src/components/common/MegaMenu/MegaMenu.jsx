@@ -22,17 +22,24 @@ export default function MegaMenu({ item, isOpen, onClose }) {
 
           {featured && (
             <div className="megamenu-featured">
-              <span className="mono-tag featured-badge">FEATURED PERSPECTIVE</span>
-              <h4 className="featured-title">{featured.title}</h4>
-              <p className="featured-desc">{featured.description}</p>
-              <Link 
-                to={featured.href} 
-                className="featured-link"
-                onClick={onClose}
-              >
-                <span>Read Blueprint</span>
-                <ArrowRight size={14} />
-              </Link>
+              {featured.image && (
+                <div className="megamenu-featured-thumb-wrap">
+                  <img src={featured.image} alt={featured.title} className="megamenu-featured-thumb" />
+                </div>
+              )}
+              <div className="megamenu-featured-body">
+                <span className="mono-tag featured-badge">FEATURED PERSPECTIVE</span>
+                <h4 className="featured-title">{featured.title}</h4>
+                <p className="featured-desc">{featured.description}</p>
+                <Link 
+                  to={featured.href} 
+                  className="featured-link"
+                  onClick={onClose}
+                >
+                  <span>{featured.ctaText || 'Explore ERP Capabilities'}</span>
+                  <ArrowRight size={14} />
+                </Link>
+              </div>
             </div>
           )}
         </div>

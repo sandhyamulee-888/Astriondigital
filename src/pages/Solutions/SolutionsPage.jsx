@@ -50,13 +50,8 @@ export default function SolutionsPage() {
 
   return (
     <div className="solutions-hub-page">
-      {/* Hero Header with Background Visual */}
+      {/* Hero Header without distracting background images */}
       <div className="solutions-hub-hero">
-        <div className="solutions-hub-bg" aria-hidden="true">
-          <img src="/solutions-bg.jpg" alt="" className="solutions-hub-bg-img" />
-          <div className="solutions-hub-overlay"></div>
-        </div>
-
         <div className="container solutions-hub-hero-container">
           {/* Breadcrumb */}
           <div className="hub-breadcrumb mono-tag">
@@ -108,11 +103,26 @@ export default function SolutionsPage() {
             </div>
           </div>
 
-          {/* 8 Dedicated Capability Cards Grid */}
+          {/* 8 Dedicated Capability Cards Grid - Clean, High-Contrast Architecture with Crisp Visual Media */}
           <StaggerContainer staggerDelay={0.06} className="hub-cards-grid">
             {filteredSolutions.map((item) => (
               <StaggerItem key={item.id}>
                 <div className="hub-solution-card">
+                  {/* Dedicated Visual Showcase Window - 100% Crisp & High-Definition */}
+                  {item.image && (
+                    <div className="hub-card-visual-frame">
+                      <img 
+                        src={item.image} 
+                        alt={item.title} 
+                        className="hub-card-visual-img" 
+                        loading="lazy" 
+                      />
+                      <div className="hub-card-visual-tag mono-tag">
+                        <span>{item.categoryLabel}</span>
+                      </div>
+                    </div>
+                  )}
+
                   <div className="hub-card-inner">
                     {/* Top Meta */}
                     <div className="hub-card-top">

@@ -12,37 +12,6 @@
   overflow: hidden;
 }
 
-.solutions-hub-bg {
-  position: absolute;
-  top: 0;
-  left: 0;
-  right: 0;
-  bottom: 0;
-  pointer-events: none;
-  overflow: hidden;
-}
-
-.solutions-hub-bg-img {
-  width: 100%;
-  height: 100%;
-  object-fit: cover;
-  object-position: center top;
-  opacity: 0.35;
-}
-
-.solutions-hub-overlay {
-  position: absolute;
-  top: 0;
-  left: 0;
-  right: 0;
-  bottom: 0;
-  background: linear-gradient(
-    180deg,
-    rgba(255, 255, 255, 0.94) 0%,
-    rgba(248, 250, 252, 0.88) 100%
-  );
-}
-
 .solutions-hub-hero-container {
   position: relative;
   z-index: 2;
@@ -177,7 +146,7 @@
   background-color: #FFFFFF;
   border: 1px solid var(--border-card);
   border-radius: var(--radius-sm);
-  padding: 30px 24px;
+  padding: 0;
   box-shadow: 0 2px 8px rgba(15, 23, 42, 0.03);
   display: flex;
   flex-direction: column;
@@ -186,6 +155,43 @@
   transition: transform 300ms cubic-bezier(0.16, 1, 0.3, 1),
               box-shadow 300ms cubic-bezier(0.16, 1, 0.3, 1),
               border-color 300ms cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+/* Dedicated Visual Media Showcase Banner */
+.hub-card-visual-frame {
+  position: relative;
+  width: 100%;
+  height: 160px;
+  overflow: hidden;
+  background-color: #0F172A;
+}
+
+.hub-card-visual-img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  object-position: center;
+  transition: transform 500ms cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+.hub-solution-card:hover .hub-card-visual-img {
+  transform: scale(1.06);
+}
+
+.hub-card-visual-tag {
+  position: absolute;
+  bottom: 12px;
+  left: 14px;
+  background: rgba(15, 23, 42, 0.85);
+  backdrop-filter: blur(6px);
+  color: #FFFFFF;
+  font-size: 0.6875rem;
+  font-weight: 700;
+  letter-spacing: 0.06em;
+  padding: 4px 10px;
+  border-radius: 4px;
+  border: 1px solid rgba(255, 255, 255, 0.15);
+  text-transform: uppercase;
 }
 
 .hub-solution-card::before {
@@ -197,6 +203,7 @@
   height: 3px;
   background: var(--brand-gradient-h);
   opacity: 0;
+  z-index: 3;
   transition: opacity 250ms ease;
 }
 
@@ -211,9 +218,11 @@
 }
 
 .hub-card-inner {
+  padding: 24px 22px;
   display: flex;
   flex-direction: column;
   height: 100%;
+  flex-grow: 1;
 }
 
 .hub-card-top {

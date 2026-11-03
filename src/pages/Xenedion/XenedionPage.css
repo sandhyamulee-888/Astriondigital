@@ -1,8 +1,118 @@
-.xenedion-visual-holder {
+/* --------------------------------------------------------
+   XENedion ERP Platform Hero Section
+   -------------------------------------------------------- */
+.xenedion-erp-hero {
+  position: relative;
   background-color: #FFFFFF;
-  border-radius: var(--radius-sm);
-  box-shadow: var(--shadow-card);
+  border-bottom: 1px solid var(--border-light);
+  overflow: hidden;
+  padding-top: calc(var(--header-height) + 40px);
+  padding-bottom: 72px;
 }
+
+.xenedion-hero-bg-layer {
+  position: absolute;
+  top: 0;
+  right: 0;
+  width: 52%;
+  height: 100%;
+  pointer-events: none;
+  overflow: hidden;
+  z-index: 1;
+  display: flex;
+  align-items: center;
+  justify-content: flex-end;
+  padding-right: 48px;
+}
+
+.xenedion-hero-bg-img {
+  max-width: 100%;
+  max-height: 88%;
+  width: auto;
+  height: auto;
+  object-fit: contain;
+  object-position: right center;
+  opacity: 1;
+  filter: drop-shadow(0 14px 36px rgba(15, 23, 42, 0.08));
+}
+
+.xenedion-hero-content-constrained {
+  position: relative;
+  z-index: 2;
+  max-width: 660px;
+}
+
+/* Metric Cards in Hero */
+.xenedion-hero-metrics-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 16px;
+  margin: 28px 0;
+}
+
+.xenedion-hero-metric-card {
+  background: #FFFFFF;
+  border: 1px solid var(--border-medium);
+  border-radius: var(--radius-sm);
+  padding: 16px 18px;
+  box-shadow: 0 2px 8px rgba(15, 23, 42, 0.04);
+}
+
+.xenedion-hero-metric-val {
+  color: var(--brand-orange, #EB643E);
+  font-size: 1.625rem;
+  font-weight: 700;
+  line-height: 1.2;
+}
+
+.xenedion-hero-metric-label {
+  font-weight: 600;
+  font-size: 0.9375rem;
+  color: var(--text-primary);
+  margin-top: 4px;
+}
+
+.xenedion-hero-metric-desc {
+  font-size: 0.8125rem;
+  color: var(--text-secondary);
+  margin-top: 4px;
+  line-height: 1.4;
+}
+
+.xenedion-hero-callout {
+  background-color: rgba(28, 117, 189, 0.04);
+  border: 1px solid rgba(28, 117, 189, 0.18);
+  border-radius: var(--radius-sm);
+  padding: 14px 18px;
+  display: flex;
+  align-items: flex-start;
+  gap: 12px;
+  margin-bottom: 28px;
+  color: var(--brand-blue);
+  font-size: 0.875rem;
+  line-height: 1.5;
+}
+
+@media (max-width: 1024px) {
+  .xenedion-hero-bg-layer {
+    width: 45%;
+    opacity: 0.8;
+  }
+}
+
+@media (max-width: 768px) {
+  .xenedion-hero-bg-layer {
+    width: 100%;
+    opacity: 0.12;
+    -webkit-mask-image: none;
+    mask-image: none;
+  }
+
+  .xenedion-hero-metrics-grid {
+    grid-template-columns: 1fr;
+  }
+}
+
 
 .xenedion-features-grid {
   display: grid;
@@ -266,5 +376,311 @@
     padding: 28px 20px;
     flex-direction: column;
     align-items: flex-start;
+  }
+}
+
+
+/* --------------------------------------------------------
+   Section 2: 5 Core ERP Dark Cards Grid
+   -------------------------------------------------------- */
+.core-modules-dark-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 24px;
+  margin-top: 36px;
+}
+
+.core-module-dark-card {
+  background: #11141a;
+  border: 1px solid rgba(255, 255, 255, 0.08);
+  border-radius: 12px;
+  padding: 32px 28px;
+  display: flex;
+  flex-direction: column;
+  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.16);
+  transition: transform var(--transition-fast), border-color var(--transition-fast);
+}
+
+.core-module-dark-card:hover {
+  transform: translateY(-4px);
+  border-color: rgba(235, 100, 62, 0.4);
+}
+
+.core-module-dark-card h3 {
+  font-size: 1.25rem;
+  font-weight: 700;
+  color: #FFFFFF;
+  margin-bottom: 12px;
+  letter-spacing: -0.01em;
+}
+
+.core-module-dark-card p {
+  font-size: 0.9rem;
+  line-height: 1.55;
+  color: #94a3b8;
+  margin-bottom: 24px;
+}
+
+.core-module-benefits-label {
+  color: var(--brand-orange, #eb643e);
+  font-size: 0.75rem;
+  font-weight: 700;
+  letter-spacing: 0.08em;
+  margin-bottom: 14px;
+  display: block;
+}
+
+.core-module-benefits-list {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+
+.core-module-benefit-item {
+  display: flex;
+  align-items: flex-start;
+  gap: 10px;
+  font-size: 0.85rem;
+  color: #e2e8f0;
+  line-height: 1.4;
+}
+
+.core-module-benefit-icon {
+  color: var(--brand-orange, #eb643e);
+  flex-shrink: 0;
+  margin-top: 2px;
+}
+
+/* --------------------------------------------------------
+   Section 3: Complete Module Directory Grid (11 Cards)
+   -------------------------------------------------------- */
+.modules-directory-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 24px;
+  margin-bottom: 32px;
+}
+
+.dir-module-card {
+  background: #FFFFFF;
+  border: 1px solid var(--border-medium, #e2e8f0);
+  border-radius: 12px;
+  padding: 26px 24px;
+  box-shadow: 0 1px 3px rgba(0, 0, 0, 0.04);
+  display: flex;
+  flex-direction: column;
+  transition: transform var(--transition-fast), border-color var(--transition-fast), box-shadow var(--transition-fast);
+}
+
+.dir-module-card:hover {
+  transform: translateY(-4px);
+  border-color: var(--brand-blue, #1c75bd);
+  box-shadow: 0 12px 28px rgba(15, 23, 42, 0.08);
+}
+
+.dir-module-top {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin-bottom: 14px;
+}
+
+.dir-module-icon-wrap {
+  width: 38px;
+  height: 38px;
+  border-radius: 8px;
+  background: rgba(28, 117, 189, 0.08);
+  color: var(--brand-blue, #1c75bd);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.dir-module-cat-tag {
+  font-size: 0.6875rem;
+  font-weight: 700;
+  color: var(--brand-orange, #eb643e);
+  letter-spacing: 0.04em;
+}
+
+.dir-module-title {
+  font-size: 1.1875rem;
+  font-weight: 700;
+  color: var(--text-primary, #0f172a);
+  margin-bottom: 8px;
+}
+
+.dir-module-desc {
+  font-size: 0.875rem;
+  line-height: 1.55;
+  color: var(--text-secondary, #64748b);
+  margin-bottom: 16px;
+  flex: 1;
+}
+
+.dir-module-bullets {
+  list-style: none;
+  padding: 0;
+  margin: 0 0 18px 0;
+  display: flex;
+  flex-direction: column;
+  gap: 7px;
+}
+
+.dir-module-bullet-item {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  font-size: 0.8125rem;
+  color: #475569;
+}
+
+.dir-module-bullet-icon {
+  width: 5px;
+  height: 5px;
+  border-radius: 50%;
+  background-color: var(--brand-blue, #1c75bd);
+  flex-shrink: 0;
+}
+
+.dir-module-footer {
+  padding-top: 14px;
+  border-top: 1px solid var(--border-light, #f1f5f9);
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  font-size: 0.6875rem;
+  color: var(--text-tertiary, #94a3b8);
+  letter-spacing: 0.06em;
+}
+
+@media (max-width: 1100px) {
+  .core-modules-dark-grid,
+  .modules-directory-grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+@media (max-width: 768px) {
+  .core-modules-dark-grid,
+  .modules-directory-grid {
+    grid-template-columns: 1fr;
+  }
+}
+
+
+/* --------------------------------------------------------
+   Why Growing Companies Choose XENedion - Side-by-Side Layout
+   -------------------------------------------------------- */
+.why-growing-side-by-side {
+  display: grid;
+  grid-template-columns: 1fr 1.15fr;
+  gap: 32px;
+  align-items: stretch;
+  margin-top: 36px;
+}
+
+.why-growing-image-col {
+  width: 100%;
+  height: 100%;
+  min-height: 440px;
+  border-radius: 14px;
+  overflow: hidden;
+  border: 1px solid var(--border-medium, #e2e8f0);
+  box-shadow: 0 4px 20px rgba(15, 23, 42, 0.05);
+  background-color: #FFFFFF;
+  display: flex;
+}
+
+.why-growing-image-col .why-growing-banner-img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  object-position: center;
+  display: block;
+}
+
+.why-growing-cards-grid {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 20px;
+}
+
+.why-growing-cards-grid .xenedion-feature-card {
+  background-color: #FFFFFF;
+  border: 1px solid var(--border-medium, #e2e8f0);
+  border-radius: 12px;
+  padding: 24px 20px;
+  box-shadow: 0 1px 3px rgba(0, 0, 0, 0.04);
+  display: flex;
+  flex-direction: column;
+  transition: transform var(--transition-fast), border-color var(--transition-fast), box-shadow var(--transition-fast);
+}
+
+.why-growing-cards-grid .xenedion-feature-card:hover {
+  transform: translateY(-3px);
+  border-color: var(--brand-blue, #1c75bd);
+  box-shadow: 0 10px 24px rgba(15, 23, 42, 0.07);
+}
+
+.feat-card-header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin-bottom: 14px;
+}
+
+.feat-icon-box {
+  width: 40px;
+  height: 40px;
+  border-radius: 10px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-shrink: 0;
+}
+
+.feat-card-num {
+  font-size: 0.75rem;
+  font-weight: 700;
+  color: var(--text-tertiary, #94a3b8);
+  letter-spacing: 0.06em;
+}
+
+.why-growing-cards-grid .xenedion-feat-title {
+  font-size: 1.0625rem;
+  font-weight: 700;
+  color: var(--text-primary, #0f172a);
+  margin-bottom: 8px;
+  line-height: 1.35;
+}
+
+.why-growing-cards-grid .xenedion-feat-desc {
+  font-size: 0.84375rem;
+  line-height: 1.55;
+  color: var(--text-secondary, #64748b);
+  margin: 0;
+}
+
+@media (max-width: 1024px) {
+  .why-growing-side-by-side {
+    grid-template-columns: 1fr;
+    gap: 28px;
+  }
+
+  .why-growing-image-col {
+    min-height: 280px;
+    height: 280px;
+  }
+}
+
+@media (max-width: 640px) {
+  .why-growing-cards-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .why-growing-image-col {
+    min-height: 200px;
+    height: 200px;
   }
 }
