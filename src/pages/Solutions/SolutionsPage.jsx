@@ -20,14 +20,11 @@ import ScrollReveal, { StaggerContainer, StaggerItem } from '../../components/co
 import './SolutionsPage.css';
 
 const DOMAIN_ICONS = {
+  'erp': <Cpu size={16} />,
   'digital-transformation': <Layers size={16} />,
   'ai-intelligent-automation': <Sparkles size={16} />,
-  'software-development': <Code2 size={16} />,
-  'erp': <Cpu size={16} />,
-  'cybersecurity': <ShieldCheck size={16} />,
   'cloud-infrastructure': <Cloud size={16} />,
-  'data-business-intelligence': <Database size={16} />,
-  'integration-api': <Network size={16} />
+  'data-business-intelligence': <Database size={16} />
 };
 
 const DIFF_ICONS = [
@@ -93,11 +90,6 @@ export default function SolutionsPage() {
                   onClick={() => setActiveCategory(cat.id)}
                 >
                   <span>{cat.label}</span>
-                  {cat.id === 'all' ? (
-                    <span className="hub-cat-count">{SOLUTIONS.length}</span>
-                  ) : (
-                    <span className="hub-cat-count">{SOLUTIONS.filter(s => s.category === cat.id).length}</span>
-                  )}
                 </button>
               ))}
             </div>

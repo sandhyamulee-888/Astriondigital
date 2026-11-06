@@ -81,13 +81,15 @@ export default function Header() {
                     <li key={item.id} className="nav-item">
                       <Link 
                         to={item.href} 
-                        className={`nav-button ${location.pathname === item.href ? 'is-active' : ''}`}
+                        className={`nav-button ${location.pathname === item.href || (item.id === 'partners' && location.pathname === '/about/partners') ? 'is-active' : ''}`}
                       >
                         <span className="nav-button-label">{item.label}</span>
                       </Link>
                     </li>
                   );
                 }
+                const isRouteActive = location.pathname.startsWith(item.href) || (item.id === 'partners' && location.pathname === '/about/partners');
+
                 return (
                   <li
                     key={item.id}
@@ -95,7 +97,7 @@ export default function Header() {
                     onMouseEnter={() => handleMouseEnter(item.id)}
                   >
                     <button
-                      className={`nav-button ${isActive ? 'is-active' : ''}`}
+                      className={`nav-button ${isActive || isRouteActive ? 'is-active' : ''}`}
                       aria-expanded={isActive}
                       aria-haspopup="true"
                       onClick={() => setActiveMenuId(isActive ? null : item.id)}

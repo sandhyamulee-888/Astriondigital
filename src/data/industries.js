@@ -1,24 +1,24 @@
 export const INDUSTRIES = [
   {
-    id: 'manufacturing',
+    id: 'retail',
     num: '01',
-    name: 'Manufacturing',
-    headline: 'Connected Shop Floors and Automated Bill of Materials',
-    simpleHeadline: 'Connected Shop Floors and Automated Bill of Materials',
-    coreProblemSolved: 'Tracks production schedules, raw material stock, scrap rates, and machine maintenance in real time.',
-    challenge: 'Factory floors struggle with disconnected paper schedules, unexpected machine breakdowns, and material shortages that delay delivery to clients.',
-    solution: 'XENedion links your Bill of Materials (BOM), raw inventory, machine schedules, and quality inspections into one real-time shop floor dashboard.',
-    result: 'Zero production delays from missing parts, accurate cost-per-unit calculations, and real-time scrap tracking that protects profit margins.',
-    description: 'Tracks production schedules, raw material stock, scrap rates, and machine maintenance in real time.',
-    capabilities: ['Shop-Floor Scheduling', 'Automated BOM Tracking', 'Raw Material Inventory', 'Machine Maintenance Alerts'],
+    name: 'Retail & Wholesale',
+    headline: 'Unified In-Store, Warehouse, and Online Inventory',
+    simpleHeadline: 'Unified In-Store, Warehouse, and Online Inventory',
+    coreProblemSolved: 'Prevents overselling by automatically syncing POS registers, web stores, and back-office stock.',
+    challenge: 'Retailers oversell out-of-stock items online because physical store registers and eCommerce shopping carts run on separate databases.',
+    solution: 'XENedion synchronizes point-of-sale (POS) registers, eCommerce channels (Shopify, WooCommerce), and warehouse stock instantly in one shared database.',
+    result: 'Zero overselling, accurate inventory availability for customers, and instant consolidated sales and margin reporting across all channels.',
+    description: 'Prevents overselling by automatically syncing POS registers, web stores, and back-office stock.',
+    capabilities: ['Omnichannel Sync', 'POS Integration', 'Real-Time Stock Counts', 'Promotions & Pricing'],
     outcomes: [
-      'Shop-floor operations synchronized with enterprise ERP ledger in real time',
-      'Accurate Bill of Materials (BOM) & sub-assembly component routing',
-      'Live scrap rate monitoring and raw material waste reduction',
-      'Preventative machine maintenance alerts to eliminate unplanned downtime'
+      'Single inventory ledger shared between physical stores and online shops',
+      'Automated replenishment orders based on real-time sales trends',
+      'Live gross margin calculations by SKU, store location, and promotion',
+      'Seamless cross-store stock lookups and customer return processing'
     ],
-    xenedionFocus: ['Production Scheduling', 'Inventory Control', 'Purchasing & POs', 'Quality Control'],
-    href: '/industries/manufacturing'
+    xenedionFocus: ['Sales & POS', 'Inventory Management', 'Customer CRM', 'Financial Ledger'],
+    href: '/industries/retail'
   },
   {
     id: 'distribution',
@@ -42,29 +42,8 @@ export const INDUSTRIES = [
     href: '/industries/distribution'
   },
   {
-    id: 'retail',
-    num: '03',
-    name: 'Retail & Wholesale',
-    headline: 'Unified In-Store, Warehouse, and Online Inventory',
-    simpleHeadline: 'Unified In-Store, Warehouse, and Online Inventory',
-    coreProblemSolved: 'Prevents overselling by automatically syncing POS registers, web stores, and back-office stock.',
-    challenge: 'Retailers oversell out-of-stock items online because physical store registers and eCommerce shopping carts run on separate databases.',
-    solution: 'XENedion synchronizes point-of-sale (POS) registers, eCommerce channels (Shopify, WooCommerce), and warehouse stock instantly in one shared database.',
-    result: 'Zero overselling, accurate inventory availability for customers, and instant consolidated sales and margin reporting across all channels.',
-    description: 'Prevents overselling by automatically syncing POS registers, web stores, and back-office stock.',
-    capabilities: ['Omnichannel Sync', 'POS Integration', 'Real-Time Stock Counts', 'Promotions & Pricing'],
-    outcomes: [
-      'Single inventory ledger shared between physical stores and online shops',
-      'Automated replenishment orders based on real-time sales trends',
-      'Live gross margin calculations by SKU, store location, and promotion',
-      'Seamless cross-store stock lookups and customer return processing'
-    ],
-    xenedionFocus: ['Sales & POS', 'Inventory Management', 'Customer CRM', 'Financial Ledger'],
-    href: '/industries/retail'
-  },
-  {
     id: 'logistics',
-    num: '04',
+    num: '03',
     name: 'Logistics & Supply Chain',
     headline: 'Fleet Route Optimization and Freight Tracking',
     simpleHeadline: 'Fleet Route Optimization and Freight Tracking',
@@ -84,29 +63,8 @@ export const INDUSTRIES = [
     href: '/industries/logistics'
   },
   {
-    id: 'professional-services',
-    num: '05',
-    name: 'Professional Services',
-    headline: 'Real-Time Project Billing and Resource Allocation',
-    simpleHeadline: 'Real-Time Project Billing and Resource Allocation',
-    coreProblemSolved: 'Tracks billable hours, project milestones, and contract profitability on one simple dashboard.',
-    challenge: 'Agencies and consulting firms struggle with unbilled hours, scope creep, and discovering unprofitable projects only after the work is done.',
-    solution: 'XENedion tracks staff timesheets, project milestones, and expenses in real time, comparing current spend against contract budgets.',
-    result: '100% of billable hours captured, automated milestone invoices sent on time, and real-time visibility into project profit margins.',
-    description: 'Tracks billable hours, project milestones, and contract profitability on one simple dashboard.',
-    capabilities: ['Project Accounting', 'Resource Scheduling', 'Milestone Invoicing', 'Time & Expense Tracking'],
-    outcomes: [
-      'Live consultant billability dashboards and forward-looking staffing plans',
-      'One-click automated invoicing based on approved hours and milestones',
-      'Real-time project expense tracking against contract budget caps',
-      'Instant margin visibility before, during, and after client engagements'
-    ],
-    xenedionFocus: ['Project Accounting', 'Time & Billing', 'CRM & Contracts', 'Financial Reports'],
-    href: '/industries/professional-services'
-  },
-  {
     id: 'automotive',
-    num: '06',
+    num: '04',
     name: 'Automotive',
     headline: 'Parts Traceability and Dealer Supply Chain Integration',
     simpleHeadline: 'Parts Traceability and Dealer Supply Chain Integration',
@@ -127,7 +85,7 @@ export const INDUSTRIES = [
   },
   {
     id: 'other',
-    num: '07',
+    num: '05',
     name: 'Other Sectors',
     headline: 'Flexible ERP Solutions for Specialized Businesses',
     simpleHeadline: 'Flexible ERP Solutions for Specialized Businesses',

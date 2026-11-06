@@ -35,7 +35,7 @@ export default function XenedionIndustriesPage() {
             </div>
 
             <h1 className="inner-hero-title">
-              XENedion Industry Blueprints: Pre-configured for operational realities.
+              XENedion Industry Blueprints: Pre-configured for operational realities
             </h1>
 
             <p className="inner-hero-lead">

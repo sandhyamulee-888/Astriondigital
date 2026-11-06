@@ -35,7 +35,7 @@ export default function ProblemSection() {
               <span>THE OPERATIONAL CHALLENGE</span>
             </div>
             <h2 id="problem-heading" className="problem-title">
-              Using Too Many Apps and Spreadsheets Slows Your Business Down.
+              Using Too Many Apps and Spreadsheets Slows Your Business Down
             </h2>
             <p className="problem-subtitle" style={{ maxWidth: '720px', margin: '14px auto 0', color: 'var(--text-secondary, #94a3b8)', fontSize: '1.05rem', lineHeight: '1.6' }}>
               When teams use different tools for daily work, tasks take longer and mistakes happen. Astrion Digital brings all your operations together into one simple, smart platform.

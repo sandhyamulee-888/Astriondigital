@@ -39,7 +39,7 @@ export default function ApproachPage() {
             </div>
 
             <h1 className="inner-hero-title">
-              How We Engineer &amp; Deliver.
+              How We Engineer &amp; Deliver
             </h1>
 
             <p className="inner-hero-lead">

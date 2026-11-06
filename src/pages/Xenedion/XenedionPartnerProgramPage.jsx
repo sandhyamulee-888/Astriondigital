@@ -67,7 +67,7 @@ export default function XenedionPartnerProgramPage() {
         <div className="container">
           <div className="section-header-compact">
             <div className="mono-label section-tag">PARTNERSHIP TIERS</div>
-            <h2 className="section-title-compact">Empowering partners with world-class enablement.</h2>
+            <h2 className="section-title-compact">Empowering partners with world-class enablement</h2>
           </div>
 
           <div className="values-cards-grid" style={{ marginBottom: '48px' }}>

@@ -3,8 +3,8 @@
   background-color: #FFFFFF;
   border-top: 1px solid var(--border-light);
   overflow: hidden;
-  padding-top: 120px;
-  padding-bottom: 120px;
+  padding-top: 88px;
+  padding-bottom: 88px;
   text-align: center;
 }
 
@@ -108,7 +108,7 @@
   align-items: center;
   justify-content: center;
   gap: 16px;
-  margin-bottom: 48px;
+  margin-bottom: 0;
   flex-wrap: wrap;
 }
 
@@ -175,8 +175,8 @@
 
 @media (max-width: 768px) {
   .final-cta-section {
-    padding-top: 80px;
-    padding-bottom: 80px;
+    padding-top: 60px;
+    padding-bottom: 60px;
   }
 
   .cta-headline {

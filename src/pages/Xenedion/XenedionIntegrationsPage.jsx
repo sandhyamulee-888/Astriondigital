@@ -57,7 +57,7 @@ export default function XenedionIntegrationsPage() {
             </div>
 
             <h1 className="inner-hero-title">
-              XENedion Integrations &amp; APIs: Real-time connectivity across your ecosystem.
+              XENedion Integrations &amp; APIs: Real-time connectivity across your ecosystem
             </h1>
 
             <p className="inner-hero-lead">

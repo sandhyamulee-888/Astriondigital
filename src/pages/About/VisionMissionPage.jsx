@@ -35,7 +35,7 @@ export default function VisionMissionPage() {
             </div>
 
             <h1 className="inner-hero-title">
-              Our Mission &amp; Vision: Powering Intelligent Enterprise Software.
+              Our Mission &; Vision: Powering Intelligent Enterprise Software
             </h1>
 
             <p className="inner-hero-lead">

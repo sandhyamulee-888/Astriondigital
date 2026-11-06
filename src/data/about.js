@@ -1,10 +1,10 @@
 export const HERO_CONTENT = {
   label: 'ASTRION DIGITAL',
   eyebrow: 'CORPORATE BRAND',
-  headline: 'The Company Behind Intelligent Enterprise Software.',
+  headline: 'The Company Behind Intelligent Enterprise Software',
   subhead: 'Enterprise Software Products | Innovation | Business Technology',
   lead:
-    'Astrion Digital Private Limited is an enterprise software company focused on developing technology products that help businesses operate more efficiently, intelligently, and effectively.',
+    'Astrion Digital is an enterprise software solutions provider focused on developing innovative technology products that help businesses operate more efficiently, intelligently, and effectively.',
   flagship:
     'Our flagship product, XENedion, is an integrated enterprise resource planning platform designed to connect core business functions, streamline operations, and provide better visibility across the organization.',
   foundation:
@@ -21,7 +21,7 @@ export const HERO_CONTENT = {
 
 export const CORPORATE_BRAND_SECTION = {
   label: 'CORPORATE BRAND',
-  title: 'The Company Behind Intelligent Enterprise Software.',
+  title: 'The Company Behind Intelligent Enterprise Software',
   description: 'Enterprise Software Products | Innovation | Business Technology'
 };
 
@@ -33,7 +33,7 @@ export const BRAND_ARCHITECTURE = {
     role: 'Parent Company / Corporate Entity',
     pillars: ['Product Ownership', 'Strategy', 'Innovation', 'Growth'],
     description:
-      'Astrion Digital Private Limited is the enterprise software product company that designs, develops, and maintains our technology platforms. We provide the corporate foundation, cloud infrastructure, engineering talent, and sustained vision.',
+      'Astrion Digital is the enterprise software product company that designs, develops, and maintains our technology platforms. We provide the corporate foundation, cloud infrastructure, engineering talent, and sustained vision.',
     responsibilities: [
       {
         title: 'Product Ownership & IP',
@@ -100,11 +100,11 @@ export const BRAND_ARCHITECTURE = {
 export const ABOUT_ASTRION = {
   label: 'ABOUT ASTRION DIGITAL',
   corporateBrand: 'ASTRION DIGITAL',
-  legalName: 'Astrion Digital Private Limited',
-  headline: 'The Company Behind Intelligent Enterprise Software.',
+  legalName: 'Astrion Digital',
+  headline: 'The Company Behind Intelligent Enterprise Software',
   subhead: 'Enterprise Software Products | Innovation | Business Technology',
   lead:
-    'Astrion Digital Private Limited is an enterprise software company focused on developing technology products that help businesses operate more efficiently, intelligently, and effectively.',
+    'Astrion Digital is an enterprise software company focused on developing technology products that help businesses operate more efficiently, intelligently, and effectively.',
   flagshipStatement:
     'Our flagship product, XENedion, is an integrated enterprise resource planning platform designed to connect core business functions, streamline operations, and provide better visibility across the organization.',
   foundationStatement:
@@ -148,7 +148,7 @@ export const ABOUT_ASTRION = {
     {
       num: 'Core Pillars',
       label: 'CORPORATE MTRX',
-      desc: 'Product Ownership · Strategy · Innovation · Growth'
+      desc: 'Driven by product ownership, strategic vision, continuous innovation, and enterprise growth'
     },
     {
       num: 'Cloud-Native',
@@ -217,30 +217,6 @@ export const LEADERSHIP = [
 ];
 
 export const PARTNERS = [
-  {
-    id: 'aws',
-    name: 'Amazon Web Services',
-    tier: 'Cloud Infrastructure Partner',
-    category: 'Cloud Hosting & High Availability',
-    desc: 'High-availability multi-region hosting and automated database backups ensuring 24/7 reliability.',
-    tech: ['Amazon EKS', 'Encrypted RDS Storage', 'Global CDN']
-  },
-  {
-    id: 'azure',
-    name: 'Microsoft Azure',
-    tier: 'Cloud & Identity Partner',
-    category: 'Enterprise Identity & Office Sync',
-    desc: 'Single sign-on (SSO), active directory federation, and seamless Excel / Office export connectivity.',
-    tech: ['Microsoft Entra ID', 'Azure Cloud Backup', 'Office 365 Sync']
-  },
-  {
-    id: 'gcp',
-    name: 'Google Cloud',
-    tier: 'Analytics & Infrastructure Partner',
-    category: 'Real-Time Analytics & Security',
-    desc: 'High-speed data querying and intelligent forecasting models powering XENedion dashboards.',
-    tech: ['Google BigQuery', 'Cloud Security Command', 'Vertex AI']
-  },
   {
     id: 'implementation-partners',
     name: 'Certified Delivery Network',

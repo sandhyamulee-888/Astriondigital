@@ -58,12 +58,12 @@ export default function CorporatePositioningSection() {
             </div>
 
             <h2 className="positioning-main-headline">
-              Astrion Digital provides the corporate foundation for intelligent enterprise software.
+              Astrion Digital provides the corporate foundation for intelligent enterprise software
             </h2>
 
             <div className="positioning-statement-card">
               <p className="statement-lead-paragraph">
-                Astrion Digital Private Limited is an enterprise software company focused on developing technology products that help businesses operate more efficiently, intelligently, and effectively.
+                Astrion Digital is an enterprise software company focused on developing technology products that help businesses operate more efficiently, intelligently, and effectively.
               </p>
 
               <p className="statement-secondary-paragraph">

@@ -3,18 +3,19 @@ import { BrowserRouter, Routes, Route, useLocation } from 'react-router-dom';
 import Header from './components/common/Header/Header';
 import Footer from './components/common/Footer/Footer';
 import ScrollProgressBar from './components/common/ScrollProgressBar/ScrollProgressBar';
+import FloatingERPButton from './components/common/FloatingERPButton/FloatingERPButton';
 
-// 1. Home
+// Home
 import HomePage from './pages/Home/HomePage';
 
-// 2. About
+// About
 import AboutPage from './pages/About/AboutPage';
 import VisionMissionPage from './pages/About/VisionMissionPage';
 import ApproachPage from './pages/About/ApproachPage';
 import LeadershipPage from './pages/About/LeadershipPage';
 import PartnersPage from './pages/About/PartnersPage';
 
-// 3. Solutions
+// Solutions
 import SolutionsPage from './pages/Solutions/SolutionsPage';
 import SolutionDetailPage from './pages/Solutions/SolutionDetailPage';
 import DigitalTransformationPage from './pages/Solutions/DigitalTransformationPage';
@@ -26,16 +27,14 @@ import CloudInfrastructurePage from './pages/Solutions/CloudInfrastructurePage';
 import DataBIPage from './pages/Solutions/DataBIPage';
 import IntegrationAPIPage from './pages/Solutions/IntegrationAPIPage';
 
-// 4. XENedion ERP
-import XenedionPage from './pages/Xenedion/XenedionPage';
-import XenedionModulesPage from './pages/Xenedion/XenedionModulesPage';
+// XENedion ERP
 import XenedionIndustriesPage from './pages/Xenedion/XenedionIndustriesPage';
 import XenedionAIPage from './pages/Xenedion/XenedionAIPage';
 import XenedionIntegrationsPage from './pages/Xenedion/XenedionIntegrationsPage';
 import XenedionImplementationPage from './pages/Xenedion/XenedionImplementationPage';
 import XenedionPartnerProgramPage from './pages/Xenedion/XenedionPartnerProgramPage';
 
-// 5. Industries
+// Industries
 import IndustriesPage from './pages/Industries/IndustriesPage';
 import IndustryDetailPage from './pages/Industries/IndustryDetailPage';
 import ManufacturingPage from './pages/Industries/ManufacturingPage';
@@ -46,7 +45,7 @@ import ProfessionalServicesPage from './pages/Industries/ProfessionalServicesPag
 import AutomotivePage from './pages/Industries/AutomotivePage';
 import OtherIndustriesPage from './pages/Industries/OtherIndustriesPage';
 
-// 6. Insights
+// Insights
 import InsightsPage from './pages/Insights/InsightsPage';
 import BlogPage from './pages/Insights/BlogPage';
 import CaseStudiesPage from './pages/Insights/CaseStudiesPage';
@@ -60,6 +59,7 @@ import LegalPage from './pages/Legal/LegalPage';
 
 // Fallback
 import PlaceholderPage from './pages/PlaceholderPage';
+
 
 import './App.css';
 
@@ -80,6 +80,8 @@ function ScrollToTop() {
       document.title = 'Platform Capabilities & Architecture — Astrion Digital';
     } else if (pathname.startsWith('/industries')) {
       document.title = 'Industry Blueprints — Astrion Digital';
+    } else if (pathname.startsWith('/partners')) {
+      document.title = 'Strategic Partners — Astrion Digital';
     } else if (pathname.startsWith('/insights')) {
       document.title = 'Insights & Publications — Astrion Digital';
     } else if (pathname.startsWith('/contact')) {
@@ -96,13 +98,17 @@ export default function App() {
   return (
     <BrowserRouter>
       <ScrollToTop />
-      <div className="app-shell">
-        <ScrollProgressBar />
-        <Header />
-        
-        <Routes>
-          {/* 1. Home */}
+        <div className="app-shell">
+          <ScrollProgressBar />
+          <Header />
+          
+          <Routes>
+
+            {/* 1. Home */}
           <Route path="/" element={<HomePage />} />
+
+          {/* Partners Route */}
+          <Route path="/partners" element={<PartnersPage />} />
 
           {/* 2. About Routes */}
           <Route path="/about" element={<AboutPage />} />
@@ -176,6 +182,7 @@ export default function App() {
         </Routes>
 
         <Footer />
+        <FloatingERPButton />
       </div>
     </BrowserRouter>
   );

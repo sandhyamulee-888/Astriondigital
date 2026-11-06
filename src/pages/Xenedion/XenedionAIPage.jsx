@@ -72,7 +72,7 @@ export default function XenedionAIPage() {
         <div className="container">
           <div className="section-header-compact">
             <div className="mono-label section-tag">AUTONOMOUS OPERATING LOOPS</div>
-            <h2 className="section-title-compact">AI integrated into every enterprise transaction.</h2>
+            <h2 className="section-title-compact">AI integrated into every enterprise transaction</h2>
             <p className="section-desc-compact">
               Deterministic, schema-validated agentic workflows operating with strict privacy and mathematical accuracy.
             </p>
