@@ -72,7 +72,7 @@ export default function XenedionImplementationPage() {
         <div className="container">
           <div className="section-header-compact">
             <div className="mono-label section-tag">DEPLOYMENT METHODOLOGY</div>
-            <h2 className="section-title-compact">Four phases of risk-controlled rollout.</h2>
+            <h2 className="section-title-compact">Four phases of risk-controlled rollout</h2>
           </div>
 
           <div className="values-cards-grid" style={{ marginBottom: '48px' }}>

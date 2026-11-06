@@ -47,24 +47,6 @@ export default function FinalCTA() {
               Talk to Our Product Team
             </Button>
           </div>
-
-          {/* Friendly Trust & Demo Guarantees */}
-          <div className="cta-governance-strip">
-            <div className="gov-item">
-              <span style={{ fontSize: '14px', lineHeight: 1 }}>🔒</span>
-              <span className="mono-tag">No Commitments Required</span>
-            </div>
-            <div className="gov-divider mono-tag" style={{ color: 'rgba(15, 23, 42, 0.3)' }}>•</div>
-            <div className="gov-item">
-              <span style={{ fontSize: '14px', lineHeight: 1 }}>⚡</span>
-              <span className="mono-tag">Tailored Product Demo</span>
-            </div>
-            <div className="gov-divider mono-tag" style={{ color: 'rgba(15, 23, 42, 0.3)' }}>•</div>
-            <div className="gov-item">
-              <span style={{ fontSize: '14px', lineHeight: 1 }}>💬</span>
-              <span className="mono-tag">Direct Access to Product Specialists</span>
-            </div>
-          </div>
         </ScrollReveal>
       </div>
     </section>

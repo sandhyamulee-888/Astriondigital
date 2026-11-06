@@ -37,7 +37,7 @@ export default function WhyAstrionSection() {
               <span>WHY ASTRION DIGITAL</span>
             </div>
             <h2 id="why-heading" className="why-title">
-              Enterprise Software Built for Long-Term Business Growth.
+              Enterprise Software Built for Long-Term Business Growth
             </h2>
             <p style={{ maxWidth: '680px', margin: '14px auto 0', color: 'var(--text-secondary, #94a3b8)', fontSize: '1.05rem', lineHeight: '1.6' }}>
               We provide the corporate foundation, technology innovation, and dependable engineering backing so your business can operate with total clarity.

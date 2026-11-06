@@ -125,6 +125,11 @@
   margin-bottom: 32px;
 }
 
+.inner-hero-lead:last-child,
+.inner-hero-content > *:last-child {
+  margin-bottom: 0;
+}
+
 .inner-hero-actions {
   display: flex;
   align-items: center;
@@ -434,15 +439,7 @@
   color: var(--text-secondary);
 }
 
-@media (max-width: 1024px) {
-  .brand-architecture-grid {
-    grid-template-columns: 1fr;
-  }
 
-  .why-cards-grid {
-    grid-template-columns: 1fr;
-  }
-}
 
 .quote-text {
   font-size: 1.0625rem;
@@ -459,33 +456,69 @@
 }
 
 /* 4 Key Proof Metrics Grid */
+.about-narrative-header {
+  max-width: 860px;
+  margin-bottom: 32px;
+}
+
 .stats-matrix-grid {
   display: grid;
   grid-template-columns: repeat(2, 1fr);
-  gap: 16px;
+  gap: 18px;
+  align-content: start;
 }
 
 .stat-matrix-card {
   background-color: #FFFFFF;
   border: 1px solid var(--border-medium);
   border-radius: var(--radius-sm);
-  padding: 28px 22px;
-  box-shadow: var(--shadow-subtle);
+  padding: 24px 20px;
+  box-shadow: 0 2px 10px rgba(15, 23, 42, 0.04);
   display: flex;
   flex-direction: column;
-  transition: transform var(--transition-fast), border-color var(--transition-fast);
+  transition: transform var(--transition-fast), border-color var(--transition-fast), box-shadow var(--transition-fast);
 }
 
 .stat-matrix-card:hover {
   transform: translateY(-3px);
-  border-color: var(--accent-primary-border);
+  border-color: var(--brand-blue);
+  box-shadow: 0 10px 24px rgba(28, 117, 189, 0.08);
+}
+
+.stat-card-header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 12px;
+  margin-bottom: 16px;
+}
+
+.stat-icon-box {
+  width: 44px;
+  height: 44px;
+  border-radius: var(--radius-xs);
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  flex-shrink: 0;
+  border: 1px solid;
+}
+
+.stat-matrix-title {
+  font-family: var(--font-display, inherit);
+  font-size: 1.25rem;
+  font-weight: 700;
+  color: var(--text-primary);
+  line-height: 1.3;
+  margin-bottom: 8px;
+  word-break: normal;
 }
 
 .stat-matrix-number {
-  font-size: clamp(1.75rem, 3vw, 2.25rem);
+  font-size: 1.25rem;
   font-weight: 700;
   color: var(--brand-blue);
-  line-height: 1;
+  line-height: 1.3;
   margin-bottom: 8px;
 }
 
@@ -493,15 +526,153 @@
   font-size: 0.6875rem;
   font-weight: 700;
   color: var(--text-tertiary);
-  margin-bottom: 10px;
-  letter-spacing: 0.06em;
+  margin-bottom: 0;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
 }
 
 .stat-matrix-desc {
-  font-size: 0.8125rem;
-  line-height: 1.5;
+  font-size: 0.84375rem;
+  line-height: 1.55;
   color: var(--text-secondary);
   margin-top: auto;
+}
+
+.about-narrative-col,
+.about-stats-col {
+  min-width: 0;
+  max-width: 100%;
+}
+
+@media (max-width: 1024px) {
+  .about-split-grid {
+    grid-template-columns: 1fr;
+    gap: 40px;
+  }
+
+  .brand-architecture-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .why-cards-grid {
+    grid-template-columns: 1fr;
+  }
+}
+
+@media (max-width: 768px) {
+  .inner-hero-section {
+    padding-top: calc(var(--header-height) + 24px);
+    padding-bottom: 48px;
+  }
+
+  .inner-hero-title {
+    font-size: 2rem;
+    line-height: 1.15;
+  }
+
+  .inner-hero-lead {
+    font-size: 1rem;
+    line-height: 1.55;
+    margin-bottom: 24px;
+  }
+
+  .inner-hero-actions {
+    flex-direction: column;
+    align-items: stretch;
+    gap: 12px;
+  }
+
+  .inner-hero-actions .btn {
+    width: 100%;
+    justify-content: center;
+  }
+
+  .about-narrative-section {
+    padding-top: 48px;
+    padding-bottom: 48px;
+  }
+
+  .about-split-grid {
+    grid-template-columns: 1fr !important;
+    gap: 28px;
+  }
+
+  .stats-matrix-grid {
+    grid-template-columns: 1fr !important;
+    gap: 14px;
+  }
+
+  .stat-matrix-card {
+    padding: 22px 18px;
+  }
+
+  .stat-matrix-title,
+  .stat-matrix-number {
+    font-size: 1.125rem;
+    word-break: normal;
+  }
+
+  .narrative-heading {
+    font-size: 1.625rem;
+    line-height: 1.25;
+  }
+
+  .corporate-statement-block {
+    padding: 22px 18px;
+  }
+
+  .statement-lead-para {
+    font-size: 1rem;
+    line-height: 1.55;
+  }
+
+  .statement-flagship-para {
+    font-size: 0.9375rem;
+  }
+
+  .about-callout-quote {
+    padding: 18px 16px;
+  }
+
+  .brand-architecture-section {
+    padding-top: 48px;
+    padding-bottom: 48px;
+  }
+
+  .brand-arch-card {
+    padding: 24px 18px;
+  }
+
+  .arch-entity-heading {
+    font-size: 1.5rem;
+  }
+
+  .why-positioning-block {
+    padding: 24px 18px;
+  }
+
+  .about-values-section {
+    padding-top: 48px;
+    padding-bottom: 48px;
+  }
+
+  .about-subnav-section {
+    padding-top: 48px;
+    padding-bottom: 48px;
+  }
+
+  .about-subpage-card {
+    padding: 22px 18px;
+  }
+
+  .about-cta-section {
+    padding-top: 48px;
+    padding-bottom: 48px;
+  }
+
+  .about-cta-banner {
+    padding: 28px 20px;
+  }
 }
 
 /* Compact Section Headers */
@@ -578,8 +749,14 @@
 /* Sub-Pages Explorer Grid */
 .about-subpages-grid {
   display: grid;
-  grid-template-columns: repeat(4, 1fr);
+  grid-template-columns: repeat(3, 1fr);
   gap: 24px;
+}
+
+@media (max-width: 900px) {
+  .about-subpages-grid {
+    grid-template-columns: 1fr;
+  }
 }
 
 .about-subpage-card {
@@ -1173,11 +1350,25 @@
 /* ========================================================
    PARTNERS PAGE STYLES
    ======================================================== */
+.partners-page .inner-hero-section {
+  padding-bottom: 32px;
+}
+
+.partners-page .inner-hero-lead {
+  margin-bottom: 0;
+}
+
+.partners-page .partners-content-section {
+  padding-top: 36px;
+  padding-bottom: 72px;
+}
+
 .partners-deep-grid {
   display: grid;
-  grid-template-columns: repeat(3, 1fr);
+  grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+  max-width: 780px;
+  margin: 0 auto 48px;
   gap: 28px;
-  margin-bottom: 48px;
 }
 
 .partner-deep-card {
@@ -1325,6 +1516,15 @@
 }
 
 @media (max-width: 768px) {
+  .partners-page .inner-hero-section {
+    padding-bottom: 24px;
+  }
+
+  .partners-page .partners-content-section {
+    padding-top: 24px;
+    padding-bottom: 48px;
+  }
+
   .inner-vm-large-grid,
   .approach-timeline-tabs,
   .approach-all-phases-grid,

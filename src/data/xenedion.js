@@ -2,7 +2,7 @@ export const XENEDION_DATA = {
   tag: 'FLAGSHIP ENTERPRISE SOFTWARE PRODUCT',
   productName: 'XENedion',
   tagline: 'One Platform. Your Entire Business.',
-  headline: 'XENedion ERP — One Platform. Your Entire Business.',
+  headline: 'XENedion ERP — One Platform. Your Entire Business',
   heroHeadline: 'One Platform. Your Entire Business.',
   heroSubheadline: 'Our flagship product, XENedion, is an integrated enterprise resource planning platform designed to connect core business functions, streamline operations, and provide better visibility across the organization.',
   role: 'Flagship Enterprise Software Product',

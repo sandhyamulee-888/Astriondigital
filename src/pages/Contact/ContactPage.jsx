@@ -98,7 +98,7 @@ export default function ContactPage() {
             </div>
 
             <h1 className="contact-hero-title">
-              Let’s Start a Conversation.
+              Let’s Start a Conversation
             </h1>
 
             <p className="contact-hero-lead">

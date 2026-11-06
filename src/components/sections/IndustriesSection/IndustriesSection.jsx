@@ -7,18 +7,23 @@ import './IndustriesSection.css';
 export default function IndustriesSection() {
   const tabs = [
     {
-      id: 'manufacturing',
-      name: 'Manufacturing',
-      icon: <Factory size={18} />,
-      headline: 'Precision Production & Shop Floor Orchestration',
-      description: 'Plan factory floor shifts, manage raw material stock, minimize machine downtime, and track product quality.',
+      id: 'retail-wholesale',
+      name: 'Retail & Wholesale',
+      icon: <ShoppingCart size={18} />,
+      headline: 'Unified Omni-Channel Commercial Operations',
+      description: 'Keep retail stores, online orders, and backend stock synchronized without overselling.',
       deliverables: [
-        'Shift scheduling and real-time machine capacity planning',
-        'Raw materials BOM traceability and automatic replenishment',
-        'Predictive maintenance telemetry to eliminate unplanned downtime',
-        'End-to-end batch quality tracking and ISO compliance'
+        'Single real-time inventory pool across physical stores and eCommerce',
+        'Point of Sale (POS) offline-first checkout with auto-sync',
+        'Dynamic B2B customer pricing tiers and credit term rules',
+        'Automated replenishment triggers based on seasonal sell-through'
       ],
-      href: '/industries/manufacturing'
+      quote: 'Omni-channel sales and stock synchronized in real time. Automatically balances in-store POS, eCommerce orders, and central warehouse fulfillment.',
+      metric1Label: 'SYNC STATUS',
+      metric1Value: 'POS AUTO-SYNC: ON',
+      metric2Label: 'STOCK ACCURACY',
+      metric2Value: 'OMNI RECONCILED: 100%',
+      href: '/industries/retail'
     },
     {
       id: 'distribution-logistics',
@@ -32,21 +37,31 @@ export default function IndustriesSection() {
         'Multi-depot inventory visibility with automated balancing',
         'Carrier rate comparison and instant e-way bill generation'
       ],
+      quote: 'Fleet routes and multi-warehouse stock balanced in real time. Automatically optimizes delivery schedules and dispatches orders without manual lag.',
+      metric1Label: 'SYNC STATUS',
+      metric1Value: 'FLEET DISPATCH: LIVE',
+      metric2Label: 'FULFILLMENT RATE',
+      metric2Value: 'ON-TIME: 99.6%',
       href: '/industries/logistics'
     },
     {
-      id: 'retail-wholesale',
-      name: 'Retail & Wholesale',
-      icon: <ShoppingCart size={18} />,
-      headline: 'Unified Omni-Channel Commercial Operations',
-      description: 'Keep retail stores, online orders, and backend stock synchronized without overselling.',
+      id: 'manufacturing',
+      name: 'Manufacturing',
+      icon: <Factory size={18} />,
+      headline: 'Precision Production & Shop Floor Orchestration',
+      description: 'Plan factory floor shifts, manage raw material stock, minimize machine downtime, and track product quality.',
       deliverables: [
-        'Single real-time inventory pool across physical stores and eCommerce',
-        'Point of Sale (POS) offline-first checkout with auto-sync',
-        'Dynamic B2B customer pricing tiers and credit term rules',
-        'Automated replenishment triggers based on seasonal sell-through'
+        'Shift scheduling and real-time machine capacity planning',
+        'Raw materials BOM traceability and automatic replenishment',
+        'Predictive maintenance telemetry to eliminate unplanned downtime',
+        'End-to-end batch quality tracking and ISO compliance'
       ],
-      href: '/industries/retail'
+      quote: 'Shop-floor operations connected in real time. Automatically alerts managers when raw materials run low or machines require scheduled maintenance.',
+      metric1Label: 'SYNC STATUS',
+      metric1Value: 'SHOP FLOOR: LIVE',
+      metric2Label: 'LEDGER INTEGRITY',
+      metric2Value: 'BOM ACCURACY: 100%',
+      href: '/industries/manufacturing'
     }
   ];
 
@@ -63,7 +78,7 @@ export default function IndustriesSection() {
               <span>BUILT FOR YOUR INDUSTRY</span>
             </div>
             <h2 id="industries-heading" className="industries-title">
-              Custom-Fit for How Your Business Actually Works.
+              Custom-Fit for How Your Business Actually Works
             </h2>
           </div>
         </ScrollReveal>
@@ -136,17 +151,17 @@ export default function IndustriesSection() {
                 <div className="preview-card-body">
                   <div className="preview-metric-row">
                     <div className="metric-box">
-                      <span className="mono-tag metric-tag">SYNC STATUS</span>
-                      <span className="metric-status green-text">SYNC: ACTIVE</span>
+                      <span className="mono-tag metric-tag">{activeTab.metric1Label || 'SYNC STATUS'}</span>
+                      <span className="metric-status green-text">{activeTab.metric1Value || 'SYNC: ACTIVE'}</span>
                     </div>
                     <div className="metric-box">
-                      <span className="mono-tag metric-tag">LEDGER INTEGRITY</span>
-                      <span className="metric-status green-text">STOCK RECONCILED: 100%</span>
+                      <span className="mono-tag metric-tag">{activeTab.metric2Label || 'LEDGER INTEGRITY'}</span>
+                      <span className="metric-status green-text">{activeTab.metric2Value || 'STOCK RECONCILED: 100%'}</span>
                     </div>
                   </div>
                   <div className="preview-quote-box">
                     <p className="preview-quote-text">
-                      &ldquo;Shop-floor operations connected in real time. Automatically alerts managers when raw materials run low or machines require scheduled maintenance.&rdquo;
+                      &ldquo;{activeTab.quote || 'Shop-floor operations connected in real time. Automatically alerts managers when raw materials run low or machines require scheduled maintenance.'}&rdquo;
                     </p>
                   </div>
                 </div>

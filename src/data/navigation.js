@@ -10,7 +10,7 @@ export const NAV_ITEMS = [
     href: '/about',
     megaMenu: {
       tag: 'ASTRION DIGITAL // CORPORATE ENTITY',
-      headline: 'The Company Behind Intelligent Enterprise Software.',
+      headline: 'The Company Behind Intelligent Enterprise Software',
       featured: {
         title: 'About Astrion Digital',
         description: 'An enterprise software company developing technology products that help businesses operate more efficiently, intelligently, and effectively.',
@@ -26,10 +26,9 @@ export const NAV_ITEMS = [
           ]
         },
         {
-          heading: 'Leadership & Partners',
+          heading: 'Leadership',
           items: [
-            { title: 'Leadership', href: '/about/leadership', desc: 'Experienced software architects and operational leaders.' },
-            { title: 'Partners', href: '/about/partners', desc: 'Global cloud infrastructure and certified delivery partners.' }
+            { title: 'Leadership', href: '/about/leadership', desc: 'Experienced software architects and operational leaders.' }
           ]
         }
       ]
@@ -41,7 +40,7 @@ export const NAV_ITEMS = [
     href: '/solutions',
     megaMenu: {
       tag: 'SOLUTIONS // PLATFORM CAPABILITIES',
-      headline: 'Enterprise software capabilities engineered for modern operational growth.',
+      headline: 'Enterprise software capabilities engineered for modern operational growth',
       featured: {
         title: 'Enterprise Digital Transformation',
         description: 'Manage your entire business from one integrated ERP platform with real-time operational visibility.',
@@ -94,15 +93,15 @@ export const NAV_ITEMS = [
     href: '/industries',
     megaMenu: {
       tag: 'INDUSTRIES // BUILT FOR YOUR SECTOR',
-      headline: 'Pre-configured workflows tailored to how your industry actually works.',
+      headline: 'Pre-configured workflows tailored to how your industry actually works',
       featured: {
-        title: 'Manufacturing Blueprint',
-        description: 'Connected shop floors, live Bills of Materials, and real-time scrap tracking.',
-        href: '/industries/manufacturing'
+        title: 'Retail Commerce Blueprint',
+        description: 'Unified in-store POS, multi-warehouse fulfillment, and real-time inventory synchronization.',
+        href: '/industries/retail'
       },
       columns: [
         {
-          heading: 'Production & Trade',
+          heading: 'Commerce & Trade',
           items: [
             { title: 'Retail', href: '/industries/retail', desc: 'Unified in-store, warehouse, and online inventory.' },
             { title: 'Distribution', href: '/industries/distribution', desc: 'Multi-warehouse visibility and faster order fulfillment.' }
@@ -120,12 +119,44 @@ export const NAV_ITEMS = [
     }
   },
   {
+    id: 'partners',
+    label: 'Partners',
+    href: '/partners',
+    megaMenu: {
+      tag: 'PARTNERS // STRATEGIC ALLIES',
+      headline: 'Collaborating with regional implementation and delivery partners',
+      featured: {
+        title: 'Strategic Delivery Network',
+        description: 'Certified regional implementation and delivery partners providing reliable enterprise software onboarding worldwide.',
+        href: '/partners',
+        ctaText: 'Explore Partners'
+      },
+      columns: [
+        {
+          heading: 'Ecosystem & Programs',
+          items: [
+            { 
+              title: 'ERP Partner Program', 
+              href: '/xenedion/partner-program', 
+              desc: 'Join our certified implementation, reseller, and technology partner network.' 
+            },
+            { 
+              title: 'Partner Inquiries', 
+              href: '/contact', 
+              desc: 'Explore strategic delivery and ecosystem collaboration.' 
+            }
+          ]
+        }
+      ]
+    }
+  },
+  {
     id: 'insights',
     label: 'Insights',
     href: '/insights',
     megaMenu: {
       tag: 'INSIGHTS // PRACTICAL PERSPECTIVES',
-      headline: 'Practical perspectives on modernizing business operations and ERP best practices.',
+      headline: 'Practical perspectives on modernizing business operations and ERP best practices',
       featured: {
         title: 'Customer Success Stories',
         description: 'Real stories of companies cutting admin time, stopping inventory leaks, and scaling fast.',

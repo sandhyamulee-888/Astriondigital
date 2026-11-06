@@ -35,7 +35,7 @@ export default function LeadershipPage() {
             </div>
 
             <h1 className="inner-hero-title">
-              Leadership: The Team Behind Intelligent Enterprise Software.
+              Leadership: The Team Behind Intelligent Enterprise Software
             </h1>
 
             <p className="inner-hero-lead">

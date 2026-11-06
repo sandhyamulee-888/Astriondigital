@@ -5,7 +5,6 @@ import {
   Compass,
   Target,
   Users,
-  Handshake,
   Layers,
   CheckCircle2,
   ArrowUpRight,
@@ -14,7 +13,8 @@ import {
   Globe,
   Building2,
   Cpu,
-  Layers2
+  Layers2,
+  Cloud
 } from 'lucide-react';
 import { ABOUT_ASTRION } from '../../data/about';
 import Button from '../../components/common/Button/Button';
@@ -48,7 +48,7 @@ export default function AboutPage() {
             </div>
 
             <h1 className="inner-hero-title">
-              The Company Behind Intelligent Enterprise Software.
+              The Company Behind Intelligent Enterprise Software
             </h1>
 
             <div className="about-subhead-badge mono-tag">
@@ -56,7 +56,7 @@ export default function AboutPage() {
             </div>
 
             <p className="inner-hero-lead">
-              Astrion Digital Private Limited is an enterprise software company focused on developing technology products that help businesses operate more efficiently, intelligently, and effectively — powered by our flagship platform, XENedion.
+              Astrion Digital is an enterprise software solutions focused on developing technology products that help businesses operate more efficiently, intelligently, and effectively — Powered by our flagship XENedion platform.
             </p>
 
             <div className="inner-hero-actions">
@@ -74,14 +74,16 @@ export default function AboutPage() {
       {/* Section 1: Corporate Positioning Statement */}
       <section className="section about-narrative-section">
         <div className="container">
+          <div className="section-header-compact about-narrative-header">
+            <div className="mono-label section-tag">CORPORATE POSITIONING STATEMENT</div>
+            <h2 className="narrative-heading">
+              Astrion Digital provides the corporate foundation for intelligent enterprise software
+            </h2>
+          </div>
+
           <div className="about-split-grid">
             {/* Left Column: Core Positioning Statement */}
             <div className="about-narrative-col">
-              <div className="mono-label section-tag">CORPORATE POSITIONING STATEMENT</div>
-              <h2 className="narrative-heading">
-                Astrion Digital provides the corporate foundation for intelligent enterprise software.
-              </h2>
-
               <div className="corporate-statement-block">
                 <p className="statement-lead-para">
                   {ABOUT_ASTRION.lead}
@@ -103,16 +105,37 @@ export default function AboutPage() {
               </div>
             </div>
 
-            {/* Right Column:  Key Proof Metrics */}
+            {/* Right Column: Key Proof Metrics */}
             <div className="about-stats-col">
               <div className="stats-matrix-grid">
-                {ABOUT_ASTRION.stats.map((stat, idx) => (
-                  <div key={idx} className="stat-matrix-card">
-                    <div className="stat-matrix-number mono-tag">{stat.num}</div>
-                    <div className="stat-matrix-label mono-label">{stat.label}</div>
-                    <p className="stat-matrix-desc">{stat.desc}</p>
-                  </div>
-                ))}
+                {ABOUT_ASTRION.stats.map((stat, idx) => {
+                  const statMeta = [
+                    { icon: <Cpu size={20} />, color: '#1C75BD', bg: 'rgba(28, 117, 189, 0.08)', border: 'rgba(28, 117, 189, 0.18)' },
+                    { icon: <Layers size={20} />, color: '#EB643E', bg: 'rgba(235, 100, 62, 0.08)', border: 'rgba(235, 100, 62, 0.18)' },
+                    { icon: <Building2 size={20} />, color: '#10B981', bg: 'rgba(16, 185, 129, 0.08)', border: 'rgba(16, 185, 129, 0.18)' },
+                    { icon: <Cloud size={20} />, color: '#6366F1', bg: 'rgba(99, 102, 241, 0.08)', border: 'rgba(99, 102, 241, 0.18)' }
+                  ][idx] || { icon: <Cpu size={20} />, color: '#1C75BD', bg: 'rgba(28, 117, 189, 0.08)', border: 'rgba(28, 117, 189, 0.18)' };
+
+                  return (
+                    <div key={idx} className="stat-matrix-card">
+                      <div className="stat-card-header">
+                        <div
+                          className="stat-icon-box"
+                          style={{
+                            color: statMeta.color,
+                            backgroundColor: statMeta.bg,
+                            borderColor: statMeta.border
+                          }}
+                        >
+                          {statMeta.icon}
+                        </div>
+                        <span className="stat-matrix-label mono-label">{stat.label}</span>
+                      </div>
+                      <h3 className="stat-matrix-title">{stat.num}</h3>
+                      <p className="stat-matrix-desc">{stat.desc}</p>
+                    </div>
+                  );
+                })}
               </div>
             </div>
           </div>
@@ -158,7 +181,7 @@ export default function AboutPage() {
               <Layers size={14} />
               <span>THE COMPANY &amp; THE PRODUCT</span>
             </div>
-            <h2 className="section-title-compact">Astrion Digital Builds. XENedion Runs Your Business.</h2>
+            <h2 className="section-title-compact">Astrion Digital Builds. XENedion Runs Your Business</h2>
             <p className="section-desc-compact">
               Astrion Digital is the software company. XENedion is the product your team will use every day — an all-in-one ERP built to connect every part of your business.
             </p>
@@ -176,7 +199,7 @@ export default function AboutPage() {
                 Dedicated Engineering &bull; Reliable Cloud &bull; Continuous Updates &bull; Expert Support
               </div>
               <p className="arch-card-summary">
-                Astrion Digital Private Limited is the enterprise software product company that designs, develops, and maintains our technology platforms. We provide continuous updates, reliable infrastructure, and sustained product backing.
+                Astrion Digital is the enterprise software product company that designs, develops, and maintains our technology platforms. We provide continuous updates, reliable infrastructure, and sustained product backing.
               </p>
               <ul className="arch-responsibilities-list">
                 <li>
@@ -318,16 +341,6 @@ export default function AboutPage() {
               <h3 className="subpage-title">Leadership</h3>
               <p className="subpage-desc">Experienced software architects and operational leaders committed to your success.</p>
               <span className="mono-tag subpage-link-text">Meet Our Leaders →</span>
-            </Link>
-
-            <Link to="/about/partners" className="about-subpage-card">
-              <div className="subpage-card-top">
-                <Handshake size={20} className="subpage-icon" />
-                <ArrowUpRight size={16} className="subpage-arrow" />
-              </div>
-              <h3 className="subpage-title">Strategic Partners</h3>
-              <p className="subpage-desc">Collaborating with leading cloud infrastructure and regional implementation partners.</p>
-              <span className="mono-tag subpage-link-text">View Strategic Partners →</span>
             </Link>
           </div>
         </div>
