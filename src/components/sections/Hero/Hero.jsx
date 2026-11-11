@@ -4,6 +4,25 @@ import { ShieldCheck, Activity, Layers } from 'lucide-react';
 import Button from '../../common/Button/Button';
 import './Hero.css';
 
+const HERO_BENEFITS = [
+  {
+    title: 'Connected Operations:',
+    description: 'Integrate business functions into one unified platform.',
+  },
+  {
+    title: 'Operational Efficiency:',
+    description: 'Simplify workflows, reduce manual processes and improve productivity.',
+  },
+  {
+    title: 'Business Visibility:',
+    description: 'Access meaningful information and insights across your organisation.',
+  },
+  {
+    title: 'Scalable Technology:',
+    description: 'Build an operational foundation that grows with your business.',
+  },
+];
+
 export default function Hero() {
   return (
     <section className="hero-section" aria-label="Astrion Digital Enterprise Overview">
@@ -33,15 +52,43 @@ export default function Hero() {
             </span>
           </div>
 
+          {/* Main Heading (Kept unchanged) */}
           <h1 className="hero-headline">
             Technology That Moves{' '}
             <span className="hero-gradient-text">Business Forward</span>
           </h1>
 
-          <p className="hero-subheadline-lead">
-            Astrion Digital is an enterprise technology and business transformation company, with XENedion as its flagship ERP platform.
+          {/* Tagline directly below main heading */}
+          <p className="hero-tagline">
+            Run Smarter. Grow Faster. Stay Ahead.
           </p>
 
+          {/* Description below tagline */}
+          <p className="hero-description">
+            Bring your business operations together with intelligent enterprise technology. Astrion Digital helps businesses simplify complexity, connect processes and gain the visibility they need to make better decisions and achieve sustainable growth.
+          </p>
+
+          {/* Four Business Benefits - Clean Bullet List without Boxes or Icons */}
+          <ul className="hero-benefits-list" aria-label="Key business benefits">
+            {HERO_BENEFITS.map((benefit, idx) => (
+              <li key={idx} className="hero-benefit-item">
+                <span className="hero-benefit-bullet" aria-hidden="true">•</span>
+                <p className="hero-benefit-text">
+                  <strong className="hero-benefit-title">{benefit.title}</strong>{' '}
+                  <span className="hero-benefit-desc">{benefit.description}</span>
+                </p>
+              </li>
+            ))}
+          </ul>
+
+          {/* Company Positioning Statement AFTER the four benefits */}
+          <div className="hero-positioning-statement">
+            <p className="positioning-statement-text">
+              <span className="positioning-brand">Astrion Digital</span> as an enterprise technology and business transformation company, with <span className="positioning-platform">XENedion</span> as its flagship ERP platform.
+            </p>
+          </div>
+
+          {/* CTA Buttons */}
           <div className="hero-cta-group">
             <Button
               to="/solutions/erp"
