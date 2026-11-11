@@ -42,8 +42,29 @@ export const INDUSTRIES = [
     href: '/industries/distribution'
   },
   {
-    id: 'logistics',
+    id: 'manufacturing',
     num: '03',
+    name: 'Manufacturing',
+    headline: 'Smarter Plants, Supply Chains and ERP',
+    simpleHeadline: 'Smarter Plants, Supply Chains and ERP',
+    coreProblemSolved: 'Tracks production schedules, raw material stock, scrap rates, and machine maintenance in real time.',
+    challenge: 'Factory floors struggle with disconnected paper schedules, unexpected machine breakdowns, and material shortages that delay delivery to clients.',
+    solution: 'XENedion links your Bill of Materials (BOM), raw inventory, machine schedules, and quality inspections into one real-time shop floor dashboard.',
+    result: 'Zero production delays from missing parts, accurate cost-per-unit calculations, and real-time scrap tracking that protects profit margins.',
+    description: 'Smarter plants, supply chains and ERP.',
+    capabilities: ['Shop-Floor Scheduling', 'Automated BOM Tracking', 'Raw Material Inventory', 'Machine Maintenance Alerts'],
+    outcomes: [
+      'Shop-floor operations synchronized with enterprise ERP ledger in real time',
+      'Accurate Bill of Materials (BOM) & sub-assembly component routing',
+      'Live scrap rate monitoring and raw material waste reduction',
+      'Preventative machine maintenance alerts to eliminate unplanned downtime'
+    ],
+    xenedionFocus: ['Production Scheduling', 'Inventory Control', 'Purchasing & POs', 'Quality Control'],
+    href: '/industries/manufacturing'
+  },
+  {
+    id: 'logistics',
+    num: '04',
     name: 'Logistics & Supply Chain',
     headline: 'Fleet Route Optimization and Freight Tracking',
     simpleHeadline: 'Fleet Route Optimization and Freight Tracking',
@@ -64,7 +85,7 @@ export const INDUSTRIES = [
   },
   {
     id: 'automotive',
-    num: '04',
+    num: '05',
     name: 'Automotive',
     headline: 'Parts Traceability and Dealer Supply Chain Integration',
     simpleHeadline: 'Parts Traceability and Dealer Supply Chain Integration',
@@ -85,7 +106,7 @@ export const INDUSTRIES = [
   },
   {
     id: 'other',
-    num: '05',
+    num: '06',
     name: 'Other Sectors',
     headline: 'Flexible ERP Solutions for Specialized Businesses',
     simpleHeadline: 'Flexible ERP Solutions for Specialized Businesses',

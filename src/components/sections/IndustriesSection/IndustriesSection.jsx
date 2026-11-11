@@ -48,8 +48,8 @@ export default function IndustriesSection() {
       id: 'manufacturing',
       name: 'Manufacturing',
       icon: <Factory size={18} />,
-      headline: 'Precision Production & Shop Floor Orchestration',
-      description: 'Plan factory floor shifts, manage raw material stock, minimize machine downtime, and track product quality.',
+      headline: 'Smarter Plants, Supply Chains and ERP',
+      description: 'Smarter plants, supply chains and ERP. Plan factory floor shifts, manage raw material stock, minimize machine downtime, and track product quality.',
       deliverables: [
         'Shift scheduling and real-time machine capacity planning',
         'Raw materials BOM traceability and automatic replenishment',

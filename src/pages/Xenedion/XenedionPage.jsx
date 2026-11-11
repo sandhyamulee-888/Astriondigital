@@ -17,7 +17,8 @@ import {
   Cpu,
   Database,
   Zap,
-  ShieldCheck
+  ShieldCheck,
+  ShoppingCart
 } from 'lucide-react';
 import { XENEDION_DATA } from '../../data/xenedion';
 import Button from '../../components/common/Button/Button';
@@ -46,31 +47,35 @@ export default function XenedionPage({ isSolutionSection = false }) {
 
   const categories = [
     'All Modules',
-    'Customer',
-    'Revenue',
-    'Fulfillment',
-    'Procurement',
-    'Supply Chain',
-    'Operations',
-    'Ledger',
-    'People',
-    'Intelligence'
+    ...Array.from(new Set(XENEDION_DATA.modules.map((m) => m.category)))
   ];
 
   const getModuleIcon = (id) => {
     switch (id) {
-      case 'crm': return <Users size={18} />;
-      case 'sales': return <TrendingUp size={18} />;
-      case 'orders': return <FileText size={18} />;
-      case 'purchasing': return <ShoppingBag size={18} />;
-      case 'vendor': return <Briefcase size={18} />;
-      case 'inventory': return <Layers size={18} />;
-      case 'warehouse': return <Package size={18} />;
-      case 'finance': return <DollarSign size={18} />;
-      case 'hr': return <UserCheck size={18} />;
-      case 'logistics': return <Truck size={18} />;
-      case 'analytics': return <BarChart3 size={18} />;
-      default: return <Cpu size={18} />;
+      case 'auth':
+      case 'user-management-auth':
+        return <ShieldCheck size={18} />;
+      case 'inventory':
+        return <Layers size={18} />;
+      case 'sales':
+        return <TrendingUp size={18} />;
+      case 'purchasing':
+        return <ShoppingBag size={18} />;
+      case 'pos':
+        return <ShoppingCart size={18} />;
+      case 'crm':
+        return <Users size={18} />;
+      case 'gst-compliance':
+      case 'compliance':
+        return <FileText size={18} />;
+      case 'finance':
+      case 'finance-accounts':
+        return <DollarSign size={18} />;
+      case 'reports':
+      case 'analytics':
+        return <BarChart3 size={18} />;
+      default:
+        return <Cpu size={18} />;
     }
   };
 
@@ -206,50 +211,7 @@ export default function XenedionPage({ isSolutionSection = false }) {
       </section>
 
       {/* ========================================================
-          SECTION 2: CORE ERP MODULES (5 Dark Cards)
-          ======================================================== */}
-      <section className="section section-alt">
-        <div className="container">
-          <div className="section-header-compact">
-            <div className="mono-label section-tag">CORE ERP MODULES</div>
-            <h2 className="section-title-compact">Everything You Need to Run Your Business</h2>
-            <p className="section-desc-compact">
-              Built to replace multiple fragmented subscriptions with one clean, unified platform.
-            </p>
-          </div>
-
-          <div className="core-modules-dark-grid">
-            {XENEDION_DATA.coreModules.map((mod) => (
-              <div key={mod.id} className="core-module-dark-card">
-                <h3>{mod.name}</h3>
-                <p>{mod.summary}</p>
-                <div style={{ marginTop: 'auto' }}>
-                  <span className="core-module-benefits-label mono-tag">
-                    KEY BENEFITS:
-                  </span>
-                  <div className="core-module-benefits-list">
-                    {mod.bullets.map((bullet, bIdx) => (
-                      <div key={bIdx} className="core-module-benefit-item">
-                        <CheckCircle2 size={15} className="core-module-benefit-icon" />
-                        <span>{bullet}</span>
-                      </div>
-                    ))}
-                  </div>
-                </div>
-              </div>
-            ))}
-          </div>
-
-          <div style={{ textAlign: 'center', marginTop: '40px' }}>
-            <Button onClick={scrollToModules} variant="secondary" size="md">
-              View Detailed Module Directory →
-            </Button>
-          </div>
-        </div>
-      </section>
-
-      {/* ========================================================
-          SECTION 3: COMPLETE MODULE DIRECTORY (11 Module Cards)
+          SECTION 2: COMPLETE MODULE DIRECTORY (9 Module Cards)
           ======================================================== */}
       <section className="section" id="modules-directory">
         <div className="container">
@@ -289,7 +251,7 @@ export default function XenedionPage({ isSolutionSection = false }) {
                 </div>
 
                 <h3 className="dir-module-title">{mod.name}</h3>
-                <p className="dir-module-desc">{mod.desc}</p>
+                {mod.desc ? <p className="dir-module-desc">{mod.desc}</p> : null}
 
                 <ul className="dir-module-bullets">
                   {mod.bullets.map((bullet, bIdx) => (
@@ -301,8 +263,19 @@ export default function XenedionPage({ isSolutionSection = false }) {
                 </ul>
 
                 <div className="dir-module-footer mono-tag">
-                  <span>100% REAL-TIME SYNC</span>
-                  <span>SHARED LEDGER</span>
+                  {mod.badges && mod.badges.length >= 2 ? (
+                    <>
+                      <span>{mod.badges[0]}</span>
+                      <span>{mod.badges[1]}</span>
+                    </>
+                  ) : mod.badges && mod.badges.length === 1 ? (
+                    <span>{mod.badges[0]}</span>
+                  ) : (
+                    <>
+                      <span>100% REAL-TIME SYNC</span>
+                      <span>SHARED LEDGER</span>
+                    </>
+                  )}
                 </div>
               </div>
             ))}

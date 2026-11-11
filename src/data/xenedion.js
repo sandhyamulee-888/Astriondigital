@@ -110,93 +110,122 @@ export const XENEDION_DATA = {
       ]
     }
   ],
-  modules: [
+    modules: [
     {
-      id: 'crm',
-      name: 'CRM',
-      category: 'Customer',
-      desc: 'Lead pipelines, customer interaction histories, and automated sales follow-ups.',
-      bullets: ['Customer pipeline', 'Interaction logs', 'Automated follow-ups'],
-      icon: 'Users'
-    },
-    {
-      id: 'sales',
-      name: 'Sales',
-      category: 'Revenue',
-      desc: 'Instant quotes-to-orders, contract pricing, and automated sales commission tracking.',
-      bullets: ['Quote-to-order flow', 'Contract pricing', 'Commission tracking'],
-      icon: 'TrendingUp'
-    },
-    {
-      id: 'orders',
-      name: 'Orders',
-      category: 'Fulfillment',
-      desc: 'Multi-channel order fulfillment, credit limit checks, and real-time shipping status.',
-      bullets: ['Multi-channel intake', 'Credit validation', 'Fulfillment tracking'],
-      icon: 'FileText'
-    },
-    {
-      id: 'purchasing',
-      name: 'Purchasing',
-      category: 'Procurement',
-      desc: 'Purchase requisitions, supplier PO dispatch, and three-way invoice matching.',
-      bullets: ['Purchase orders', 'Approval rules', 'Three-way matching'],
-      icon: 'ShoppingBag'
-    },
-    {
-      id: 'vendor',
-      name: 'Vendor Management',
-      category: 'Procurement',
-      desc: 'Supplier scorecards, compliance certificates, and contract renewal reminders.',
-      bullets: ['Vendor scorecards', 'Compliance records', 'Price agreements'],
-      icon: 'Briefcase'
+      id: 'auth',
+      name: 'User Management & Auth',
+      category: 'Security',
+      desc: '',
+      bullets: [
+        'Branch-level data access isolation',
+        'Action-level role & approval matrices',
+        '1-Click user deactivation & audit trail'
+      ],
+      badges: ['ZERO-TRUST RBAC', '100% AUDIT LOGGED'],
+      icon: 'ShieldCheck'
     },
     {
       id: 'inventory',
-      name: 'Inventory',
+      name: 'Inventory Management',
       category: 'Supply Chain',
-      desc: 'Real-time multi-location stock counts, automated reorders, and stock valuation.',
-      bullets: ['Live stock counts', 'Automated reorders', 'FIFO/LIFO valuation'],
+      desc: '',
+      bullets: [
+        'Multi-warehouse & bin-level stock allocation',
+        'Batch-level expiry & quarantine status',
+        'Statutory GST UQC multi-unit conversions'
+      ],
+      badges: ['100% REAL-TIME SYNC', 'FIFO / LIFO VALUATION'],
       icon: 'Layers'
     },
     {
-      id: 'warehouse',
-      name: 'Warehouse',
-      category: 'Operations',
-      desc: 'Barcode scanning, bin location management, wave picking, and packing slips.',
-      bullets: ['Barcode scanning', 'Bin management', 'Pick-pack-ship flow'],
-      icon: 'Package'
+      id: 'sales',
+      name: 'Sales & Invoicing',
+      category: 'Revenue',
+      desc: '',
+      bullets: [
+        '1-Click quotation-to-order conversion',
+        'Automated credit limit validation & block',
+        'Real-time tax & GST calculation engine'
+      ],
+      badges: ['AUTOMATED TAX ENGINE', 'SHARED LEDGER'],
+      icon: 'TrendingUp'
     },
     {
-      id: 'finance',
-      name: 'Finance & Accounting',
+      id: 'purchasing',
+      name: 'Purchasing & Procurement',
+      category: 'Procurement',
+      desc: '',
+      bullets: [
+        'Multi-tier PO approval rules & limits',
+        '3-Way matching (PO vs GRN vs Invoice)',
+        'Landed cost calculation & inward tracking'
+      ],
+      badges: ['3-WAY MATCHING', 'MULTI-LEVEL APPROVALS'],
+      icon: 'ShoppingBag'
+    },
+    {
+      id: 'pos',
+      name: 'Point of Sale (POS)',
+      category: 'Retail & Store',
+      desc: '',
+      bullets: [
+        'Ultra-fast barcode scan & item lookup',
+        'Split tender (Cash, Card, UPI, Credit)',
+        'Live drawer reconciliation & shift closes'
+      ],
+      badges: ['OFFLINE RESILIENT', 'INSTANT TILL SYNC'],
+      icon: 'ShoppingCart'
+    },
+    {
+      id: 'crm',
+      name: 'CRM & Customer 360',
+      category: 'Customer',
+      desc: '',
+      bullets: [
+        'Customer credit health & exposure tracking',
+        'Multi-address routing (Billing / Shipping)',
+        'Unified purchase & payment history logs'
+      ],
+      badges: ['CENTRALIZED DIRECTORY', '100% REAL-TIME SYNC'],
+      icon: 'Users'
+    },
+    {
+      id: 'gst-compliance',
+      name: 'GST & Statutory Compliance',
+      category: 'Compliance',
+      desc: '',
+      bullets: [
+        'Built-in GST UQC & HSN statutory registry',
+        'Instant e-Invoice (IRN) & e-Way bill readiness',
+        'Error-free monthly GST return JSON/Excel export'
+      ],
+      badges: ['STATUTORY COMPLIANT', 'GSTR-1 / 3B READY'],
+      icon: 'FileText'
+    },
+    {
+      id: 'finance-accounts',
+      name: 'Finance & Accounts',
       category: 'Ledger',
-      desc: 'General ledger, accounts receivable/payable, tax filings, and multi-currency billing.',
-      bullets: ['General ledger', 'AP/AR automation', 'Tax & multi-currency'],
+      desc: '',
+      bullets: [
+        'Real-time event-driven subledger postings',
+        'Automated payment reconciliation & credit notes',
+        'Multi-currency trial balance & P&L statements'
+      ],
+      badges: ['ACID COMPLIANT', 'REAL-TIME LEDGER'],
       icon: 'DollarSign'
     },
     {
-      id: 'hr',
-      name: 'HR & Payroll',
-      category: 'People',
-      desc: 'Attendance tracking, leave management, automated payroll, and employee self-service.',
-      bullets: ['Attendance & shifts', 'Leave approvals', 'Automated payroll'],
-      icon: 'UserCheck'
-    },
-    {
-      id: 'logistics',
-      name: 'Logistics & Dispatch',
-      category: 'Fulfillment',
-      desc: 'Carrier integrations, dispatch manifests, proof of delivery, and fleet tracking.',
-      bullets: ['Carrier sync', 'Dispatch manifests', 'Proof of delivery'],
-      icon: 'Truck'
-    },
-    {
-      id: 'analytics',
-      name: 'Business Intelligence',
+      id: 'reports',
+      name: 'Reports & Business Analytics',
       category: 'Intelligence',
-      desc: 'Real-time revenue, gross margins, inventory turnover, and cash flow dashboards.',
-      bullets: ['Live KPI dashboards', 'Cash flow tracking', 'Margin analysis'],
+      desc: '',
+      bullets: [
+        'Real-time sales, inventory & profit telemetry',
+        'Ledger & stock aging drill-down views',
+        '1-Click Excel, CSV & PDF export pipelines'
+      ],
+      badges: ['LIVE TELEMETRY', '1-CLICK EXPORTS'],
       icon: 'BarChart3'
     }
   ]

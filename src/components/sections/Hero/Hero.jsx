@@ -34,12 +34,12 @@ export default function Hero() {
           </div>
 
           <h1 className="hero-headline">
-            The Company Behind{' '}
-            <span className="hero-gradient-text">Intelligent Enterprise Software</span>
+            Technology That Moves{' '}
+            <span className="hero-gradient-text">Business Forward</span>
           </h1>
 
           <p className="hero-subheadline-lead">
-            Astrion Digital is an enterprise software company focused on developing technology products that help businesses operate more efficiently, intelligently, and effectively — powered by our flagship XENedion platform.
+            Astrion Digital is an enterprise technology and business transformation company, with XENedion as its flagship ERP platform.
           </p>
 
           <div className="hero-cta-group">

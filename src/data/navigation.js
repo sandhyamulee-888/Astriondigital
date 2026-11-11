@@ -101,10 +101,11 @@ export const NAV_ITEMS = [
       },
       columns: [
         {
-          heading: 'Commerce & Trade',
+          heading: 'Production & Trade',
           items: [
             { title: 'Retail', href: '/industries/retail', desc: 'Unified in-store, warehouse, and online inventory.' },
-            { title: 'Distribution', href: '/industries/distribution', desc: 'Multi-warehouse visibility and faster order fulfillment.' }
+            { title: 'Distribution', href: '/industries/distribution', desc: 'Multi-warehouse visibility and faster order fulfillment.' },
+            { title: 'Manufacturing', href: '/industries/manufacturing', desc: 'Smarter plants, supply chains and ERP.' }
           ]
         },
         {

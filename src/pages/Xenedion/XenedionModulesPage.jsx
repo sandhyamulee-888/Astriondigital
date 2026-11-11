@@ -14,7 +14,9 @@ import {
   BarChart3, 
   Cpu, 
   CheckCircle2, 
-  ArrowUpRight 
+  ArrowUpRight,
+  ShieldCheck,
+  ShoppingCart
 } from 'lucide-react';
 import { XENEDION_DATA } from '../../data/xenedion';
 import Button from '../../components/common/Button/Button';
@@ -27,8 +29,43 @@ export default function XenedionModulesPage() {
     window.scrollTo(0, 0);
   }, []);
 
-  const getIcon = (name) => {
+  const getIcon = (id, name) => {
+    switch (id) {
+      case 'auth':
+      case 'user-management-auth':
+        return <ShieldCheck size={18} />;
+      case 'inventory':
+        return <Layers size={18} />;
+      case 'sales':
+        return <TrendingUp size={18} />;
+      case 'purchasing':
+        return <ShoppingBag size={18} />;
+      case 'pos':
+        return <ShoppingCart size={18} />;
+      case 'crm':
+        return <Users size={18} />;
+      case 'gst-compliance':
+      case 'compliance':
+        return <FileText size={18} />;
+      case 'finance':
+      case 'finance-accounts':
+        return <DollarSign size={18} />;
+      case 'reports':
+      case 'analytics':
+        return <BarChart3 size={18} />;
+      default:
+        break;
+    }
     switch (name) {
+      case 'User Management & Auth': return <ShieldCheck size={18} />;
+      case 'Inventory Management': return <Layers size={18} />;
+      case 'Sales & Invoicing': return <TrendingUp size={18} />;
+      case 'Purchasing & Procurement': return <ShoppingBag size={18} />;
+      case 'Point of Sale (POS)': return <ShoppingCart size={18} />;
+      case 'CRM & Customer 360': return <Users size={18} />;
+      case 'GST & Statutory Compliance': return <FileText size={18} />;
+      case 'Finance & Accounts': return <DollarSign size={18} />;
+      case 'Reports & Business Analytics': return <BarChart3 size={18} />;
       case 'CRM': return <Users size={18} />;
       case 'Sales': return <TrendingUp size={18} />;
       case 'Orders': return <FileText size={18} />;
@@ -48,11 +85,14 @@ export default function XenedionModulesPage() {
     }
   };
 
-  const categories = ['all', 'Customer', 'Revenue', 'Fulfillment', 'Procurement', 'Supply Chain', 'Operations', 'Ledger', 'People', 'Intelligence'];
+  const categories = [
+    'all',
+    ...Array.from(new Set(XENEDION_DATA.modules.map((m) => m.category)))
+  ];
 
-  const filteredModules = activeCategory === 'all'
+  const filteredModules = activeCategory === 'all' || activeCategory === 'All Modules'
     ? XENEDION_DATA.modules
-    : XENEDION_DATA.modules.filter(m => m.category === activeCategory);
+    : XENEDION_DATA.modules.filter(m => m.category.toLowerCase() === activeCategory.toLowerCase());
 
   return (
     <div className="inner-page xenedion-modules-page">
@@ -98,55 +138,6 @@ export default function XenedionModulesPage() {
         </div>
       </section>
 
-      {/* 5 Primary Operational Modules Overview */}
-      <section className="section section-alt">
-        <div className="container">
-          <div className="section-header-compact">
-            <div className="mono-label section-tag">CORE PLATFORM PILLARS</div>
-            <h2 className="section-title-compact">Core Modules at a Glance</h2>
-            <p className="section-desc-compact">
-              Each module is designed with straightforward workflows and clear business benefits.
-            </p>
-          </div>
-
-          <div style={{
-            display: 'grid',
-            gridTemplateColumns: 'repeat(auto-fit, minmax(320px, 1fr))',
-            gap: '24px',
-            marginTop: '32px'
-          }}>
-            {XENEDION_DATA.coreModules.map((mod) => (
-              <div key={mod.id} style={{
-                background: '#13151a',
-                border: '1px solid rgba(255, 255, 255, 0.08)',
-                borderRadius: '12px',
-                padding: '24px',
-                display: 'flex',
-                flexDirection: 'column'
-              }}>
-                <h3 style={{ fontSize: '1.2rem', color: '#fff', marginBottom: '8px' }}>{mod.name}</h3>
-                <p style={{ fontSize: '0.88rem', color: '#aaa', marginBottom: '16px' }}>{mod.summary}</p>
-                <ul style={{ listStyle: 'none', padding: 0, margin: 0 }}>
-                  {mod.bullets.map((bullet, idx) => (
-                    <li key={idx} style={{
-                      display: 'flex',
-                      alignItems: 'flex-start',
-                      gap: '8px',
-                      fontSize: '0.84rem',
-                      color: '#ddd',
-                      marginBottom: '8px'
-                    }}>
-                      <CheckCircle2 size={14} style={{ color: '#ff6b35', flexShrink: 0, marginTop: '3px' }} />
-                      <span>{bullet}</span>
-                    </li>
-                  ))}
-                </ul>
-              </div>
-            ))}
-          </div>
-        </div>
-      </section>
-
       {/* Detailed Modules Grid Section */}
       <section className="section">
         <div className="container">
@@ -174,26 +165,37 @@ export default function XenedionModulesPage() {
             {filteredModules.map((mod) => (
               <div key={mod.id} className="module-card-item">
                 <div className="module-card-header">
-                  <div className="module-icon-wrap">{getIcon(mod.name)}</div>
+                  <div className="module-icon-wrap">{getIcon(mod.id, mod.name)}</div>
                   <span className="module-category-tag mono-tag">{mod.category}</span>
                 </div>
                 <h3 className="module-name">{mod.name}</h3>
-                <p className="module-desc">{mod.desc}</p>
+                {mod.desc ? <p className="module-desc">{mod.desc}</p> : null}
                 
                 {mod.bullets && (
-                  <div style={{ marginTop: '12px', borderTop: '1px solid rgba(255, 255, 255, 0.06)', paddingTop: '10px' }}>
+                  <div style={{ marginTop: '12px', borderTop: '1px solid var(--border-light, #f1f5f9)', paddingTop: '12px', flex: 1 }}>
                     {mod.bullets.map((b, bIdx) => (
-                      <div key={bIdx} style={{ display: 'flex', alignItems: 'center', gap: '6px', fontSize: '0.8rem', color: '#bbb', marginBottom: '4px' }}>
-                        <CheckCircle2 size={12} style={{ color: '#ff6b35' }} />
+                      <div key={bIdx} style={{ display: 'flex', alignItems: 'center', gap: '8px', fontSize: '0.8125rem', color: '#475569', marginBottom: '6px' }}>
+                        <span style={{ width: '5px', height: '5px', borderRadius: '50%', backgroundColor: 'var(--brand-blue, #1c75bd)', flexShrink: 0 }} />
                         <span>{b}</span>
                       </div>
                     ))}
                   </div>
                 )}
                 
-                <div className="module-specs-row mono-tag" style={{ marginTop: '12px' }}>
-                  <span>100% REAL-TIME SYNC</span>
-                  <span>SHARED LEDGER</span>
+                <div className="module-specs-row mono-tag" style={{ marginTop: '14px' }}>
+                  {mod.badges && mod.badges.length >= 2 ? (
+                    <>
+                      <span>{mod.badges[0]}</span>
+                      <span>{mod.badges[1]}</span>
+                    </>
+                  ) : mod.badges && mod.badges.length === 1 ? (
+                    <span>{mod.badges[0]}</span>
+                  ) : (
+                    <>
+                      <span>100% REAL-TIME SYNC</span>
+                      <span>SHARED LEDGER</span>
+                    </>
+                  )}
                 </div>
               </div>
             ))}
