@@ -10,6 +10,9 @@ import HomePage from './pages/Home/HomePage';
 
 // About
 import AboutPage from './pages/About/AboutPage';
+import VisionMissionPage from './pages/About/VisionMissionPage';
+import ApproachPage from './pages/About/ApproachPage';
+import LeadershipPage from './pages/About/LeadershipPage';
 import PartnersPage from './pages/About/PartnersPage';
 
 // Solutions

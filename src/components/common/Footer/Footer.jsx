@@ -49,7 +49,9 @@ export default function Footer() {
             <h4 className="footer-col-title mono-tag">ABOUT</h4>
             <ul className="footer-links">
               <li><Link to="/about">About Astrion</Link></li>
-              <li><Link to="/about/partners">Partners</Link></li>
+              <li><Link to="/about">Vision &amp; Mission</Link></li>
+              <li><Link to="/about">Our Approach</Link></li>
+              <li><Link to="/about">Leadership</Link></li>
             </ul>
           </div>
 

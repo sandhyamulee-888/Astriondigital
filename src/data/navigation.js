@@ -7,7 +7,32 @@ export const NAV_ITEMS = [
   {
     id: 'about',
     label: 'About',
-    href: '/about'
+    href: '/about',
+    megaMenu: {
+      tag: 'ASTRION DIGITAL // CORPORATE ENTITY',
+      headline: 'The Company Behind Intelligent Enterprise Software',
+      featured: {
+        title: 'About Astrion Digital',
+        description: 'An enterprise software company developing technology products that help businesses operate more efficiently, intelligently, and effectively.',
+        href: '/about'
+      },
+      columns: [
+        {
+          heading: 'Company & Vision',
+          items: [
+            { title: 'About Astrion', href: '/about' },
+            { title: 'Vision & Mission', href: '/about' },
+            { title: 'Our Approach', href: '/about' }
+          ]
+        },
+        {
+          heading: 'Leadership',
+          items: [
+            { title: 'Leadership', href: '/about' }
+          ]
+        }
+      ]
+    }
   },
   {
     id: 'solutions',

@@ -4,12 +4,16 @@ import {
   Layers, 
   CheckCircle2, 
   Cpu, 
+  Compass, 
+  Target, 
+  Users, 
   Handshake
 } from 'lucide-react';
 import Button from '../components/common/Button/Button';
 import { SOLUTIONS } from '../data/solutions';
 import { INDUSTRIES } from '../data/industries';
-import { PARTNERS } from '../data/about';
+import { VISION_MISSION, LEADERSHIP, PARTNERS } from '../data/about';
+import { APPROACH_PHASES } from '../data/approach';
 import './PlaceholderPage.css';
 
 export default function PlaceholderPage({ title }) {
@@ -132,6 +136,11 @@ export default function PlaceholderPage({ title }) {
               </Button>
             </div>
           </div>
+        ) : rootSection === 'about' && (subSlug === 'vision-mission' || subSlug === 'approach' || subSlug === 'leadership') ? (
+          /* =========================================================================
+             ABOUT: BLANK SECTIONS
+             ========================================================================= */
+          <div className="placeholder-content-card blank-card" style={{ minHeight: '50vh', border: 'none', background: 'transparent', boxShadow: 'none' }}></div>
         ) : rootSection === 'about' && subSlug === 'partners' ? (
           /* =========================================================================
              ABOUT: PARTNERS
