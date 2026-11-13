@@ -1,5 +1,5 @@
 import React, { useEffect } from 'react';
-import { BrowserRouter, Routes, Route, useLocation } from 'react-router-dom';
+import { BrowserRouter, Routes, Route, useLocation, Navigate } from 'react-router-dom';
 import Header from './components/common/Header/Header';
 import Footer from './components/common/Footer/Footer';
 import ScrollProgressBar from './components/common/ScrollProgressBar/ScrollProgressBar';
@@ -10,9 +10,6 @@ import HomePage from './pages/Home/HomePage';
 
 // About
 import AboutPage from './pages/About/AboutPage';
-import VisionMissionPage from './pages/About/VisionMissionPage';
-import ApproachPage from './pages/About/ApproachPage';
-import LeadershipPage from './pages/About/LeadershipPage';
 import PartnersPage from './pages/About/PartnersPage';
 
 // Solutions
@@ -113,10 +110,10 @@ export default function App() {
           {/* 2. About Routes */}
           <Route path="/about" element={<AboutPage />} />
           <Route path="/about/about-astrion" element={<AboutPage />} />
-          <Route path="/about/vision-mission" element={<VisionMissionPage />} />
-          <Route path="/about/approach" element={<ApproachPage />} />
-          <Route path="/about/our-approach" element={<ApproachPage />} />
-          <Route path="/about/leadership" element={<LeadershipPage />} />
+          <Route path="/about/vision-mission" element={<Navigate to="/about" replace />} />
+          <Route path="/about/approach" element={<Navigate to="/about" replace />} />
+          <Route path="/about/our-approach" element={<Navigate to="/about" replace />} />
+          <Route path="/about/leadership" element={<Navigate to="/about" replace />} />
           <Route path="/about/partners" element={<PartnersPage />} />
 
           {/* 3. Solutions Routes */}

@@ -138,7 +138,7 @@ export default function XenedionPage({ isSolutionSection = false }) {
     },
     { 
       title: 'Implementation Process', 
-      href: '/about/approach', 
+      href: '/xenedion/implementation', 
       desc: 'Smooth onboarding with dedicated data migration, step-by-step team training, and go-live assistance.' 
     },
     { 

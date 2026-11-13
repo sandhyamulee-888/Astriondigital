@@ -4,16 +4,12 @@ import {
   Layers, 
   CheckCircle2, 
   Cpu, 
-  Compass, 
-  Target, 
-  Users, 
   Handshake
 } from 'lucide-react';
 import Button from '../components/common/Button/Button';
 import { SOLUTIONS } from '../data/solutions';
 import { INDUSTRIES } from '../data/industries';
-import { VISION_MISSION, LEADERSHIP, PARTNERS } from '../data/about';
-import { APPROACH_PHASES } from '../data/approach';
+import { PARTNERS } from '../data/about';
 import './PlaceholderPage.css';
 
 export default function PlaceholderPage({ title }) {
@@ -133,131 +129,6 @@ export default function PlaceholderPage({ title }) {
               </Button>
               <Button to="/#industries" variant="secondary" size="md" icon="arrow">
                 View All Industries
-              </Button>
-            </div>
-          </div>
-        ) : rootSection === 'about' && subSlug === 'vision-mission' ? (
-          /* =========================================================================
-               ABOUT: VISION & MISSION
-             ========================================================================= */
-          <div className="placeholder-content-card">
-            <div className="placeholder-badge mono-label">
-              <Compass size={14} />
-              <span>ABOUT // GUIDING PRINCIPLES</span>
-            </div>
-
-            <h1 className="placeholder-title">Vision &amp; Mission</h1>
-            
-            <div className="inner-vm-grid">
-              <div className="vm-box">
-                <span className="mono-label vm-tag">{VISION_MISSION.vision.tag}</span>
-                <h3 className="vm-box-title">{VISION_MISSION.vision.title}</h3>
-                <p className="vm-desc">"{VISION_MISSION.vision.description}"</p>
-                <div className="vm-chips">
-                  {VISION_MISSION.vision.pillars.map((p, idx) => (
-                    <span key={idx} className="domain-chip mono-tag">{p}</span>
-                  ))}
-                </div>
-              </div>
-
-              <div className="vm-box">
-                <span className="mono-label vm-tag orange">{VISION_MISSION.mission.tag}</span>
-                <h3 className="vm-box-title">{VISION_MISSION.mission.title}</h3>
-                <p className="vm-desc">"{VISION_MISSION.mission.description}"</p>
-                <div className="vm-chips">
-                  {VISION_MISSION.mission.pillars.map((p, idx) => (
-                    <span key={idx} className="domain-chip mono-tag">{p}</span>
-                  ))}
-                </div>
-              </div>
-            </div>
-
-            <div className="placeholder-actions">
-              <Button to="/contact" variant="primary" size="md" icon="arrow">
-                Schedule Strategic Briefing
-              </Button>
-              <Button to="/#about" variant="secondary" size="md" icon="arrow">
-                Back to About Section
-              </Button>
-            </div>
-          </div>
-        ) : rootSection === 'about' && subSlug === 'approach' ? (
-          /* =========================================================================
-               ABOUT: OUR APPROACH
-             ========================================================================= */
-          <div className="placeholder-content-card">
-            <div className="placeholder-badge mono-label">
-              <Target size={14} />
-              <span>ABOUT // TRANSFORMATION METHODOLOGY</span>
-            </div>
-
-            <h1 className="placeholder-title">Our Approach</h1>
-            <p className="placeholder-lead">
-              Astrion structures enterprise initiatives into four continuous engineering phases that convert strategic ambiguity into scalable, production-tested software.
-            </p>
-
-            <div className="approach-phases-vertical">
-              {APPROACH_PHASES.map((phase) => (
-                <div key={phase.phase} className="approach-phase-card">
-                  <div className="phase-card-top">
-                    <span className="mono-tag phase-badge">{phase.phase}</span>
-                    <h3 className="phase-card-title">{phase.headline}</h3>
-                  </div>
-                  <p className="phase-card-summary">{phase.summary}</p>
-                  <div className="phase-card-artifacts">
-                    <span className="mono-tag artifacts-label">KEY ARTIFACTS:</span>
-                    <div className="chips-flex-row">
-                      {phase.deliverables.map((d, dIdx) => (
-                        <span key={dIdx} className="domain-chip mono-tag">{d}</span>
-                      ))}
-                    </div>
-                  </div>
-                </div>
-              ))}
-            </div>
-
-            <div className="placeholder-actions">
-              <Button to="/contact" variant="primary" size="md" icon="arrow">
-                Start Discovery Phase
-              </Button>
-              <Button to="/#about" variant="secondary" size="md" icon="arrow">
-                Return to Homepage
-              </Button>
-            </div>
-          </div>
-        ) : rootSection === 'about' && subSlug === 'leadership' ? (
-          /* =========================================================================
-               ABOUT: LEADERSHIP
-             ========================================================================= */
-          <div className="placeholder-content-card">
-            <div className="placeholder-badge mono-label">
-              <Users size={14} />
-              <span>ABOUT // EXECUTIVE TECHNOLOGISTS</span>
-            </div>
-
-            <h1 className="placeholder-title">Leadership</h1>
-            <p className="placeholder-lead">
-              Our executive leadership combines decades of experience in distributed systems architecture, industrial ERP implementations, and production artificial intelligence.
-            </p>
-
-            <div className="leadership-page-grid">
-              {LEADERSHIP.map((leader) => (
-                <div key={leader.id} className="leader-page-card">
-                  <h3 className="leader-page-name">{leader.name}</h3>
-                  <div className="leader-page-role mono-label">{leader.role}</div>
-                  <div className="leader-page-domain mono-tag">{leader.domain}</div>
-                  <p className="leader-page-bio">{leader.bio}</p>
-                  <span className="leader-page-creds mono-tag">{leader.credentials}</span>
-                </div>
-              ))}
-            </div>
-
-            <div className="placeholder-actions">
-              <Button to="/contact" variant="primary" size="md" icon="arrow">
-                Connect with Architects
-              </Button>
-              <Button to="/#about" variant="secondary" size="md" icon="arrow">
-                Return to Homepage
               </Button>
             </div>
           </div>
