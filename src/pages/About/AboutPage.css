@@ -1545,6 +1545,16 @@
    ABOUT US PAGE â€” NEW MANAGEMENT CONTENT DESIGN SYSTEM
    ======================================================== */
 
+.about-main-page {
+  min-height: auto;
+  background-color: var(--bg-secondary);
+}
+
+.about-main-page .about-hero-section {
+  padding-bottom: 72px;
+  border-bottom: none;
+}
+
 .about-hero-constrained {
   max-width: 860px;
 }
@@ -2007,5 +2017,9 @@
 
   .about-hero-actions > * {
     width: 100%;
+  }
+
+  .about-main-page .about-hero-section {
+    padding-bottom: 40px;
   }
 }
