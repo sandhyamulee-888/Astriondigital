@@ -75,7 +75,7 @@ export default function XenedionVisual() {
 
         <div className="top-bar-right mono-tag">
           <span className="ping-dot"></span>
-          <span>11 CONNECTED SUBSYSTEMS // REAL-TIME SYNCHRONIZATION</span>
+          <span>CONNECTED SUBSYSTEMS // REAL-TIME SYNCHRONIZATION</span>
         </div>
       </div>
 
@@ -85,7 +85,6 @@ export default function XenedionVisual() {
         <div className="modules-mesh-grid">
           <div className="mesh-header-row">
             <span className="mesh-section-label mono-tag">SELECT OPERATIONAL SUBSYSTEM</span>
-            <span className="mesh-count mono-tag">{filteredModules.length} OF 11</span>
           </div>
 
           {/* Quick Category Filter Pills */}

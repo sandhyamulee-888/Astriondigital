@@ -1,220 +1,152 @@
-export const HERO_CONTENT = {
-  label: 'ASTRION DIGITAL',
-  eyebrow: 'CORPORATE BRAND',
-  headline: 'The Company Behind Intelligent Enterprise Software',
-  subhead: 'Enterprise Software Products | Innovation | Business Technology',
-  lead:
-    'Astrion Digital is an enterprise software solutions provider focused on developing innovative technology products that help businesses operate more efficiently, intelligently, and effectively.',
-  flagship:
-    'Our flagship product, XENedion, is an integrated enterprise resource planning platform designed to connect core business functions, streamline operations, and provide better visibility across the organization.',
-  foundation:
-    'Astrion Digital provides the corporate foundation for XENedion\'s product development, innovation, growth, and long-term vision.',
+/**
+ * Astrion Digital — Official Corporate Content
+ * Sourced directly from Management
+ */
+
+export const ABOUT_HERO = {
+  label: 'ABOUT ASTRION DIGITAL',
+  badge: 'CORPORATE BRAND // ENTERPRISE TECHNOLOGY',
+  heading: 'Building Better Businesses Through Better Technology.',
+  introParagraphs: [
+    'At Astrion Digital, we believe technology should simplify business, not complicate it.',
+    'Modern businesses operate across multiple functions, locations, teams and systems. Managing these interconnected activities efficiently requires more than individual software applications. It requires an integrated approach to business management.',
+    'Astrion Digital focuses on developing and delivering enterprise technology solutions that help organisations bring their operations together, improve process efficiency and make informed business decisions.',
+    'Our flagship platform, XENedion ERP, is designed to address the operational requirements of growing and established businesses through an integrated business management environment.',
+    'We combine technology, business process understanding and a practical implementation approach to help businesses build stronger, more efficient and scalable operations.'
+  ],
+  commitment: 'Making enterprise technology practical, accessible and valuable for businesses.',
   ctaPrimary: {
     label: 'Explore XENedion ERP',
-    href: '/xenedion'
+    href: '/solutions/erp'
   },
   ctaSecondary: {
-    label: 'Book a Live Demo',
+    label: 'Request a Demo',
     href: '/contact'
   }
 };
 
-export const CORPORATE_BRAND_SECTION = {
-  label: 'CORPORATE BRAND',
-  title: 'The Company Behind Intelligent Enterprise Software',
-  description: 'Enterprise Software Products | Innovation | Business Technology'
+export const VISION_MISSION = {
+  tag: 'VISION & MISSION',
+  heading: 'Purpose-Driven Enterprise Technology',
+  vision: {
+    tag: 'OUR VISION',
+    title: 'Our Vision',
+    description: 'To empower businesses with intelligent, integrated and accessible technology that transforms the way they operate, compete and grow.',
+    pillars: [
+      'Empower businesses of all sizes with accessible enterprise technology',
+      'Transform operational workflows to build sustainable competitive advantage',
+      'Foster continuous innovation through intelligent and integrated solutions'
+    ]
+  },
+  mission: {
+    tag: 'OUR MISSION',
+    title: 'Our Mission',
+    description: 'To simplify business management through innovative enterprise solutions that connect people, processes and information.',
+    pillars: [
+      'Connect core operations under a unified single source of live information',
+      'Replace disconnected point tools with streamlined enterprise workflows',
+      'Provide leaders with real-time visibility to make confident decisions'
+    ]
+  },
+  striveHeading: 'We strive to:',
+  strivePoints: [
+    'Develop technology that solves real business challenges.',
+    'Enable organisations to achieve greater operational efficiency.',
+    'Improve business visibility through integrated information.',
+    'Build long-term relationships with customers and partners.',
+    'Make enterprise technology accessible to businesses of different sizes.'
+  ]
 };
 
-export const BRAND_ARCHITECTURE = {
-  title: 'Recommended Brand Architecture',
-  subtitle: 'A clear distinction between the corporate parent entity and our flagship enterprise software product.',
-  parentCompany: {
-    name: 'ASTRION DIGITAL',
-    role: 'Parent Company / Corporate Entity',
-    pillars: ['Product Ownership', 'Strategy', 'Innovation', 'Growth'],
-    description:
-      'Astrion Digital is the enterprise software product company that designs, develops, and maintains our technology platforms. We provide the corporate foundation, cloud infrastructure, engineering talent, and sustained vision.',
-    responsibilities: [
-      {
-        title: 'Product Ownership & IP',
-        desc: 'Direct development, continuous feature upgrades, and full proprietary architecture control.'
-      },
-      {
-        title: 'Long-Term Corporate Strategy',
-        desc: 'Ensuring lasting enterprise governance, sustained capital backing, and strategic roadmap execution.'
-      },
-      {
-        title: 'Continuous Technology Innovation',
-        desc: 'Pioneering practical AI workflows, cloud-native scalability, and enterprise data security.'
-      },
-      {
-        title: 'Multi-Product Portfolio Growth',
-        desc: 'A flexible corporate umbrella designed to introduce future enterprise software products without altering company identity.'
-      }
-    ]
-  },
-  flagshipProduct: {
-    name: 'XENedion',
-    role: 'Flagship Enterprise Software Product',
-    tagline: 'One Platform. Your Entire Business.',
-    description:
-      'XENedion is the integrated enterprise resource planning (ERP) platform designed to connect core business functions, streamline operations, and provide unified real-time visibility across the organization.',
-    highlights: [
-      {
-        title: 'All-in-One Operations',
-        desc: 'Finance, inventory, sales, purchasing, warehousing, and HR unified in one system.'
-      },
-      {
-        title: 'Real-Time Shared Data',
-        desc: 'Single source of truth that keeps every team, branch, and warehouse synchronized.'
-      },
-      {
-        title: 'Built-In Automation',
-        desc: 'Practical automated invoice processing, stock reorder triggers, and smart alerts.'
-      },
-      {
-        title: 'Rapid Deployment',
-        desc: 'Go live smoothly in weeks with pre-built vertical blueprints for manufacturing, distribution, and retail.'
-      }
-    ]
-  },
-  positioningBenefits: [
+export const OUR_APPROACH = {
+  tag: 'OUR APPROACH',
+  heading: 'Understand. Integrate. Optimise. Grow.',
+  intro: [
+    'We believe successful technology implementation begins with understanding the business, not simply installing software.',
+    'Our approach focuses on four key principles.'
+  ],
+  principles: [
     {
       num: '01',
-      title: 'Clear Product Company Identity',
-      desc: 'It establishes Astrion as the company behind the product, without suggesting that it independently offers consulting, cybersecurity, web development, or unrelated agency services.'
+      title: 'Understand the Business',
+      description: 'We understand your business model, operating processes, challenges and growth objectives before recommending a technology solution.'
     },
     {
       num: '02',
-      title: 'Scalable Multi-Product Future',
-      desc: 'It allows introducing additional enterprise software products under the Astrion umbrella in the future without having to change the company\'s core identity or market positioning.'
+      title: 'Connect the Processes',
+      description: 'We bring different business functions together through integrated systems, structured workflows and connected information.'
     },
     {
       num: '03',
-      title: 'Enterprise Trust & Reliability',
-      desc: 'Clients know their mission-critical business software is engineered and supported by a dedicated product organization committed to long-term innovation and continuous support.'
+      title: 'Improve Performance',
+      description: 'We help businesses gain visibility into their operations, identify inefficiencies and improve decision-making.'
+    },
+    {
+      num: '04',
+      title: 'Enable Growth',
+      description: 'We build technology foundations that support business expansion, evolving requirements and increasing operational complexity.'
     }
   ]
 };
 
-export const ABOUT_ASTRION = {
-  label: 'ABOUT ASTRION DIGITAL',
-  corporateBrand: 'ASTRION DIGITAL',
-  legalName: 'Astrion Digital',
-  headline: 'The Company Behind Intelligent Enterprise Software',
-  subhead: 'Enterprise Software Products | Innovation | Business Technology',
-  lead:
-    'Astrion Digital is an enterprise software company focused on developing technology products that help businesses operate more efficiently, intelligently, and effectively.',
-  flagshipStatement:
-    'Our flagship product, XENedion, is an integrated enterprise resource planning platform designed to connect core business functions, streamline operations, and provide better visibility across the organization.',
-  foundationStatement:
-    'Astrion Digital provides the corporate foundation for XENedion\'s product development, innovation, growth, and long-term vision.',
-  story:
-    'Astrion Digital was established to solve a universal enterprise headache: growing businesses getting choked by fragmented tools, chaotic spreadsheets, and slow manual processes. Instead of offering generic consulting or piecemeal IT services, we engineer robust, product-led software platforms that give business leaders unified visibility and total control.',
-  keyPillars: [
-    {
-      id: 'product-ownership',
-      title: 'Product Ownership',
-      desc: 'We are an enterprise software company with dedicated in-house engineering, rigorous QA, and proprietary IP ownership.'
-    },
-    {
-      id: 'strategy-vision',
-      title: 'Strategy & Governance',
-      desc: 'A stable corporate foundation that provides sustained financial backing, roadmaps, and continuous cloud reliability.'
-    },
-    {
-      id: 'continuous-innovation',
-      title: 'Continuous Innovation',
-      desc: 'Pioneering practical business automation, AI workflows, and high-uptime cloud architectures for modern operations.'
-    },
-    {
-      id: 'sustainable-growth',
-      title: 'Enterprise Growth',
-      desc: 'Engineered to scale from high-growth mid-market enterprises to multi-location global supply chains with zero friction.'
-    }
+export const LEADERSHIP_SECTION = {
+  tag: 'LEADERSHIP',
+  heading: 'Experience. Vision. Execution.',
+  intro: [
+    'Astrion Digital is driven by a leadership philosophy that combines business understanding, technology expertise and a commitment to customer success.',
+    'We believe enterprise technology delivers its greatest value when it is aligned with business objectives and supported by people who understand how businesses operate.',
+    'Our leadership team is focused on building practical technology solutions, developing strong customer relationships and creating a growing ecosystem of implementation and technology partners.'
   ],
-  companyVsProduct: BRAND_ARCHITECTURE,
-  stats: [
-    {
-      num: 'Product-Led',
-      label: 'SOFTWARE COMPANY',
-      desc: 'Dedicated enterprise software product engineering and long-term vision'
-    },
-    {
-      num: 'XENedion',
-      label: 'FLAGSHIP ERP',
-      desc: 'One Platform. Your Entire Business. Connecting core operations in real time'
-    },
-    {
-      num: 'Core Pillars',
-      label: 'CORPORATE MTRX',
-      desc: 'Driven by product ownership, strategic vision, continuous innovation, and enterprise growth'
-    },
-    {
-      num: 'Cloud-Native',
-      label: 'ENTERPRISE TECH',
-      desc: 'Bank-grade security, encrypted database protection, and high-uptime cloud hosting'
-    }
-  ]
+  note: 'Management has not yet finalized individual leadership profiles. Photo assets, names, designations, and executive biographies will be published upon finalization.'
 };
 
-export const VISION_MISSION = {
-  mission: {
-    tag: 'OUR MISSION',
-    title: 'Clean, Intelligent Software Teams Love Using',
-    description: 'To develop intelligent enterprise software products that help businesses operate more efficiently, intelligently, and effectively—eliminating spreadsheet chaos and manual busywork.',
-    pillars: [
-      'Connect core business functions under a unified single source of truth',
-      'Provide instant, real-time metrics for confident leadership decisions',
-      'Deliver friendly, intuitive software requiring zero complex training marathons'
-    ]
-  },
-  vision: {
-    tag: 'OUR VISION',
-    title: 'The Trusted Company Behind Global Enterprise Operations',
-    description: 'To be the corporate foundation and technology pioneer powering the world\'s most dependable business software platforms.',
-    pillars: [
-      'Empower growing enterprises with accessible, enterprise-grade technology',
-      'Drive continuous innovation through embedded AI and autonomous business workflows',
-      'Maintain an enduring standard of engineering excellence, security, and customer trust'
-    ]
-  }
-};
-
-export const LEADERSHIP = [
+export const LEADERSHIP_PROFILES = [
   {
-    id: 'vikramaditya-rao',
-    name: 'Vikramaditya Rao',
-    role: 'Chief Executive Officer & Chief Architect',
-    domain: 'Enterprise Architecture & Platform Engineering',
-    bio: 'Veteran software architect with over 20 years of experience building dependable enterprise platforms and simplifying complex workflows for growing companies.',
-    credentials: 'Ex-Global Systems Integrator • M.S. Distributed Systems'
+    id: 'leader-slot-1',
+    name: 'Leadership Profile',
+    role: 'Executive Management',
+    slotLabel: 'EXECUTIVE LEADERSHIP',
+    title: 'Leadership Profile',
+    domain: 'Enterprise Technology & Strategy',
+    bio: 'Leadership photographs, full names, designations, and individual biographies will be added once finalized by management.',
+    credentials: 'Profile Pending Finalization',
+    placeholderDesc: 'Leadership photographs, full names, designations, and individual biographies will be added once finalized by management.',
+    isPlaceholder: true
   },
   {
-    id: 'elena-rostova',
-    name: 'Dr. Elena Rostova',
-    role: 'Head of AI & Intelligent Automation',
-    domain: 'Autonomous Workflows & Smart Forecasting',
-    bio: 'Directs intelligent automation features in XENedion, focusing on practical AI that automates invoice matching, catches errors, and predicts inventory reorders.',
-    credentials: 'Ph.D. Computer Science • Enterprise AI Specialist'
+    id: 'leader-slot-2',
+    name: 'Leadership Profile',
+    role: 'Technology & Product Strategy',
+    slotLabel: 'TECHNOLOGY & ARCHITECTURE',
+    title: 'Leadership Profile',
+    domain: 'Software Architecture & ERP Engineering',
+    bio: 'Leadership photographs, full names, designations, and individual biographies will be added once finalized by management.',
+    credentials: 'Profile Pending Finalization',
+    placeholderDesc: 'Leadership photographs, full names, designations, and individual biographies will be added once finalized by management.',
+    isPlaceholder: true
   },
   {
-    id: 'marcus-chen',
-    name: 'Marcus Chen',
-    role: 'VP of Product Engineering (XENedion)',
-    domain: 'ERP Operations & Supply Chain',
-    bio: 'Specializes in factory floor automation, warehouse inventory tracking, and multi-depot fulfillment workflows that streamline daily operations.',
-    credentials: 'Industrial Operations Specialist • APICS Fellow'
-  },
-  {
-    id: 'sarah-almansoor',
-    name: 'Sarah Al-Mansoor',
-    role: 'Director of Cloud & Cybersecurity',
-    domain: 'Enterprise Security & Cloud Infrastructure',
-    bio: 'Leads our cloud infrastructure team, ensuring high-availability uptime, role-based access controls, and strict data encryption across all client environments.',
-    credentials: 'CISSP • Cloud Architecture Lead'
+    id: 'leader-slot-3',
+    name: 'Leadership Profile',
+    role: 'Operations & Partner Ecosystem',
+    slotLabel: 'OPERATIONS & CUSTOMER SUCCESS',
+    title: 'Leadership Profile',
+    domain: 'Business Operations & Delivery Network',
+    bio: 'Leadership photographs, full names, designations, and individual biographies will be added once finalized by management.',
+    credentials: 'Profile Pending Finalization',
+    placeholderDesc: 'Leadership photographs, full names, designations, and individual biographies will be added once finalized by management.',
+    isPlaceholder: true
   }
 ];
+
+// Array-compatible export for any legacy references, with section properties attached
+export const LEADERSHIP = Object.assign([...LEADERSHIP_PROFILES], {
+  tag: LEADERSHIP_SECTION.tag,
+  heading: LEADERSHIP_SECTION.heading,
+  intro: LEADERSHIP_SECTION.intro,
+  note: LEADERSHIP_SECTION.note,
+  profiles: LEADERSHIP_PROFILES
+});
 
 export const PARTNERS = [
   {
@@ -226,3 +158,14 @@ export const PARTNERS = [
     tech: ['Hands-On Staff Training', 'Data Migration Support', 'Post-Launch Care']
   }
 ];
+
+// Compatibility exports for existing components
+export const ABOUT_ASTRION = {
+  label: ABOUT_HERO.label,
+  corporateBrand: 'ASTRION DIGITAL',
+  headline: ABOUT_HERO.heading,
+  subhead: 'Enterprise Technology Solutions • Integrated Business Management',
+  lead: ABOUT_HERO.introParagraphs[0],
+  flagshipStatement: ABOUT_HERO.introParagraphs[3],
+  foundationStatement: ABOUT_HERO.commitment
+};

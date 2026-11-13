@@ -15,7 +15,7 @@ export default function HomePage() {
       {/* Section 2: The Operational Problem You Solve */}
       <ProblemSection />
 
-      {/* Section 3: Why Astrion Digital (Built for Speed. Designed for Total Clarity) */}
+      {/* Section 3: Why Astrion Digital (Built for Speed Designed for Total Clarity) */}
       <AboutSection />
 
       {/* Section 4: Product Showcase (XENedion ERP) */}

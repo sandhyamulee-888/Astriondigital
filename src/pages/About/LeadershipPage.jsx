@@ -1,6 +1,6 @@
 import React, { useEffect } from 'react';
 import { Link } from 'react-router-dom';
-import { Users, Shield, Award, ArrowUpRight, CheckCircle2 } from 'lucide-react';
+import { Users, User, Shield } from 'lucide-react';
 import { LEADERSHIP } from '../../data/about';
 import Button from '../../components/common/Button/Button';
 import './AboutPage.css';
@@ -31,70 +31,76 @@ export default function LeadershipPage() {
           <div className="inner-hero-content">
             <div className="mono-label inner-hero-badge">
               <Users size={14} />
-              <span>ABOUT // LEADERSHIP TEAM</span>
+              <span>ABOUT // LEADERSHIP PHILOSOPHY</span>
             </div>
 
             <h1 className="inner-hero-title">
-              Leadership: The Team Behind Intelligent Enterprise Software
+              {LEADERSHIP.heading}
             </h1>
 
-            <p className="inner-hero-lead">
-              Experienced software architects, product engineers, and operational leaders committed to delivering dependable enterprise software platforms that help growing businesses run with clarity.
-            </p>
+            <div className="leadership-intro-block" style={{ margin: '16px 0 0 0', textAlign: 'left' }}>
+              {LEADERSHIP.intro.map((para, idx) => (
+                <p key={idx} className="leadership-intro-para">{para}</p>
+              ))}
+            </div>
           </div>
         </div>
       </section>
 
-      {/* Leadership Grid */}
+      {/* Leadership Profile Cards Section */}
       <section className="section">
         <div className="container">
-          <div className="leadership-cards-deep-grid">
-            {LEADERSHIP.map((leader) => (
-              <div key={leader.id} className="leader-profile-card">
-                <div className="leader-card-header-bar">
-                  <div className="leader-avatar-circle">
-                    <span className="mono-tag leader-initials">
-                      {leader.name.split(' ').map(n => n[0]).join('')}
-                    </span>
-                  </div>
-                  <div className="leader-identity">
-                    <h2 className="leader-full-name">{leader.name}</h2>
-                    <span className="leader-corporate-role mono-label">{leader.role}</span>
+          <div className="section-header-compact">
+            <div className="mono-label section-tag">
+              <span>EXECUTIVE LEADERSHIP</span>
+            </div>
+            <h2 className="section-title-compact">Leadership Team</h2>
+            <p className="section-desc-compact">
+              Bringing together deep business domain understanding, software architecture excellence, and hands-on client partnership.
+            </p>
+          </div>
+
+          <div className="leadership-profiles-grid" style={{ marginTop: '36px' }}>
+            {LEADERSHIP.profiles.map((profile) => (
+              <div key={profile.id} className="corporate-profile-card">
+                <div className="profile-photo-frame" aria-label={`${profile.title} Photo Container`}>
+                  <div className="profile-placeholder-graphic">
+                    <User size={38} className="placeholder-user-icon" />
+                    <span className="mono-tag placeholder-slot-label">{profile.slotLabel}</span>
                   </div>
                 </div>
 
-                <div className="leader-domain-highlight mono-tag">
-                  <span className="domain-label">SPECIALTY:</span> {leader.domain}
-                </div>
-
-                <p className="leader-biography">{leader.bio}</p>
-
-                <div className="leader-credentials-box">
-                  <Award size={14} className="cred-icon" />
-                  <span className="mono-tag cred-text">{leader.credentials}</span>
+                <div className="profile-details-body">
+                  <div className="profile-meta-row">
+                    <span className="profile-role-badge mono-label">{profile.role}</span>
+                  </div>
+                  <h3 className="profile-full-name">{profile.title}</h3>
+                  <p className="profile-bio-text">
+                    {profile.placeholderDesc}
+                  </p>
                 </div>
               </div>
             ))}
           </div>
 
-          {/* Architectural Governance Model */}
-          <div className="governance-model-card">
-            <div className="gov-header">
-              <div className="mono-label">
-                <Shield size={16} />
-                <span>ARCHITECTURAL GOVERNANCE</span>
-              </div>
-              <h3>Hands-On Senior Technical Oversight</h3>
-            </div>
-            <p className="gov-desc">
-              At Astrion, senior leadership is not detached from code and architecture. Every project is assigned an Executive Architect who participates in design reviews, schema validations, and cutover governance.
+          {/* Understated Corporate Note regarding Final Profiles */}
+          <div className="leadership-management-note" style={{ marginTop: '32px' }}>
+            <span className="note-badge mono-tag">CORPORATE NOTE</span>
+            <p className="note-text">
+              {LEADERSHIP.note}
             </p>
-            <div className="gov-actions">
-              <Button to="/contact" variant="primary" size="md" icon="arrow">
-                Connect with an Executive Architect
-              </Button>
-              <Button to="/about/partners" variant="secondary" size="md">
-                View Technology Partners
+          </div>
+
+          {/* Closing Contact Banner */}
+          <div className="about-cta-banner" style={{ marginTop: '56px' }}>
+            <div className="about-cta-text">
+              <span className="mono-label">CONNECT WITH US</span>
+              <h3>Explore Enterprise Partnership Opportunities</h3>
+              <p>Reach out to our team to discuss technology implementation, custom solutions, or partner programs.</p>
+            </div>
+            <div className="about-cta-btn-wrap">
+              <Button to="/contact" variant="primary" size="lg" icon="arrow">
+                Contact Leadership Team
               </Button>
             </div>
           </div>

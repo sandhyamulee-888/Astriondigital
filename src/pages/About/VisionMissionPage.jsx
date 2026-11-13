@@ -1,8 +1,7 @@
 import React, { useEffect } from 'react';
 import { Link } from 'react-router-dom';
-import { Compass, Target, CheckCircle2, ArrowRight, Shield, Award } from 'lucide-react';
-import { VISION_MISSION } from '../../data/about';
-import Button from '../../components/common/Button/Button';
+import { Compass, Target, CheckCircle2, Sparkles } from 'lucide-react';
+import { VISION_MISSION, ABOUT_HERO } from '../../data/about';
 import './AboutPage.css';
 
 export default function VisionMissionPage() {
@@ -25,21 +24,21 @@ export default function VisionMissionPage() {
             <span className="breadcrumb-slash">/</span>
             <Link to="/about">ABOUT</Link>
             <span className="breadcrumb-slash">/</span>
-            <span className="breadcrumb-current">MISSION &amp; VALUES</span>
+            <span className="breadcrumb-current">VISION &amp; MISSION</span>
           </div>
 
           <div className="inner-hero-content">
             <div className="mono-label inner-hero-badge">
               <Compass size={14} />
-              <span>ABOUT // MISSION &amp; VALUES</span>
+              <span>ABOUT // PURPOSE &amp; DIRECTION</span>
             </div>
 
             <h1 className="inner-hero-title">
-              Our Mission &; Vision: Powering Intelligent Enterprise Software
+              Our Vision &amp; Mission
             </h1>
 
             <p className="inner-hero-lead">
-              Astrion Digital develops modern technology products that empower businesses to operate more efficiently, intelligently, and effectively. We eliminate manual bottlenecks and connect core operations with clarity.
+              To empower businesses with intelligent, integrated and accessible technology that transforms the way they operate, compete and grow.
             </p>
           </div>
         </div>
@@ -48,87 +47,65 @@ export default function VisionMissionPage() {
       {/* Vision & Mission Core Cards Grid */}
       <section className="section">
         <div className="container">
-          <div className="inner-vm-large-grid">
-            {/* Mission Card */}
-            <div className="vm-large-card mission">
-              <div className="vm-card-badge mono-label orange">
-                <Target size={16} />
-                <span>OUR MISSION</span>
+          <div className="vm-dedicated-grid">
+            {/* Vision Card */}
+            <div className="vm-dedicated-card vision-card">
+              <div className="vm-card-top-row">
+                <span className="mono-label vm-pill blue">
+                  <Compass size={14} />
+                  <span>{VISION_MISSION.vision.tag}</span>
+                </span>
               </div>
-              <h2 className="vm-card-title">Clean, Intelligent Software Teams Love Using</h2>
-              <blockquote className="vm-statement-quote">
-                &ldquo;To develop intelligent enterprise software products that help businesses operate more efficiently, intelligently, and effectively—eliminating spreadsheet chaos and manual busywork.&rdquo;
-              </blockquote>
-
-              <div className="vm-pillars-block">
-                <span className="mono-tag vm-pillars-heading">WHAT THIS MEANS IN PRACTICE</span>
-                <div className="vm-pillars-list">
-                  <div className="vm-pillar-item">
-                    <CheckCircle2 size={16} className="pillar-check-icon orange" />
-                    <span>Eliminate manual data re-entry across finance, warehouse, sales, and HR</span>
-                  </div>
-                  <div className="vm-pillar-item">
-                    <CheckCircle2 size={16} className="pillar-check-icon orange" />
-                    <span>Deliver real-time visibility so managers can make decisions with total confidence</span>
-                  </div>
-                  <div className="vm-pillar-item">
-                    <CheckCircle2 size={16} className="pillar-check-icon orange" />
-                    <span>Build intuitive, friendly interfaces that employees actually enjoy opening every day</span>
-                  </div>
-                </div>
-              </div>
+              <h2 className="vm-dedicated-title">{VISION_MISSION.vision.title}</h2>
+              <p className="vm-dedicated-statement">
+                &ldquo;{VISION_MISSION.vision.description}&rdquo;
+              </p>
             </div>
 
-            {/* Vision Card */}
-            <div className="vm-large-card vision">
-              <div className="vm-card-badge mono-label">
-                <Compass size={16} />
-                <span>OUR VISION</span>
+            {/* Mission Card */}
+            <div className="vm-dedicated-card mission-card">
+              <div className="vm-card-top-row">
+                <span className="mono-label vm-pill orange">
+                  <Target size={14} />
+                  <span>{VISION_MISSION.mission.tag}</span>
+                </span>
               </div>
-              <h2 className="vm-card-title">The Trusted Company Behind Global Enterprise Operations</h2>
-              <blockquote className="vm-statement-quote">
-                &ldquo;To be the corporate foundation and technology pioneer powering the world&rsquo;s most dependable business software platforms.&rdquo;
-              </blockquote>
+              <h2 className="vm-dedicated-title">{VISION_MISSION.mission.title}</h2>
+              <p className="vm-dedicated-statement">
+                &ldquo;{VISION_MISSION.mission.description}&rdquo;
+              </p>
+            </div>
+          </div>
 
-              <div className="vm-pillars-block">
-                <span className="mono-tag vm-pillars-heading">HOW WE MAKE IT HAPPEN</span>
-                <div className="vm-pillars-list">
-                  <div className="vm-pillar-item">
-                    <CheckCircle2 size={16} className="pillar-check-icon" />
-                    <span>Unify core operations—finance, supply chain, inventory, and HR—under one roof</span>
-                  </div>
-                  <div className="vm-pillar-item">
-                    <CheckCircle2 size={16} className="pillar-check-icon" />
-                    <span>Deploy pre-built industry templates that get clients live in weeks, not years</span>
-                  </div>
-                  <div className="vm-pillar-item">
-                    <CheckCircle2 size={16} className="pillar-check-icon" />
-                    <span>Provide continuous development and reliable updates with zero vendor lock-in</span>
-                  </div>
-                </div>
+          {/* We Strive To: Core Objectives Block */}
+          <div className="strive-block-card" style={{ marginBottom: '40px' }}>
+            <div className="strive-header">
+              <div className="mono-label strive-tag">
+                <Sparkles size={14} />
+                <span>CORE OBJECTIVES</span>
               </div>
+              <h3 className="strive-title">{VISION_MISSION.striveHeading}</h3>
+            </div>
+
+            <div className="strive-items-list">
+              {VISION_MISSION.strivePoints.map((point, idx) => (
+                <div key={idx} className="strive-item-row">
+                  <span className="strive-check-icon" aria-hidden="true">
+                    <CheckCircle2 size={18} />
+                  </span>
+                  <p className="strive-item-text">{point}</p>
+                </div>
+              ))}
             </div>
           </div>
 
           {/* Commitment Block */}
-          <div className="commitment-card">
-            <div className="commitment-header">
-              <div className="mono-label">
-                <Award size={16} />
-                <span>OUR PROMISE</span>
-              </div>
-              <h3>Enterprise Software Without the Complex Headaches</h3>
-            </div>
-            <p className="commitment-text">
-              We stand behind our software with transparent pricing, rapid implementation, and continuous updates. When your business grows, your software scales seamlessly right alongside you.
-            </p>
-            <div className="commitment-actions">
-              <Button to="/xenedion" variant="primary" size="md" icon="arrow">
-                Explore XENedion ERP
-              </Button>
-              <Button to="/contact" variant="secondary" size="md">
-                Request a Demo
-              </Button>
+          <div className="about-commitment-card" style={{ margin: '0' }}>
+            <div className="commitment-content">
+              <span className="mono-label commitment-badge">OUR COMMITMENT</span>
+              <p className="commitment-statement">
+                {ABOUT_HERO.commitment}
+              </p>
             </div>
           </div>
         </div>

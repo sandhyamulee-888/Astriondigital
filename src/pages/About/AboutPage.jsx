@@ -1,22 +1,25 @@
 import React, { useEffect } from 'react';
 import { Link } from 'react-router-dom';
 import {
-  ShieldCheck,
   Compass,
   Target,
-  Users,
-  Layers,
   CheckCircle2,
-  ArrowUpRight,
-  Zap,
-  Lock,
-  Globe,
+  ArrowRight,
+  Search,
+  Network,
+  TrendingUp,
+  ShieldCheck,
+  User,
+  Sparkles,
   Building2,
-  Cpu,
-  Layers2,
-  Cloud
+  Layers
 } from 'lucide-react';
-import { ABOUT_ASTRION } from '../../data/about';
+import {
+  ABOUT_HERO,
+  VISION_MISSION,
+  OUR_APPROACH,
+  LEADERSHIP
+} from '../../data/about';
 import Button from '../../components/common/Button/Button';
 import './AboutPage.css';
 
@@ -27,8 +30,10 @@ export default function AboutPage() {
 
   return (
     <div className="inner-page about-main-page">
-      {/* Top Hero Section */}
-      <section className="inner-hero-section">
+      {/* ========================================================
+          1. ABOUT US HERO & OVERVIEW
+          ======================================================== */}
+      <section className="inner-hero-section about-hero-section" aria-label="About Astrion Digital Overview">
         <div className="inner-hero-bg" aria-hidden="true">
           <img src="/solutions-bg.jpg" alt="" className="inner-hero-bg-img" />
           <div className="inner-hero-overlay"></div>
@@ -41,131 +46,157 @@ export default function AboutPage() {
             <span className="breadcrumb-current">ABOUT ASTRION DIGITAL</span>
           </div>
 
-          <div className="inner-hero-content">
+          <div className="inner-hero-content about-hero-constrained">
             <div className="mono-label inner-hero-badge">
               <span className="badge-dot"></span>
-              CORPORATE BRAND // ENTERPRISE SOFTWARE PRODUCTS
+              {ABOUT_HERO.badge}
             </div>
 
-            <h1 className="inner-hero-title">
-              The Company Behind Intelligent Enterprise Software
+            <h1 className="inner-hero-title about-hero-headline">
+              {ABOUT_HERO.heading}
             </h1>
 
-            <div className="about-subhead-badge mono-tag">
-              Enterprise Software Products &bull; Innovation &bull; Business Technology
+            {/* Introduction Narrative */}
+            <div className="about-intro-narrative">
+              {ABOUT_HERO.introParagraphs.map((paragraph, idx) => (
+                <p key={idx} className="about-intro-paragraph">
+                  {paragraph}
+                </p>
+              ))}
             </div>
 
-            <p className="inner-hero-lead">
-              Astrion Digital is an enterprise software solutions focused on developing technology products that help businesses operate more efficiently, intelligently, and effectively — Powered by our flagship XENedion platform.
-            </p>
+            {/* Our Commitment Callout */}
+            <div className="about-commitment-card">
+              <div className="commitment-accent-bar" aria-hidden="true" />
+              <div className="commitment-content">
+                <span className="mono-label commitment-badge">OUR COMMITMENT</span>
+                <p className="commitment-statement">
+                  {ABOUT_HERO.commitment}
+                </p>
+              </div>
+            </div>
 
-            <div className="inner-hero-actions">
-              <Button to="/solutions/erp" variant="primary" size="lg" icon="arrow">
-                Explore XENedion ERP
+            {/* CTA Group */}
+            <div className="inner-hero-actions about-hero-actions">
+              <Button to={ABOUT_HERO.ctaPrimary.href} variant="primary" size="lg" icon="arrow">
+                {ABOUT_HERO.ctaPrimary.label}
               </Button>
-              <Button to="/contact" variant="secondary" size="lg">
-                Request a Demo
+              <Button to={ABOUT_HERO.ctaSecondary.href} variant="secondary" size="lg">
+                {ABOUT_HERO.ctaSecondary.label}
               </Button>
             </div>
           </div>
         </div>
       </section>
 
-      {/* Section 1: Corporate Positioning Statement */}
-      <section className="section about-narrative-section">
-        <div className="container">
-          <div className="section-header-compact about-narrative-header">
-            <div className="mono-label section-tag">CORPORATE POSITIONING STATEMENT</div>
-            <h2 className="narrative-heading">
-              Astrion Digital provides the corporate foundation for intelligent enterprise software
-            </h2>
-          </div>
-
-          <div className="about-split-grid">
-            {/* Left Column: Core Positioning Statement */}
-            <div className="about-narrative-col">
-              <div className="corporate-statement-block">
-                <p className="statement-lead-para">
-                  {ABOUT_ASTRION.lead}
-                </p>
-                <p className="statement-flagship-para">
-                  {ABOUT_ASTRION.flagshipStatement}
-                </p>
-                <div className="statement-foundation-callout">
-                  <CheckCircle2 size={18} className="callout-icon" />
-                  <span>{ABOUT_ASTRION.foundationStatement}</span>
-                </div>
-              </div>
-
-              <div className="about-callout-quote">
-                <p className="quote-text">
-                  “It establishes Astrion as the company behind the product, without suggesting that it independently offers consulting, cybersecurity, web development, or other unrelated services.”
-                </p>
-                <span className="quote-author mono-tag">— Strategic Corporate Brand Positioning</span>
-              </div>
-            </div>
-
-            {/* Right Column: Key Proof Metrics */}
-            <div className="about-stats-col">
-              <div className="stats-matrix-grid">
-                {ABOUT_ASTRION.stats.map((stat, idx) => {
-                  const statMeta = [
-                    { icon: <Cpu size={20} />, color: '#1C75BD', bg: 'rgba(28, 117, 189, 0.08)', border: 'rgba(28, 117, 189, 0.18)' },
-                    { icon: <Layers size={20} />, color: '#EB643E', bg: 'rgba(235, 100, 62, 0.08)', border: 'rgba(235, 100, 62, 0.18)' },
-                    { icon: <Building2 size={20} />, color: '#10B981', bg: 'rgba(16, 185, 129, 0.08)', border: 'rgba(16, 185, 129, 0.18)' },
-                    { icon: <Cloud size={20} />, color: '#6366F1', bg: 'rgba(99, 102, 241, 0.08)', border: 'rgba(99, 102, 241, 0.18)' }
-                  ][idx] || { icon: <Cpu size={20} />, color: '#1C75BD', bg: 'rgba(28, 117, 189, 0.08)', border: 'rgba(28, 117, 189, 0.18)' };
-
-                  return (
-                    <div key={idx} className="stat-matrix-card">
-                      <div className="stat-card-header">
-                        <div
-                          className="stat-icon-box"
-                          style={{
-                            color: statMeta.color,
-                            backgroundColor: statMeta.bg,
-                            borderColor: statMeta.border
-                          }}
-                        >
-                          {statMeta.icon}
-                        </div>
-                        <span className="stat-matrix-label mono-label">{stat.label}</span>
-                      </div>
-                      <h3 className="stat-matrix-title">{stat.num}</h3>
-                      <p className="stat-matrix-desc">{stat.desc}</p>
-                    </div>
-                  );
-                })}
-              </div>
-            </div>
-          </div>
-        </div>
-      </section>
-
-      {/* Section 2: Key Operational Pillars */}
-      <section className="section about-values-section section-alt">
+      {/* ========================================================
+          2. DEDICATED VISION & MISSION SECTION
+          ======================================================== */}
+      <section className="section vision-mission-dedicated-section" id="vision-mission" aria-label="Vision and Mission">
         <div className="container">
           <div className="section-header-compact">
-            <div className="mono-label section-tag">WHY BUSINESSES CHOOSE US</div>
-            <h2 className="section-title-compact">Why Growing Companies Run on Astrion</h2>
+            <div className="mono-label section-tag">
+              <Compass size={14} className="tag-icon" />
+              <span>{VISION_MISSION.tag}</span>
+            </div>
+            <h2 className="section-title-compact">Vision &amp; Mission</h2>
             <p className="section-desc-compact">
-              Purpose-built software. Real results. Zero complexity.
+              Driving sustainable business transformation through purposeful enterprise innovation.
             </p>
           </div>
 
-          <div className="values-cards-grid" style={{ gridTemplateColumns: 'repeat(auto-fit, minmax(260px, 1fr))' }}>
-            {ABOUT_ASTRION.keyPillars.map((pillar, idx) => {
+          {/* Vision & Mission Cards Grid */}
+          <div className="vm-dedicated-grid">
+            {/* Vision Card */}
+            <div className="vm-dedicated-card vision-card">
+              <div className="vm-card-top-row">
+                <span className="mono-label vm-pill blue">
+                  <Compass size={14} />
+                  <span>{VISION_MISSION.vision.tag}</span>
+                </span>
+              </div>
+              <h3 className="vm-dedicated-title">{VISION_MISSION.vision.title}</h3>
+              <p className="vm-dedicated-statement">
+                &ldquo;{VISION_MISSION.vision.description}&rdquo;
+              </p>
+            </div>
+
+            {/* Mission Card */}
+            <div className="vm-dedicated-card mission-card">
+              <div className="vm-card-top-row">
+                <span className="mono-label vm-pill orange">
+                  <Target size={14} />
+                  <span>{VISION_MISSION.mission.tag}</span>
+                </span>
+              </div>
+              <h3 className="vm-dedicated-title">{VISION_MISSION.mission.title}</h3>
+              <p className="vm-dedicated-statement">
+                &ldquo;{VISION_MISSION.mission.description}&rdquo;
+              </p>
+            </div>
+          </div>
+
+          {/* We Strive To: Feature Block */}
+          <div className="strive-block-card">
+            <div className="strive-header">
+              <div className="mono-label strive-tag">
+                <Sparkles size={14} />
+                <span>CORE OBJECTIVES</span>
+              </div>
+              <h3 className="strive-title">{VISION_MISSION.striveHeading}</h3>
+            </div>
+
+            <div className="strive-items-list">
+              {VISION_MISSION.strivePoints.map((point, idx) => (
+                <div key={idx} className="strive-item-row">
+                  <span className="strive-check-icon" aria-hidden="true">
+                    <CheckCircle2 size={18} />
+                  </span>
+                  <p className="strive-item-text">{point}</p>
+                </div>
+              ))}
+            </div>
+          </div>
+        </div>
+      </section>
+
+      {/* ========================================================
+          3. OUR APPROACH SECTION
+          ======================================================== */}
+      <section className="section approach-dedicated-section section-alt" id="approach" aria-label="Our Approach">
+        <div className="container">
+          <div className="section-header-compact">
+            <div className="mono-label section-tag">
+              <Target size={14} className="tag-icon" />
+              <span>{OUR_APPROACH.tag}</span>
+            </div>
+            <h2 className="section-title-compact">{OUR_APPROACH.heading}</h2>
+            <div className="approach-intro-block">
+              {OUR_APPROACH.intro.map((para, idx) => (
+                <p key={idx} className="approach-intro-para">{para}</p>
+              ))}
+            </div>
+          </div>
+
+          {/* 4 Key Principles Grid */}
+          <div className="approach-principles-grid">
+            {OUR_APPROACH.principles.map((principle, idx) => {
               const icons = [
-                <Layers2 key="1" size={24} />,
-                <ShieldCheck key="2" size={24} />,
-                <Zap key="3" size={24} />,
-                <Building2 key="4" size={24} />
+                <Search key="search" size={20} />,
+                <Network key="network" size={20} />,
+                <TrendingUp key="trending" size={20} />,
+                <ShieldCheck key="shield" size={20} />
               ];
               return (
-                <div key={pillar.id || idx} className="value-item-card">
-                  <div className="value-icon-box">{icons[idx % icons.length]}</div>
-                  <h3 className="value-title">{pillar.title}</h3>
-                  <p className="value-desc">{pillar.desc}</p>
+                <div key={principle.num} className="principle-card">
+                  <div className="principle-card-top">
+                    <span className="principle-num mono-tag">{principle.num}</span>
+                    <span className="principle-icon-wrap" aria-hidden="true">
+                      {icons[idx]}
+                    </span>
+                  </div>
+                  <h3 className="principle-title">{principle.title}</h3>
+                  <p className="principle-desc">{principle.description}</p>
                 </div>
               );
             })}
@@ -173,187 +204,74 @@ export default function AboutPage() {
         </div>
       </section>
 
-      {/* Section 3: Recommended Brand Architecture */}
-      <section className="section brand-architecture-section">
+      {/* ========================================================
+          4. LEADERSHIP SECTION
+          ======================================================== */}
+      <section className="section leadership-dedicated-section" id="leadership" aria-label="Leadership Philosophy">
         <div className="container">
           <div className="section-header-compact">
             <div className="mono-label section-tag">
-              <Layers size={14} />
-              <span>THE COMPANY &amp; THE PRODUCT</span>
+              <User size={14} className="tag-icon" />
+              <span>{LEADERSHIP.tag}</span>
             </div>
-            <h2 className="section-title-compact">Astrion Digital Builds. XENedion Runs Your Business</h2>
-            <p className="section-desc-compact">
-              Astrion Digital is the software company. XENedion is the product your team will use every day — an all-in-one ERP built to connect every part of your business.
+            <h2 className="section-title-compact">{LEADERSHIP.heading}</h2>
+            
+            {/* Leadership Introduction */}
+            <div className="leadership-intro-block">
+              {LEADERSHIP.intro.map((para, idx) => (
+                <p key={idx} className="leadership-intro-para">
+                  {para}
+                </p>
+              ))}
+            </div>
+          </div>
+
+          {/* Leadership Profiles Layout (Clean corporate profile cards) */}
+          <div className="leadership-profiles-grid">
+            {LEADERSHIP.profiles.map((profile) => (
+              <div key={profile.id} className="corporate-profile-card">
+                {/* Photo Aspect-Ratio Frame */}
+                <div className="profile-photo-frame" aria-label={`${profile.title} Photo Container`}>
+                  <div className="profile-placeholder-graphic">
+                    <User size={38} className="placeholder-user-icon" />
+                    <span className="mono-tag placeholder-slot-label">{profile.slotLabel}</span>
+                  </div>
+                </div>
+
+                {/* Profile Details */}
+                <div className="profile-details-body">
+                  <div className="profile-meta-row">
+                    <span className="profile-role-badge mono-label">{profile.role}</span>
+                  </div>
+                  <h3 className="profile-full-name">{profile.title}</h3>
+                  <p className="profile-bio-text">
+                    {profile.placeholderDesc}
+                  </p>
+                </div>
+              </div>
+            ))}
+          </div>
+
+          {/* Understated Corporate Note regarding Final Profiles */}
+          <div className="leadership-management-note">
+            <span className="note-badge mono-tag">CORPORATE NOTE</span>
+            <p className="note-text">
+              {LEADERSHIP.note}
             </p>
           </div>
-
-          <div className="brand-architecture-grid">
-            {/* The Company Card */}
-            <div className="brand-arch-card parent-arch-card">
-              <div className="arch-card-top">
-                <span className="mono-tag arch-entity-type">THE COMPANY BEHIND THE PLATFORM</span>
-                <span className="mono-tag arch-role-tag">ENTERPRISE SOFTWARE</span>
-              </div>
-              <h3 className="arch-entity-heading">ASTRION DIGITAL</h3>
-              <div className="arch-pillars-bar mono-tag">
-                Dedicated Engineering &bull; Reliable Cloud &bull; Continuous Updates &bull; Expert Support
-              </div>
-              <p className="arch-card-summary">
-                Astrion Digital is the enterprise software product company that designs, develops, and maintains our technology platforms. We provide continuous updates, reliable infrastructure, and sustained product backing.
-              </p>
-              <ul className="arch-responsibilities-list">
-                <li>
-                  <CheckCircle2 size={15} />
-                  <span><strong>Product Ownership:</strong> Direct development, proprietary IP, and automated cloud testing.</span>
-                </li>
-                <li>
-                  <CheckCircle2 size={15} />
-                  <span><strong>Corporate Strategy:</strong> Long-term governance, sustained capital backing, and strategic roadmap execution.</span>
-                </li>
-                <li>
-                  <CheckCircle2 size={15} />
-                  <span><strong>Continuous Innovation:</strong> Practical AI automation, smart workflows, and performance optimization.</span>
-                </li>
-                <li>
-                  <CheckCircle2 size={15} />
-                  <span><strong>Enterprise Growth:</strong> Scalable foundation built to introduce future software products without altering company identity.</span>
-                </li>
-              </ul>
-            </div>
-
-            {/* The ERP Product Card */}
-            <div className="brand-arch-card flagship-arch-card">
-              <div className="arch-card-top">
-                <span className="mono-tag arch-entity-type orange">FLAGSHIP ENTERPRISE SOFTWARE PRODUCT</span>
-                <span className="mono-tag arch-role-tag orange">WHAT CLIENTS USE</span>
-              </div>
-              <h3 className="arch-entity-heading">XENedion</h3>
-              <div className="arch-pillars-bar mono-tag orange">
-                &ldquo;One Platform. Your Entire Business.&rdquo;
-              </div>
-              <p className="arch-card-summary">
-                XENedion is the integrated enterprise resource planning platform designed to connect core business functions, streamline operations, and provide better visibility across the organization.
-              </p>
-              <ul className="arch-responsibilities-list">
-                <li>
-                  <CheckCircle2 size={15} className="orange-check" />
-                  <span><strong>Integrated Modules:</strong> Finance, Inventory, Purchasing, Sales &amp; CRM, HR &amp; Payroll, and Operations.</span>
-                </li>
-                <li>
-                  <CheckCircle2 size={15} className="orange-check" />
-                  <span><strong>Embedded AI:</strong> Automatic invoice matching, reorder alerts, and smart shipment tracking.</span>
-                </li>
-                <li>
-                  <CheckCircle2 size={15} className="orange-check" />
-                  <span><strong>Real-Time Data:</strong> One shared database ensuring your inventory and financial ledgers stay 100% in sync.</span>
-                </li>
-                <li>
-                  <CheckCircle2 size={15} className="orange-check" />
-                  <span><strong>Fast Deployment:</strong> Up and running in weeks with ready-to-use templates tailored to your industry.</span>
-                </li>
-              </ul>
-
-              <div className="arch-card-action">
-                <Button to="/solutions/erp" variant="primary" size="md" icon="arrow">
-                  Explore XENedion ERP
-                </Button>
-              </div>
-            </div>
-          </div>
-
-          {/* Why This Positioning Works Card Block */}
-          <div className="why-positioning-block" style={{ marginTop: '48px' }}>
-            <div className="why-header">
-              <div className="mono-label" style={{ color: 'var(--brand-orange)', marginBottom: '8px' }}>
-                STRATEGIC BRAND RATIONALE
-              </div>
-              <h3>
-                Why This Corporate Positioning Works
-              </h3>
-            </div>
-            <div className="why-cards-grid">
-              <div className="why-card">
-                <div className="why-num" style={{ color: 'var(--brand-blue)' }}>
-                  Software Product Company Focus
-                </div>
-                <h4 className="why-title">Clean Product Focus</h4>
-                <p className="why-desc">
-                  It establishes Astrion as the company behind the product, without suggesting that it independently offers consulting, cybersecurity, web development, or other unrelated services.
-                </p>
-              </div>
-              <div className="why-card">
-                <div className="why-num" style={{ color: 'var(--brand-orange)' }}>
-                  Scalable Multi-Product Future
-                </div>
-                <h4 className="why-title">Multi-Product Umbrella</h4>
-                <p className="why-desc">
-                  It also allows you to introduce additional software products under Astrion in the future without having to change the company’s identity or market positioning.
-                </p>
-              </div>
-              <div className="why-card">
-                <div className="why-num" style={{ color: '#10b981' }}>
-                  Dedicated Corporate Foundation
-                </div>
-                <h4 className="why-title">Enduring Corporate Backing</h4>
-                <p className="why-desc">
-                  Astrion Digital directly owns and develops XENedion, providing the corporate foundation, cloud infrastructure, and sustained vision for long-term customer success.
-                </p>
-              </div>
-            </div>
-          </div>
         </div>
       </section>
 
-      {/* Sub-Navigation Explore Hub */}
-      <section className="section about-subnav-section section-alt">
-        <div className="container">
-          <div className="section-header-compact">
-            <div className="mono-label section-tag">LEARN MORE ABOUT US</div>
-            <h2 className="section-title-compact">Explore Astrion Digital</h2>
-          </div>
-
-          <div className="about-subpages-grid">
-            <Link to="/about/vision-mission" className="about-subpage-card">
-              <div className="subpage-card-top">
-                <Compass size={20} className="subpage-icon" />
-                <ArrowUpRight size={16} className="subpage-arrow" />
-              </div>
-              <h3 className="subpage-title">Mission &amp; Values</h3>
-              <p className="subpage-desc">Our mission to replace messy, disconnected tools with clean, intelligent software.</p>
-              <span className="mono-tag subpage-link-text">Read Mission &amp; Values →</span>
-            </Link>
-
-            <Link to="/about/approach" className="about-subpage-card">
-              <div className="subpage-card-top">
-                <Target size={20} className="subpage-icon" />
-                <ArrowUpRight size={16} className="subpage-arrow" />
-              </div>
-              <h3 className="subpage-title">How We Work</h3>
-              <p className="subpage-desc">Three simple steps: Understand the Bottlenecks, Deploy the Platform, and Evolve.</p>
-              <span className="mono-tag subpage-link-text">View Our Approach →</span>
-            </Link>
-
-            <Link to="/about/leadership" className="about-subpage-card">
-              <div className="subpage-card-top">
-                <Users size={20} className="subpage-icon" />
-                <ArrowUpRight size={16} className="subpage-arrow" />
-              </div>
-              <h3 className="subpage-title">Leadership</h3>
-              <p className="subpage-desc">Experienced software architects and operational leaders committed to your success.</p>
-              <span className="mono-tag subpage-link-text">Meet Our Leaders →</span>
-            </Link>
-          </div>
-        </div>
-      </section>
-
-      {/* Bottom CTA Bar */}
-      <section className="section about-cta-section">
+      {/* ========================================================
+          5. CLOSING CALL TO ACTION
+          ======================================================== */}
+      <section className="section about-cta-section section-alt">
         <div className="container">
           <div className="about-cta-banner">
             <div className="about-cta-text">
               <span className="mono-label">READY TO GET STARTED?</span>
               <h3>Ready to simplify how your business operates?</h3>
-              <p>Schedule a quick 15-minute walkthrough to see how Astrion Digital and XENedion can help your team.</p>
+              <p>Schedule a quick walkthrough to see how Astrion Digital and XENedion can help your team.</p>
             </div>
             <div className="about-cta-btn-wrap">
               <Button to="/contact" variant="primary" size="lg" icon="arrow">

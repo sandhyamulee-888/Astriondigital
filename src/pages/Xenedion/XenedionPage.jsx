@@ -182,7 +182,7 @@ export default function XenedionPage({ isSolutionSection = false }) {
             </div>
 
             <h1 className="inner-hero-title">
-              One Platform. Your Entire Business
+              One Platform Your Entire Business
             </h1>
 
             <div className="about-subhead-badge mono-tag">

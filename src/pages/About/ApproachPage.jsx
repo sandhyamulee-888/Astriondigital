@@ -1,18 +1,21 @@
-import React, { useState, useEffect } from 'react';
+import React, { useEffect } from 'react';
 import { Link } from 'react-router-dom';
-import { Target, CheckCircle2, ArrowRight, Layers, ShieldCheck, Zap, BarChart3, Clock } from 'lucide-react';
-import { APPROACH_PHASES } from '../../data/approach';
+import { Target, Search, Network, TrendingUp, ShieldCheck } from 'lucide-react';
+import { OUR_APPROACH } from '../../data/about';
 import Button from '../../components/common/Button/Button';
 import './AboutPage.css';
 
 export default function ApproachPage() {
-  const [activePhaseIndex, setActivePhaseIndex] = useState(0);
-
   useEffect(() => {
     window.scrollTo(0, 0);
   }, []);
 
-  const activePhase = APPROACH_PHASES[activePhaseIndex];
+  const icons = [
+    <Search key="search" size={22} />,
+    <Network key="network" size={22} />,
+    <TrendingUp key="trending" size={22} />,
+    <ShieldCheck key="shield" size={22} />
+  ];
 
   return (
     <div className="inner-page approach-page">
@@ -35,120 +38,58 @@ export default function ApproachPage() {
           <div className="inner-hero-content">
             <div className="mono-label inner-hero-badge">
               <Target size={14} />
-              <span>HOW WE WORK // PRODUCT-LED EXECUTION</span>
+              <span>ABOUT // IMPLEMENTATION PHILOSOPHY</span>
             </div>
 
             <h1 className="inner-hero-title">
-              How We Engineer &amp; Deliver
+              {OUR_APPROACH.heading}
             </h1>
 
-            <p className="inner-hero-lead">
-              A product-led, three-step methodology: Understand Bottlenecks, Deploy Unified Modules, and Evolve Continuously. Engineered to eliminate operational friction and deliver dependable software without the headaches.
-            </p>
+            <div className="approach-intro-block" style={{ margin: '16px 0 0 0', textAlign: 'left' }}>
+              {OUR_APPROACH.intro.map((para, idx) => (
+                <p key={idx} className="approach-intro-para">{para}</p>
+              ))}
+            </div>
           </div>
         </div>
       </section>
 
-      {/* 3-Step Delivery Framework */}
+      {/* 4-Principles Framework Section */}
       <section className="section">
         <div className="container">
-          {/* Phase Selector Tabs */}
-          <div className="approach-timeline-tabs">
-            {APPROACH_PHASES.map((phase, idx) => (
-              <button
-                key={idx}
-                className={`timeline-tab-btn ${activePhaseIndex === idx ? 'active' : ''}`}
-                onClick={() => setActivePhaseIndex(idx)}
-              >
-                <span className="tab-phase-name">{phase.title}</span>
-              </button>
-            ))}
+          <div className="section-header-compact">
+            <div className="mono-label section-tag">
+              <span>CORE PRINCIPLES</span>
+            </div>
+            <h2 className="section-title-compact">Four Foundations of Technology Delivery</h2>
+            <p className="section-desc-compact">
+              Built on deep process understanding, unified architecture, measurable performance, and long-term scalability.
+            </p>
           </div>
 
-          {/* Active Phase Deep Dive Card */}
-          <div className="approach-deepdive-card">
-            <div className="deepdive-header">
-              <div className="mono-label deepdive-badge">
-                <span>{activePhase.phase}</span>
-              </div>
-              <h2 className="deepdive-headline">{activePhase.headline}</h2>
-              <p className="deepdive-summary">{activePhase.summary}</p>
-            </div>
-
-            <div className="deepdive-grid">
-              {/* Deliverables Checklist */}
-              <div className="deepdive-col">
-                <span className="mono-tag deepdive-col-title">WHAT WE DELIVER</span>
-                <div className="deliverables-stack">
-                  {activePhase.deliverables.map((del, idx) => (
-                    <div key={idx} className="deliverable-card">
-                      <CheckCircle2 size={16} className="del-check-icon" />
-                      <div className="del-text">
-                        <h4>{del}</h4>
-                        <span className="mono-tag">Actionable Milestone</span>
-                      </div>
-                    </div>
-                  ))}
+          <div className="approach-principles-grid" style={{ marginTop: '32px' }}>
+            {OUR_APPROACH.principles.map((principle, idx) => (
+              <div key={principle.num} className="principle-card">
+                <div className="principle-card-top">
+                  <span className="principle-num mono-tag">{principle.num}</span>
+                  <span className="principle-icon-wrap" aria-hidden="true">
+                    {icons[idx]}
+                  </span>
                 </div>
-              </div>
-
-              {/* Phase Architectural Safeguards */}
-              <div className="deepdive-col">
-                <span className="mono-tag deepdive-col-title">WHAT YOU CAN EXPECT</span>
-                <div className="safeguards-box">
-                  <div className="safeguard-row">
-                    <ShieldCheck size={16} className="safeguard-icon" />
-                    <div>
-                      <strong>{activePhase.safeguards?.title || 'Operational Security'}</strong>
-                      <p>{activePhase.safeguards?.desc || 'Strict data safeguards throughout the process.'}</p>
-                    </div>
-                  </div>
-                  <div className="safeguard-row">
-                    <Zap size={16} className="safeguard-icon" />
-                    <div>
-                      <strong>Fast, Predictable Timelines</strong>
-                      <p>Weeks to deploy rather than months or years of stalled implementations.</p>
-                    </div>
-                  </div>
-                  <div className="safeguard-row">
-                    <Clock size={16} className="safeguard-icon" />
-                    <div>
-                      <strong>Dedicated Implementation Team</strong>
-                      <p>Direct access to our platform specialists who guide your team every step of the way.</p>
-                    </div>
-                  </div>
-                </div>
-              </div>
-            </div>
-          </div>
-
-          {/* Complete Visual Overview */}
-          <div className="approach-all-phases-grid">
-            {APPROACH_PHASES.map((item, idx) => (
-              <div key={idx} className={`phase-summary-box ${activePhaseIndex === idx ? 'highlighted' : ''}`}>
-                <div className="phase-summary-top">
-                  <span className="mono-label phase-badge-name">{item.phase}</span>
-                </div>
-                <h3 className="phase-summary-title">{item.title}</h3>
-                <p className="phase-summary-desc">{item.summary}</p>
-                <button 
-                  className="phase-inspect-btn mono-tag"
-                  onClick={() => setActivePhaseIndex(idx)}
-                >
-                  View Details →
-                </button>
+                <h3 className="principle-title">{principle.title}</h3>
+                <p className="principle-desc">{principle.description}</p>
               </div>
             ))}
           </div>
 
-          {/* CTA Row */}
-          <div className="approach-actions-banner">
-            <div className="approach-cta-info">
-              <span className="mono-label">READY TO GET STARTED?</span>
-              <h3>Schedule a workflow walkthrough with our product specialists.</h3>
-              <p>We will review your current systems, show you how XENedion fits, and map out a simple onboarding plan.</p>
+          {/* Action CTA Banner */}
+          <div className="about-cta-banner" style={{ marginTop: '56px' }}>
+            <div className="about-cta-text">
+              <span className="mono-label">READY TO TRANSFORM YOUR OPERATIONS?</span>
+              <h3>Discuss Your Business Workflows With Our Team</h3>
+              <p>Schedule a practical consultation to see how connected operations can accelerate your growth.</p>
             </div>
-            <div className="approach-cta-btns">
+            <div className="about-cta-btn-wrap">
               <Button to="/contact" variant="primary" size="lg" icon="arrow">
                 Request a Demo
               </Button>
