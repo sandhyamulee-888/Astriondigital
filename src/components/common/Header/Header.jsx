@@ -58,7 +58,7 @@ export default function Header() {
     <>
       <header
         ref={navRef}
-        className={`site-header ${isScrolled ? 'scrolled' : ''} ${activeMenuId ? 'menu-active' : ''}`}
+        className={`site-header ${isScrolled ? 'scrolled' : ''} ${activeMenuId && activeMenuId !== 'about' ? 'menu-active' : ''}`}
         onMouseLeave={handleMouseLeave}
       >
         <div className="container header-container">
@@ -106,6 +106,30 @@ export default function Header() {
                       {item.badge && <span className="nav-badge">{item.badge}</span>}
                       <ChevronDown size={14} className={`nav-chevron ${isActive ? 'open' : ''}`} />
                     </button>
+
+                    {/* Classic Compact Dropdown Menu for About */}
+                    {item.id === 'about' && isActive && (
+                      <div 
+                        className="compact-dropdown-menu"
+                        role="menu"
+                        aria-label="About menu"
+                      >
+                        <ul className="compact-dropdown-list">
+                          {item.megaMenu.columns.flatMap(c => c.items).map((subItem, idx) => (
+                            <li key={idx} role="none">
+                              <Link
+                                to={subItem.href}
+                                className="compact-dropdown-link"
+                                role="menuitem"
+                                onClick={() => setActiveMenuId(null)}
+                              >
+                                {subItem.title}
+                              </Link>
+                            </li>
+                          ))}
+                        </ul>
+                      </div>
+                    )}
                   </li>
                 );
               })}
@@ -134,12 +158,14 @@ export default function Header() {
           </div>
         </div>
 
-        {/* Desktop Mega Menu Panel */}
-        <MegaMenu
-          item={activeItem}
-          isOpen={Boolean(activeMenuId && activeItem?.megaMenu)}
-          onClose={() => setActiveMenuId(null)}
-        />
+        {/* Desktop Mega Menu Panel (for non-compact items) */}
+        {activeItem?.id !== 'about' && (
+          <MegaMenu
+            item={activeItem}
+            isOpen={Boolean(activeMenuId && activeItem?.megaMenu)}
+            onClose={() => setActiveMenuId(null)}
+          />
+        )}
       </header>
 
       {/* Mobile Navigation Full-screen Drawer */}

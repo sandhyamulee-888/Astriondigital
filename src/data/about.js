@@ -60,7 +60,7 @@ export const VISION_MISSION = {
 
 export const OUR_APPROACH = {
   tag: 'OUR APPROACH',
-  heading: 'Understand. Integrate. Optimise. Grow.',
+  heading: 'Understand Integrate Optimise Grow',
   intro: [
     'We believe successful technology implementation begins with understanding the business, not simply installing software.',
     'Our approach focuses on four key principles.'

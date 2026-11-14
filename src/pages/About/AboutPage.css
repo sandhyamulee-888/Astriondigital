@@ -1621,80 +1621,145 @@
 
 /* Vision & Mission Dedicated Section */
 .vision-mission-dedicated-section {
-  background-color: var(--bg-primary);
+  background-color: var(--bg-primary, #ffffff);
 }
 
-.vm-dedicated-grid {
+/* ── Modern Premium Vision & Mission Cards ── */
+.vm-cards-container {
   display: grid;
   grid-template-columns: repeat(2, 1fr);
-  gap: 24px;
-  margin-bottom: 32px;
+  gap: 28px;
+  margin-bottom: 40px;
 }
 
-.vm-dedicated-card {
-  background: #FFFFFF;
-  border: 1px solid var(--border-light);
-  border-radius: var(--radius-md);
-  padding: 32px 28px;
-  box-shadow: 0 2px 8px rgba(15, 23, 42, 0.03);
+.vm-card {
+  position: relative;
+  background: #ffffff;
+  border: 1px solid var(--border-medium, #e2e8f0);
+  border-radius: 14px;
+  padding: 36px 32px;
   display: flex;
   flex-direction: column;
-  transition: all var(--transition-fast);
+  transition: all 0.25s cubic-bezier(0.16, 1, 0.3, 1);
+  box-shadow: 0 4px 16px rgba(15, 23, 42, 0.03);
 }
 
-.vm-dedicated-card.vision-card:hover {
-  border-color: var(--brand-blue-border);
-  box-shadow: 0 6px 18px rgba(28, 117, 189, 0.08);
-  transform: translateY(-2px);
+/* Subtle top colored accent stroke */
+.vm-card::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  height: 3px;
+  border-top-left-radius: 14px;
+  border-top-right-radius: 14px;
 }
 
-.vm-dedicated-card.mission-card:hover {
-  border-color: var(--brand-orange-border);
-  box-shadow: 0 6px 18px rgba(235, 100, 62, 0.08);
-  transform: translateY(-2px);
+.vm-card--vision::before {
+  background: var(--brand-blue, #1C75BD);
 }
 
-.vm-card-top-row {
-  margin-bottom: 16px;
+.vm-card--mission::before {
+  background: var(--brand-orange, #EB643E);
 }
 
-.vm-pill {
-  display: inline-flex;
+.vm-card:hover {
+  transform: translateY(-4px);
+  box-shadow: 0 16px 36px rgba(15, 23, 42, 0.08);
+}
+
+.vm-card--vision:hover {
+  border-color: rgba(28, 117, 189, 0.4);
+}
+
+.vm-card--mission:hover {
+  border-color: rgba(235, 100, 62, 0.4);
+}
+
+/* Header row inside card */
+.vm-card-head {
+  display: flex;
   align-items: center;
-  gap: 6px;
-  padding: 5px 12px;
-  border-radius: var(--radius-full);
+  justify-content: space-between;
+  margin-bottom: 22px;
+}
+
+.vm-card-icon-wrap {
+  width: 48px;
+  height: 48px;
+  border-radius: 12px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: all 0.25s ease;
+}
+
+.vm-card-icon-wrap--vision {
+  background: rgba(28, 117, 189, 0.08);
+  color: var(--brand-blue, #1C75BD);
+  border: 1px solid rgba(28, 117, 189, 0.18);
+}
+
+.vm-card:hover .vm-card-icon-wrap--vision {
+  background: var(--brand-blue, #1C75BD);
+  color: #ffffff;
+}
+
+.vm-card-icon-wrap--mission {
+  background: rgba(235, 100, 62, 0.08);
+  color: var(--brand-orange, #EB643E);
+  border: 1px solid rgba(235, 100, 62, 0.18);
+}
+
+.vm-card:hover .vm-card-icon-wrap--mission {
+  background: var(--brand-orange, #EB643E);
+  color: #ffffff;
+}
+
+.vm-card-tag {
   font-size: 0.6875rem;
   font-weight: 700;
-  letter-spacing: 0.06em;
+  letter-spacing: 0.1em;
+  padding: 4px 10px;
+  border-radius: 999px;
 }
 
-.vm-pill.blue {
-  background: rgba(28, 117, 189, 0.08);
-  color: var(--brand-blue);
-  border: 1px solid rgba(28, 117, 189, 0.2);
+.vm-card--vision .vm-card-tag {
+  color: var(--brand-blue, #1C75BD);
+  background: rgba(28, 117, 189, 0.06);
+  border: 1px solid rgba(28, 117, 189, 0.14);
 }
 
-.vm-pill.orange {
-  background: rgba(235, 100, 62, 0.08);
-  color: var(--brand-orange);
-  border: 1px solid rgba(235, 100, 62, 0.2);
+.vm-card--mission .vm-card-tag {
+  color: var(--brand-orange, #EB643E);
+  background: rgba(235, 100, 62, 0.06);
+  border: 1px solid rgba(235, 100, 62, 0.14);
 }
 
-.vm-dedicated-title {
-  font-size: 1.45rem;
+.vm-card-heading {
+  font-size: 1.35rem;
   font-weight: 700;
-  color: var(--text-primary);
-  margin-bottom: 12px;
+  letter-spacing: -0.02em;
+  color: var(--text-primary, #0F172A);
+  margin: 0 0 12px 0;
+  line-height: 1.25;
 }
 
-.vm-dedicated-statement {
-  font-size: 1.05rem;
-  line-height: 1.65;
-  color: var(--text-secondary);
-  font-style: normal;
+.vm-card-text {
+  font-size: 1.025rem;
+  line-height: 1.7;
+  color: var(--text-secondary, #475569);
   margin: 0;
-  flex-grow: 1;
+  font-style: normal;
+  font-weight: 400;
+}
+
+@media (max-width: 768px) {
+  .vm-cards-container {
+    grid-template-columns: 1fr;
+    gap: 20px;
+  }
 }
 
 /* Strive Feature Block */
@@ -2021,5 +2086,246 @@
 
   .about-main-page .about-hero-section {
     padding-bottom: 40px;
+  }
+}
+
+/* ========================================================
+   SINGLE-PAGE ABOUT — CLEAN MINIMAL STYLE
+   ======================================================== */
+
+/* Anchor scroll offset */
+#about-astrion,
+#vision-mission,
+#approach,
+#leadership {
+  scroll-margin-top: calc(var(--header-height, 72px) + 24px);
+}
+
+/* ── Uniform section padding ── */
+.vision-mission-dedicated-section,
+.approach-dedicated-section,
+.leadership-dedicated-section {
+  padding-top: 88px;
+  padding-bottom: 88px;
+}
+
+.vision-mission-dedicated-section {
+  background-color: #ffffff;
+}
+
+.approach-dedicated-section {
+  background-color: #f8fafc;
+  border-top: 1px solid var(--border-light);
+  border-bottom: 1px solid var(--border-light);
+}
+
+.leadership-dedicated-section {
+  background-color: #ffffff;
+}
+
+/* ── Section header: LEFT-aligned, plain label, bottom divider line ── */
+.about-section-header {
+  text-align: left;
+  max-width: 100%;
+  margin: 0 0 48px 0;
+  padding-bottom: 24px;
+  border-bottom: 1px solid var(--border-light);
+}
+
+/* Plain uppercase label — no background, no pill, no badge */
+.about-section-tag {
+  display: block;
+  margin-bottom: 10px;
+  color: var(--brand-blue);
+  font-size: 0.6875rem;
+  font-weight: 700;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+  background: none;
+  border: none;
+  padding: 0;
+  border-radius: 0;
+}
+
+.about-section-heading {
+  font-size: clamp(1.75rem, 3vw, 2.5rem);
+  font-weight: 700;
+  letter-spacing: -0.03em;
+  line-height: 1.14;
+  color: var(--text-primary);
+  margin: 0;
+}
+
+/* ── Strive block: clean white, no shadow ── */
+.strive-block-card {
+  background: #ffffff !important;
+  border: 1px solid var(--border-light) !important;
+  box-shadow: none !important;
+}
+
+.strive-title {
+  font-size: 1.1875rem !important;
+  font-weight: 600 !important;
+}
+
+.strive-tag {
+  color: var(--brand-blue) !important;
+}
+
+/* 2-column strive list on desktop */
+.strive-items-list {
+  grid-template-columns: repeat(2, 1fr) !important;
+  gap: 12px 48px !important;
+}
+
+.strive-item-text {
+  font-size: 0.9375rem !important;
+  line-height: 1.6 !important;
+}
+
+/* ── Approach intro: left-aligned ── */
+.approach-intro-block {
+  max-width: 680px !important;
+  margin: 0 0 44px 0 !important;
+  text-align: left !important;
+}
+
+.approach-intro-para {
+  font-size: 1.0375rem;
+  line-height: 1.72;
+  color: var(--text-secondary);
+  margin-bottom: 10px;
+}
+
+.approach-intro-para:last-child {
+  margin-bottom: 0;
+}
+
+.approach-principles-grid {
+  margin-top: 0 !important;
+  align-items: stretch;
+}
+
+/* Principle cards: flat, clean, left-aligned content */
+.principle-card {
+  height: 100%;
+  border-radius: var(--radius-sm) !important;
+  box-shadow: none !important;
+  border: 1px solid var(--border-light) !important;
+  background: #ffffff !important;
+}
+
+.principle-card:hover {
+  border-color: var(--brand-blue) !important;
+  box-shadow: none !important;
+  transform: none !important;
+}
+
+.principle-num {
+  font-size: 0.6875rem !important;
+  background: none !important;
+  border: none !important;
+  padding: 0 !important;
+  color: var(--brand-orange) !important;
+  letter-spacing: 0.08em !important;
+  font-weight: 800 !important;
+}
+
+.principle-title {
+  font-size: 1.0625rem !important;
+  font-weight: 700 !important;
+  margin-bottom: 10px !important;
+}
+
+.principle-desc {
+  font-size: 0.875rem !important;
+  line-height: 1.65 !important;
+  color: var(--text-secondary) !important;
+}
+
+/* ── Leadership intro: left-aligned ── */
+.leadership-intro-block {
+  max-width: 760px !important;
+  margin: 0 0 44px 0 !important;
+  text-align: left !important;
+}
+
+.leadership-intro-para {
+  font-size: 1.0375rem;
+  line-height: 1.72;
+  margin-bottom: 14px;
+}
+
+.leadership-intro-para:last-child {
+  margin-bottom: 0;
+}
+
+/* Leadership profile cards: flat, no shadow */
+.corporate-profile-card {
+  border-radius: var(--radius-sm) !important;
+  box-shadow: none !important;
+  border: 1px solid var(--border-light) !important;
+}
+
+.corporate-profile-card:hover {
+  border-color: var(--brand-blue) !important;
+  box-shadow: none !important;
+  transform: none !important;
+}
+
+.profile-photo-frame {
+  aspect-ratio: 3 / 2 !important;
+  background: #f1f5f9 !important;
+}
+
+.profile-placeholder-graphic {
+  color: #94a3b8;
+}
+
+/* Management note: left-border style */
+.leadership-management-note {
+  background: #f8fafc !important;
+  border: 1px solid var(--border-light) !important;
+  border-left: 3px solid var(--brand-blue) !important;
+  border-radius: var(--radius-sm) !important;
+  justify-content: flex-start !important;
+  text-align: left !important;
+}
+
+/* ── Responsive ── */
+@media (max-width: 1024px) {
+  .vision-mission-dedicated-section,
+  .approach-dedicated-section,
+  .leadership-dedicated-section {
+    padding-top: 72px;
+    padding-bottom: 72px;
+  }
+
+  .strive-items-list {
+    grid-template-columns: 1fr !important;
+  }
+}
+
+@media (max-width: 768px) {
+  .vision-mission-dedicated-section,
+  .approach-dedicated-section,
+  .leadership-dedicated-section {
+    padding-top: 52px;
+    padding-bottom: 52px;
+  }
+
+  .about-section-header {
+    margin-bottom: 32px;
+    padding-bottom: 18px;
+  }
+
+  .strive-items-list {
+    grid-template-columns: 1fr !important;
+  }
+
+  .approach-intro-block,
+  .leadership-intro-block {
+    text-align: left;
+    margin: 0 0 32px 0 !important;
   }
 }

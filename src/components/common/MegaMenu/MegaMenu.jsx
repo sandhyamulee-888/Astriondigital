@@ -6,7 +6,7 @@ import './MegaMenu.css';
 export default function MegaMenu({ item, isOpen, onClose }) {
   if (!isOpen || !item?.megaMenu) return null;
 
-  const { tag, headline, featured, columns } = item.megaMenu;
+  const { columns } = item.megaMenu;
 
   return (
     <div 
@@ -15,35 +15,6 @@ export default function MegaMenu({ item, isOpen, onClose }) {
       aria-label={`${item.label} sub-navigation`}
     >
       <div className="container megamenu-inner">
-        {/* Left Editorial Header Column */}
-        <div className="megamenu-editorial">
-          <div className="mono-label megamenu-tag">{tag}</div>
-          <p className="megamenu-headline">{headline}</p>
-
-          {featured && (
-            <div className="megamenu-featured">
-              {featured.image && (
-                <div className="megamenu-featured-thumb-wrap">
-                  <img src={featured.image} alt={featured.title} className="megamenu-featured-thumb" />
-                </div>
-              )}
-              <div className="megamenu-featured-body">
-                <span className="mono-tag featured-badge">FEATURED PERSPECTIVE</span>
-                <h4 className="featured-title">{featured.title}</h4>
-                <p className="featured-desc">{featured.description}</p>
-                <Link 
-                  to={featured.href} 
-                  className="featured-link"
-                  onClick={onClose}
-                >
-                  <span>{featured.ctaText || 'Explore ERP Capabilities'}</span>
-                  <ArrowRight size={14} />
-                </Link>
-              </div>
-            </div>
-          )}
-        </div>
-
         {/* Content Columns with Thin Dividers */}
         <div className="megamenu-columns-grid">
           {columns.map((col, colIdx) => (

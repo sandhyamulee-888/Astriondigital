@@ -20,15 +20,15 @@ export const NAV_ITEMS = [
         {
           heading: 'Company & Vision',
           items: [
-            { title: 'About Astrion', href: '/about' },
-            { title: 'Vision & Mission', href: '/about' },
-            { title: 'Our Approach', href: '/about' }
+            { title: 'About Astrion', href: '/about#about-astrion' },
+            { title: 'Vision & Mission', href: '/about#vision-mission' },
+            { title: 'Our Approach', href: '/about#approach' }
           ]
         },
         {
           heading: 'Leadership',
           items: [
-            { title: 'Leadership', href: '/about' }
+            { title: 'Leadership', href: '/about#leadership' }
           ]
         }
       ]

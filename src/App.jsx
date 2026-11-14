@@ -113,10 +113,10 @@ export default function App() {
           {/* 2. About Routes */}
           <Route path="/about" element={<AboutPage />} />
           <Route path="/about/about-astrion" element={<AboutPage />} />
-          <Route path="/about/vision-mission" element={<Navigate to="/about" replace />} />
-          <Route path="/about/approach" element={<Navigate to="/about" replace />} />
-          <Route path="/about/our-approach" element={<Navigate to="/about" replace />} />
-          <Route path="/about/leadership" element={<Navigate to="/about" replace />} />
+          <Route path="/about/vision-mission" element={<AboutPage />} />
+          <Route path="/about/approach" element={<AboutPage />} />
+          <Route path="/about/our-approach" element={<AboutPage />} />
+          <Route path="/about/leadership" element={<AboutPage />} />
           <Route path="/about/partners" element={<PartnersPage />} />
 
           {/* 3. Solutions Routes */}
