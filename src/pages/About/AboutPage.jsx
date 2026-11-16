@@ -179,9 +179,18 @@ export default function AboutPage() {
             {LEADERSHIP_PROFILES.map((profile) => (
               <div key={profile.id} className="corporate-profile-card">
                 <div className="profile-photo-frame">
-                  <div className="profile-placeholder-graphic">
-                    <User size={40} aria-hidden="true" />
-                  </div>
+                  {profile.image ? (
+                    <img 
+                      src={profile.image} 
+                      alt={profile.role} 
+                      className="profile-photo-img" 
+                      loading="lazy"
+                    />
+                  ) : (
+                    <div className="profile-placeholder-graphic">
+                      <User size={40} aria-hidden="true" />
+                    </div>
+                  )}
                 </div>
                 <div className="profile-details-body">
                   <span className="profile-role-badge mono-label">{profile.slotLabel}</span>

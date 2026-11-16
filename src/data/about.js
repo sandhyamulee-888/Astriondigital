@@ -107,6 +107,7 @@ export const LEADERSHIP_PROFILES = [
     bio: 'Leadership photographs, full names, designations, and individual biographies will be added once finalized by management.',
     credentials: 'Profile Pending Finalization',
     placeholderDesc: 'Leadership photographs, full names, designations, and individual biographies will be added once finalized by management.',
+    image: '/images/about/executive-management.jpg',
     isPlaceholder: true
   },
   {
@@ -119,6 +120,7 @@ export const LEADERSHIP_PROFILES = [
     bio: 'Leadership photographs, full names, designations, and individual biographies will be added once finalized by management.',
     credentials: 'Profile Pending Finalization',
     placeholderDesc: 'Leadership photographs, full names, designations, and individual biographies will be added once finalized by management.',
+    image: '/images/about/technology-product-strategy.jpg',
     isPlaceholder: true
   },
   {
@@ -131,6 +133,7 @@ export const LEADERSHIP_PROFILES = [
     bio: 'Leadership photographs, full names, designations, and individual biographies will be added once finalized by management.',
     credentials: 'Profile Pending Finalization',
     placeholderDesc: 'Leadership photographs, full names, designations, and individual biographies will be added once finalized by management.',
+    image: '/images/about/operations-partner-ecosystem.jpg',
     isPlaceholder: true
   }
 ];
