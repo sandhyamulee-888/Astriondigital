@@ -147,6 +147,86 @@ export const LEADERSHIP = Object.assign([...LEADERSHIP_PROFILES], {
   profiles: LEADERSHIP_PROFILES
 });
 
+export const PARTNER_PROGRAM = {
+  title: 'Partners',
+  heading: 'Build Business Opportunities. Grow With Astrion Digital.',
+  intro: [
+    'We believe a strong partner ecosystem is essential to making enterprise technology accessible to more businesses.',
+    'Astrion Digital welcomes technology consultants, ERP implementation professionals, business advisors and organisations interested in expanding their service portfolios through XENedion.',
+    'Our ERP Partner Program is designed to create mutually beneficial business opportunities through product enablement, sales support and implementation collaboration.'
+  ],
+  overview: {
+    tag: 'ERP PARTNER PROGRAM',
+    title: 'A Partnership That Creates Opportunities.',
+    desc: 'Partner with Astrion Digital to take XENedion ERP to businesses looking to improve their operational efficiency and business management capabilities.'
+  },
+  whyPartner: [
+    {
+      title: 'Business Opportunity',
+      desc: 'Participate in the growing enterprise software and ERP market.'
+    },
+    {
+      title: 'Product Portfolio',
+      desc: 'Offer an integrated ERP solution covering multiple business functions.'
+    },
+    {
+      title: 'Sales Enablement',
+      desc: 'Access product information, presentations and sales support.'
+    },
+    {
+      title: 'Implementation Support',
+      desc: 'Collaborate on customer onboarding, configuration and implementation.'
+    },
+    {
+      title: 'Recurring Revenue Potential',
+      desc: 'Build a sustainable business through ERP licensing and customer relationships.'
+    },
+    {
+      title: 'Long-Term Collaboration',
+      desc: 'Develop a mutually beneficial relationship with Astrion Digital.'
+    }
+  ],
+  whoCanPartner: [
+    'Regional sales and distribution partners.',
+    'Industry-specific solution providers.',
+    'Technology service providers.',
+    'Independent business consultants.',
+    'ERP implementation consultants.',
+    'IT consulting companies.'
+  ],
+  howItWorks: [
+    {
+      step: '01',
+      title: 'Partner Enquiry',
+      desc: 'Express your interest in joining our partner network.'
+    },
+    {
+      step: '02',
+      title: 'Evaluation',
+      desc: 'We understand your business, market reach and capabilities.'
+    },
+    {
+      step: '03',
+      title: 'Partner Onboarding',
+      desc: 'Get familiar with XENedion and the partner framework.'
+    },
+    {
+      step: '04',
+      title: 'Business Development',
+      desc: 'Identify and engage prospective customers.'
+    },
+    {
+      step: '05',
+      title: 'Implementation & Growth',
+      desc: 'Work with Astrion Digital to onboard customers and develop long-term relationships.'
+    }
+  ],
+  cta: {
+    label: 'Become a XENedion ERP Partner',
+    href: '/contact'
+  }
+};
+
 export const PARTNERS = [
   {
     id: 'implementation-partners',

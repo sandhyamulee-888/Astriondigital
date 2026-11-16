@@ -17,6 +17,7 @@ import {
   Boxes, 
   Factory, 
   Car, 
+  Shirt,
   ArrowRight, 
   CheckCircle2 
 } from 'lucide-react';
@@ -144,6 +145,13 @@ const TARGET_SECTORS = [
     link: '/industries/manufacturing'
   },
   {
+    id: 'garments',
+    title: 'Garments',
+    desc: 'Manage garment operations, connecting fabric and trim materials, supplier procurement, inventory, production, and customer orders.',
+    icon: <Shirt size={26} />,
+    link: '/industries/garments'
+  },
+  {
     id: 'automotive',
     title: 'Automotive Businesses',
     desc: 'Manage automotive business operations, parts inventory, vendor relationships, and customer service transactions.',
@@ -259,7 +267,6 @@ export default function XenedionPage() {
                     >
                       {func.icon}
                     </div>
-                    <span className="functional-num mono-label">{func.num}</span>
                   </div>
                   <h3 className="functional-card-title">{func.title}</h3>
                   <p className="functional-card-desc">{func.desc}</p>
@@ -317,7 +324,7 @@ export default function XenedionPage() {
         <div className="container">
           <ScrollReveal yOffset={20}>
             <div className="xenedion-section-header">
-              <span className="mono-label xenedion-section-tag">INDUSTRY BLUEPRINTS</span>
+              <span className="mono-label xenedion-section-tag">INDUSTRY SOLUTIONS</span>
               <h2 className="xenedion-section-title">
                 Who Is XENedion For?
               </h2>

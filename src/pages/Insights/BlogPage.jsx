@@ -53,7 +53,7 @@ const BLOG_ARTICLES = [
   {
     id: 'zero-trust-hybrid-cloud',
     category: 'SECURITY & INFRASTRUCTURE',
-    title: 'The Multi-Tier Enterprise Security Blueprint: Zero-Trust Across Hybrid Infrastructure',
+    title: 'The Multi-Tier Enterprise Security Framework: Zero-Trust Across Hybrid Infrastructure',
     author: 'Principal Security Officer',
     date: 'Cybersecurity Whitepaper',
     readTime: '10 min read',

@@ -216,7 +216,7 @@ export default function XenedionModulesPage() {
                 Request a Live Demo
               </Button>
               <Button to="/xenedion/industries" variant="secondary" size="md">
-                View Industry Blueprints
+                View Industry Solutions
               </Button>
             </div>
           </div>

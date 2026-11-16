@@ -1,5 +1,5 @@
 import React, { useState } from 'react';
-import { Factory, Truck, ShoppingCart, CheckCircle2 } from 'lucide-react';
+import { Factory, Truck, ShoppingCart, CheckCircle2, Shirt, Car } from 'lucide-react';
 import Button from '../../common/Button/Button';
 import { ScrollReveal } from '../../common/Motion/ScrollReveal';
 import './IndustriesSection.css';
@@ -7,61 +7,113 @@ import './IndustriesSection.css';
 export default function IndustriesSection() {
   const tabs = [
     {
-      id: 'retail-wholesale',
-      name: 'Retail & Wholesale',
+      id: 'retail',
+      name: 'Retail',
       icon: <ShoppingCart size={18} />,
-      headline: 'Unified Omni-Channel Commercial Operations',
-      description: 'Keep retail stores, online orders, and backend stock synchronized without overselling.',
+      headline: 'Manage Retail Operations with Greater Control and Visibility.',
+      description: 'Retail businesses need to manage customers, sales, inventory and purchasing while maintaining consistency across their operations. XENedion helps retail businesses bring essential operational functions together through an integrated business management platform.',
       deliverables: [
-        'Single real-time inventory pool across physical stores and eCommerce',
-        'Point of Sale (POS) offline-first checkout with auto-sync',
-        'Dynamic B2B customer pricing tiers and credit term rules',
-        'Automated replenishment triggers based on seasonal sell-through'
+        'Sales and order management',
+        'Inventory and stock management',
+        'Vendor and purchase management',
+        'Goods receipt and warehouse operations',
+        'Financial and operational reporting'
       ],
-      quote: 'Omni-channel sales and stock synchronized in real time. Automatically balances in-store POS, eCommerce orders, and central warehouse fulfillment.',
-      metric1Label: 'SYNC STATUS',
-      metric1Value: 'POS AUTO-SYNC: ON',
-      metric2Label: 'STOCK ACCURACY',
-      metric2Value: 'OMNI RECONCILED: 100%',
+      quote: 'Retail operations connected in real time. Manages customer transactions, multi-channel stock levels, and purchasing workflows within a single system.',
+      metric1Label: 'OPERATIONS STATUS',
+      metric1Value: 'POS & STOCK: CONNECTED',
+      metric2Label: 'REPORTING',
+      metric2Value: 'FINANCIAL VISIBILITY: 100%',
+      ctaText: 'Explore Retail Solutions',
       href: '/industries/retail'
     },
     {
       id: 'distribution',
       name: 'Distribution',
       icon: <Truck size={18} />,
-      headline: 'Multi-Warehouse Visibility & Order Fulfillment',
-      description: 'Eliminates stock-outs and delivery delays with real-time stock allocation across distribution centers.',
+      headline: 'Connect Your Distribution Operations.',
+      description: 'Distribution businesses operate across suppliers, warehouses, sales teams and customers. Maintaining accurate inventory and coordinating orders are essential to efficient operations. XENedion provides an integrated environment to manage key distribution processes and improve operational visibility.',
       deliverables: [
-        'Multi-warehouse automated allocation and stock re-balancing',
-        'Real-time automated vendor re-ordering based on sales velocity',
-        'Automated pick, pack, and wave order fulfillment workflows',
-        'Integrated B2B customer order portal with custom pricing tiers'
+        'Customer and vendor management',
+        'Sales orders and procurement',
+        'Inventory and warehouse management',
+        'Goods receipt and stock movement',
+        'Logistics coordination',
+        'Business performance reporting'
       ],
-      quote: 'Multi-warehouse stock balanced in real time. Automatically optimizes fulfillment schedules and dispatches orders without manual lag.',
-      metric1Label: 'SYNC STATUS',
-      metric1Value: 'INVENTORY ALLOCATION: LIVE',
-      metric2Label: 'FULFILLMENT RATE',
-      metric2Value: 'ON-TIME: 99.6%',
+      quote: 'Unified distribution environment connecting vendor orders, multi-warehouse stock allocations, goods receipts, and operational performance.',
+      metric1Label: 'WAREHOUSE VISIBILITY',
+      metric1Value: 'MULTI-FACILITY: LIVE',
+      metric2Label: 'ORDER PROCESS',
+      metric2Value: 'ALLOCATION: SYNCHRONIZED',
+      ctaText: 'Explore Distribution Solutions',
       href: '/industries/distribution'
     },
     {
       id: 'manufacturing',
       name: 'Manufacturing',
       icon: <Factory size={18} />,
-      headline: 'Smarter Plants, Supply Chains and ERP',
-      description: 'Smarter plants, supply chains and ERP. Plan factory floor shifts, manage raw material stock, minimize machine downtime, and track product quality.',
+      headline: 'Bring Greater Structure to Manufacturing Operations.',
+      description: 'Manufacturing businesses require coordination between procurement, inventory, production-related activities, warehousing and finance. An integrated business management environment helps businesses improve information flow and establish better operational control. XENedion supports the connected business processes required to manage manufacturing organizations.',
       deliverables: [
-        'Shift scheduling and real-time machine capacity planning',
-        'Raw materials BOM traceability and automatic replenishment',
-        'Predictive maintenance telemetry to eliminate unplanned downtime',
-        'End-to-end batch quality tracking and ISO compliance'
+        'Procurement and vendor management',
+        'Purchase orders and goods receipt',
+        'Inventory management',
+        'Warehouse operations',
+        'Sales and order management',
+        'Financial and operational reporting'
       ],
-      quote: 'Shop-floor operations connected in real time. Automatically alerts managers when raw materials run low or machines require scheduled maintenance.',
-      metric1Label: 'SYNC STATUS',
-      metric1Value: 'SHOP FLOOR: LIVE',
-      metric2Label: 'LEDGER INTEGRITY',
-      metric2Value: 'BOM ACCURACY: 100%',
+      quote: 'Structured manufacturing management supporting procurement, warehouse coordination, production-related processes, and financial ledger integration.',
+      metric1Label: 'PROCUREMENT & PO',
+      metric1Value: 'SUPPLIER ORDERS: ACTIVE',
+      metric2Label: 'CONTROL',
+      metric2Value: 'OPERATIONAL FLOW: UNIFIED',
+      ctaText: 'Explore Manufacturing Solutions',
       href: '/industries/manufacturing'
+    },
+    {
+      id: 'garments',
+      name: 'Garments',
+      icon: <Shirt size={18} />,
+      headline: 'Manage Your Garment Business from Procurement to Delivery.',
+      description: 'The garment industry involves complex coordination between materials, suppliers, inventory, production activities and customer orders. Businesses need better visibility and control over the movement of materials and finished goods. XENedion provides an integrated platform to connect important business functions and improve operational coordination.',
+      deliverables: [
+        'Vendor and procurement management',
+        'Purchase and goods receipt',
+        'Inventory management',
+        'Warehouse operations',
+        'Customer and sales order management',
+        'Financial reporting'
+      ],
+      quote: 'End-to-end operational coordination for the garment sector, connecting materials, suppliers, inventory movements, and customer order fulfillment.',
+      metric1Label: 'MATERIAL TRACKING',
+      metric1Value: 'PROCUREMENT TO GOODS: LIVE',
+      metric2Label: 'ORDER FULFILLMENT',
+      metric2Value: 'DISPATCH STATUS: TRACKED',
+      ctaText: 'Explore Garment Industry Solutions',
+      href: '/industries/garments'
+    },
+    {
+      id: 'automotive',
+      name: 'Automotive',
+      icon: <Car size={18} />,
+      headline: 'Drive Efficiency Across Automotive Business Operations.',
+      description: 'Automotive component manufacturers, distributors and traders operate in an environment where procurement, inventory accuracy, order management and supplier coordination are critical. XENedion helps connect these essential business functions through an integrated ERP platform.',
+      deliverables: [
+        'Vendor and supplier management',
+        'Procurement and purchase orders',
+        'Inventory and warehouse management',
+        'Customer and sales management',
+        'Order processing',
+        'Logistics and financial management'
+      ],
+      quote: 'Essential business functions connected for automotive operations, delivering structured inventory management, supplier coordination, and order processing.',
+      metric1Label: 'SUPPLIER CODES',
+      metric1Value: 'VENDOR PROCESS: CONNECTED',
+      metric2Label: 'INVENTORY ACCURACY',
+      metric2Value: 'PARTS TRACKING: ACTIVE',
+      ctaText: 'Explore Automotive Solutions',
+      href: '/industries/automotive'
     }
   ];
 
@@ -75,11 +127,14 @@ export default function IndustriesSection() {
         <ScrollReveal yOffset={24}>
           <div className="industries-header text-center">
             <div className="mono-label industries-tag">
-              <span>BUILT FOR YOUR INDUSTRY</span>
+              <span>INDUSTRIES</span>
             </div>
             <h2 id="industries-heading" className="industries-title">
-              Custom-Fit for How Your Business Actually Works
+              Technology That Understands Your Industry.
             </h2>
+            <p style={{ maxWidth: '780px', margin: '14px auto 0', color: 'var(--text-secondary)', fontSize: '1.05rem', lineHeight: '1.6' }}>
+              Every industry has its own operating environment, business processes and challenges. Astrion Digital focuses on delivering integrated business management solutions that address the operational needs of different industries.
+            </p>
           </div>
         </ScrollReveal>
 
@@ -108,11 +163,23 @@ export default function IndustriesSection() {
         <ScrollReveal yOffset={24} delay={0.1}>
           <div className="industry-tab-content" key={activeTab.id}>
             <div className="industry-content-left">
-              <span className="mono-tag industry-active-badge">INDUSTRY BLUEPRINT</span>
+              <span className="mono-tag industry-active-badge">INDUSTRY SOLUTION</span>
               <h3 className="industry-content-name">{activeTab.name}</h3>
-              <p className="industry-content-lead">{activeTab.description}</p>
+              <h4 style={{ fontSize: '1rem', fontWeight: 600, color: '#0F172A', margin: '6px 0 12px', lineHeight: 1.4 }}>
+                {activeTab.headline}
+              </h4>
+              <div style={{ display: 'flex', flexDirection: 'column', gap: '8px', marginBottom: '16px' }}>
+                {(activeTab.paragraphs || [activeTab.description]).map((para, idx) => (
+                  <p key={idx} className="industry-content-lead" style={{ margin: 0, lineHeight: '1.6' }}>
+                    {para}
+                  </p>
+                ))}
+              </div>
 
               <div className="industry-deliverables-list">
+                <span className="mono-tag" style={{ fontSize: '0.6875rem', fontWeight: 700, color: 'var(--text-tertiary)', display: 'block', marginBottom: '8px' }}>
+                  KEY BUSINESS AREAS:
+                </span>
                 {activeTab.deliverables.map((item, idx) => (
                   <div key={idx} className="deliverable-item">
                     <CheckCircle2 size={16} className="deliverable-check" />
@@ -128,14 +195,14 @@ export default function IndustriesSection() {
                   size="md"
                   icon="arrow"
                 >
-                  Explore {activeTab.name} Blueprint
+                  {activeTab.ctaText || `Explore ${activeTab.name} Solutions`}
                 </Button>
                 <Button
                   to="/contact"
                   variant="secondary"
                   size="md"
                 >
-                  Schedule a Quick Walkthrough
+                  Request a Product Demonstration
                 </Button>
               </div>
             </div>
@@ -146,22 +213,22 @@ export default function IndustriesSection() {
                   <div className="preview-dot green"></div>
                   <div className="preview-dot amber"></div>
                   <div className="preview-dot blue"></div>
-                  <span className="mono-tag preview-header-title">LIVE OPERATIONS MONITOR</span>
+                  <span className="mono-tag preview-header-title">OPERATIONS MONITOR</span>
                 </div>
                 <div className="preview-card-body">
                   <div className="preview-metric-row">
                     <div className="metric-box">
                       <span className="mono-tag metric-tag">{activeTab.metric1Label || 'SYNC STATUS'}</span>
-                      <span className="metric-status green-text">{activeTab.metric1Value || 'SYNC: ACTIVE'}</span>
+                      <span className="metric-status green-text">{activeTab.metric1Value || 'OPERATIONS: LIVE'}</span>
                     </div>
                     <div className="metric-box">
                       <span className="mono-tag metric-tag">{activeTab.metric2Label || 'LEDGER INTEGRITY'}</span>
-                      <span className="metric-status green-text">{activeTab.metric2Value || 'STOCK RECONCILED: 100%'}</span>
+                      <span className="metric-status green-text">{activeTab.metric2Value || 'STATUS: UNIFIED'}</span>
                     </div>
                   </div>
                   <div className="preview-quote-box">
                     <p className="preview-quote-text">
-                      &ldquo;{activeTab.quote || 'Shop-floor operations connected in real time. Automatically alerts managers when raw materials run low or machines require scheduled maintenance.'}&rdquo;
+                      &ldquo;{activeTab.quote}&rdquo;
                     </p>
                   </div>
                 </div>

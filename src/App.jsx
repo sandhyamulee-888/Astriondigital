@@ -43,6 +43,7 @@ import RetailPage from './pages/Industries/RetailPage';
 import LogisticsPage from './pages/Industries/LogisticsPage';
 import ProfessionalServicesPage from './pages/Industries/ProfessionalServicesPage';
 import AutomotivePage from './pages/Industries/AutomotivePage';
+import GarmentsPage from './pages/Industries/GarmentsPage';
 import OtherIndustriesPage from './pages/Industries/OtherIndustriesPage';
 
 // Insights
@@ -79,7 +80,7 @@ function ScrollToTop() {
     } else if (pathname.startsWith('/solutions')) {
       document.title = 'Platform Capabilities & Architecture — Astrion Digital';
     } else if (pathname.startsWith('/industries')) {
-      document.title = 'Industry Blueprints — Astrion Digital';
+      document.title = 'Industry Solutions — Astrion Digital';
     } else if (pathname.startsWith('/partners')) {
       document.title = 'Strategic Partners — Astrion Digital';
     } else if (pathname.startsWith('/insights')) {
@@ -156,6 +157,7 @@ export default function App() {
           <Route path="/industries/manufacturing" element={<ManufacturingPage />} />
           <Route path="/industries/distribution" element={<DistributionPage />} />
           <Route path="/industries/retail" element={<RetailPage />} />
+          <Route path="/industries/garments" element={<GarmentsPage />} />
           <Route path="/industries/logistics" element={<LogisticsPage />} />
           <Route path="/industries/professional-services" element={<ProfessionalServicesPage />} />
           <Route path="/industries/automotive" element={<AutomotivePage />} />

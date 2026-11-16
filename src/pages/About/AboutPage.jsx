@@ -146,11 +146,8 @@ export default function AboutPage() {
           </div>
 
           <div className="approach-principles-grid">
-            {OUR_APPROACH.principles.map((principle) => (
-              <div key={principle.num} className="principle-card">
-                <div className="principle-card-top">
-                  <span className="principle-num mono-label">{principle.num}</span>
-                </div>
+            {OUR_APPROACH.principles.map((principle, idx) => (
+              <div key={idx} className="principle-card">
                 <h3 className="principle-title">{principle.title}</h3>
                 <p className="principle-desc">{principle.description}</p>
               </div>

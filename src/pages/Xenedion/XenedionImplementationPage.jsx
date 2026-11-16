@@ -12,7 +12,7 @@ export default function XenedionImplementationPage() {
   const stages = [
     {
       step: '01',
-      title: 'Scoping & Architecture Blueprint',
+      title: 'Scoping & Architecture Planning',
       desc: 'Defining master data models, mapping chart of accounts, configuring BOM hierarchies, and validating integration boundaries.'
     },
     {

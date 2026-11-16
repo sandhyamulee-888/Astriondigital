@@ -74,7 +74,7 @@ export default function Footer() {
               <li><Link to="/industries/retail">Retail</Link></li>
               <li><Link to="/industries/distribution">Distribution</Link></li>
               <li><Link to="/industries/manufacturing">Manufacturing</Link></li>
-              <li><Link to="/industries/logistics">Logistics</Link></li>
+              <li><Link to="/industries/garments">Garments</Link></li>
               <li><Link to="/industries/automotive">Automotive</Link></li>
               <li><Link to="/industries/other">Other Industries</Link></li>
             </ul>

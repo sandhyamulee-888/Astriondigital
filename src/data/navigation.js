@@ -109,27 +109,28 @@ export const NAV_ITEMS = [
     label: 'Industries',
     href: '/industries',
     megaMenu: {
-      tag: 'INDUSTRIES // BUILT FOR YOUR SECTOR',
-      headline: 'Pre-configured workflows tailored to how your industry actually works',
+      tag: 'INDUSTRIES // OPERATIONAL MANAGEMENT',
+      headline: 'Technology That Understands Your Industry',
       featured: {
-        title: 'Retail Commerce Blueprint',
-        description: 'Unified in-store POS, multi-warehouse fulfillment, and real-time inventory synchronization.',
-        href: '/industries/retail'
+        title: 'Industry Solutions',
+        description: 'Every industry has its own operating environment, business processes and challenges. Astrion Digital focuses on delivering integrated business management solutions.',
+        href: '/industries'
       },
       columns: [
         {
-          heading: 'Production & Trade',
+          heading: 'Core Sectors',
           items: [
-            { title: 'Retail', href: '/industries/retail', desc: 'Unified in-store, warehouse, and online inventory.' },
-            { title: 'Distribution', href: '/industries/distribution', desc: 'Multi-warehouse visibility and faster order fulfillment.' },
-            { title: 'Manufacturing', href: '/industries/manufacturing', desc: 'Smarter plants, supply chains and ERP.' }
+            { title: 'Retail', href: '/industries/retail', desc: 'Manage retail operations with greater control and visibility.' },
+            { title: 'Distribution', href: '/industries/distribution', desc: 'Connect your distribution operations.' },
+            { title: 'Manufacturing', href: '/industries/manufacturing', desc: 'Bring greater structure to manufacturing operations.' }
           ]
         },
         {
-          heading: 'Automotive & Specialized',
+          heading: 'Specialized Sectors',
           items: [
-            { title: 'Automotive', href: '/industries/automotive', desc: 'Parts traceability and dealer supply chain integration.' },
-            { title: 'Other Industries', href: '/industries/other', desc: 'Custom-fit operational platforms for specialized business domains.' }
+            { title: 'Garments', href: '/industries/garments', desc: 'Manage your garment business from procurement to delivery.' },
+            { title: 'Automotive', href: '/industries/automotive', desc: 'Drive efficiency across automotive business operations.' },
+            { title: 'Other Industries', href: '/industries/other', desc: 'Integrated business management solutions for diverse sectors.' }
           ]
         }
       ]
@@ -140,27 +141,27 @@ export const NAV_ITEMS = [
     label: 'Partners',
     href: '/partners',
     megaMenu: {
-      tag: 'PARTNERS // STRATEGIC ALLIES',
-      headline: 'Collaborating with regional implementation and delivery partners',
+      tag: 'PARTNERS // BUSINESS OPPORTUNITIES',
+      headline: 'Build Business Opportunities. Grow With Astrion Digital.',
       featured: {
-        title: 'Strategic Delivery Network',
-        description: 'Certified regional implementation and delivery partners providing reliable enterprise software onboarding worldwide.',
+        title: 'ERP Partner Program',
+        description: 'A Partnership That Creates Opportunities. Partner with Astrion Digital to take XENedion ERP to businesses looking to improve operational efficiency.',
         href: '/partners',
-        ctaText: 'Explore Partners'
+        ctaText: 'Become a Partner'
       },
       columns: [
         {
-          heading: 'Ecosystem & Programs',
+          heading: 'Partner Program & Allies',
           items: [
             { 
               title: 'ERP Partner Program', 
-              href: '/xenedion/partner-program', 
-              desc: 'Join our certified implementation, reseller, and technology partner network.' 
+              href: '/partners', 
+              desc: 'Product enablement, sales support, and implementation collaboration.' 
             },
             { 
-              title: 'Partner Inquiries', 
+              title: 'Become a Partner', 
               href: '/contact', 
-              desc: 'Explore strategic delivery and ecosystem collaboration.' 
+              desc: 'Express your interest in joining our growing partner network.' 
             }
           ]
         }

@@ -21,7 +21,7 @@ export default function HomePage() {
       {/* Section 4: Why Astrion Digital (Built for Speed Designed for Total Clarity) */}
       <AboutSection />
 
-      {/* Section 5: Industry Blueprints */}
+      {/* Section 5: Industry Solutions */}
       <IndustriesSection />
 
       {/* Section 6: Bottom Call to Action (Closing) */}

@@ -72,7 +72,7 @@ export default function SolutionsIntro() {
             <div className="solutions-pillars-preview">
               <div className="preview-bar-title mono-tag">
                 <span>ENTERPRISE CAPABILITY DOMAINS</span>
-                <span className="mono-tag preview-note">EXPLORE DEDICATED BLUEPRINTS</span>
+                <span className="mono-tag preview-note">EXPLORE DEDICATED SOLUTIONS</span>
               </div>
 
               <div className="pillars-chips-grid">

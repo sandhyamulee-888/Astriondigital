@@ -4,147 +4,51 @@ import {
   ArrowLeft, 
   ArrowRight, 
   CheckCircle2, 
-  Layers, 
   Factory, 
   Truck, 
   ShoppingCart, 
-  Briefcase, 
   Car, 
   Globe,
+  Shirt,
   ArrowUpRight,
   ShieldCheck,
-  Cpu,
-  Workflow,
-  Sparkles,
-  BarChart3
+  Layers,
+  Network,
+  Eye,
+  TrendingUp,
+  Zap
 } from 'lucide-react';
-import { INDUSTRIES } from '../../data/industries';
+import { INDUSTRIES, INDUSTRIES_PAGE_HEADER } from '../../data/industries';
 import Button from '../../components/common/Button/Button';
 import './IndustryDetailPage.css';
 
-// Rich industry-specific extended details
-const INDUSTRY_DETAILS = {
-  manufacturing: {
-    heroMetric: 'Accelerated production cycle lead times and synchronized BOM accuracy',
-    challenges: [
-      'Disjointed shop-floor telemetry disconnected from enterprise financial ledgers',
-      'Unplanned machine downtime caused by reactive rather than predictive maintenance',
-      'Complex multi-level Bill of Materials (BOM) reconciliation across global plants',
-      'Manual quality inspection bottlenecks slowing dispatch and increasing scrap rates'
-    ],
-    architecture: [
-      { step: '01', title: 'Shop-Floor Telemetry', desc: 'IoT sensor arrays and PLC connectors ingest machine status, cycle times, and vibration metrics in real-time intervals.' },
-      { step: '02', title: 'Edge Event Processing', desc: 'Local gateways filter anomalies, calculate real-time OEE, and detect impending component fatigue.' },
-      { step: '03', title: 'XENedion MES Sync', desc: 'Continuous bidirectional sync automatically triggers work order updates, inventory depletion, and dynamic labor scheduling.' },
-      { step: '04', title: 'Closed-Loop Quality', desc: 'Automated vision inspections update lot records, preventing non-conforming batches from moving to packaging.' }
-    ],
-    useCases: [
-      { title: 'Discrete Automotive Parts Assembly', result: 'Synchronized 14 assembly lines across 3 plants with just-in-time material delivery.' },
-      { title: 'Process Chemicals Formulation', result: 'Automated recipe management with strict temperature and mix-ratio compliance logging.' },
-      { title: 'Heavy Industrial Equipment', result: 'Enabled serial-tracked warranty records and predictive field servicing dispatch.' }
-    ]
+const WHY_XENEDION_BENEFITS = [
+  {
+    title: 'Integrated Operations',
+    desc: 'Reduce information silos across departments and bring essential business functions together.',
+    icon: <Network size={20} />
   },
-  distribution: {
-    heroMetric: 'High-precision order fulfillment with automated cross-dock routing',
-    challenges: [
-      'Fragmented warehouse management leading to stockouts and duplicate inventory buffers',
-      'Inefficient manual pick-and-pack routing causing fulfillment delays in high-volume hubs',
-      'Lack of real-time EDI sync with supplier replenishment pipelines',
-      'Complex B2B multi-tier pricing contracts requiring error-prone manual reconciliations'
-    ],
-    architecture: [
-      { step: '01', title: 'Omni-Channel Ingestion', desc: 'Orders stream via EDI 850, B2B eCommerce portals, and API connectors into a centralized allocation engine.' },
-      { step: '02', title: 'Dynamic Stock Allocation', desc: 'AI-assisted routing selects the optimal fulfillment center based on proximity, stock velocity, and carrier rates.' },
-      { step: '03', title: 'Optimized Wave Picking', desc: 'Pickers receive dynamic shortest-path routes on ruggedized mobile devices with barcode verification.' },
-      { step: '04', title: 'Automated Carrier Dispatch', desc: 'System generates shipping labels, assigns dock doors, and dispatches EDI 856 ASN notices instantly.' }
-    ],
-    useCases: [
-      { title: 'Multi-Regional Consumer Goods Wholesaler', result: 'Unified 6 regional distribution centers into a single automated inventory pool.' },
-      { title: 'Cold-Chain Pharmaceutical Distribution', result: 'Enforced continuous temperature telemetry and lot-controlled FEFO routing.' },
-      { title: 'Industrial MRO Parts Distribution', result: 'Automated vendor-managed inventory (VMI) with self-replenishing customer bins.' }
-    ]
+  {
+    title: 'Improved Control',
+    desc: 'Establish structured workflows, reliable operational processes, and departmental accountability.',
+    icon: <ShieldCheck size={20} />
   },
-  retail: {
-    heroMetric: 'Unified omnichannel inventory ledger with real-time synchronized stock data',
-    challenges: [
-      'Siloed physical store POS systems unable to reflect online stock in real time',
-      'High rate of stockouts and overstock due to inaccurate regional demand forecasting',
-      'Friction in omnichannel returns, buy-online-pickup-in-store (BOPIS), and ship-from-store',
-      'Fragmented customer loyalty profiles separated between web and brick-and-mortar stores'
-    ],
-    architecture: [
-      { step: '01', title: 'Unified POS & Digital Sync', desc: 'High-throughput event streams capture all transactions across web, mobile app, and physical store POS.' },
-      { step: '02', title: 'Universal Stock Ledger', desc: 'Single source of truth updates available-to-promise (ATP) inventory in real-time globally.' },
-      { step: '03', title: 'Predictive Demand Sensing', desc: 'Machine learning algorithms analyze seasonal trends, local weather, and promotions to automate reorders.' },
-      { step: '04', title: 'Frictionless Omnichannel', desc: 'Store associates fulfill online orders directly from store shelves with intelligent mobile guided workflows.' }
-    ],
-    useCases: [
-      { title: 'National Apparel & Footwear Chain', result: 'Enabled ship-from-store across regional retail locations, optimizing fulfillment costs.' },
-      { title: 'Specialty Electronics Retailer', result: 'Unified customer loyalty profiles and omnichannel warranty tracking.' },
-      { title: 'Luxury Goods & Accessories', result: 'Implemented strict serial tracking and VIP customer concierge clienteling workflows.' }
-    ]
+  {
+    title: 'Better Visibility',
+    desc: 'Access accurate business information and operational reporting across all functional areas in real time.',
+    icon: <Eye size={20} />
   },
-  'professional-services': {
-    heroMetric: 'Optimized consultant utilization with automated multi-currency milestone billing',
-    challenges: [
-      'Low visibility into future consultant availability leading to over-hiring or staffing shortfalls',
-      'Manual spreadsheet-based time tracking causing billing disputes and revenue leakage',
-      'Complex multi-entity, multi-currency accounting for cross-border client engagements',
-      'Lack of real-time project profitability dashboards during active engagement delivery'
-    ],
-    architecture: [
-      { step: '01', title: 'Resource & Skill Ontology', desc: 'Centralized talent catalog categorizes staff competencies, certifications, clearance levels, and availability.' },
-      { step: '02', title: 'Predictive Staffing Match', desc: 'Automated staffing engine matches project staffing requirements against consultant skills and utilization targets.' },
-      { step: '03', title: 'Automated Time & Expense', desc: 'Mobile time capture with receipt OCR routes approvals directly into project milestone accounting.' },
-      { step: '04', title: 'Real-Time Margin Ledger', desc: 'Dynamic calculations compute project gross margin, burn rate, and projected completion costs daily.' }
-    ],
-    useCases: [
-      { title: 'Global Management Consulting Firm', result: 'Automated global resource staffing and multi-entity tax compliance across 14 countries.' },
-      { title: 'Enterprise IT Engineering Practice', result: 'Integrated agile sprint velocity with milestone billing and revenue recognition.' },
-      { title: 'Architecture & Design Advisory', result: 'Streamlined fixed-fee vs. time-and-materials project accounting with real-time margin visibility.' }
-    ]
+  {
+    title: 'Increased Productivity',
+    desc: 'Reduce repetitive manual work, duplicate data entry, and spreadsheet-based tracking.',
+    icon: <Zap size={20} />
   },
-  automotive: {
-    heroMetric: 'Comprehensive component serialization and just-in-sequence (JIS) compliance',
-    challenges: [
-      'Stringent OEM just-in-sequence delivery penalties for line-stoppage errors',
-      'Multi-tier supplier component traceability required for recall prevention and audit defense',
-      'Engineering change orders (ECO) failing to propagate across complex sub-tier BOMs',
-      'Stringent IATF 16949 quality compliance and PPAP documentation overhead'
-    ],
-    architecture: [
-      { step: '01', title: 'OEM Broadcast Ingestion', desc: 'Direct EDI 866 JIS feeds parse vehicle production sequences directly from OEM assembly plants.' },
-      { step: '02', title: 'Sequence Queue Sequencing', desc: 'Shop-floor robotic cells and pick stations organize module sub-assemblies in exact OEM rack order.' },
-      { step: '03', title: 'Full Serial Traceability', desc: 'Every bolt torque, weld parameter, and electronic serial number binds to the vehicle identification number (VIN).' },
-      { step: '04', title: 'Automated PPAP & Audit', desc: 'Quality records compile automatically, providing complete audit readiness for OEM compliance inspections.' }
-    ],
-    useCases: [
-      { title: 'Tier-1 Cockpit & Seating Supplier', result: 'Achieved consistent on-time JIS delivery to major automotive assembly plants with continuous operational reliability.' },
-      { title: 'Electric Vehicle Battery Pack Assembler', result: 'Enforced cell-level thermal testing data capture and automated battery pack genealogy.' },
-      { title: 'Chassis & Stamping Manufacturer', result: 'Automated press machine die wear monitoring and closed-loop dimensional inspection.' }
-    ]
-  },
-  other: {
-    heroMetric: 'Bespoke enterprise platforms engineered for mission-critical specialized domains',
-    challenges: [
-      'Off-the-shelf software failing to accommodate unique regulatory or operational constraints',
-      'Complex legacy architectures that resist standard off-the-shelf modernization approaches',
-      'Stringent data sovereignty, air-gapped security, or specialized hardware interface needs',
-      'Fragmented operational workflows crossing multiple proprietary enterprise tools'
-    ],
-    architecture: [
-      { step: '01', title: 'Domain Discovery & Modeling', desc: 'Deep technical analysis maps operational physics, regulatory requirements, and legacy data flows.' },
-      { step: '02', title: 'Custom Architecture Design', desc: 'Astrion engineers a modular architecture combining XENedion core with specialized microservices.' },
-      { step: '03', title: 'Enterprise Integration Mesh', desc: 'Robust API bridges and message queues connect specialized domain hardware, SCADA, or legacy mainframes.' },
-      { step: '04', title: 'Continuous Governance', desc: 'Automated compliance testing, observability, and SLA monitoring ensure long-term platform resilience.' }
-    ],
-    useCases: [
-      { title: 'Life Sciences & Medical Devices', result: 'Delivered 21 CFR Part 11 compliant operational tracking and electronic batch records.' },
-      { title: 'Energy & Utilities Infrastructure', result: 'Engineered asset lifecycle management and remote substation telemetry consolidation.' },
-      { title: 'Aerospace Components Fabrication', result: 'Implemented AS9100 quality traceability with digital material cert verification.' }
-    ]
+  {
+    title: 'Scalable Platform',
+    desc: 'Support evolving business requirements, new facilities, expanding teams, and operational growth.',
+    icon: <TrendingUp size={20} />
   }
-};
+];
 
 export default function IndustryDetailPage({ slugOverride }) {
   const params = useParams();
@@ -160,8 +64,6 @@ export default function IndustryDetailPage({ slugOverride }) {
     return <Navigate to="/industries" replace />;
   }
 
-  const details = INDUSTRY_DETAILS[industry.id] || INDUSTRY_DETAILS.other;
-
   // Next / Prev navigation
   const currentIndex = INDUSTRIES.findIndex((i) => i.id === industry.id);
   const prevIndustry = currentIndex > 0 ? INDUSTRIES[currentIndex - 1] : INDUSTRIES[INDUSTRIES.length - 1];
@@ -172,7 +74,7 @@ export default function IndustryDetailPage({ slugOverride }) {
       case 'manufacturing': return <Factory size={22} />;
       case 'distribution': return <Truck size={22} />;
       case 'retail': return <ShoppingCart size={22} />;
-      case 'professional-services': return <Briefcase size={22} />;
+      case 'garments': return <Shirt size={22} />;
       case 'automotive': return <Car size={22} />;
       default: return <Globe size={22} />;
     }
@@ -199,20 +101,31 @@ export default function IndustryDetailPage({ slugOverride }) {
           <div className="inner-hero-content">
             <div className="mono-label inner-hero-badge">
               <span className="badge-dot"></span>
-              INDUSTRIES // {industry.name.toUpperCase()} BLUEPRINT
+              INDUSTRIES // {industry.name.toUpperCase()} SOLUTIONS
             </div>
 
             <h1 className="inner-hero-title">
-              {industry.name}: {industry.headline}
+              {industry.headline}
             </h1>
 
-            <p className="inner-hero-lead">
-              {industry.coreProblemSolved || industry.description}
-            </p>
+            <div className="inner-hero-lead-wrap" style={{ maxWidth: '820px' }}>
+              {(industry.paragraphs || [industry.description]).map((para, idx) => (
+                <p 
+                  key={idx} 
+                  className="inner-hero-lead" 
+                  style={{ 
+                    marginBottom: idx < (industry.paragraphs?.length || 1) - 1 ? '16px' : '0',
+                    lineHeight: '1.68'
+                  }}
+                >
+                  {para}
+                </p>
+              ))}
+            </div>
 
             <div className="inner-hero-actions" style={{ marginTop: '24px' }}>
               <Button to="/contact" variant="primary" size="lg" icon="arrow">
-                Request a Demo
+                Request a Product Demonstration
               </Button>
             </div>
           </div>
@@ -222,106 +135,123 @@ export default function IndustryDetailPage({ slugOverride }) {
       {/* Main Content Layout */}
       <section className="section industry-main-section">
         <div className="container industry-layout-container">
-          {/* Challenge ➔ XENedion Solution ➔ Result Formula */}
-          {industry.challenge && (
-            <div className="industry-csr-block" style={{
-              background: '#13151a',
-              border: '1px solid rgba(255, 255, 255, 0.08)',
-              borderRadius: '12px',
-              padding: '32px',
-              marginBottom: '40px'
-            }}>
-              <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fit, minmax(260px, 1fr))', gap: '24px' }}>
-                <div style={{ borderLeft: '3px solid #ef4444', paddingLeft: '16px' }}>
-                  <span className="mono-tag" style={{ color: '#ef4444', fontSize: '0.75rem', fontWeight: 700 }}>THE CHALLENGE</span>
-                  <p style={{ color: '#ddd', fontSize: '0.95rem', marginTop: '8px', lineHeight: 1.5 }}>{industry.challenge}</p>
-                </div>
-                <div style={{ borderLeft: '3px solid #ff6b35', paddingLeft: '16px' }}>
-                  <span className="mono-tag" style={{ color: '#ff6b35', fontSize: '0.75rem', fontWeight: 700 }}>XENEDION SOLUTION</span>
-                  <p style={{ color: '#ddd', fontSize: '0.95rem', marginTop: '8px', lineHeight: 1.5 }}>{industry.solution}</p>
-                </div>
-                <div style={{ borderLeft: '3px solid #10b981', paddingLeft: '16px' }}>
-                  <span className="mono-tag" style={{ color: '#10b981', fontSize: '0.75rem', fontWeight: 700 }}>MEASURABLE RESULT</span>
-                  <p style={{ color: '#ddd', fontSize: '0.95rem', marginTop: '8px', lineHeight: 1.5 }}>{industry.result}</p>
-                </div>
-              </div>
-            </div>
-          )}
-
+          
           <div className="industry-grid-layout">
             
             {/* Primary Column */}
             <div className="industry-primary-col">
               
-              {/* Sector Challenges & Operational Realities */}
-              <div className="industry-content-block">
+              {/* Overview & Operating Context */}
+              <div className="industry-content-block" style={{ borderLeft: '4px solid var(--brand-blue)' }}>
                 <div className="block-header">
-                  <span className="mono-tag block-eyebrow">CHALLENGES &amp; BOTTLENECKS</span>
-                  <h2 className="block-title">Key Operational Hurdles in {industry.name}</h2>
+                  <span className="mono-tag block-eyebrow">INTEGRATED OPERATING ENVIRONMENT</span>
+                  <h2 className="block-title">Managing {industry.name} Operations with XENedion</h2>
                 </div>
-                <div className="challenges-grid">
-                  {details.challenges.map((chal, idx) => (
-                    <div key={idx} className="challenge-card">
-                      <div className="challenge-num mono-tag">&bull;</div>
-                      <p className="challenge-text">{chal}</p>
-                    </div>
+                <div style={{ display: 'flex', flexDirection: 'column', gap: '14px' }}>
+                  {(industry.paragraphs || [industry.description]).map((para, idx) => (
+                    <p key={idx} style={{ color: 'var(--text-secondary)', fontSize: '1.0625rem', lineHeight: '1.7', margin: 0 }}>
+                      {para}
+                    </p>
                   ))}
                 </div>
               </div>
 
-              {/* End-to-End Operational Architecture */}
+              {/* Key Business Areas (from Reference Document) */}
               <div className="industry-content-block">
                 <div className="block-header">
-                  <span className="mono-tag block-eyebrow">BLUEPRINT ARCHITECTURE</span>
-                  <h2 className="block-title">How Astrion Orchestrates {industry.name} Workflows</h2>
+                  <span className="mono-tag block-eyebrow">CORE FUNCTIONAL SCOPE</span>
+                  <h2 className="block-title">Key Business Areas Covered in {industry.name}</h2>
+                  <p style={{ color: 'var(--text-secondary)', fontSize: '0.9375rem', marginTop: '8px' }}>
+                    XENedion brings essential operational functions together into a unified ERP environment, enabling {industry.name.toLowerCase()} businesses to manage operations with greater control and visibility:
+                  </p>
                 </div>
-                <div className="workflow-steps-timeline">
-                  {details.architecture.map((step, idx) => (
-                    <div key={idx} className="workflow-step-card">
-                      <div className="workflow-step-header">
-                        <span className="workflow-step-badge mono-tag">WORKFLOW STAGE</span>
-                        <h3 className="workflow-step-title">{step.title}</h3>
-                      </div>
-                      <p className="workflow-step-desc">{step.desc}</p>
-                    </div>
-                  ))}
-                </div>
-              </div>
-
-              {/* Realized Business Outcomes */}
-              <div className="industry-content-block">
-                <div className="block-header">
-                  <span className="mono-tag block-eyebrow">DELIVERED VALUE</span>
-                  <h2 className="block-title">Documented Business Outcomes</h2>
-                </div>
-                <div className="outcomes-checklist-grid">
-                  {industry.outcomes.map((out, idx) => (
-                    <div key={idx} className="outcome-check-card">
-                      <CheckCircle2 size={18} className="outcome-icon" />
-                      <div className="outcome-info">
-                        <p className="outcome-text">{out}</p>
+                
+                <div className="outcomes-checklist-grid" style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fit, minmax(280px, 1fr))', gap: '16px' }}>
+                  {(industry.keyBusinessAreas || industry.outcomes).map((area, idx) => (
+                    <div key={idx} className="outcome-check-card" style={{
+                      display: 'flex',
+                      alignItems: 'flex-start',
+                      gap: '12px',
+                      padding: '18px 20px',
+                      background: 'var(--bg-secondary, #F8FAFC)',
+                      border: '1px solid var(--border-light, #E2E8F0)',
+                      borderRadius: '8px'
+                    }}>
+                      <CheckCircle2 size={20} style={{ color: 'var(--brand-blue, #1c75bd)', flexShrink: 0, marginTop: '2px' }} />
+                      <div>
+                        <h3 style={{ fontSize: '1rem', fontWeight: 600, color: 'var(--text-primary)', margin: 0, lineHeight: 1.4 }}>
+                          {area}
+                        </h3>
                       </div>
                     </div>
                   ))}
                 </div>
               </div>
 
-              {/* Representative Use Cases */}
+              {/* Why XENedion Section */}
               <div className="industry-content-block">
                 <div className="block-header">
-                  <span className="mono-tag block-eyebrow">REPRESENTATIVE DEPLOYMENTS</span>
-                  <h2 className="block-title">Enterprise Case Implementations</h2>
+                  <span className="mono-tag block-eyebrow">PLATFORM ADVANTAGES</span>
+                  <h2 className="block-title">Why XENedion for {industry.name}</h2>
+                  <p style={{ color: 'var(--text-secondary)', fontSize: '0.9375rem', marginTop: '8px' }}>
+                    Deliver measurable operational control and long-term business value:
+                  </p>
                 </div>
-                <div className="use-cases-grid">
-                  {details.useCases.map((uc, idx) => (
-                    <div key={idx} className="use-case-card">
-                      <div className="use-case-top">
-                        <span className="mono-tag use-case-tag">CASE BRIEF</span>
+                
+                <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fit, minmax(260px, 1fr))', gap: '18px' }}>
+                  {WHY_XENEDION_BENEFITS.map((benefit, idx) => (
+                    <div key={idx} style={{
+                      padding: '20px',
+                      background: '#FFFFFF',
+                      border: '1px solid var(--border-medium, #CBD5E1)',
+                      borderRadius: '8px',
+                      boxShadow: '0 2px 8px rgba(0,0,0,0.04)'
+                    }}>
+                      <div style={{
+                        width: '38px',
+                        height: '38px',
+                        borderRadius: '6px',
+                        background: 'rgba(28, 117, 189, 0.08)',
+                        color: 'var(--brand-blue, #1c75bd)',
+                        display: 'flex',
+                        alignItems: 'center',
+                        justifyContent: 'center',
+                        marginBottom: '14px'
+                      }}>
+                        {benefit.icon}
                       </div>
-                      <h4 className="use-case-title">{uc.title}</h4>
-                      <p className="use-case-result">{uc.result}</p>
+                      <h3 style={{ fontSize: '1.0625rem', fontWeight: 700, color: 'var(--text-primary)', margin: '0 0 6px' }}>
+                        {benefit.title}
+                      </h3>
+                      <p style={{ fontSize: '0.875rem', color: 'var(--text-secondary)', lineHeight: 1.55, margin: 0 }}>
+                        {benefit.desc}
+                      </p>
                     </div>
                   ))}
+                </div>
+              </div>
+
+              {/* Bottom CTA Banner */}
+              <div style={{
+                background: 'linear-gradient(135deg, #0F172A 0%, #1E293B 100%)',
+                color: '#FFFFFF',
+                padding: '40px 36px',
+                borderRadius: '12px',
+                boxShadow: '0 12px 32px rgba(15, 23, 42, 0.12)'
+              }}>
+                <span className="mono-label" style={{ color: '#FF8A50', fontSize: '0.75rem', display: 'block', marginBottom: '8px' }}>
+                  TRANSFORM YOUR OPERATIONS
+                </span>
+                <h2 style={{ fontSize: '1.75rem', fontWeight: 700, color: '#FFFFFF', margin: '0 0 12px' }}>
+                  Discover how XENedion can transform your business operations.
+                </h2>
+                <p style={{ color: '#CBD5E1', fontSize: '1rem', lineHeight: 1.6, maxWidth: '640px', marginBottom: '24px' }}>
+                  Move beyond disconnected applications, spreadsheets and manual processes. Talk to our team to see XENedion ERP configured for {industry.name.toLowerCase()} operations.
+                </p>
+                <div>
+                  <Button to="/contact" variant="primary" size="lg" icon="arrow">
+                    Request a Product Demonstration
+                  </Button>
                 </div>
               </div>
 
@@ -330,54 +260,88 @@ export default function IndustryDetailPage({ slugOverride }) {
             {/* Sidebar Column */}
             <aside className="industry-sidebar-col">
               
-              {/* XENedion Module Alignment */}
+              {/* Quick Sector Profile */}
+              <div className="sidebar-widget">
+                <div className="widget-header">
+                  <div style={{ width: '32px', height: '32px', borderRadius: '6px', background: 'var(--brand-blue-light)', color: 'var(--brand-blue)', display: 'flex', alignItems: 'center', justifyContent: 'center' }}>
+                    {getIndustryIcon(industry.id)}
+                  </div>
+                  <h3 className="widget-title" style={{ marginLeft: '10px' }}>{industry.name} Solutions</h3>
+                </div>
+                <p className="widget-desc" style={{ marginTop: '10px' }}>
+                  Integrated business management platform designed to simplify and streamline operational processes across {industry.name.toLowerCase()} businesses.
+                </p>
+                <div style={{ borderTop: '1px solid var(--border-light)', paddingTop: '12px', marginTop: '12px' }}>
+                  <span className="mono-tag" style={{ display: 'block', fontSize: '0.6875rem', color: 'var(--text-tertiary)', marginBottom: '8px' }}>
+                    KEY FUNCTIONAL FOCUS:
+                  </span>
+                  <div style={{ display: 'flex', flexWrap: 'wrap', gap: '6px' }}>
+                    {industry.xenedionFocus.map((mod, idx) => (
+                      <span key={idx} className="mono-tag" style={{ fontSize: '0.75rem', padding: '3px 8px', background: 'var(--bg-secondary)', border: '1px solid var(--border-light)', borderRadius: '4px' }}>
+                        {mod}
+                      </span>
+                    ))}
+                  </div>
+                </div>
+              </div>
+
+              {/* Switch to Other Industries */}
               <div className="sidebar-widget">
                 <div className="widget-header">
                   <Layers size={16} className="widget-icon" />
-                  <h4 className="widget-title">XENedion Modules for {industry.name}</h4>
+                  <h3 className="widget-title">Other Industry Solutions</h3>
                 </div>
-                <p className="widget-desc">
-                  Pre-configured platform modules optimized for this industry's specific workflow demands:
-                </p>
-                <div className="xenedion-tag-list">
-                  {industry.xenedionFocus.map((mod, idx) => (
-                    <span key={idx} className="xenedion-module-badge mono-tag">
-                      {mod}
-                    </span>
+                <div style={{ display: 'flex', flexDirection: 'column', gap: '8px', marginTop: '12px' }}>
+                  {INDUSTRIES.filter(ind => ind.id !== industry.id).map(ind => (
+                    <Link
+                      key={ind.id}
+                      to={ind.href || `/industries/${ind.id}`}
+                      style={{
+                        display: 'flex',
+                        alignItems: 'center',
+                        justifyContent: 'space-between',
+                        padding: '10px 14px',
+                        borderRadius: '6px',
+                        background: 'var(--bg-secondary)',
+                        color: 'var(--text-primary)',
+                        fontSize: '0.875rem',
+                        fontWeight: 600,
+                        textDecoration: 'none',
+                        border: '1px solid var(--border-light)',
+                        transition: 'all 0.15s ease'
+                      }}
+                      onMouseEnter={(e) => {
+                        e.currentTarget.style.borderColor = 'var(--brand-blue)';
+                        e.currentTarget.style.color = 'var(--brand-blue)';
+                      }}
+                      onMouseLeave={(e) => {
+                        e.currentTarget.style.borderColor = 'var(--border-light)';
+                        e.currentTarget.style.color = 'var(--text-primary)';
+                      }}
+                    >
+                      <span>{ind.name}</span>
+                      <ArrowUpRight size={14} style={{ color: 'var(--text-tertiary)' }} />
+                    </Link>
                   ))}
                 </div>
-                <Link to="/xenedion/modules" className="widget-action-link">
-                  <span>View full XENedion module spec</span>
-                  <ArrowUpRight size={14} />
-                </Link>
-              </div>
-
-              {/* Capability Matrix */}
-              <div className="sidebar-widget">
-                <div className="widget-header">
-                  <Cpu size={16} className="widget-icon" />
-                  <h4 className="widget-title">Integrated Capabilities</h4>
-                </div>
-                <div className="capability-tag-list">
-                  {industry.capabilities.map((cap, idx) => (
-                    <span key={idx} className="capability-pill mono-tag">
-                      {cap}
-                    </span>
-                  ))}
+                <div style={{ marginTop: '14px', textAlign: 'center' }}>
+                  <Link to="/industries" style={{ fontSize: '0.8125rem', color: 'var(--brand-blue)', fontWeight: 600 }}>
+                    View All Industries Overview →
+                  </Link>
                 </div>
               </div>
 
-              {/* Technical Briefing Card */}
+              {/* Consultation / Demo Request Card */}
               <div className="sidebar-widget consultation-widget">
                 <div className="widget-header">
                   <ShieldCheck size={16} className="widget-icon" />
-                  <h4 className="widget-title">Industry Architecture Session</h4>
+                  <h3 className="widget-title">Request a Demonstration</h3>
                 </div>
                 <p className="widget-desc">
-                  Engage our industry enterprise architects for a comprehensive 45-minute blueprint briefing tailored to your operating footprint.
+                  Connect with Astrion Digital to discuss your operational challenges and explore how XENedion ERP connects your essential business functions.
                 </p>
                 <Button to="/contact" variant="primary" size="sm" icon="arrow" fullWidth>
-                  Request Blueprint Session
+                  Request a Product Demonstration
                 </Button>
               </div>
 
@@ -387,23 +351,23 @@ export default function IndustryDetailPage({ slugOverride }) {
 
           {/* Next / Previous Industry Navigation */}
           <div className="industry-nav-footer">
-            <Link to={`/industries/${prevIndustry.id}`} className="nav-footer-card prev">
+            <Link to={prevIndustry.href || `/industries/${prevIndustry.id}`} className="nav-footer-card prev">
               <div className="nav-footer-icon">
                 <ArrowLeft size={16} />
               </div>
               <div className="nav-footer-text">
-                <span className="mono-tag nav-label">PREVIOUS SECTOR</span>
+                <span className="mono-tag nav-label">PREVIOUS INDUSTRY</span>
                 <span className="nav-title">{prevIndustry.name}</span>
               </div>
             </Link>
 
             <Link to="/industries" className="nav-footer-all mono-tag">
-              <span>VIEW ALL 7 BLUEPRINTS</span>
+              <span>VIEW ALL INDUSTRIES</span>
             </Link>
 
-            <Link to={`/industries/${nextIndustry.id}`} className="nav-footer-card next">
+            <Link to={nextIndustry.href || `/industries/${nextIndustry.id}`} className="nav-footer-card next">
               <div className="nav-footer-text text-right">
-                <span className="mono-tag nav-label">NEXT SECTOR</span>
+                <span className="mono-tag nav-label">NEXT INDUSTRY</span>
                 <span className="nav-title">{nextIndustry.name}</span>
               </div>
               <div className="nav-footer-icon">

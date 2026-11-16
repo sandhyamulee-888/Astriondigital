@@ -99,7 +99,7 @@ export default function PlaceholderPage({ title }) {
           <div className="placeholder-content-card">
             <div className="placeholder-badge mono-label">
               <Layers size={14} />
-              <span>INDUSTRIES // {matchedIndustry.name.toUpperCase()} BLUEPRINT</span>
+              <span>INDUSTRIES // {matchedIndustry.name.toUpperCase()} SOLUTION</span>
             </div>
 
             <h1 className="placeholder-title">{matchedIndustry.name}</h1>
@@ -199,7 +199,7 @@ export default function PlaceholderPage({ title }) {
             <p className="placeholder-path mono-tag">{location.pathname}</p>
 
             <p className="placeholder-desc">
-              This node is mapped directly within the Astrion Digital sitemap. Explore the full architecture, interactive visualizations, and operational blueprints across our core platforms.
+              This node is mapped directly within the Astrion Digital sitemap. Explore the full architecture, interactive visualizations, and operational solutions across our core platforms.
             </p>
 
             <div className="placeholder-actions">

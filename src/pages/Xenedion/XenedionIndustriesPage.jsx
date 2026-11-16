@@ -25,7 +25,7 @@ export default function XenedionIndustriesPage() {
             <span className="breadcrumb-slash">/</span>
             <Link to="/xenedion">XENEDION ERP</Link>
             <span className="breadcrumb-slash">/</span>
-            <span className="breadcrumb-current">INDUSTRY BLUEPRINTS</span>
+            <span className="breadcrumb-current">INDUSTRY SOLUTIONS</span>
           </div>
 
           <div className="inner-hero-content">
@@ -35,17 +35,17 @@ export default function XenedionIndustriesPage() {
             </div>
 
             <h1 className="inner-hero-title">
-              XENedion Industry Blueprints: Pre-configured for operational realities
+              Technology That Understands Your Industry
             </h1>
 
             <p className="inner-hero-lead">
-              Rather than forcing generic software onto specialized businesses, XENedion provides pre-packaged domain schemas, compliance rules, and automated workflow templates tailored to your sector.
+              Every industry has its own operating environment, business processes and challenges. Astrion Digital focuses on delivering integrated business management solutions that address the operational needs of different industries.
             </p>
           </div>
         </div>
       </section>
 
-      {/* Industry Blueprints Grid */}
+      {/* Industry Solutions Grid */}
       <section className="section">
         <div className="container">
           <div className="modules-grid-full">
@@ -53,9 +53,9 @@ export default function XenedionIndustriesPage() {
               <div key={ind.id} className="module-card-item">
                 <div className="module-card-header">
                   <span className="mono-tag" style={{ color: 'var(--brand-blue)', fontWeight: 700 }}>
-                    SECTOR BLUEPRINT
+                    INDUSTRY SOLUTION
                   </span>
-                  <Link to={`/industries/${ind.id}`} aria-label={`View ${ind.name} blueprint`}>
+                  <Link to={`/industries/${ind.id}`} aria-label={`View ${ind.name} solutions`}>
                     <ArrowUpRight size={16} style={{ color: 'var(--text-tertiary)' }} />
                   </Link>
                 </div>
@@ -65,20 +65,21 @@ export default function XenedionIndustriesPage() {
 
                 <div style={{ marginBottom: '16px' }}>
                   <span className="mono-tag" style={{ display: 'block', marginBottom: '8px', color: 'var(--text-tertiary)' }}>
-                    PRE-CONFIGURED MODULES:
+                    KEY BUSINESS AREAS:
                   </span>
-                  <div style={{ display: 'flex', flexWrap: 'wrap', gap: '6px' }}>
-                    {ind.xenedionFocus.map((m, idx) => (
-                      <span key={idx} className="mono-tag" style={{ padding: '2px 8px', backgroundColor: 'var(--bg-secondary)', border: '1px solid var(--border-light)', borderRadius: '4px' }}>
-                        {m}
-                      </span>
+                  <div style={{ display: 'flex', flexDirection: 'column', gap: '4px' }}>
+                    {(ind.keyBusinessAreas || ind.outcomes).slice(0, 3).map((area, idx) => (
+                      <div key={idx} style={{ display: 'flex', alignItems: 'center', gap: '6px', fontSize: '0.8125rem', color: 'var(--text-secondary)' }}>
+                        <CheckCircle2 size={13} style={{ color: 'var(--brand-blue)', flexShrink: 0 }} />
+                        <span>{area}</span>
+                      </div>
                     ))}
                   </div>
                 </div>
 
                 <div className="module-specs-row mono-tag">
-                  <Link to={`/industries/${ind.id}`} style={{ color: 'var(--brand-blue)', fontWeight: 600 }}>
-                    Explore Industry Blueprint →
+                  <Link to={ind.href || `/industries/${ind.id}`} style={{ color: 'var(--brand-blue)', fontWeight: 600 }}>
+                    {ind.ctaText || 'Explore Industry Solutions'} →
                   </Link>
                 </div>
               </div>

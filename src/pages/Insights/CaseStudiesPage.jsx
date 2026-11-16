@@ -165,7 +165,7 @@ export default function CaseStudiesPage() {
                   </div>
 
                   <Button to="/contact" variant="primary" size="sm" icon="arrow">
-                    Request Similar Blueprint
+                    Request Similar Solution
                   </Button>
                 </div>
               </div>

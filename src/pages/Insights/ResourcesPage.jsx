@@ -20,9 +20,9 @@ import './InsightsPage.css';
 const RESOURCES = [
   {
     id: 'strangler-fig-playbook',
-    type: 'ARCHITECTURE BLUEPRINT',
+    type: 'ARCHITECTURE FRAMEWORK',
     format: 'PDF / SPEC (34 PAGES)',
-    title: 'The Enterprise Strangler Fig Architecture Blueprint',
+    title: 'The Enterprise Strangler Fig Architecture Framework',
     description: 'A complete step-by-step engineering framework for decoupling monolithic core ERP systems into event-driven services with structured risk mitigation and business continuity.',
     topics: ['Event Proxy Architecture', 'Dual-Write Reconciliation', 'Canary Rollout Strategies', 'Database De-coupling Patterns'],
     downloadCount: 'Principal Architect Verified'
@@ -76,7 +76,7 @@ export default function ResourcesPage() {
             <span className="breadcrumb-slash">/</span>
             <Link to="/insights">INSIGHTS</Link>
             <span className="breadcrumb-slash">/</span>
-            <span className="breadcrumb-current">RESOURCES &amp; BLUEPRINTS</span>
+            <span className="breadcrumb-current">RESOURCES</span>
           </div>
 
           <div className="inner-hero-content">
@@ -137,9 +137,9 @@ export default function ResourcesPage() {
             <div className="commitment-header">
               <div className="mono-label">
                 <ShieldCheck size={16} />
-                <span>CUSTOM BLUEPRINT REQUEST</span>
+                <span>CUSTOM ARCHITECTURE REQUEST</span>
               </div>
-              <h3>Require a custom architectural blueprint for your environment?</h3>
+              <h3>Require custom architecture guidance for your environment?</h3>
             </div>
             <p className="commitment-text">
               Our engineering team can create customized system architecture diagrams, data dictionary specs, and cloud deployment guides tailored to your internal enterprise systems.
