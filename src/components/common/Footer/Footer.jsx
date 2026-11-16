@@ -12,7 +12,7 @@ export default function Footer() {
           <div className="footer-brand-block">
             <Link to="/" className="footer-logo" aria-label="Astrion Digital Homepage">
               <img 
-                src="/logo.png" 
+                src="/logo-white.png" 
                 alt="Astrion Digital" 
                 className="footer-logo-img" 
               />
