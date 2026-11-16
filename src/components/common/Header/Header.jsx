@@ -41,6 +41,17 @@ export default function Header() {
     return () => window.removeEventListener('keydown', handleKeyDown);
   }, []);
 
+  // Handle click outside to close dropdown
+  useEffect(() => {
+    const handleClickOutside = (e) => {
+      if (navRef.current && !navRef.current.contains(e.target)) {
+        setActiveMenuId(null);
+      }
+    };
+    document.addEventListener('mousedown', handleClickOutside);
+    return () => document.removeEventListener('mousedown', handleClickOutside);
+  }, []);
+
   const handleMouseEnter = (itemId) => {
     if (hoverTimeoutRef.current) clearTimeout(hoverTimeoutRef.current);
     setActiveMenuId(itemId);
@@ -49,7 +60,7 @@ export default function Header() {
   const handleMouseLeave = () => {
     hoverTimeoutRef.current = setTimeout(() => {
       setActiveMenuId(null);
-    }, 150);
+    }, 180);
   };
 
   return (
@@ -73,15 +84,19 @@ export default function Header() {
           <nav className="desktop-nav" aria-label="Main Navigation">
             <ul className="nav-list">
               {NAV_ITEMS.map((item, index) => {
-                const isActive = activeMenuId === item.id;
+                const isOpen = activeMenuId === item.id;
                 const hasDropdown = Boolean(item.megaMenu?.columns?.length);
+
+                const isCurrentRoute = location.pathname === item.href || 
+                  (item.href !== '/' && location.pathname.startsWith(item.href)) ||
+                  (item.id === 'partners' && location.pathname === '/about/partners');
 
                 if (!hasDropdown) {
                   return (
                     <li key={item.id} className="nav-item">
                       <Link 
                         to={item.href} 
-                        className={`nav-button ${location.pathname === item.href ? 'is-active' : ''}`}
+                        className={`nav-button ${isCurrentRoute ? 'is-route-active' : ''}`}
                       >
                         <span className="nav-button-label">{item.label}</span>
                       </Link>
@@ -89,11 +104,13 @@ export default function Header() {
                   );
                 }
 
-                const isRouteActive = location.pathname.startsWith(item.href) || 
-                  (item.id === 'partners' && location.pathname === '/about/partners');
-
-                // Right-align dropdowns for items near the right edge to prevent viewport cutoff
-                const align = index >= NAV_ITEMS.length - 2 ? 'right' : 'left';
+                // Smart positioning:
+                // About (1), Solutions (2) -> left-aligned to button
+                // Industries (3) -> centered under button
+                // Partners (4), Insights (5) -> right-aligned to button
+                let align = 'left';
+                if (index === 3) align = 'center';
+                else if (index >= 4) align = 'right';
 
                 return (
                   <li
@@ -102,22 +119,26 @@ export default function Header() {
                     onMouseEnter={() => handleMouseEnter(item.id)}
                   >
                     <button
-                      className={`nav-button ${isActive || isRouteActive ? 'is-active' : ''}`}
-                      aria-expanded={isActive}
+                      className={`nav-button ${isCurrentRoute ? 'is-route-active' : ''} ${isOpen ? 'is-open' : ''}`}
+                      aria-expanded={isOpen}
                       aria-haspopup="true"
-                      onClick={() => setActiveMenuId(isActive ? null : item.id)}
+                      onClick={() => setActiveMenuId(isOpen ? null : item.id)}
                     >
                       <span className="nav-button-label">{item.label}</span>
                       {item.badge && <span className="nav-badge">{item.badge}</span>}
-                      <ChevronDown size={14} className={`nav-chevron ${isActive ? 'open' : ''}`} />
+                      <ChevronDown size={14} className={`nav-chevron ${isOpen ? 'open' : ''}`} />
                     </button>
 
                     {/* Common Nav Dropdown Component for All Menu Items */}
-                    {isActive && (
+                    {isOpen && (
                       <NavDropdown
                         item={item}
                         align={align}
                         onClose={() => setActiveMenuId(null)}
+                        onMouseEnter={() => {
+                          if (hoverTimeoutRef.current) clearTimeout(hoverTimeoutRef.current);
+                        }}
+                        onMouseLeave={handleMouseLeave}
                       />
                     )}
                   </li>

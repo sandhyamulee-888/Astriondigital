@@ -70,6 +70,7 @@
 }
 
 .nav-button {
+  position: relative;
   display: inline-flex;
   align-items: center;
   gap: 6px;
@@ -77,12 +78,13 @@
   font-size: 0.9375rem;
   font-weight: 500;
   color: var(--text-secondary);
-  border-radius: var(--radius-xs);
+  border-radius: 8px;
   transition: all var(--transition-fast);
 }
 
 .nav-button:hover,
-.nav-button.is-active {
+.nav-button.is-route-active,
+.nav-button.is-open {
   color: var(--text-primary);
   background-color: var(--bg-secondary);
 }
@@ -100,12 +102,13 @@
 
 .nav-chevron {
   color: var(--text-tertiary);
-  transition: transform var(--transition-fast);
+  transition: transform 0.22s cubic-bezier(0.16, 1, 0.3, 1), color 0.15s ease;
 }
 
-.nav-chevron.open {
+.nav-chevron.open,
+.nav-button[aria-expanded="true"] .nav-chevron {
   transform: rotate(180deg);
-  color: var(--accent-primary);
+  color: var(--brand-orange, #eb643e);
 }
 
 /* Header Actions */

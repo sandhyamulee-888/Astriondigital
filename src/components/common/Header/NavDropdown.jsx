@@ -1,86 +1,158 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
-import { ArrowUpRight, ArrowRight } from 'lucide-react';
+import {
+  Building2,
+  Target,
+  Layers,
+  Users,
+  Boxes,
+  Cpu,
+  Sparkles,
+  Cloud,
+  BarChart3,
+  ShoppingBag,
+  Truck,
+  Factory,
+  Navigation,
+  Car,
+  Globe,
+  Award,
+  Handshake,
+  FileText,
+  TrendingUp,
+  FolderKanban,
+  ArrowRight,
+  ArrowUpRight
+} from 'lucide-react';
 import './NavDropdown.css';
 
 /**
- * Common NavDropdown Component
- * 
- * Reusable, unified dropdown menu used across all header components:
- * About, Solutions, Industries, Partners, and Insights.
- * 
- * Automatically handles:
- * - Single column vs Multi-column layouts based on items
- * - Column eyebrow headers
- * - Link titles, optional badges, arrow transitions, and descriptions
- * - Unified footer with quick link to overview page
- * - Left or right alignment to prevent clipping
+ * Universal Icon Mapping for all Astrion Digital navigation items.
+ * Professional enterprise icons matching Design Shifu style.
  */
-export default function NavDropdown({ item, align = 'left', onClose }) {
+const ICON_MAP = {
+  // About
+  'About Astrion': Building2,
+  'Vision & Mission': Target,
+  'Our Approach': Layers,
+  'Leadership': Users,
+
+  // Solutions
+  'XENedion ERP': Boxes,
+  'Enterprise Digital Transformation': Cpu,
+  'AI & Intelligent Automation': Sparkles,
+  'Cloud & Infrastructure': Cloud,
+  'Data & Business Intelligence': BarChart3,
+
+  // Industries
+  'Retail': ShoppingBag,
+  'Distribution': Truck,
+  'Manufacturing': Factory,
+  'Logistics': Navigation,
+  'Automotive': Car,
+  'Other Industries': Globe,
+
+  // Partners
+  'ERP Partner Program': Award,
+  'Partner Inquiries': Handshake,
+
+  // Insights
+  'Blog': FileText,
+  'Case Studies': TrendingUp,
+  'Resources': FolderKanban,
+};
+
+/**
+ * Common Floating NavDropdown Component (Side-by-Side 2-Column Grid)
+ * 
+ * Recreates the exact premium, unified floating dropdown panel:
+ * - Side-by-side 2-column layout across all components
+ * - Rounded corners (20-24px) with soft diffuse shadow and subtle border
+ * - Vertical item arrangement inside cards:
+ *    - Professional icon box on the left (40x40px, rounded 10px)
+ *    - Menu heading on the right
+ *    - Description below
+ * - Soft grey hover background with subtle orange left indicator
+ * - Bottom callout bar with quick overview link
+ */
+export default function NavDropdown({
+  item,
+  align = 'left',
+  onClose,
+  onMouseEnter,
+  onMouseLeave
+}) {
   if (!item?.megaMenu?.columns?.length) return null;
 
-  const { columns } = item.megaMenu;
-  const isMultiColumn = columns.length > 1;
+  // Flatten all items into a side-by-side 2-column grid
+  const allItems = item.megaMenu.columns.flatMap((col) => col.items);
 
   return (
     <div
-      className={`nav-dropdown-menu ${isMultiColumn ? 'multi-column' : 'single-column'} align-${align}`}
+      className={`nav-dropdown-panel align-${align}`}
       role="menu"
-      aria-label={`${item.label} navigation menu`}
+      aria-label={`${item.label} menu`}
+      onMouseEnter={onMouseEnter}
+      onMouseLeave={onMouseLeave}
     >
-      <div className="nav-dropdown-columns">
-        {columns.map((col, colIdx) => (
-          <div key={colIdx} className="nav-dropdown-col">
-            {col.heading && (
-              <span className="nav-dropdown-col-heading">
-                {col.heading}
-              </span>
-            )}
-            <ul className="nav-dropdown-links-list">
-              {col.items.map((subItem, itemIdx) => (
-                <li key={itemIdx} role="none" className="nav-dropdown-item">
-                  <Link
-                    to={subItem.href}
-                    className="nav-dropdown-link"
-                    role="menuitem"
-                    onClick={onClose}
-                  >
-                    <div className="nav-dropdown-link-header">
-                      <span className="nav-dropdown-link-title">
-                        {subItem.title}
-                      </span>
-                      {subItem.badge && (
-                        <span className="nav-dropdown-badge">{subItem.badge}</span>
-                      )}
-                      <ArrowUpRight
-                        size={13}
-                        className="nav-dropdown-link-arrow"
-                        aria-hidden="true"
-                      />
-                    </div>
-                    {subItem.desc && (
-                      <p className="nav-dropdown-link-desc">{subItem.desc}</p>
-                    )}
-                  </Link>
-                </li>
-              ))}
-            </ul>
-          </div>
-        ))}
+      {/* Side-by-Side 2-Column Grid */}
+      <div className="nav-dropdown-grid-2col">
+        {allItems.map((subItem, itemIdx) => {
+          const IconComponent = ICON_MAP[subItem.title] || Boxes;
+
+          return (
+            <Link
+              key={itemIdx}
+              to={subItem.href}
+              className="nav-dropdown-card"
+              role="menuitem"
+              onClick={onClose}
+            >
+              {/* Subtle Left Orange Accent Line on hover */}
+              <span className="nav-card-accent-line" aria-hidden="true" />
+
+              {/* Professional Rounded Icon Box */}
+              <div className="nav-card-icon-box" aria-hidden="true">
+                <IconComponent size={19} className="nav-card-icon" />
+              </div>
+
+              {/* Text Container: Heading + Description */}
+              <div className="nav-card-body">
+                <div className="nav-card-header">
+                  <span className="nav-card-title">{subItem.title}</span>
+                  {subItem.badge && (
+                    <span className="nav-card-badge">{subItem.badge}</span>
+                  )}
+                  <ArrowUpRight
+                    size={13}
+                    className="nav-card-arrow"
+                    aria-hidden="true"
+                  />
+                </div>
+                {subItem.desc && (
+                  <p className="nav-card-desc">{subItem.desc}</p>
+                )}
+              </div>
+            </Link>
+          );
+        })}
       </div>
 
-      {/* Universal Footer Link */}
-      <div className="nav-dropdown-footer">
+      {/* Common Bottom Bar */}
+      <div className="nav-dropdown-bottom-bar">
+        <div className="nav-bottom-left">
+          <span className="nav-bottom-kicker mono-tag">ASTRION</span>
+          <span className="nav-bottom-desc">Enterprise Platform</span>
+        </div>
         <Link
           to={item.href}
-          className="nav-dropdown-view-all"
+          className="nav-bottom-action-link"
           onClick={onClose}
         >
           <span>View All {item.label}</span>
-          <ArrowRight size={13} aria-hidden="true" />
+          <ArrowRight size={13} className="nav-bottom-arrow" aria-hidden="true" />
         </Link>
       </div>
     </div>
   );
 }
-
