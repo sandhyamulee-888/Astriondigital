@@ -36,7 +36,7 @@ export const INDUSTRIES = [
       'Integrated B2B customer order portal with custom pricing tiers',
       'Sub-minute picking route optimization for warehouse teams'
     ],
-    xenedionFocus: ['Order Management', 'Warehouse Barcoding', 'Purchasing', 'Logistics'],
+    xenedionFocus: ['Order Management', 'Warehouse Barcoding', 'Purchasing', 'Fulfillment'],
     href: '/industries/distribution'
   },
   {
@@ -58,26 +58,6 @@ export const INDUSTRIES = [
     ],
     xenedionFocus: ['Production Scheduling', 'Inventory Control', 'Purchasing & POs', 'Quality Control'],
     href: '/industries/manufacturing'
-  },
-  {
-    id: 'logistics',
-    name: 'Logistics & Supply Chain',
-    headline: 'Fleet Route Optimization and Freight Tracking',
-    simpleHeadline: 'Fleet Route Optimization and Freight Tracking',
-    coreProblemSolved: 'Tracks shipments live, automates dispatch documentation, and manages proof of delivery.',
-    challenge: 'Freight teams lose hours answering "where is my order?" calls, dealing with manual paper manifests, and handling disputed delivery claims.',
-    solution: 'XENedion tracks freight shipments in real time, automates bill-of-lading and dispatch documents, and captures digital proof of delivery on mobile.',
-    result: 'Total shipment transparency for clients, instant billing upon delivery confirmation, and reduced fuel and dispatch overhead.',
-    description: 'Tracks shipments live, automates dispatch documentation, and manages proof of delivery.',
-    capabilities: ['Live Freight Tracking', 'Automated Manifests', 'Electronic Proof of Delivery', 'Carrier Rate Matching'],
-    outcomes: [
-      'Real-time vehicle and shipment tracking with automated customer alerts',
-      'Automated freight rate calculation and instant invoice generation',
-      'Mobile digital proof-of-delivery signatures and photo uploads',
-      'Full audit compliance for driver hours, fuel logs, and safety checks'
-    ],
-    xenedionFocus: ['Logistics & Fleet', 'Dispatch Manifests', 'Order Tracking', 'Billing Automation'],
-    href: '/industries/logistics'
   },
   {
     id: 'automotive',

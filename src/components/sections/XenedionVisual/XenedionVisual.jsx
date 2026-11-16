@@ -17,7 +17,6 @@ const MODULE_METRICS = {
   warehouse: { kpi: 'Wave Pick Optimization', protocol: 'mTLS 1.3 Event Stream', speed: 'Guided Workflows' },
   finance: { kpi: 'Continuous Real-Time Close', protocol: 'Deterministic Ledger', speed: 'Multi-Currency Core' },
   hr: { kpi: 'Single Workforce Record', protocol: 'mTLS 1.3 Event Stream', speed: 'Automated Payroll Sync' },
-  logistics: { kpi: 'Carrier Mesh API', protocol: 'Deterministic Event Bus', speed: 'Dynamic Route Optimization' },
   analytics: { kpi: 'Continuous OLAP Telemetry', protocol: 'Streaming Ingestion', speed: 'Real-time Aggregations' }
 };
 
@@ -43,7 +42,6 @@ export default function XenedionVisual() {
       case 'Warehouse': return <Package size={16} />;
       case 'Finance': return <DollarSign size={16} />;
       case 'HR': return <UserCheck size={16} />;
-      case 'Logistics': return <Truck size={16} />;
       case 'Analytics': return <BarChart3 size={16} />;
       default: return <Cpu size={16} />;
     }

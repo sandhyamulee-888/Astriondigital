@@ -12,19 +12,22 @@ export const SOLUTIONS = [
     categoryLabel: 'Enterprise Solutions',
     title: 'XENedion ERP',
     image: '/images/solutions/erp-solutions.webp',
-    headline: 'Centralize Your Business Data into One Source of Truth',
-    tagline: 'Centralized Operations → Complete Visibility',
-    shortDesc: 'Centralize your business data into one source of truth. Connect core operations, finance, inventory, supply chain, and sales tracking into a unified operational platform.',
-    overview: 'Astrion Digital is the software company behind XENedion ERP. We unify finance, inventory, purchasing, sales, and HR into one cohesive platform so every department works from the exact same accurate numbers in real time.',
-    problemSolved: 'Replaces fragmented software tools and spreadsheets that cause reconciliation errors and duplicate work.',
+    headline: 'One Platform. Every Business Function. Complete Control.',
+    tagline: 'One Platform. Every Business Function. Complete Control.',
+    shortDesc: 'XENedion is an integrated Enterprise Resource Planning platform designed to simplify and streamline the way businesses manage their operations.',
+    overview: 'XENedion brings essential business functions together in a unified ERP environment, enabling organisations to manage their operations more effectively without disconnected applications, spreadsheets and manual processes.',
+    problemSolved: 'Eliminates disconnected applications, spreadsheets and manual processes that create information gaps, duplication of work and limited visibility across departments.',
     services: [
-      'Core Ledger & General Accounting',
-      'Real-Time Multi-Warehouse Inventory Tracking',
-      'Integrated Procurement & Order Automation',
-      'Unified Operational Systems & Dashboards'
+      'CRM & Sales Management',
+      'Inventory & Warehouse Management',
+      'Procurement & Vendor Management',
+      'Finance & Accounts',
+      'Human Resource Management',
+      'Logistics Management',
+      'Business Reporting & Analytics'
     ],
-    architecture: 'High-availability unified transactional database with real-time operational synchronization.',
-    metrics: '100% Real-Time Ledger Synchronization'
+    architecture: 'Unified ERP environment connecting all operational departments into one source of truth.',
+    metrics: '7 Core Integrated Functional Areas'
   },
   {
     id: 'digital-transformation',

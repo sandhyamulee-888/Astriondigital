@@ -10,7 +10,7 @@ import './CaseStudiesSection.css';
 const ROI_METRICS = {
   'industrial-manufacturing-modernization': { roi: 'Synchronized Ops', sub: 'Multi-Plant Visibility' },
   'global-distribution-fulfillment': { roi: 'High Precision', sub: 'Order Fulfillment Sync' },
-  'enterprise-fleet-logistics': { roi: 'Optimized Routes', sub: 'Autonomous Dispatch' }
+  'automotive-parts-traceability': { roi: '100% Traceability', sub: 'OEM Serial Genealogy' }
 };
 
 export default function CaseStudiesSection() {

@@ -15,7 +15,6 @@ export default function IndustriesPage() {
       case 'manufacturing': return <Factory size={22} />;
       case 'distribution': return <Truck size={22} />;
       case 'retail': return <ShoppingCart size={22} />;
-      case 'logistics': return <Truck size={22} />;
       case 'professional-services': return <Briefcase size={22} />;
       case 'automotive': return <Car size={22} />;
       default: return <Globe size={22} />;
@@ -49,7 +48,7 @@ export default function IndustriesPage() {
             </h1>
 
             <p className="inner-hero-lead">
-              Pre-built workflows and templates tailored specifically for Manufacturing, Distribution, Retail, Logistics, Professional Services, and Automotive.
+              Pre-built workflows and templates tailored specifically for Retail, Distribution, Manufacturing, and Automotive.
             </p>
           </div>
         </div>

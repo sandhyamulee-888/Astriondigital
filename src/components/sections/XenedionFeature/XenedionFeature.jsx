@@ -1,5 +1,5 @@
 import React from 'react';
-import { DollarSign, Layers, Users, UserCheck } from 'lucide-react';
+import { DollarSign, Layers, Users, ShoppingBag } from 'lucide-react';
 import Button from '../../common/Button/Button';
 import ScrollReveal, { StaggerContainer, StaggerItem } from '../../common/Motion/ScrollReveal';
 import './XenedionFeature.css';
@@ -8,30 +8,30 @@ const PILLAR_ICONS = {
   DollarSign: <DollarSign size={20} />,
   Layers: <Layers size={20} />,
   Users: <Users size={20} />,
-  UserCheck: <UserCheck size={20} />
+  ShoppingBag: <ShoppingBag size={20} />
 };
 
 export default function XenedionFeature() {
   const pillars = [
     {
-      title: 'Finance & Accounting',
-      desc: 'Automated ledger entries, multi-currency reporting, and audit-ready financial statements in real time.',
-      icon: 'DollarSign'
-    },
-    {
-      title: 'Inventory & Warehousing',
-      desc: 'Multi-location inventory tracking, live stock reservation, and automated reorder alerts.',
-      icon: 'Layers'
-    },
-    {
-      title: 'Sales & CRM',
-      desc: 'Seamless quote-to-order-to-invoice workflows with real-time deal pipeline visibility.',
+      title: 'CRM & Sales Management',
+      desc: 'Manage customer information, sales activities, opportunities, quotations and sales orders through a connected process.',
       icon: 'Users'
     },
     {
-      title: 'HR & Operations',
-      desc: 'Integrated payroll calculation, shift scheduling, employee self-service, and approval flows.',
-      icon: 'UserCheck'
+      title: 'Inventory & Warehouse Management',
+      desc: 'Monitor stock movements, inventory positions, warehouse activities and goods receipts.',
+      icon: 'Layers'
+    },
+    {
+      title: 'Procurement & Vendor Management',
+      desc: 'Organise vendor information, purchase requirements, purchase orders and goods receipt processes.',
+      icon: 'ShoppingBag'
+    },
+    {
+      title: 'Finance & Accounts',
+      desc: 'Connect business transactions with financial management, accounting processes and operational reporting.',
+      icon: 'DollarSign'
     }
   ];
 
@@ -49,7 +49,7 @@ export default function XenedionFeature() {
                 Meet XENedion ERP
               </h2>
               <p className="product-copy">
-                One integrated platform to manage finance, sales, inventory, operations, and your entire business.
+                One Platform. Every Business Function. Complete Control.
               </p>
               <div className="mono-tag" style={{ color: 'var(--brand-blue, #1c75bd)', marginTop: '12px', fontSize: '0.8125rem', display: 'flex', alignItems: 'center', gap: '8px' }}>
                 <span style={{ display: 'inline-block', width: '6px', height: '6px', borderRadius: '50%', background: 'var(--brand-blue, #1c75bd)' }}></span>

@@ -126,9 +126,8 @@ export const NAV_ITEMS = [
           ]
         },
         {
-          heading: 'Supply Chain & Services',
+          heading: 'Automotive & Specialized',
           items: [
-            { title: 'Logistics', href: '/industries/logistics', desc: 'Fleet route optimization and live freight tracking.' },
             { title: 'Automotive', href: '/industries/automotive', desc: 'Parts traceability and dealer supply chain integration.' },
             { title: 'Other Industries', href: '/industries/other', desc: 'Custom-fit operational platforms for specialized business domains.' }
           ]

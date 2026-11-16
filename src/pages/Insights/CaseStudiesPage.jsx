@@ -36,7 +36,7 @@ const DETAILED_CASE_STUDIES = [
   },
   {
     id: 'global-distribution-fulfillment',
-    industry: 'Wholesale & Logistics Distribution',
+    industry: 'Wholesale Distribution',
     clientType: 'National Consumer Goods Distributor',
     title: 'Real-Time Order Routing & Cross-Dock Orchestration',
     challenge: 'A high-velocity distribution network processing large volumes of daily orders suffered from picking bottlenecks, manual carrier allocation, and frequent inventory desynchronization between distribution centers.',
@@ -51,20 +51,20 @@ const DETAILED_CASE_STUDIES = [
     architectureHighlights: 'Dynamic routing engine automatically assesses carrier performance metrics, regional shipping costs, and dock door availability to schedule dispatch without manual intervention.'
   },
   {
-    id: 'enterprise-fleet-logistics',
-    industry: 'Supply Chain & Transportation',
-    clientType: 'Multi-Modal Freight & Fleet Operator',
-    title: 'Autonomous Fleet Telematics & Dynamic Route Optimization',
-    challenge: 'Managing an expansive fleet of freight vehicles with disparate GPS systems and paper-based proof of delivery resulted in unpredictable customer arrival estimates and delayed freight invoicing.',
-    solution: 'Astrion engineered a centralized telematics ingestion pipeline paired with automated electronic proof of delivery (ePOD) and dynamic re-routing algorithms.',
+    id: 'automotive-parts-traceability',
+    industry: 'Automotive & Component Manufacturing',
+    clientType: 'Tier-1 Automotive Parts Manufacturer & Supplier',
+    title: 'End-to-End Serial Number Traceability & OEM Supply Chain Integration',
+    challenge: 'Managing complex component lots, serial number histories, and supplier quality certifications across distributed regional factories led to audit overhead and slow warranty turnaround times.',
+    solution: 'Astrion deployed XENedion Serial & Lot Traceability architecture, providing real-time genealogy tracking from raw casting through machining, assembly, and OEM dispatch.',
     results: [
-      'Real-time vehicle telemetry tracking with continuous data streaming',
-      'Automated electronic proof of delivery triggering instantaneous freight invoicing',
-      'Dynamic weather and traffic rerouting reducing fleet fuel consumption and idle time',
-      'Full regulatory compliance with ELD and driver rest hour mandates'
+      'Lot-level serial traceability down to individual component batches',
+      'Direct EDI integration with OEM production schedules and just-in-time delivery',
+      'Automated warranty verification reducing claim dispute resolution time by 60%',
+      '100% compliance with ISO/TS automotive quality management standards'
     ],
-    technologies: ['Telematics Ingestion Pipeline', 'Route Optimization Engine', 'Mobile ePOD Application', 'FinOps Billing Engine'],
-    architectureHighlights: 'Direct OBD-II telematics streams are correlated with weather radar and traffic models to calculate dynamic arrival windows, notifying distribution hubs of delays proactively.'
+    technologies: ['Serial Traceability Engine', 'OEM EDI Gateway', 'Quality Inspection Module', 'Automated Warranty Verification'],
+    architectureHighlights: 'Real-time serialization pipeline logs barcode scans at every production cell into an immutable genealogy ledger, guaranteeing instant recall isolation within seconds.'
   }
 ];
 

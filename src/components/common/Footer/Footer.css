@@ -1,8 +1,9 @@
 .site-footer {
-  background-color: var(--bg-secondary);
-  border-top: 1px solid var(--border-light);
+  background-color: #e8e8e8;
+  border-top: 1px solid rgba(15, 23, 42, 0.1);
   padding-top: 96px;
   padding-bottom: 48px;
+  color: #0F172A;
 }
 
 .footer-top-tier {
@@ -111,6 +112,8 @@
 
 .footer-divider {
   margin-bottom: 56px;
+  border: none;
+  border-top: 1px solid rgba(15, 23, 42, 0.1);
 }
 
 /* Multi-Column Directory Grid */

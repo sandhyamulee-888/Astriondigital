@@ -22,7 +22,7 @@ export default function XenedionIntegrationsPage() {
     },
     {
       title: 'B2B EDI & Supply Chain Bridges',
-      desc: 'Native support for ANSI X12, EDIFACT, and AS2 protocols to automate order processing with major retailers and logistics carriers.',
+      desc: 'Native support for ANSI X12, EDIFACT, and AS2 protocols to automate order processing with major retailers and supply chain partners.',
       badge: 'EDI & PROTOCOLS'
     },
     {

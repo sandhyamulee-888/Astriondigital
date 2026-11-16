@@ -1,6 +1,6 @@
 import React from 'react';
-import IndustryDetailPage from './IndustryDetailPage';
+import { Navigate } from 'react-router-dom';
 
 export default function LogisticsPage() {
-  return <IndustryDetailPage slugOverride="logistics" />;
+  return <Navigate to="/industries/distribution" replace />;
 }

@@ -27,6 +27,7 @@ import './XenedionPage.css';
 const FUNCTIONAL_AREAS = [
   {
     id: 'crm-sales',
+    num: '01',
     title: 'CRM & Sales Management',
     desc: 'Manage customer information, sales activities, opportunities, quotations and sales orders through a connected process.',
     icon: <Users size={22} />,
@@ -34,6 +35,7 @@ const FUNCTIONAL_AREAS = [
   },
   {
     id: 'inventory-warehouse',
+    num: '02',
     title: 'Inventory & Warehouse Management',
     desc: 'Monitor stock movements, inventory positions, warehouse activities and goods receipts.',
     icon: <Package size={22} />,
@@ -41,6 +43,7 @@ const FUNCTIONAL_AREAS = [
   },
   {
     id: 'procurement-vendor',
+    num: '03',
     title: 'Procurement & Vendor Management',
     desc: 'Organise vendor information, purchase requirements, purchase orders and goods receipt processes.',
     icon: <ShoppingBag size={22} />,
@@ -48,6 +51,7 @@ const FUNCTIONAL_AREAS = [
   },
   {
     id: 'finance-accounts',
+    num: '04',
     title: 'Finance & Accounts',
     desc: 'Connect business transactions with financial management, accounting processes and operational reporting.',
     icon: <DollarSign size={22} />,
@@ -55,6 +59,7 @@ const FUNCTIONAL_AREAS = [
   },
   {
     id: 'hr-management',
+    num: '05',
     title: 'Human Resource Management',
     desc: 'Organise employee information and support structured HR administration.',
     icon: <UserCheck size={22} />,
@@ -62,6 +67,7 @@ const FUNCTIONAL_AREAS = [
   },
   {
     id: 'logistics-management',
+    num: '06',
     title: 'Logistics Management',
     desc: 'Support logistics operations and improve coordination across business activities.',
     icon: <Truck size={22} />,
@@ -69,6 +75,7 @@ const FUNCTIONAL_AREAS = [
   },
   {
     id: 'reporting-analytics',
+    num: '07',
     title: 'Business Reporting & Analytics',
     desc: 'Bring operational information together to support business monitoring and informed decisions.',
     icon: <BarChart3 size={22} />,
@@ -117,29 +124,29 @@ const WHY_XENEDION = [
 const TARGET_SECTORS = [
   {
     id: 'retail',
-    title: 'Retail',
-    desc: 'Unified store, warehouse, and online operations with live inventory positions, replenishment, and POS workflow connectivity.',
+    title: 'Retail Outlets',
+    desc: 'Manage retail store operations, multi-location stock movements, and customer sales transactions within a connected platform.',
     icon: <Store size={26} />,
     link: '/industries/retail'
   },
   {
     id: 'distribution',
-    title: 'Distribution',
-    desc: 'Multi-warehouse stock tracking, automated order fulfillment, logistics coordination, and connected supplier workflows.',
+    title: 'Distribution Networks',
+    desc: 'Coordinate warehouse stock movements, inventory positions, vendor orders, and fulfillment activities across facilities.',
     icon: <Boxes size={26} />,
     link: '/industries/distribution'
   },
   {
     id: 'manufacturing',
-    title: 'Manufacturing',
-    desc: 'Structured production planning, raw material procurement, bill of materials tracking, and operational process control.',
+    title: 'Manufacturing Operations',
+    desc: 'Organise production schedules, material procurement, inventory tracking, and operational process workflows.',
     icon: <Factory size={26} />,
     link: '/industries/manufacturing'
   },
   {
     id: 'automotive',
-    title: 'Automotive',
-    desc: 'Parts traceability, dealership supply chain integration, service billing, and end-to-end inventory governance.',
+    title: 'Automotive Businesses',
+    desc: 'Manage automotive business operations, parts inventory, vendor relationships, and customer service transactions.',
     icon: <Car size={26} />,
     link: '/industries/automotive'
   }

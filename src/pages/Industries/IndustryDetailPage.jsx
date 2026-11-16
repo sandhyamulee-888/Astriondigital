@@ -60,7 +60,7 @@ const INDUSTRY_DETAILS = {
     ],
     useCases: [
       { title: 'Multi-Regional Consumer Goods Wholesaler', result: 'Unified 6 regional distribution centers into a single automated inventory pool.' },
-      { title: 'Cold-Chain Pharmaceutical Logistics', result: 'Enforced continuous temperature telemetry and lot-controlled FEFO routing.' },
+      { title: 'Cold-Chain Pharmaceutical Distribution', result: 'Enforced continuous temperature telemetry and lot-controlled FEFO routing.' },
       { title: 'Industrial MRO Parts Distribution', result: 'Automated vendor-managed inventory (VMI) with self-replenishing customer bins.' }
     ]
   },
@@ -82,26 +82,6 @@ const INDUSTRY_DETAILS = {
       { title: 'National Apparel & Footwear Chain', result: 'Enabled ship-from-store across regional retail locations, optimizing fulfillment costs.' },
       { title: 'Specialty Electronics Retailer', result: 'Unified customer loyalty profiles and omnichannel warranty tracking.' },
       { title: 'Luxury Goods & Accessories', result: 'Implemented strict serial tracking and VIP customer concierge clienteling workflows.' }
-    ]
-  },
-  logistics: {
-    heroMetric: 'Real-time freight tracking with automated route transit optimization',
-    challenges: [
-      'Blind spots in transit visibility between carrier dispatch and customer dock delivery',
-      'Manual carrier freight billing leading to audit disputes and delayed settlement cycles',
-      'Static route planning unable to dynamically adapt to weather, traffic, and border delays',
-      'Stringent electronic logging device (ELD) and hazardous materials regulatory compliance'
-    ],
-    architecture: [
-      { step: '01', title: 'Fleet Telematics Ingestion', desc: 'GPS, OBD-II, and IoT temperature sensor streams feed continuous vehicle telemetry into Astrion Data Mesh.' },
-      { step: '02', title: 'Dynamic Route Optimization', desc: 'Algorithms continuously calculate optimal multi-stop corridors considering fuel burn and driver hours.' },
-      { step: '03', title: 'Automated Exception Handling', desc: 'Smart alerts notify dispatchers of temperature excursions, geofence breaches, or ETA deviations.' },
-      { step: '04', title: 'Electronic Proof of Delivery', desc: 'Digital signatures and photos trigger automated freight invoicing and instantaneous carrier payout.' }
-    ],
-    useCases: [
-      { title: 'Intermodal Freight Operator', result: 'Synchronized rail, ocean, and long-haul trucking container handoffs with real-time tracking.' },
-      { title: 'Last-Mile Delivery Network', result: 'Optimized high-density daily urban delivery stops with real-time dynamic traffic rerouting.' },
-      { title: 'Hazardous Chemical Transporter', result: 'Enforced full regulatory chain-of-custody logging and automated emergency dispatch protocols.' }
     ]
   },
   'professional-services': {
@@ -192,7 +172,6 @@ export default function IndustryDetailPage({ slugOverride }) {
       case 'manufacturing': return <Factory size={22} />;
       case 'distribution': return <Truck size={22} />;
       case 'retail': return <ShoppingCart size={22} />;
-      case 'logistics': return <Truck size={22} />;
       case 'professional-services': return <Briefcase size={22} />;
       case 'automotive': return <Car size={22} />;
       default: return <Globe size={22} />;

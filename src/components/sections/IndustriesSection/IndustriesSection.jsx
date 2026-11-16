@@ -26,23 +26,23 @@ export default function IndustriesSection() {
       href: '/industries/retail'
     },
     {
-      id: 'distribution-logistics',
-      name: 'Distribution & Logistics',
+      id: 'distribution',
+      name: 'Distribution',
       icon: <Truck size={18} />,
-      headline: 'Agile Dispatch & Multi-Node Fleet Visibility',
-      description: 'Speed up order dispatch, track fleet routes, and eliminate costly shipping delays.',
+      headline: 'Multi-Warehouse Visibility & Order Fulfillment',
+      description: 'Eliminates stock-outs and delivery delays with real-time stock allocation across distribution centers.',
       deliverables: [
+        'Multi-warehouse automated allocation and stock re-balancing',
+        'Real-time automated vendor re-ordering based on sales velocity',
         'Automated pick, pack, and wave order fulfillment workflows',
-        'Real-time GPS vehicle telematics and dynamic route optimization',
-        'Multi-depot inventory visibility with automated balancing',
-        'Carrier rate comparison and instant e-way bill generation'
+        'Integrated B2B customer order portal with custom pricing tiers'
       ],
-      quote: 'Fleet routes and multi-warehouse stock balanced in real time. Automatically optimizes delivery schedules and dispatches orders without manual lag.',
+      quote: 'Multi-warehouse stock balanced in real time. Automatically optimizes fulfillment schedules and dispatches orders without manual lag.',
       metric1Label: 'SYNC STATUS',
-      metric1Value: 'FLEET DISPATCH: LIVE',
+      metric1Value: 'INVENTORY ALLOCATION: LIVE',
       metric2Label: 'FULFILLMENT RATE',
       metric2Value: 'ON-TIME: 99.6%',
-      href: '/industries/logistics'
+      href: '/industries/distribution'
     },
     {
       id: 'manufacturing',

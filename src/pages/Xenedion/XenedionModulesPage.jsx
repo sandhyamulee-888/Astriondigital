@@ -77,8 +77,6 @@ export default function XenedionModulesPage() {
       case 'Finance': return <DollarSign size={18} />;
       case 'HR & Payroll':
       case 'HR': return <UserCheck size={18} />;
-      case 'Logistics & Dispatch':
-      case 'Logistics': return <Truck size={18} />;
       case 'Business Intelligence':
       case 'Analytics': return <BarChart3 size={18} />;
       default: return <Cpu size={18} />;

@@ -235,7 +235,7 @@ export default function ContactPage() {
                           type="text"
                           id="company"
                           name="company"
-                          placeholder="e.g. Acme Logistics"
+                          placeholder="e.g. Acme Enterprises"
                           value={formData.company}
                           onChange={handleChange}
                           className="form-input"

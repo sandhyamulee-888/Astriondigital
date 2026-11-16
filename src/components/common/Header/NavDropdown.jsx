@@ -48,7 +48,6 @@ const ICON_MAP = {
   'Retail': ShoppingBag,
   'Distribution': Truck,
   'Manufacturing': Factory,
-  'Logistics': Navigation,
   'Automotive': Car,
   'Other Industries': Globe,
 

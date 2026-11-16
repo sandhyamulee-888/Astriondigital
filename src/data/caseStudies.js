@@ -30,17 +30,17 @@ export const CASE_STUDIES = [
     link: '/insights/case-studies'
   },
   {
-    id: 'enterprise-fleet-logistics',
+    id: 'automotive-parts-traceability',
     featured: false,
     tag: 'SUCCESS STORY',
-    industry: 'Logistics & Supply Chain',
-    title: 'Real-Time Fleet Delivery Tracking and Automated Customer Billing',
-    description: 'A regional logistics provider eliminated manual paper manifests and billing disputes with real-time GPS delivery tracking, automated electronic signatures, and instant invoice generation.',
-    technologies: ['Fleet Logistics Module', 'Live Delivery Tracking', 'Automated Invoicing'],
+    industry: 'Automotive & Parts',
+    title: 'Serial Number Traceability and Tier Supplier Integration',
+    description: 'An automotive components supplier streamlined lot-level tracking and warranty verification across 12 dealer networks with XENedion ERP.',
+    technologies: ['Serial & Lot Tracking', 'Supplier EDI Sync', 'Warranty Management'],
     deliverables: [
-      '100% paperless electronic proof of delivery',
-      'Invoices sent automatically the moment deliveries are completed',
-      'Zero manual data re-entry between dispatch and accounting'
+      '100% end-to-end component traceability from factory to dealer',
+      'Reduced warranty claim processing turnaround by 60%',
+      'Seamless compliance with strict OEM traceability standards'
     ],
     link: '/insights/case-studies'
   }
