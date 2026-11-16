@@ -706,6 +706,20 @@
   gap: 24px;
 }
 
+@media (max-width: 1024px) {
+  .values-cards-grid {
+    grid-template-columns: repeat(2, 1fr);
+    gap: 20px;
+  }
+}
+
+@media (max-width: 768px) {
+  .values-cards-grid {
+    grid-template-columns: 1fr;
+    gap: 16px;
+  }
+}
+
 .value-item-card {
   background-color: #FFFFFF;
   border: 1px solid var(--border-light);

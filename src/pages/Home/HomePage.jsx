@@ -15,11 +15,11 @@ export default function HomePage() {
       {/* Section 2: The Operational Problem You Solve */}
       <ProblemSection />
 
-      {/* Section 3: Why Astrion Digital (Built for Speed Designed for Total Clarity) */}
-      <AboutSection />
-
-      {/* Section 4: Product Showcase (XENedion ERP) */}
+      {/* Section 3: Product Showcase (Meet XENedion ERP) */}
       <XenedionFeature />
+
+      {/* Section 4: Why Astrion Digital (Built for Speed Designed for Total Clarity) */}
+      <AboutSection />
 
       {/* Section 5: Industry Blueprints */}
       <IndustriesSection />

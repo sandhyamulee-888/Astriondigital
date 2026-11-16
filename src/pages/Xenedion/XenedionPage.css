@@ -1134,6 +1134,73 @@
   flex-wrap: wrap;
 }
 
+/* ========================================================
+   XENedion Sub-pages (Partner Program, AI, Implementation, Integrations)
+   ======================================================== */
+.section-header-compact {
+  margin-bottom: 40px;
+  max-width: 760px;
+}
+
+.section-tag {
+  margin-bottom: 12px;
+}
+
+.section-title-compact {
+  font-size: clamp(1.75rem, 3.2vw, 2.5rem);
+  font-weight: 700;
+  letter-spacing: -0.03em;
+  color: var(--text-primary);
+  line-height: 1.25;
+  margin-bottom: 12px;
+}
+
+.section-desc-compact {
+  font-size: 1.0625rem;
+  line-height: 1.6;
+  color: var(--text-secondary);
+}
+
+/* Values & Partner Tiers Grid */
+.values-cards-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 24px;
+}
+
+.value-item-card {
+  background-color: #FFFFFF;
+  border: 1px solid var(--border-light, #E2E8F0);
+  border-radius: var(--radius-sm, 12px);
+  padding: 28px 24px;
+  box-shadow: var(--shadow-subtle, 0 2px 8px rgba(15, 23, 42, 0.04));
+  transition: transform var(--transition-fast), border-color var(--transition-fast);
+  display: flex;
+  flex-direction: column;
+  height: 100%;
+}
+
+.value-item-card:hover {
+  transform: translateY(-4px);
+  border-color: var(--brand-blue, #1C75BD);
+  box-shadow: 0 12px 28px rgba(15, 23, 42, 0.08);
+}
+
+.value-title {
+  font-size: 1.125rem;
+  font-weight: 600;
+  color: var(--text-primary, #0F172A);
+  margin-bottom: 10px;
+  line-height: 1.35;
+}
+
+.value-desc {
+  font-size: 0.9375rem;
+  line-height: 1.6;
+  color: var(--text-secondary, #64748B);
+  margin: 0;
+}
+
 /* Responsive adjustments */
 @media (max-width: 1024px) {
   .xenedion-hero-grid {
@@ -1147,6 +1214,11 @@
 
   .target-sectors-grid {
     grid-template-columns: repeat(2, 1fr);
+  }
+
+  .values-cards-grid {
+    grid-template-columns: repeat(2, 1fr);
+    gap: 20px;
   }
 }
 
@@ -1173,6 +1245,19 @@
 
   .target-sectors-grid {
     grid-template-columns: 1fr;
+  }
+
+  .values-cards-grid {
+    grid-template-columns: 1fr;
+    gap: 16px;
+  }
+
+  .value-item-card {
+    padding: 22px 18px;
+  }
+
+  .section-title-compact {
+    font-size: 1.625rem;
   }
 
   .xenedion-cta-box {

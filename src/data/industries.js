@@ -1,7 +1,6 @@
 export const INDUSTRIES = [
   {
     id: 'retail',
-    num: '01',
     name: 'Retail & Wholesale',
     headline: 'Unified In-Store, Warehouse, and Online Inventory',
     simpleHeadline: 'Unified In-Store, Warehouse, and Online Inventory',
@@ -22,7 +21,6 @@ export const INDUSTRIES = [
   },
   {
     id: 'distribution',
-    num: '02',
     name: 'Distribution',
     headline: 'Multi-Warehouse Visibility and Faster Fulfillment',
     simpleHeadline: 'Multi-Warehouse Visibility and Faster Fulfillment',
@@ -43,7 +41,6 @@ export const INDUSTRIES = [
   },
   {
     id: 'manufacturing',
-    num: '03',
     name: 'Manufacturing',
     headline: 'Smarter Plants, Supply Chains and ERP',
     simpleHeadline: 'Smarter Plants, Supply Chains and ERP',
@@ -64,7 +61,6 @@ export const INDUSTRIES = [
   },
   {
     id: 'logistics',
-    num: '04',
     name: 'Logistics & Supply Chain',
     headline: 'Fleet Route Optimization and Freight Tracking',
     simpleHeadline: 'Fleet Route Optimization and Freight Tracking',
@@ -85,7 +81,6 @@ export const INDUSTRIES = [
   },
   {
     id: 'automotive',
-    num: '05',
     name: 'Automotive',
     headline: 'Parts Traceability and Dealer Supply Chain Integration',
     simpleHeadline: 'Parts Traceability and Dealer Supply Chain Integration',
@@ -106,7 +101,6 @@ export const INDUSTRIES = [
   },
   {
     id: 'other',
-    num: '06',
     name: 'Other Sectors',
     headline: 'Flexible ERP Solutions for Specialized Businesses',
     simpleHeadline: 'Flexible ERP Solutions for Specialized Businesses',

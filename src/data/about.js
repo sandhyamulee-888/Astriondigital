@@ -67,22 +67,18 @@ export const OUR_APPROACH = {
   ],
   principles: [
     {
-      num: '01',
       title: 'Understand the Business',
       description: 'We understand your business model, operating processes, challenges and growth objectives before recommending a technology solution.'
     },
     {
-      num: '02',
       title: 'Connect the Processes',
       description: 'We bring different business functions together through integrated systems, structured workflows and connected information.'
     },
     {
-      num: '03',
       title: 'Improve Performance',
       description: 'We help businesses gain visibility into their operations, identify inefficiencies and improve decision-making.'
     },
     {
-      num: '04',
       title: 'Enable Growth',
       description: 'We build technology foundations that support business expansion, evolving requirements and increasing operational complexity.'
     }
