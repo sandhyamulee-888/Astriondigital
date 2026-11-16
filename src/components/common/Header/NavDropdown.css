@@ -1,0 +1,199 @@
+/* ========================================================
+   COMMON FLOATING NAV DROPDOWN COMPONENT
+   Universal, consistent dropdown card for all header items:
+   About, Solutions, Industries, Partners, and Insights.
+   ======================================================== */
+
+.nav-dropdown-menu {
+  position: absolute;
+  top: calc(100% + 8px);
+  background: #ffffff;
+  border: 1px solid var(--border-medium, #e2e8f0);
+  border-radius: 12px;
+  box-shadow: 0 16px 36px -4px rgba(15, 23, 42, 0.12), 0 6px 16px -2px rgba(15, 23, 42, 0.05);
+  padding: 18px 20px 14px 20px;
+  z-index: 120;
+  animation: navDropdownFadeIn 160ms cubic-bezier(0.16, 1, 0.3, 1);
+  box-sizing: border-box;
+}
+
+/* Horizontal positioning */
+.nav-dropdown-menu.align-left {
+  left: 0;
+  right: auto;
+}
+
+.nav-dropdown-menu.align-right {
+  left: auto;
+  right: 0;
+}
+
+/* Hover bridge: keeps hover active between trigger button and dropdown card */
+.nav-dropdown-menu::before {
+  content: '';
+  position: absolute;
+  top: -12px;
+  left: 0;
+  right: 0;
+  height: 12px;
+}
+
+/* Responsive Adaptive Widths */
+.nav-dropdown-menu.single-column {
+  width: 330px;
+}
+
+.nav-dropdown-menu.multi-column {
+  width: 590px;
+}
+
+@keyframes navDropdownFadeIn {
+  from {
+    opacity: 0;
+    transform: translateY(-5px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+/* Columns Grid */
+.nav-dropdown-columns {
+  display: flex;
+  gap: 24px;
+}
+
+.nav-dropdown-col {
+  flex: 1;
+  min-width: 0;
+  display: flex;
+  flex-direction: column;
+}
+
+/* Category Eyebrow Header */
+.nav-dropdown-col-heading {
+  font-family: var(--font-mono, monospace);
+  font-size: 0.6875rem;
+  font-weight: 700;
+  letter-spacing: 0.08em;
+  color: var(--text-tertiary, #94a3b8);
+  padding-bottom: 8px;
+  margin-bottom: 6px;
+  border-bottom: 1px solid var(--border-light, #f1f5f9);
+  text-transform: uppercase;
+  display: block;
+}
+
+/* Links List */
+.nav-dropdown-links-list {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+  display: flex;
+  flex-direction: column;
+  gap: 2px;
+}
+
+.nav-dropdown-item {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+}
+
+/* Individual Link Item */
+.nav-dropdown-link {
+  display: block;
+  padding: 8px 10px;
+  border-radius: 8px;
+  text-decoration: none;
+  transition: all 0.15s ease;
+  background-color: transparent;
+}
+
+.nav-dropdown-link:hover {
+  background-color: var(--bg-secondary, #f8fafc);
+}
+
+.nav-dropdown-link-header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 8px;
+}
+
+.nav-dropdown-link-title {
+  font-size: 0.875rem;
+  font-weight: 600;
+  color: var(--text-primary, #0f172a);
+  transition: color 0.15s ease;
+  line-height: 1.3;
+}
+
+.nav-dropdown-link:hover .nav-dropdown-link-title {
+  color: var(--brand-blue, #1c75bd);
+}
+
+/* Optional Item Badge (e.g. ERP, Flagship) */
+.nav-dropdown-badge {
+  font-family: var(--font-mono, monospace);
+  font-size: 0.625rem;
+  font-weight: 700;
+  padding: 1px 6px;
+  border-radius: 4px;
+  background-color: rgba(235, 100, 62, 0.1);
+  color: var(--brand-orange, #eb643e);
+  letter-spacing: 0.04em;
+  text-transform: uppercase;
+  margin-left: auto;
+  margin-right: 2px;
+}
+
+/* Subtle Interactive Arrow */
+.nav-dropdown-link-arrow {
+  color: var(--text-tertiary, #94a3b8);
+  opacity: 0;
+  transform: translate(-3px, 3px);
+  transition: all 0.15s ease;
+  flex-shrink: 0;
+}
+
+.nav-dropdown-link:hover .nav-dropdown-link-arrow {
+  opacity: 1;
+  transform: translate(0, 0);
+  color: var(--brand-blue, #1c75bd);
+}
+
+/* Item Description */
+.nav-dropdown-link-desc {
+  font-size: 0.75rem;
+  line-height: 1.42;
+  color: var(--text-secondary, #64748b);
+  margin: 3px 0 0 0;
+}
+
+/* Common Dropdown Bottom Footer */
+.nav-dropdown-footer {
+  margin-top: 14px;
+  padding-top: 10px;
+  border-top: 1px solid var(--border-light, #f1f5f9);
+  display: flex;
+  align-items: center;
+  justify-content: flex-end;
+}
+
+.nav-dropdown-view-all {
+  display: inline-flex;
+  align-items: center;
+  gap: 5px;
+  font-size: 0.78125rem;
+  font-weight: 600;
+  color: var(--brand-blue, #1c75bd);
+  text-decoration: none;
+  transition: gap 0.15s ease;
+}
+
+.nav-dropdown-view-all:hover {
+  gap: 8px;
+}
+

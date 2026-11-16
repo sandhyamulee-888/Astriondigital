@@ -191,11 +191,6 @@ export default function AboutPage() {
               </div>
             ))}
           </div>
-
-          <div className="leadership-management-note">
-            <span className="note-badge mono-label">NOTE</span>
-            <p className="note-text">{LEADERSHIP_SECTION.note}</p>
-          </div>
         </div>
       </section>
 

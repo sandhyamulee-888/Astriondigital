@@ -2,7 +2,7 @@ import React, { useState, useEffect, useRef } from 'react';
 import { Link, useLocation } from 'react-router-dom';
 import { Menu, ChevronDown } from 'lucide-react';
 import { NAV_ITEMS } from '../../../data/navigation';
-import MegaMenu from '../MegaMenu/MegaMenu';
+import NavDropdown from './NavDropdown';
 import MobileNav from '../MobileNav/MobileNav';
 import Button from '../Button/Button';
 import './Header.css';
@@ -30,7 +30,7 @@ export default function Header() {
     setIsMobileNavOpen(false);
   }, [location.pathname]);
 
-  // Handle escape key to close mega menu
+  // Handle escape key to close menu
   useEffect(() => {
     const handleKeyDown = (e) => {
       if (e.key === 'Escape') {
@@ -52,13 +52,11 @@ export default function Header() {
     }, 150);
   };
 
-  const activeItem = NAV_ITEMS.find((item) => item.id === activeMenuId);
-
   return (
     <>
       <header
         ref={navRef}
-        className={`site-header ${isScrolled ? 'scrolled' : ''} ${activeMenuId && activeMenuId !== 'about' ? 'menu-active' : ''}`}
+        className={`site-header ${isScrolled ? 'scrolled' : ''} ${activeMenuId ? 'menu-active' : ''}`}
         onMouseLeave={handleMouseLeave}
       >
         <div className="container header-container">
@@ -74,21 +72,28 @@ export default function Header() {
           {/* Desktop Navigation Links */}
           <nav className="desktop-nav" aria-label="Main Navigation">
             <ul className="nav-list">
-              {NAV_ITEMS.map((item) => {
+              {NAV_ITEMS.map((item, index) => {
                 const isActive = activeMenuId === item.id;
-                if (!item.megaMenu) {
+                const hasDropdown = Boolean(item.megaMenu?.columns?.length);
+
+                if (!hasDropdown) {
                   return (
                     <li key={item.id} className="nav-item">
                       <Link 
                         to={item.href} 
-                        className={`nav-button ${location.pathname === item.href || (item.id === 'partners' && location.pathname === '/about/partners') ? 'is-active' : ''}`}
+                        className={`nav-button ${location.pathname === item.href ? 'is-active' : ''}`}
                       >
                         <span className="nav-button-label">{item.label}</span>
                       </Link>
                     </li>
                   );
                 }
-                const isRouteActive = location.pathname.startsWith(item.href) || (item.id === 'partners' && location.pathname === '/about/partners');
+
+                const isRouteActive = location.pathname.startsWith(item.href) || 
+                  (item.id === 'partners' && location.pathname === '/about/partners');
+
+                // Right-align dropdowns for items near the right edge to prevent viewport cutoff
+                const align = index >= NAV_ITEMS.length - 2 ? 'right' : 'left';
 
                 return (
                   <li
@@ -107,28 +112,13 @@ export default function Header() {
                       <ChevronDown size={14} className={`nav-chevron ${isActive ? 'open' : ''}`} />
                     </button>
 
-                    {/* Classic Compact Dropdown Menu for About */}
-                    {item.id === 'about' && isActive && (
-                      <div 
-                        className="compact-dropdown-menu"
-                        role="menu"
-                        aria-label="About menu"
-                      >
-                        <ul className="compact-dropdown-list">
-                          {item.megaMenu.columns.flatMap(c => c.items).map((subItem, idx) => (
-                            <li key={idx} role="none">
-                              <Link
-                                to={subItem.href}
-                                className="compact-dropdown-link"
-                                role="menuitem"
-                                onClick={() => setActiveMenuId(null)}
-                              >
-                                {subItem.title}
-                              </Link>
-                            </li>
-                          ))}
-                        </ul>
-                      </div>
+                    {/* Common Nav Dropdown Component for All Menu Items */}
+                    {isActive && (
+                      <NavDropdown
+                        item={item}
+                        align={align}
+                        onClose={() => setActiveMenuId(null)}
+                      />
                     )}
                   </li>
                 );
@@ -157,15 +147,6 @@ export default function Header() {
             </button>
           </div>
         </div>
-
-        {/* Desktop Mega Menu Panel (for non-compact items) */}
-        {activeItem?.id !== 'about' && (
-          <MegaMenu
-            item={activeItem}
-            isOpen={Boolean(activeMenuId && activeItem?.megaMenu)}
-            onClose={() => setActiveMenuId(null)}
-          />
-        )}
       </header>
 
       {/* Mobile Navigation Full-screen Drawer */}

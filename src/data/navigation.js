@@ -20,15 +20,31 @@ export const NAV_ITEMS = [
         {
           heading: 'Company & Vision',
           items: [
-            { title: 'About Astrion', href: '/about#about-astrion' },
-            { title: 'Vision & Mission', href: '/about#vision-mission' },
-            { title: 'Our Approach', href: '/about#approach' }
+            { 
+              title: 'About Astrion', 
+              href: '/about#about-astrion',
+              desc: 'Our enterprise heritage, mission, and foundational journey.'
+            },
+            { 
+              title: 'Vision & Mission', 
+              href: '/about#vision-mission',
+              desc: 'Core principles powering intelligent digital operations.'
+            },
+            { 
+              title: 'Our Approach', 
+              href: '/about#approach',
+              desc: 'How we engineer, deploy, and scale enterprise solutions.'
+            }
           ]
         },
         {
           heading: 'Leadership',
           items: [
-            { title: 'Leadership', href: '/about#leadership' }
+            { 
+              title: 'Leadership', 
+              href: '/about#leadership',
+              desc: 'Executive team driving innovation and delivery excellence.'
+            }
           ]
         }
       ]
@@ -55,7 +71,8 @@ export const NAV_ITEMS = [
             { 
               title: 'XENedion ERP', 
               href: '/solutions/erp', 
-              desc: 'Centralize your business data into one source of truth.' 
+              desc: 'One Platform. Every Business Function. Complete Control.',
+              badge: 'ERP'
             }
           ]
         },

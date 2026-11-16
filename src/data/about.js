@@ -91,7 +91,7 @@ export const OUR_APPROACH = {
 
 export const LEADERSHIP_SECTION = {
   tag: 'LEADERSHIP',
-  heading: 'Experience. Vision. Execution.',
+  heading: 'Experience Vision Execution',
   intro: [
     'Astrion Digital is driven by a leadership philosophy that combines business understanding, technology expertise and a commitment to customer success.',
     'We believe enterprise technology delivers its greatest value when it is aligned with business objectives and supported by people who understand how businesses operate.',

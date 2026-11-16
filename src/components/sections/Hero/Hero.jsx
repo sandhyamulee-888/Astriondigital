@@ -60,7 +60,7 @@ export default function Hero() {
 
           {/* Tagline directly below main heading */}
           <p className="hero-tagline">
-            Run Smarter. Grow Faster. Stay Ahead.
+            Simplify Operations. Amplify Growth
           </p>
 
           {/* Description below tagline */}

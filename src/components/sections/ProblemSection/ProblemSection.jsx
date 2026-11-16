@@ -35,11 +35,19 @@ export default function ProblemSection() {
               <span>THE OPERATIONAL CHALLENGE</span>
             </div>
             <h2 id="problem-heading" className="problem-title">
-              Using Too Many Apps and Spreadsheets Slows Your Business Down
+              Managing a growing business shouldn't mean managing an endless collection of applications, spreadsheets and manual processes.
             </h2>
-            <p className="problem-subtitle" style={{ maxWidth: '720px', margin: '14px auto 0', color: 'var(--text-secondary, #94a3b8)', fontSize: '1.05rem', lineHeight: '1.6' }}>
-              When teams use different tools for daily work, tasks take longer and mistakes happen. Astrion Digital brings all your operations together into one simple, smart platform.
-            </p>
+            <div className="problem-narrative">
+              <p>
+                Disconnected systems create operational bottlenecks, limit visibility and prevent businesses from reaching their full potential. Astrion Digital helps businesses move beyond fragmented operations with integrated enterprise technology that connects people, processes and information – creating a smarter, more agile and scalable business.
+              </p>
+              <p>
+                Your sales, procurement, inventory, finance and operations are interconnected. Yet, when they operate in silos, your business loses the visibility and coordination needed to perform at its best. Astrion Digital bridges these gaps with intelligent enterprise solutions that unify business processes, turn information into actionable insights and create a connected foundation for operational excellence.
+              </p>
+              <p>
+                Disconnected applications, scattered spreadsheets and manual workflows create unnecessary complexity. They consume valuable time, restrict visibility and make business growth harder to manage. Astrion Digital simplifies this complexity with integrated enterprise technology that connects your operations, empowers your teams and puts you in control of your business.
+              </p>
+            </div>
           </div>
         </ScrollReveal>
 
