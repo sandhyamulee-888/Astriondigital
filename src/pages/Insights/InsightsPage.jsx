@@ -88,7 +88,7 @@ export default function InsightsPage() {
         <div className="container">
           
           {/* ========================================================
-              SECTION 1: BLOGS
+              SECTION: BLOGS
               ======================================================== */}
           <div id="blogs" style={{ scrollMarginTop: '110px' }}>
             <div className="insights-section-header">
@@ -161,8 +161,7 @@ export default function InsightsPage() {
                         {topic.summary}
                       </p>
 
-                      <div className="insight-card-footer">
-                        <span className="insight-date mono-tag">{topic.readTime}</span>
+                      <div className="insight-card-footer" style={{ justifyContent: 'flex-end' }}>
                         <Link to={BLOGS_DATA.ctaHref} className="insight-read-btn">
                           <span>Read Topic</span>
                           <ArrowUpRight size={14} />
@@ -176,7 +175,7 @@ export default function InsightsPage() {
           </div>
 
           {/* ========================================================
-              SECTION 2: CASE STUDIES
+              SECTION: CASE STUDIES
               ======================================================== */}
           <div id="case-studies" style={{ scrollMarginTop: '110px' }}>
             <div className="insights-section-header case-studies-margin">
@@ -265,7 +264,7 @@ export default function InsightsPage() {
           </div>
 
           {/* ========================================================
-              SECTION 3: RESOURCES
+              SECTION: RESOURCES
               ======================================================== */}
           <div id="resources" style={{ scrollMarginTop: '110px' }}>
             <div className="insights-section-header">

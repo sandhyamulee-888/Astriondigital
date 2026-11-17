@@ -62,13 +62,13 @@ export default function BlogPage() {
       <section className="section" style={{ paddingTop: '24px' }}>
         <div className="container">
 
-          {/* 1. Upcoming Blog Categories */}
+          {/* Upcoming Blog Categories */}
           <div 
             style={{ 
               background: '#FFFFFF', 
               border: '1px solid var(--border-light)', 
               borderRadius: '16px', 
-              padding: '32px',
+              padding: '32px', 
               marginBottom: '32px',
               boxShadow: '0 4px 20px rgba(15, 23, 42, 0.04)'
             }}
@@ -105,13 +105,13 @@ export default function BlogPage() {
             </div>
           </div>
 
-          {/* 2. Initial Blog Topics: (coming soon) */}
+          {/* Initial Blog Topics: (coming soon) */}
           <div 
             style={{ 
               background: '#FFFFFF', 
               border: '1px solid var(--border-light)', 
               borderRadius: '16px', 
-              padding: '32px',
+              padding: '32px', 
               marginBottom: '32px',
               boxShadow: '0 4px 20px rgba(15, 23, 42, 0.04)'
             }}
@@ -175,10 +175,7 @@ export default function BlogPage() {
                       </p>
                     )}
 
-                    <div style={{ display: 'flex', justifyContent: 'space-between', alignItems: 'center', paddingTop: '8px', borderTop: '1px solid var(--border-light)' }}>
-                      <span className="mono-tag" style={{ fontSize: '0.75rem', color: 'var(--text-tertiary)' }}>
-                        {topic.readTime}
-                      </span>
+                    <div style={{ display: 'flex', justifyContent: 'flex-end', alignItems: 'center', paddingTop: '8px', borderTop: '1px solid var(--border-light)' }}>
                       <Link to="/contact" style={{ display: 'inline-flex', alignItems: 'center', gap: '4px', fontSize: '0.8125rem', color: 'var(--brand-blue)', fontWeight: 600, textDecoration: 'none' }}>
                         <span>Request Preview</span>
                         <ArrowRight size={13} />
@@ -190,7 +187,7 @@ export default function BlogPage() {
             </div>
           </div>
 
-          {/* 3. CTA Banner */}
+          {/* CTA Banner */}
           <div 
             className="commitment-card"
             style={{

@@ -35,7 +35,7 @@ export const BLOGS_DATA = {
       id: 'why-growing-businesses-need-integrated-erp',
       title: 'Why Growing Businesses Need an Integrated ERP System',
       category: 'Enterprise Resource Planning',
-      readTime: '6 min read',
+      readTime: 'Practical Perspective',
       status: 'Coming Soon',
       summary: 'How bringing finance, sales, purchasing, and operations under a unified platform eliminates operational friction and fuels business expansion.'
     },
@@ -43,7 +43,7 @@ export const BLOGS_DATA = {
       id: 'five-signs-outgrown-spreadsheets',
       title: 'Five Signs Your Business Has Outgrown Spreadsheets',
       category: 'Business Process Optimization',
-      readTime: '5 min read',
+      readTime: 'Practical Perspective',
       status: 'Coming Soon',
       summary: 'Identify the telltale bottlenecks—from broken version control to inventory discrepancies—that signal it is time for a centralized operational core.'
     },
@@ -51,7 +51,7 @@ export const BLOGS_DATA = {
       id: 'erp-vs-accounting-software',
       title: 'ERP vs. Accounting Software: Understanding the Difference',
       category: 'Enterprise Resource Planning',
-      readTime: '7 min read',
+      readTime: 'Practical Perspective',
       status: 'Coming Soon',
       summary: 'Why traditional accounting tools only solve financial recording while ERP platforms connect full operational workflows across departments.'
     },
@@ -59,7 +59,7 @@ export const BLOGS_DATA = {
       id: 'integrated-inventory-management',
       title: 'How Integrated Inventory Management Improves Business Efficiency',
       category: 'Inventory Management',
-      readTime: '6 min read',
+      readTime: 'Practical Perspective',
       status: 'Coming Soon',
       summary: 'Eliminate dead stock, prevent stockouts, and streamline multi-warehouse fulfillment with live inventory synchronization.'
     },
@@ -67,7 +67,7 @@ export const BLOGS_DATA = {
       id: 'role-of-erp-modern-distribution',
       title: 'The Role of ERP in Modern Distribution Businesses',
       category: 'Retail & Distribution Management',
-      readTime: '8 min read',
+      readTime: 'Practical Perspective',
       status: 'Coming Soon',
       summary: 'Coordinate suppliers, warehouses, sales teams, and transport logistics to achieve faster order turnaround and accurate margins.'
     },
@@ -75,7 +75,7 @@ export const BLOGS_DATA = {
       id: 'digital-transformation-where-to-start',
       title: 'Digital Transformation: Where Should a Growing Business Start?',
       category: 'Digital Transformation',
-      readTime: '7 min read',
+      readTime: 'Practical Perspective',
       status: 'Coming Soon',
       summary: 'A pragmatic, low-risk approach to modernizing business operations step-by-step without disrupting day-to-day operations.'
     },
@@ -83,7 +83,7 @@ export const BLOGS_DATA = {
       id: 'why-real-time-visibility-matters',
       title: 'Why Real-Time Business Visibility Matters',
       category: 'Business Technology Trends',
-      readTime: '5 min read',
+      readTime: 'Practical Perspective',
       status: 'Coming Soon',
       summary: 'Empower leadership with unified dashboards and live data to make confident, strategic decisions faster.'
     }
@@ -237,8 +237,8 @@ export const INSIGHTS = [
     label: 'IDEAS & PERSPECTIVES',
     title: BLOGS_DATA.headline,
     excerpt: BLOGS_DATA.description,
-    readTime: '7 Articles',
-    date: 'Practical Perspectives',
+    readTime: 'Practical Perspectives',
+    date: 'Enterprise Knowledge',
     link: BLOGS_DATA.ctaHref
   },
   {
@@ -254,11 +254,11 @@ export const INSIGHTS = [
   {
     id: 'resources-preview',
     category: 'RESOURCES',
-    label: 'FREE TOOLS & GUIDES',
+    label: 'MANAGEMENT ASSETS',
     title: RESOURCES_DATA.headline,
     excerpt: RESOURCES_DATA.lead,
-    readTime: '5 Downloadables',
-    date: 'Practical Downloads',
+    readTime: 'Downloadable Resources',
+    date: 'Practical Guides',
     link: RESOURCES_DATA.ctaHref
   }
 ];

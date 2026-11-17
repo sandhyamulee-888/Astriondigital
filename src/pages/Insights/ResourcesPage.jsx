@@ -63,7 +63,7 @@ export default function ResourcesPage() {
       <section className="section" style={{ paddingTop: '24px' }}>
         <div className="container">
 
-          {/* 1. Resource Topics You Will Find Here */}
+          {/* Resource Topics You Will Find Here */}
           <div 
             style={{ 
               background: '#FFFFFF', 
@@ -106,7 +106,7 @@ export default function ResourcesPage() {
             </div>
           </div>
 
-          {/* 2. Downloadable Resources */}
+          {/* Downloadable Resources */}
           <div 
             style={{ 
               background: '#FFFFFF', 
@@ -157,7 +157,7 @@ export default function ResourcesPage() {
             </div>
           </div>
 
-          {/* 3. CTA Banner */}
+          {/* CTA Banner */}
           <div 
             className="commitment-card"
             style={{
