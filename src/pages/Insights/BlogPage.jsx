@@ -20,7 +20,7 @@ export default function BlogPage() {
   return (
     <div className="inner-page blog-main-page">
       {/* Hero Section */}
-      <section className="inner-hero-section">
+      <section className="inner-hero-section" style={{ paddingBottom: '20px' }}>
         <div className="inner-hero-bg" aria-hidden="true">
           <img src="/solutions-bg.jpg" alt="" className="inner-hero-bg-img" />
           <div className="inner-hero-overlay"></div>
@@ -59,7 +59,7 @@ export default function BlogPage() {
       </section>
 
       {/* Main Blog Content Section */}
-      <section className="section">
+      <section className="section" style={{ paddingTop: '24px' }}>
         <div className="container">
 
           {/* 1. Upcoming Blog Categories */}
@@ -131,51 +131,62 @@ export default function BlogPage() {
             </div>
 
             <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fit, minmax(320px, 1fr))', gap: '14px' }}>
-              {BLOGS_DATA.initialTopics.map((topic, idx) => (
-                <div 
-                  key={topic.id || idx}
-                  style={{ 
-                    padding: '20px', 
-                    background: 'var(--bg-secondary)', 
-                    borderRadius: '10px',
-                    border: '1px solid var(--border-light)',
-                    display: 'flex',
-                    flexDirection: 'column',
-                    justifyContent: 'space-between',
-                    gap: '12px'
-                  }}
-                >
-                  <div>
-                    <div style={{ display: 'flex', justifyContent: 'space-between', alignItems: 'center', marginBottom: '8px' }}>
-                      <span className="mono-tag" style={{ fontSize: '0.6875rem', color: 'var(--brand-blue)', fontWeight: 700 }}>
-                        {topic.category}
-                      </span>
-                      <span className="mono-tag" style={{ fontSize: '0.6875rem', color: 'var(--brand-orange)', fontWeight: 600 }}>
-                        {topic.status}
-                      </span>
+              {BLOGS_DATA.initialTopics.map((topic, idx) => {
+                const isFeatured = idx === 0;
+                return (
+                  <div 
+                    key={topic.id || idx}
+                    style={{ 
+                      gridColumn: isFeatured ? '1 / -1' : 'auto',
+                      padding: isFeatured ? '24px 28px' : '20px', 
+                      background: isFeatured 
+                        ? 'linear-gradient(135deg, rgba(28, 117, 189, 0.04) 0%, #FFFFFF 100%)' 
+                        : 'var(--bg-secondary)', 
+                      borderRadius: '10px',
+                      border: isFeatured 
+                        ? '1px solid rgba(28, 117, 189, 0.25)' 
+                        : '1px solid var(--border-light)',
+                      display: 'flex',
+                      flexDirection: 'column',
+                      justifyContent: 'space-between',
+                      gap: '12px',
+                      boxShadow: isFeatured ? '0 4px 16px rgba(28, 117, 189, 0.05)' : 'none'
+                    }}
+                  >
+                    <div>
+                      <div style={{ display: 'flex', alignItems: 'center', gap: '8px', marginBottom: '8px' }}>
+                        <span className="mono-tag" style={{ fontSize: '0.6875rem', color: 'var(--brand-blue)', fontWeight: 700 }}>
+                          {topic.category}
+                        </span>
+                        {isFeatured && (
+                          <span className="mono-tag" style={{ background: 'rgba(28, 117, 189, 0.1)', color: 'var(--brand-blue)', padding: '2px 8px', borderRadius: '4px', fontSize: '0.6875rem', fontWeight: 700 }}>
+                            FEATURED TOPIC
+                          </span>
+                        )}
+                      </div>
+                      <h3 style={{ fontSize: isFeatured ? '1.1875rem' : '1.0625rem', fontWeight: 700, color: 'var(--text-primary)', margin: 0, lineHeight: '1.4' }}>
+                        {topic.title}
+                      </h3>
                     </div>
-                    <h3 style={{ fontSize: '1.0625rem', fontWeight: 700, color: 'var(--text-primary)', margin: 0, lineHeight: '1.4' }}>
-                      {topic.title}
-                    </h3>
-                  </div>
 
-                  {topic.summary && (
-                    <p style={{ fontSize: '0.875rem', color: 'var(--text-secondary)', margin: 0, lineHeight: '1.5' }}>
-                      {topic.summary}
-                    </p>
-                  )}
+                    {topic.summary && (
+                      <p style={{ fontSize: '0.875rem', color: 'var(--text-secondary)', margin: 0, lineHeight: '1.5' }}>
+                        {topic.summary}
+                      </p>
+                    )}
 
-                  <div style={{ display: 'flex', justifyContent: 'space-between', alignItems: 'center', paddingTop: '8px', borderTop: '1px solid var(--border-light)' }}>
-                    <span className="mono-tag" style={{ fontSize: '0.75rem', color: 'var(--text-tertiary)' }}>
-                      {topic.readTime}
-                    </span>
-                    <Link to="/contact" style={{ display: 'inline-flex', alignItems: 'center', gap: '4px', fontSize: '0.8125rem', color: 'var(--brand-blue)', fontWeight: 600, textDecoration: 'none' }}>
-                      <span>Request Preview</span>
-                      <ArrowRight size={13} />
-                    </Link>
+                    <div style={{ display: 'flex', justifyContent: 'space-between', alignItems: 'center', paddingTop: '8px', borderTop: '1px solid var(--border-light)' }}>
+                      <span className="mono-tag" style={{ fontSize: '0.75rem', color: 'var(--text-tertiary)' }}>
+                        {topic.readTime}
+                      </span>
+                      <Link to="/contact" style={{ display: 'inline-flex', alignItems: 'center', gap: '4px', fontSize: '0.8125rem', color: 'var(--brand-blue)', fontWeight: 600, textDecoration: 'none' }}>
+                        <span>Request Preview</span>
+                        <ArrowRight size={13} />
+                      </Link>
+                    </div>
                   </div>
-                </div>
-              ))}
+                );
+              })}
             </div>
           </div>
 

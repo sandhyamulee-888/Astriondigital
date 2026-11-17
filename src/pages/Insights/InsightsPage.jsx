@@ -30,7 +30,7 @@ export default function InsightsPage() {
   return (
     <div className="inner-page insights-main-page">
       {/* Hero Section */}
-      <section className="inner-hero-section">
+      <section className="inner-hero-section" style={{ paddingBottom: '24px' }}>
         <div className="inner-hero-bg" aria-hidden="true">
           <img src="/solutions-bg.jpg" alt="" className="inner-hero-bg-img" />
           <div className="inner-hero-overlay"></div>
@@ -84,7 +84,7 @@ export default function InsightsPage() {
       </section>
 
       {/* Main Insights Content Grid */}
-      <section className="section insights-hub-section">
+      <section className="section insights-hub-section" style={{ paddingTop: '28px' }}>
         <div className="container">
           
           {/* ========================================================
@@ -135,31 +135,42 @@ export default function InsightsPage() {
                 INITIAL BLOG TOPICS: (COMING SOON)
               </span>
               <div className="insights-cards-grid">
-                {BLOGS_DATA.initialTopics.map((topic) => (
-                  <div key={topic.id} className="insight-card">
-                    <div className="insight-card-meta">
-                      <span className="insight-category-badge mono-tag">{topic.category}</span>
-                      <span className="mono-tag" style={{ fontSize: '0.6875rem', color: 'var(--brand-orange)', fontWeight: 600 }}>
-                        {topic.status}
-                      </span>
-                    </div>
+                {BLOGS_DATA.initialTopics.map((topic, idx) => {
+                  const isFeatured = idx === 0;
+                  return (
+                    <div 
+                      key={topic.id} 
+                      className={`insight-card ${isFeatured ? 'featured-insight-card' : ''}`}
+                      style={isFeatured ? { gridColumn: '1 / -1', background: 'linear-gradient(135deg, rgba(28, 117, 189, 0.03) 0%, #FFFFFF 100%)', borderColor: 'rgba(28, 117, 189, 0.25)' } : {}}
+                    >
+                      <div className="insight-card-meta">
+                        <div style={{ display: 'flex', alignItems: 'center', gap: '8px' }}>
+                          <span className="insight-category-badge mono-tag">{topic.category}</span>
+                          {isFeatured && (
+                            <span className="mono-tag" style={{ background: 'rgba(28, 117, 189, 0.1)', color: 'var(--brand-blue)', padding: '2px 8px', borderRadius: '4px', fontSize: '0.6875rem', fontWeight: 700 }}>
+                              FEATURED TOPIC
+                            </span>
+                          )}
+                        </div>
+                      </div>
 
-                    <h3 className="insight-card-title" style={{ fontSize: '1.0625rem', marginTop: '6px' }}>
-                      <Link to={BLOGS_DATA.ctaHref}>{topic.title}</Link>
-                    </h3>
-                    <p className="insight-card-excerpt" style={{ fontSize: '0.875rem' }}>
-                      {topic.summary}
-                    </p>
+                      <h3 className="insight-card-title" style={{ fontSize: isFeatured ? '1.1875rem' : '1.0625rem', marginTop: '6px' }}>
+                        <Link to={BLOGS_DATA.ctaHref}>{topic.title}</Link>
+                      </h3>
+                      <p className="insight-card-excerpt" style={{ fontSize: '0.875rem' }}>
+                        {topic.summary}
+                      </p>
 
-                    <div className="insight-card-footer">
-                      <span className="insight-date mono-tag">{topic.readTime}</span>
-                      <Link to={BLOGS_DATA.ctaHref} className="insight-read-btn">
-                        <span>Read Topic</span>
-                        <ArrowUpRight size={14} />
-                      </Link>
+                      <div className="insight-card-footer">
+                        <span className="insight-date mono-tag">{topic.readTime}</span>
+                        <Link to={BLOGS_DATA.ctaHref} className="insight-read-btn">
+                          <span>Read Topic</span>
+                          <ArrowUpRight size={14} />
+                        </Link>
+                      </div>
                     </div>
-                  </div>
-                ))}
+                  );
+                })}
               </div>
             </div>
           </div>
@@ -312,8 +323,11 @@ export default function InsightsPage() {
                       aria-label={`Explore ${item.title}`}
                     >
                       <div className="resource-card-top">
-                        <div style={{ display: 'flex', alignItems: 'center', gap: '8px' }}>
+                        <div style={{ display: 'flex', alignItems: 'center', gap: '8px', flexWrap: 'wrap' }}>
                           <span className="resource-type mono-tag">{item.category}</span>
+                          <span className="mono-tag" style={{ background: 'rgba(235, 100, 62, 0.1)', color: 'var(--brand-orange, #EB643E)', padding: '2px 8px', borderRadius: '4px', fontSize: '0.6875rem', fontWeight: 700 }}>
+                            Coming Soon
+                          </span>
                           {isFeatured && <span className="featured-pill mono-tag">FEATURED GUIDE</span>}
                         </div>
                         <span className="resource-format mono-tag">

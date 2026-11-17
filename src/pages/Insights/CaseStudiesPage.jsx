@@ -18,7 +18,7 @@ export default function CaseStudiesPage() {
   return (
     <div className="inner-page case-studies-main-page">
       {/* Hero Section */}
-      <section className="inner-hero-section">
+      <section className="inner-hero-section" style={{ paddingBottom: '20px' }}>
         <div className="inner-hero-bg" aria-hidden="true">
           <img src="/solutions-bg.jpg" alt="" className="inner-hero-bg-img" />
           <div className="inner-hero-overlay"></div>
@@ -60,7 +60,7 @@ export default function CaseStudiesPage() {
       </section>
 
       {/* Main Content Section */}
-      <section className="section">
+      <section className="section" style={{ paddingTop: '24px' }}>
         <div className="container">
 
           {/* Case Studies Format Framework */}

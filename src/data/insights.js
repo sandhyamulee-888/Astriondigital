@@ -25,7 +25,7 @@ export const BLOGS_DATA = {
     'Enterprise Resource Planning',
     'Digital Transformation',
     'Business Process Optimization',
-    'Inventory & Supply Chain Management',
+    'Inventory Management',
     'Retail & Distribution Management',
     'Manufacturing Operations',
     'Business Technology Trends'
@@ -58,7 +58,7 @@ export const BLOGS_DATA = {
     {
       id: 'integrated-inventory-management',
       title: 'How Integrated Inventory Management Improves Business Efficiency',
-      category: 'Inventory & Supply Chain Management',
+      category: 'Inventory Management',
       readTime: '6 min read',
       status: 'Coming Soon',
       summary: 'Eliminate dead stock, prevent stockouts, and streamline multi-warehouse fulfillment with live inventory synchronization.'
@@ -189,6 +189,7 @@ export const RESOURCES_DATA = {
       title: 'The Complete ERP Selection Guide for Growing Businesses',
       category: 'ERP Buyer Guides',
       format: 'Executive Guide',
+      status: 'Coming Soon',
       desc: 'A comprehensive evaluation framework to help leaders assess features, total cost of ownership, and vendor compatibility.'
     },
     {
@@ -196,6 +197,7 @@ export const RESOURCES_DATA = {
       title: 'ERP Implementation Readiness Checklist',
       category: 'ERP Implementation Checklists',
       format: 'Implementation Checklist',
+      status: 'Coming Soon',
       desc: 'Step-by-step readiness criteria covering data hygiene, workflow scoping, internal ownership, and change management.'
     },
     {
@@ -203,6 +205,7 @@ export const RESOURCES_DATA = {
       title: 'A Guide to Inventory and Warehouse Management',
       category: 'Industry-Specific ERP Guides',
       format: 'Operational Guide',
+      status: 'Coming Soon',
       desc: 'Best practices for multi-location stock tracking, automated reorder thresholds, and warehouse logistics efficiency.'
     },
     {
@@ -210,6 +213,7 @@ export const RESOURCES_DATA = {
       title: 'Digital Transformation Roadmap for SMEs',
       category: 'Digital Transformation Guides',
       format: 'Strategy Roadmap',
+      status: 'Coming Soon',
       desc: 'A practical, low-risk roadmap for modernizing manual business processes and adopting modern cloud platforms.'
     },
     {
@@ -217,6 +221,7 @@ export const RESOURCES_DATA = {
       title: 'XENedion ERP Product Brochure',
       category: 'Product Brochures',
       format: 'Product Brochure',
+      status: 'Coming Soon',
       desc: 'Complete overview of XENedion modules, core architectural capabilities, deployment options, and partner support.'
     }
   ],

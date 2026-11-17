@@ -21,7 +21,7 @@ export default function ResourcesPage() {
   return (
     <div className="inner-page resources-main-page">
       {/* Hero Section */}
-      <section className="inner-hero-section">
+      <section className="inner-hero-section" style={{ paddingBottom: '20px' }}>
         <div className="inner-hero-bg" aria-hidden="true">
           <img src="/solutions-bg.jpg" alt="" className="inner-hero-bg-img" />
           <div className="inner-hero-overlay"></div>
@@ -60,7 +60,7 @@ export default function ResourcesPage() {
       </section>
 
       {/* Main Content Section */}
-      <section className="section">
+      <section className="section" style={{ paddingTop: '24px' }}>
         <div className="container">
 
           {/* 1. Resource Topics You Will Find Here */}
@@ -137,8 +137,11 @@ export default function ResourcesPage() {
                     aria-label={`Explore ${res.title}`}
                   >
                     <div className="resource-card-top">
-                      <div style={{ display: 'flex', alignItems: 'center', gap: '8px' }}>
+                      <div style={{ display: 'flex', alignItems: 'center', gap: '8px', flexWrap: 'wrap' }}>
                         <span className="resource-type mono-tag">{res.category}</span>
+                        <span className="mono-tag" style={{ background: 'rgba(235, 100, 62, 0.1)', color: 'var(--brand-orange, #EB643E)', padding: '2px 8px', borderRadius: '4px', fontSize: '0.6875rem', fontWeight: 700 }}>
+                          Coming Soon
+                        </span>
                         {isFeatured && <span className="featured-pill mono-tag">FEATURED GUIDE</span>}
                       </div>
                       <span className="resource-format mono-tag">

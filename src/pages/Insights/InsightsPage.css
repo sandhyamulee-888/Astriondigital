@@ -923,3 +923,19 @@
   }
 }
 
+/* Hero to Content Space Reductions */
+.blog-main-page .inner-hero-section,
+.case-studies-main-page .inner-hero-section,
+.resources-main-page .inner-hero-section,
+.insights-main-page .inner-hero-section {
+  padding-bottom: 24px !important;
+}
+
+.blog-main-page .section,
+.case-studies-main-page .section,
+.resources-main-page .section,
+.insights-main-page .section {
+  padding-top: 28px !important;
+}
+
+
