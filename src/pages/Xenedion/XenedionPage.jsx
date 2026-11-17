@@ -362,6 +362,12 @@ export default function XenedionPage() {
                 </span>
               </Link>
             ))}
+
+            <div className="sectors-more-item">
+              <span className="sectors-more-text">
+                Many more...
+              </span>
+            </div>
           </div>
         </div>
       </section>

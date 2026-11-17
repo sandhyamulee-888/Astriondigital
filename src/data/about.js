@@ -99,42 +99,42 @@ export const LEADERSHIP_SECTION = {
 export const LEADERSHIP_PROFILES = [
   {
     id: 'leader-slot-1',
-    name: 'Leadership Profile',
+    name: 'Executive Management',
     role: 'Executive Management',
     slotLabel: 'EXECUTIVE LEADERSHIP',
-    title: 'Leadership Profile',
+    title: 'Executive Management',
     domain: 'Enterprise Technology & Strategy',
-    bio: 'Leadership photographs, full names, designations, and individual biographies will be added once finalized by management.',
-    credentials: 'Profile Pending Finalization',
-    placeholderDesc: 'Leadership photographs, full names, designations, and individual biographies will be added once finalized by management.',
+    bio: 'Astrion Digital is led by an experienced Executive Management Team with a strong blend of business leadership, technology expertise, and industry knowledge. The team brings strategic vision and operational excellence to drive innovation, deliver meaningful business solutions, and build lasting value for customers and partners.',
+    credentials: 'Strategic Vision & Operational Excellence',
+    placeholderDesc: 'Astrion Digital is led by an experienced Executive Management Team with a strong blend of business leadership, technology expertise, and industry knowledge. The team brings strategic vision and operational excellence to drive innovation, deliver meaningful business solutions, and build lasting value for customers and partners.',
     image: '/images/about/executive-management.jpg',
-    isPlaceholder: true
+    isPlaceholder: false
   },
   {
     id: 'leader-slot-2',
-    name: 'Leadership Profile',
-    role: 'Technology & Product Strategy',
+    name: 'Technology & Project Strategy',
+    role: 'Technology & Project Strategy',
     slotLabel: 'TECHNOLOGY & ARCHITECTURE',
-    title: 'Leadership Profile',
+    title: 'Technology & Project Strategy',
     domain: 'Software Architecture & ERP Engineering',
-    bio: 'Leadership photographs, full names, designations, and individual biographies will be added once finalized by management.',
-    credentials: 'Profile Pending Finalization',
-    placeholderDesc: 'Leadership photographs, full names, designations, and individual biographies will be added once finalized by management.',
+    bio: 'Astrion Digital’s Technology and Project Strategy Team combines deep technical expertise with strategic thinking to design, develop, and deliver business-focused technology solutions. The team ensures every project is aligned with business objectives, leveraging innovation, robust architecture, and disciplined execution to create scalable, efficient, and future-ready solutions.',
+    credentials: 'Enterprise Architecture & Project Engineering',
+    placeholderDesc: 'Astrion Digital’s Technology and Project Strategy Team combines deep technical expertise with strategic thinking to design, develop, and deliver business-focused technology solutions. The team ensures every project is aligned with business objectives, leveraging innovation, robust architecture, and disciplined execution to create scalable, efficient, and future-ready solutions.',
     image: '/images/about/technology-product-strategy.jpg',
-    isPlaceholder: true
+    isPlaceholder: false
   },
   {
     id: 'leader-slot-3',
-    name: 'Leadership Profile',
+    name: 'Operations & Partner Ecosystem',
     role: 'Operations & Partner Ecosystem',
     slotLabel: 'OPERATIONS & CUSTOMER SUCCESS',
-    title: 'Leadership Profile',
+    title: 'Operations & Partner Ecosystem',
     domain: 'Business Operations & Delivery Network',
-    bio: 'Leadership photographs, full names, designations, and individual biographies will be added once finalized by management.',
-    credentials: 'Profile Pending Finalization',
-    placeholderDesc: 'Leadership photographs, full names, designations, and individual biographies will be added once finalized by management.',
+    bio: 'Astrion Digital’s Operations & Partner Ecosystem Management Team drives operational excellence while building and nurturing strong, collaborative partner relationships. The team focuses on streamlining processes, ensuring seamless service delivery, and strengthening the partner network to create sustainable growth and long-term value for customers and stakeholders.',
+    credentials: 'Customer Success & Strategic Partnerships',
+    placeholderDesc: 'Astrion Digital’s Operations & Partner Ecosystem Management Team drives operational excellence while building and nurturing strong, collaborative partner relationships. The team focuses on streamlining processes, ensuring seamless service delivery, and strengthening the partner network to create sustainable growth and long-term value for customers and stakeholders.',
     image: '/images/about/operations-partner-ecosystem.jpg',
-    isPlaceholder: true
+    isPlaceholder: false
   }
 ];
 

@@ -994,6 +994,22 @@
   gap: 24px;
 }
 
+.sectors-more-item {
+  display: flex;
+  align-items: flex-end;
+  justify-content: flex-start;
+  padding: 0 16px 32px 16px;
+}
+
+.sectors-more-text {
+  font-size: 1.125rem;
+  font-weight: 600;
+  color: var(--brand-blue, #1C75BD);
+  font-style: italic;
+  letter-spacing: 0.01em;
+  margin: 0;
+}
+
 .target-sector-card {
   background: #FFFFFF;
   border: 1px solid var(--border-light, #E2E8F0);
@@ -1245,6 +1261,12 @@
 
   .target-sectors-grid {
     grid-template-columns: 1fr;
+  }
+
+  .sectors-more-item {
+    justify-content: center;
+    align-items: center;
+    padding: 16px 0 0 0;
   }
 
   .values-cards-grid {
