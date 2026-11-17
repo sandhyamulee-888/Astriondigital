@@ -3,12 +3,11 @@ import { Link } from 'react-router-dom';
 import { 
   BookOpen, 
   FileDown, 
-  FileText,
-  Layers, 
+  FileText, 
   CheckCircle2, 
-  Download,
-  ShieldCheck,
-  ArrowRight
+  Download, 
+  ShieldCheck, 
+  ArrowRight 
 } from 'lucide-react';
 import { RESOURCES_DATA } from '../../data/insights';
 import Button from '../../components/common/Button/Button';
@@ -40,16 +39,22 @@ export default function ResourcesPage() {
           <div className="inner-hero-content">
             <div className="mono-label inner-hero-badge">
               <span className="badge-dot"></span>
-              INSIGHTS // PRACTICAL MANAGEMENT RESOURCES
+              INSIGHTS // RESOURCES
             </div>
 
-            <h1 className="inner-hero-title">
-              {RESOURCES_DATA.headline}
+            <h1 className="inner-hero-title" style={{ marginBottom: '10px' }}>
+              Resources
             </h1>
 
-            <p className="inner-hero-lead">
-              {RESOURCES_DATA.lead}
+            <p className="inner-hero-lead" style={{ color: 'var(--brand-blue, #1C75BD)', fontSize: 'clamp(1.25rem, 2vw, 1.625rem)', fontWeight: 600, marginBottom: '16px', lineHeight: '1.3' }}>
+              Practical Resources for Better Business Management.
             </p>
+
+            <div style={{ maxWidth: '820px' }}>
+              <p style={{ color: 'var(--text-secondary, #475569)', fontSize: '1.0625rem', lineHeight: '1.65', margin: 0 }}>
+                Access useful resources designed to help business leaders, entrepreneurs and operational teams understand enterprise technology and make informed decisions.
+              </p>
+            </div>
           </div>
         </div>
       </section>
@@ -58,42 +63,42 @@ export default function ResourcesPage() {
       <section className="section">
         <div className="container">
 
-          {/* Resource Topics You Will Find Here */}
+          {/* 1. Resource Topics You Will Find Here */}
           <div 
             style={{ 
               background: '#FFFFFF', 
               border: '1px solid var(--border-light)', 
               borderRadius: '16px', 
-              padding: '28px',
-              marginBottom: '36px',
+              padding: '32px',
+              marginBottom: '32px',
               boxShadow: '0 4px 20px rgba(15, 23, 42, 0.04)'
             }}
           >
-            <div style={{ marginBottom: '16px' }}>
+            <div style={{ marginBottom: '20px' }}>
               <span className="mono-tag" style={{ color: 'var(--brand-blue)', fontWeight: 700, display: 'block', marginBottom: '6px' }}>
                 TOPIC DIRECTORY
               </span>
-              <h2 style={{ fontSize: '1.25rem', fontWeight: 700, margin: 0, color: 'var(--text-primary)' }}>
+              <h2 style={{ fontSize: '1.375rem', fontWeight: 700, margin: 0, color: 'var(--text-primary)' }}>
                 Resource Topics you will find here:
               </h2>
             </div>
 
-            <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fit, minmax(240px, 1fr))', gap: '10px' }}>
+            <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fit, minmax(280px, 1fr))', gap: '12px' }}>
               {RESOURCES_DATA.topics.map((topic, idx) => (
                 <div 
                   key={idx}
                   style={{ 
                     display: 'flex', 
                     alignItems: 'center', 
-                    gap: '10px', 
-                    padding: '12px 16px', 
+                    gap: '12px', 
+                    padding: '14px 18px', 
                     background: 'var(--bg-secondary)', 
                     borderRadius: '8px',
                     border: '1px solid var(--border-light)'
                   }}
                 >
-                  <CheckCircle2 size={16} style={{ color: 'var(--brand-blue)', flexShrink: 0 }} />
-                  <span style={{ fontSize: '0.875rem', fontWeight: 600, color: 'var(--text-primary)' }}>
+                  <CheckCircle2 size={18} style={{ color: 'var(--brand-blue)', flexShrink: 0 }} />
+                  <span style={{ fontSize: '0.9375rem', fontWeight: 600, color: 'var(--text-primary)' }}>
                     {topic}
                   </span>
                 </div>
@@ -101,14 +106,23 @@ export default function ResourcesPage() {
             </div>
           </div>
 
-          {/* Downloadable Resources Cards Grid */}
-          <div style={{ marginBottom: '48px' }}>
-            <div className="section-header-compact" style={{ marginBottom: '24px' }}>
-              <span className="mono-tag" style={{ color: 'var(--text-tertiary)', fontWeight: 700 }}>
+          {/* 2. Downloadable Resources */}
+          <div 
+            style={{ 
+              background: '#FFFFFF', 
+              border: '1px solid var(--border-light)', 
+              borderRadius: '16px', 
+              padding: '32px',
+              marginBottom: '32px',
+              boxShadow: '0 4px 20px rgba(15, 23, 42, 0.04)'
+            }}
+          >
+            <div style={{ marginBottom: '20px' }}>
+              <span className="mono-tag" style={{ color: 'var(--brand-blue)', fontWeight: 700, display: 'block', marginBottom: '6px' }}>
                 CURATED MATERIALS
               </span>
-              <h2 style={{ fontSize: '1.5rem', fontWeight: 700, color: 'var(--text-primary)', margin: '4px 0 0' }}>
-                Downloadable Resources
+              <h2 style={{ fontSize: '1.375rem', fontWeight: 700, margin: 0, color: 'var(--text-primary)' }}>
+                Downloadable Resources:
               </h2>
             </div>
 
@@ -138,30 +152,34 @@ export default function ResourcesPage() {
                 );
               })}
             </div>
-
-            {/* Section Level CTA */}
-            <div className="resources-section-cta">
-              <Button to="/contact" variant="primary" size="md" icon="arrow">
-                Explore Resources
-              </Button>
-            </div>
           </div>
 
-          {/* Strategic Consultation Banner */}
-          <div className="commitment-card">
-            <div className="commitment-header">
-              <div className="mono-label">
-                <ShieldCheck size={16} />
-                <span>EXPERT GUIDANCE</span>
+          {/* 3. CTA Banner */}
+          <div 
+            className="commitment-card"
+            style={{
+              background: 'linear-gradient(135deg, rgba(28, 117, 189, 0.04) 0%, rgba(248, 250, 252, 0.95) 100%)',
+              border: '1px solid rgba(28, 117, 189, 0.2)',
+              borderRadius: '16px',
+              padding: '32px',
+              marginTop: 0
+            }}
+          >
+            <div className="commitment-header" style={{ marginBottom: '14px' }}>
+              <div className="mono-label" style={{ color: 'var(--brand-blue)', display: 'flex', alignItems: 'center', gap: '8px' }}>
+                <BookOpen size={18} />
+                <span>MANAGEMENT RESOURCES</span>
               </div>
-              <h3>Need assistance choosing the right technology path?</h3>
+              <h3 style={{ marginTop: '8px', fontSize: '1.25rem', fontWeight: 700, color: 'var(--text-primary)' }}>
+                Access Practical Guides &amp; Decision-Making Frameworks
+              </h3>
             </div>
-            <p className="commitment-text">
-              Our specialists work with growing and established enterprises to assess their workflows, review ERP readiness, and guide digital transformation initiatives.
+            <p className="commitment-text" style={{ fontSize: '1.0625rem', lineHeight: '1.7', color: 'var(--text-primary)', margin: 0 }}>
+              Access useful resources designed to help business leaders, entrepreneurs and operational teams understand enterprise technology and make informed decisions.
             </p>
-            <div className="commitment-actions">
-              <Button to="/contact" variant="primary" size="md" icon="arrow">
-                Schedule a Consultation
+            <div className="commitment-actions" style={{ marginTop: '24px' }}>
+              <Button to="/insights" variant="primary" size="md" icon="arrow">
+                Explore Resources
               </Button>
             </div>
           </div>
