@@ -25,11 +25,11 @@ export default function CaseStudiesSection() {
         <ScrollReveal yOffset={28}>
           <SectionHeader
             label="INSIGHTS // CASE STUDIES"
-            title="Transformation in practice."
-            description="Examine representative enterprise transformation architectures. Each engagement reflects our focus on engineering resilience, deterministic outcomes, and measurable operational efficiency."
+            title="Real Business Challenges. Practical Technology Solutions."
+            description="Explore customer stories covering business challenges, solution approaches, implementation experiences and measurable outcomes."
             action={
               <Link to="/insights/case-studies" className="arrow-link">
-                <span>View All Case Studies</span>
+                <span>Explore Case Studies</span>
                 <ArrowUpRight size={16} />
               </Link>
             }

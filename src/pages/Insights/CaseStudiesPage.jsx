@@ -1,72 +1,14 @@
 import React, { useEffect } from 'react';
 import { Link } from 'react-router-dom';
 import { 
-  FileText, 
   CheckCircle2, 
-  ArrowUpRight, 
-  Building2, 
-  Layers, 
-  Cpu, 
-  TrendingUp, 
   ShieldCheck,
-  Server,
-  Zap
+  Award,
+  ArrowRight
 } from 'lucide-react';
-import { CASE_STUDIES } from '../../data/caseStudies';
+import { CASE_STUDIES_DATA } from '../../data/insights';
 import Button from '../../components/common/Button/Button';
 import './InsightsPage.css';
-
-const DETAILED_CASE_STUDIES = [
-  {
-    id: 'industrial-manufacturing-modernization',
-    industry: 'Discrete & Process Manufacturing',
-    clientType: 'Multi-Plant Industrial Equipment Manufacturer',
-    title: 'Multi-Plant Operational Consolidation & Core Modernization',
-    challenge: 'The enterprise operated 5 disparate legacy ERP and MRP installations across North American and European production facilities. Real-time shop-floor tracking was non-existent, causing multi-day delays in inventory reconciliation and excessive buffer stock costs.',
-    solution: 'Astrion designed an event-driven XENedion ERP backbone integrating shop-floor IoT telemetry, automated BOM propagation, and zero-trust hybrid cloud deployment.',
-    results: [
-      'Single consolidated ERP backbone replacing 5 disconnected legacy systems',
-      'Continuous real-time visibility into multi-site raw material allocations',
-      'Automated production order routing aligned with machine availability',
-      'Accelerated production cycle lead times across all operating plants [Metric Pending Verification]',
-      'Near-zero error rate in Bill of Materials (BOM) propagation'
-    ],
-    technologies: ['XENedion Core Platform', 'Shop-Floor IoT Telemetry', 'Kafka Event Mesh', 'Zero-Trust Cloud'],
-    architectureHighlights: 'Real-time sensor ingestion pipelines push machine telemetry to edge gateways, continuously calculating OEE and triggering proactive maintenance tickets directly inside the financial ledger.'
-  },
-  {
-    id: 'global-distribution-fulfillment',
-    industry: 'Wholesale Distribution',
-    clientType: 'National Consumer Goods Distributor',
-    title: 'Real-Time Order Routing & Cross-Dock Orchestration',
-    challenge: 'A high-velocity distribution network processing large volumes of daily orders suffered from picking bottlenecks, manual carrier allocation, and frequent inventory desynchronization between distribution centers.',
-    solution: 'Astrion deployed an intelligent warehouse management and dynamic order mesh, introducing automated wave picking, cross-dock optimization, and dynamic carrier rate comparison.',
-    results: [
-      'Real-time automated order allocation across regional fulfillment hubs',
-      'High-precision order picking accuracy using ruggedized mobile guided picking',
-      'Automated EDI 850 / 856 transaction processing with suppliers',
-      'Significant reduction in warehouse dwell times for cross-docked shipments'
-    ],
-    technologies: ['Order Mesh Engine', 'Warehouse Management System', 'B2B EDI Gateway', 'Predictive Route AI'],
-    architectureHighlights: 'Dynamic routing engine automatically assesses carrier performance metrics, regional shipping costs, and dock door availability to schedule dispatch without manual intervention.'
-  },
-  {
-    id: 'automotive-parts-traceability',
-    industry: 'Automotive & Component Manufacturing',
-    clientType: 'Tier-1 Automotive Parts Manufacturer & Supplier',
-    title: 'End-to-End Serial Number Traceability & OEM Supply Chain Integration',
-    challenge: 'Managing complex component lots, serial number histories, and supplier quality certifications across distributed regional factories led to audit overhead and slow warranty turnaround times.',
-    solution: 'Astrion deployed XENedion Serial & Lot Traceability architecture, providing real-time genealogy tracking from raw casting through machining, assembly, and OEM dispatch.',
-    results: [
-      'Lot-level serial traceability down to individual component batches',
-      'Direct EDI integration with OEM production schedules and just-in-time delivery',
-      'Automated warranty verification reducing claim dispute resolution time by 60%',
-      '100% compliance with ISO/TS automotive quality management standards'
-    ],
-    technologies: ['Serial Traceability Engine', 'OEM EDI Gateway', 'Quality Inspection Module', 'Automated Warranty Verification'],
-    architectureHighlights: 'Real-time serialization pipeline logs barcode scans at every production cell into an immutable genealogy ledger, guaranteeing instant recall isolation within seconds.'
-  }
-];
 
 export default function CaseStudiesPage() {
   useEffect(() => {
@@ -94,102 +36,106 @@ export default function CaseStudiesPage() {
           <div className="inner-hero-content">
             <div className="mono-label inner-hero-badge">
               <span className="badge-dot"></span>
-              INSIGHTS // CUSTOMER SUCCESS STORIES
+              INSIGHTS // CASE STUDIES
             </div>
 
-            <h1 className="inner-hero-title">
-              Customer Success Stories &amp; Case Studies
+            <h1 className="inner-hero-title" style={{ marginBottom: '10px' }}>
+              Case Studies
             </h1>
 
-            <p className="inner-hero-lead">
-              Real stories of how companies cut administrative time and lowered overhead costs using Astrion platforms.
+            <p className="inner-hero-lead" style={{ color: 'var(--brand-blue, #1C75BD)', fontSize: 'clamp(1.25rem, 2vw, 1.625rem)', fontWeight: 600, marginBottom: '16px', lineHeight: '1.3' }}>
+              Real Business Challenges. Practical Technology Solutions.
             </p>
+
+            <div style={{ maxWidth: '820px' }}>
+              <p style={{ color: 'var(--text-secondary, #475569)', fontSize: '1.0625rem', lineHeight: '1.65', marginBottom: '10px' }}>
+                Every business has unique operational challenges. Our case studies will showcase how integrated technology and structured business processes can help organisations improve the way they operate.
+              </p>
+              <p style={{ color: 'var(--text-secondary, #475569)', fontSize: '1.0625rem', lineHeight: '1.65', margin: 0 }}>
+                Explore customer stories covering business challenges, solution approaches, implementation experiences and measurable outcomes.
+              </p>
+            </div>
           </div>
         </div>
       </section>
 
-      {/* Case Studies Detailed Grid */}
+      {/* Main Content Section */}
       <section className="section">
         <div className="container">
-          <div className="case-studies-detailed-list">
-            {DETAILED_CASE_STUDIES.map((cs, idx) => (
-              <div key={cs.id} className="case-study-full-card">
-                <div className="cs-full-header">
-                  <div className="cs-full-meta">
-                    <span className="mono-tag cs-num">CASE BRIEF</span>
-                    <span className="mono-tag cs-industry-tag">{cs.industry}</span>
-                  </div>
-                  <h2 className="cs-full-title">{cs.title}</h2>
-                  <span className="cs-client-type mono-tag">ENGAGEMENT PROFILE: {cs.clientType}</span>
-                </div>
 
-                <div className="cs-problem-solution-grid">
-                  <div className="cs-column challenge">
-                    <h3 className="cs-col-heading">Operational Challenge</h3>
-                    <p className="cs-col-text">{cs.challenge}</p>
-                  </div>
-                  <div className="cs-column solution">
-                    <h3 className="cs-col-heading">Astrion Architecture &amp; Solution</h3>
-                    <p className="cs-col-text">{cs.solution}</p>
-                  </div>
-                </div>
+          {/* Case Studies Format Framework */}
+          <div 
+            style={{ 
+              background: '#FFFFFF', 
+              border: '1px solid var(--border-light)', 
+              borderRadius: '16px', 
+              padding: '32px',
+              marginBottom: '32px',
+              boxShadow: '0 4px 20px rgba(15, 23, 42, 0.04)'
+            }}
+          >
+            <div style={{ marginBottom: '20px' }}>
+              <span className="mono-tag" style={{ color: 'var(--brand-blue)', fontWeight: 700, display: 'block', marginBottom: '6px' }}>
+                STANDARDIZED EVALUATION FRAMEWORK
+              </span>
+              <h2 style={{ fontSize: '1.375rem', fontWeight: 700, margin: 0, color: 'var(--text-primary)' }}>
+                Our Case studies have the following format:
+              </h2>
+            </div>
 
-                {/* Architecture Highlights */}
-                <div className="cs-arch-highlight-box">
-                  <span className="mono-tag arch-label">SYSTEM ARCHITECTURE HIGHLIGHT:</span>
-                  <p className="arch-text">{cs.architectureHighlights}</p>
+            <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fit, minmax(280px, 1fr))', gap: '14px' }}>
+              {CASE_STUDIES_DATA.formatSteps.map((step, idx) => (
+                <div 
+                  key={idx}
+                  style={{ 
+                    display: 'flex', 
+                    alignItems: 'center', 
+                    gap: '12px', 
+                    padding: '14px 18px', 
+                    background: 'var(--bg-secondary)', 
+                    borderRadius: '8px',
+                    border: '1px solid var(--border-light)'
+                  }}
+                >
+                  <CheckCircle2 size={18} style={{ color: 'var(--brand-blue)', flexShrink: 0 }} />
+                  <span style={{ fontSize: '0.9375rem', fontWeight: 600, color: 'var(--text-primary)' }}>
+                    {step}
+                  </span>
                 </div>
-
-                {/* Measured Business Results */}
-                <div className="cs-results-box">
-                  <span className="mono-tag results-label">DOCUMENTED OUTCOMES &amp; KPIS:</span>
-                  <div className="results-grid">
-                    {cs.results.map((res, rIdx) => (
-                      <div key={rIdx} className="result-item">
-                        <CheckCircle2 size={16} className="result-check" />
-                        <span>{res}</span>
-                      </div>
-                    ))}
-                  </div>
-                </div>
-
-                {/* Tech Stack Footer */}
-                <div className="cs-card-bottom">
-                  <div className="cs-tech-stack">
-                    <span className="mono-tag tech-label">DEPLOYED PLATFORMS:</span>
-                    <div className="tech-pills">
-                      {cs.technologies.map((tech, tIdx) => (
-                        <span key={tIdx} className="tech-pill mono-tag">{tech}</span>
-                      ))}
-                    </div>
-                  </div>
-
-                  <Button to="/contact" variant="primary" size="sm" icon="arrow">
-                    Request Similar Solution
-                  </Button>
-                </div>
-              </div>
-            ))}
+              ))}
+            </div>
           </div>
 
-          {/* Consultation CTA Banner */}
-          <div className="commitment-card">
-            <div className="commitment-header">
-              <div className="mono-label">
-                <ShieldCheck size={16} />
-                <span>ENTERPRISE CASE STUDY WORKSHOP</span>
+          {/* Commitment Card */}
+          <div 
+            className="commitment-card"
+            style={{
+              background: 'linear-gradient(135deg, rgba(28, 117, 189, 0.04) 0%, rgba(248, 250, 252, 0.95) 100%)',
+              border: '1px solid rgba(28, 117, 189, 0.2)',
+              borderRadius: '16px',
+              padding: '32px',
+              marginTop: 0
+            }}
+          >
+            <div className="commitment-header" style={{ marginBottom: '14px' }}>
+              <div className="mono-label" style={{ color: 'var(--brand-blue)', display: 'flex', alignItems: 'center', gap: '8px' }}>
+                <ShieldCheck size={18} />
+                <span>CUSTOMER VALIDATION PROTOCOL</span>
               </div>
-              <h3>Explore an in-depth transformation case study session</h3>
+              <h3 style={{ marginTop: '8px', fontSize: '1.25rem', fontWeight: 700, color: 'var(--text-primary)' }}>
+                Verified Customer Stories Commitment
+              </h3>
             </div>
-            <p className="commitment-text">
-              Meet with our solution architects to review reference architectures, integration patterns, and rollout milestones relevant to your organization's specific technical landscape.
+            <p className="commitment-text" style={{ fontSize: '1.0625rem', lineHeight: '1.7', color: 'var(--text-primary)', margin: 0 }}>
+              <strong>Commitment:</strong> {CASE_STUDIES_DATA.commitment}
             </p>
-            <div className="commitment-actions">
+            <div className="commitment-actions" style={{ marginTop: '24px' }}>
               <Button to="/contact" variant="primary" size="md" icon="arrow">
-                Book Architecture Workshop
+                {CASE_STUDIES_DATA.ctaText}
               </Button>
             </div>
           </div>
+
         </div>
       </section>
     </div>

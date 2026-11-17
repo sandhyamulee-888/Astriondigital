@@ -173,20 +173,21 @@ export const NAV_ITEMS = [
     label: 'Insights',
     href: '/insights',
     megaMenu: {
-      tag: 'INSIGHTS // PRACTICAL PERSPECTIVES',
-      headline: 'Practical perspectives on modernizing business operations and ERP best practices',
+      tag: 'INSIGHTS // PRACTICAL KNOWLEDGE',
+      headline: 'Knowledge That Helps Businesses Move Forward',
       featured: {
-        title: 'Customer Success Stories',
-        description: 'Real stories of companies cutting admin time, stopping inventory leaks, and scaling fast.',
-        href: '/insights/case-studies'
+        title: 'Ideas. Perspectives. Practical Business Knowledge.',
+        description: 'Explore articles and perspectives on the changing world of enterprise technology, ERP adoption, and business management.',
+        href: '/insights/blog',
+        ctaText: 'Explore Articles'
       },
       columns: [
         {
-          heading: 'Publications & Case Studies',
+          heading: 'Knowledge & Guidance',
           items: [
-            { title: 'Blog', href: '/insights/blog', desc: 'Practical guides on modernizing operations and supply chains.' },
-            { title: 'Case Studies', href: '/insights/case-studies', desc: 'Real stories of companies cutting admin time and overhead.' },
-            { title: 'Resources', href: '/insights/resources', desc: 'Downloadable implementation checklists and ROI calculators.' }
+            { title: 'Blog', href: '/insights/blog', desc: 'Ideas, perspectives, and practical business knowledge on enterprise technology.' },
+            { title: 'Case Studies', href: '/insights/case-studies', desc: 'Real business challenges and practical technology solutions with measurable outcomes.' },
+            { title: 'Resources', href: '/insights/resources', desc: 'Practical resources, buyer guides, and downloadable checklists for business leaders.' }
           ]
         }
       ]

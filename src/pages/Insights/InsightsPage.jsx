@@ -3,20 +3,22 @@ import { Link } from 'react-router-dom';
 import { 
   BookOpen, 
   FileText, 
-  Layers, 
-  ArrowUpRight, 
-  Calendar, 
-  Clock, 
-  Sparkles, 
+  FileDown,
   CheckCircle2, 
   ArrowRight,
   ShieldCheck,
-  Terminal,
-  Cpu,
-  Database
+  Award,
+  Download,
+  Layers,
+  Sparkles,
+  ArrowUpRight
 } from 'lucide-react';
-import { INSIGHTS } from '../../data/insights';
-import { CASE_STUDIES } from '../../data/caseStudies';
+import { 
+  INSIGHTS_PAGE_DATA, 
+  BLOGS_DATA, 
+  CASE_STUDIES_DATA, 
+  RESOURCES_DATA 
+} from '../../data/insights';
 import Button from '../../components/common/Button/Button';
 import './InsightsPage.css';
 
@@ -44,30 +46,38 @@ export default function InsightsPage() {
           <div className="inner-hero-content">
             <div className="mono-label inner-hero-badge">
               <span className="badge-dot"></span>
-              INSIGHTS // PRACTICAL GUIDES &amp; CASE STUDIES
+              INSIGHTS // PRACTICAL KNOWLEDGE
             </div>
 
-            <h1 className="inner-hero-title">
-              Practical Guides, ERP Insights &amp; Customer Stories
+            <h1 className="inner-hero-title" style={{ marginBottom: '10px' }}>
+              Insights
             </h1>
 
-            <p className="inner-hero-lead">
-              Learn how growing businesses modernize their operations with XENedion ERP. Explore practical guides, real customer success stories, and expert resources on finance, inventory, and business automation.
+            <p className="inner-hero-lead" style={{ color: 'var(--brand-blue, #1C75BD)', fontSize: 'clamp(1.25rem, 2vw, 1.625rem)', fontWeight: 600, marginBottom: '16px', lineHeight: '1.3' }}>
+              Knowledge That Helps Businesses Move Forward.
             </p>
 
+            <div style={{ maxWidth: '780px' }}>
+              {INSIGHTS_PAGE_DATA.introParagraphs.map((para, idx) => (
+                <p key={idx} style={{ color: 'var(--text-secondary, #475569)', fontSize: '1.0625rem', lineHeight: '1.65', marginBottom: idx === 0 ? '10px' : 0 }}>
+                  {para}
+                </p>
+              ))}
+            </div>
+
             <div className="insights-quick-nav">
-              <Link to="/insights/blog" className="quick-nav-pill mono-tag">
-                <Terminal size={14} />
-                <span>ARTICLES &amp; UPDATES</span>
-              </Link>
-              <Link to="/insights/case-studies" className="quick-nav-pill mono-tag">
+              <a href="#blogs" className="quick-nav-pill mono-tag">
                 <FileText size={14} />
-                <span>CUSTOMER SUCCESS STORIES</span>
-              </Link>
-              <Link to="/insights/resources" className="quick-nav-pill mono-tag">
+                <span>BLOGS</span>
+              </a>
+              <a href="#case-studies" className="quick-nav-pill mono-tag">
+                <Award size={14} />
+                <span>CASE STUDIES</span>
+              </a>
+              <a href="#resources" className="quick-nav-pill mono-tag">
                 <BookOpen size={14} />
-                <span>GUIDES &amp; WHITEPAPERS</span>
-              </Link>
+                <span>RESOURCES</span>
+              </a>
             </div>
           </div>
         </div>
@@ -77,116 +87,252 @@ export default function InsightsPage() {
       <section className="section insights-hub-section">
         <div className="container">
           
-          {/* Section 1: Featured Architecture Articles */}
-          <div className="insights-section-header">
-            <div>
-              <span className="mono-tag section-eyebrow">LATEST RESOURCES</span>
-              <h2 className="section-title">ERP Guides, Best Practices &amp; Articles</h2>
+          {/* ========================================================
+              SECTION 1: BLOGS
+              ======================================================== */}
+          <div id="blogs" style={{ scrollMarginTop: '110px' }}>
+            <div className="insights-section-header">
+              <div>
+                <span className="mono-tag section-eyebrow">BLOGS</span>
+                <h2 className="section-title">{BLOGS_DATA.headline}</h2>
+                <p style={{ color: 'var(--text-secondary)', fontSize: '1rem', marginTop: '6px', maxWidth: '720px' }}>
+                  {BLOGS_DATA.description}
+                </p>
+              </div>
+              <Button to={BLOGS_DATA.ctaHref} variant="primary" size="sm" icon="arrow">
+                {BLOGS_DATA.ctaText}
+              </Button>
             </div>
-            <Link to="/insights/blog" className="section-view-all mono-tag">
-              <span>VIEW ALL ARTICLES</span>
-              <ArrowRight size={14} />
-            </Link>
+
+            {/* Upcoming Blog Categories */}
+            <div style={{ marginBottom: '24px' }}>
+              <span className="mono-tag" style={{ color: 'var(--text-tertiary)', display: 'block', marginBottom: '10px' }}>
+                UPCOMING BLOG CATEGORIES:
+              </span>
+              <div style={{ display: 'flex', flexWrap: 'wrap', gap: '8px' }}>
+                {BLOGS_DATA.categories.map((cat, idx) => (
+                  <span 
+                    key={idx} 
+                    className="mono-tag"
+                    style={{ 
+                      padding: '5px 12px', 
+                      background: 'var(--bg-secondary)', 
+                      border: '1px solid var(--border-light)', 
+                      borderRadius: '6px',
+                      color: 'var(--text-primary)',
+                      fontSize: '0.8125rem'
+                    }}
+                  >
+                    {cat}
+                  </span>
+                ))}
+              </div>
+            </div>
+
+            {/* Initial Blog Topics Grid */}
+            <div style={{ marginBottom: '16px' }}>
+              <span className="mono-tag" style={{ color: 'var(--text-tertiary)', display: 'block', marginBottom: '14px' }}>
+                INITIAL BLOG TOPICS: (COMING SOON)
+              </span>
+              <div className="insights-cards-grid">
+                {BLOGS_DATA.initialTopics.map((topic) => (
+                  <div key={topic.id} className="insight-card">
+                    <div className="insight-card-meta">
+                      <span className="insight-category-badge mono-tag">{topic.category}</span>
+                      <span className="mono-tag" style={{ fontSize: '0.6875rem', color: 'var(--brand-orange)', fontWeight: 600 }}>
+                        {topic.status}
+                      </span>
+                    </div>
+
+                    <h3 className="insight-card-title" style={{ fontSize: '1.0625rem', marginTop: '6px' }}>
+                      <Link to={BLOGS_DATA.ctaHref}>{topic.title}</Link>
+                    </h3>
+                    <p className="insight-card-excerpt" style={{ fontSize: '0.875rem' }}>
+                      {topic.summary}
+                    </p>
+
+                    <div className="insight-card-footer">
+                      <span className="insight-date mono-tag">{topic.readTime}</span>
+                      <Link to={BLOGS_DATA.ctaHref} className="insight-read-btn">
+                        <span>Read Topic</span>
+                        <ArrowUpRight size={14} />
+                      </Link>
+                    </div>
+                  </div>
+                ))}
+              </div>
+            </div>
           </div>
 
-          <div className="insights-cards-grid">
-            {INSIGHTS.map((item) => (
-              <div key={item.id} className="insight-card">
-                <div className="insight-card-meta">
-                  <span className="insight-category-badge mono-tag">{item.category}</span>
-                </div>
+          {/* ========================================================
+              SECTION 2: CASE STUDIES
+              ======================================================== */}
+          <div id="case-studies" style={{ scrollMarginTop: '110px' }}>
+            <div className="insights-section-header case-studies-margin">
+              <div>
+                <span className="mono-tag section-eyebrow">CASE STUDIES</span>
+                <h2 className="section-title">{CASE_STUDIES_DATA.headline}</h2>
+                <p style={{ color: 'var(--text-secondary)', fontSize: '1.0625rem', lineHeight: '1.6', marginTop: '8px', maxWidth: '780px', marginBottom: '8px' }}>
+                  {CASE_STUDIES_DATA.lead}
+                </p>
+                <p style={{ color: 'var(--text-secondary)', fontSize: '1rem', lineHeight: '1.6', maxWidth: '780px', margin: 0 }}>
+                  {CASE_STUDIES_DATA.description}
+                </p>
+              </div>
+              <Button to={CASE_STUDIES_DATA.ctaHref} variant="primary" size="sm" icon="arrow">
+                {CASE_STUDIES_DATA.ctaText}
+              </Button>
+            </div>
 
-                <span className="insight-label mono-tag">{item.label}</span>
-                <h3 className="insight-card-title">
-                  <Link to={item.link}>{item.title}</Link>
+            {/* Case Studies Format Architecture */}
+            <div 
+              style={{ 
+                background: '#FFFFFF', 
+                border: '1px solid var(--border-light)', 
+                borderRadius: '16px', 
+                padding: '28px',
+                marginBottom: '28px',
+                boxShadow: '0 4px 20px rgba(15, 23, 42, 0.04)'
+              }}
+            >
+              <div style={{ marginBottom: '16px' }}>
+                <span className="mono-tag" style={{ color: 'var(--brand-blue)', fontWeight: 700, display: 'block', marginBottom: '6px' }}>
+                  STRUCTURED DOCUMENTATION
+                </span>
+                <h3 style={{ fontSize: '1.25rem', fontWeight: 700, margin: 0, color: 'var(--text-primary)' }}>
+                  Our Case studies have the following format:
                 </h3>
-                <p className="insight-card-excerpt">{item.excerpt}</p>
-
-                <div className="insight-card-footer">
-                  <span className="insight-date mono-tag">{item.date}</span>
-                  <Link to={item.link} className="insight-read-btn">
-                    <span>Read Analysis</span>
-                    <ArrowUpRight size={14} />
-                  </Link>
-                </div>
               </div>
-            ))}
-          </div>
 
-          {/* Section 2: Transformation Case Studies Highlight */}
-          <div className="insights-section-header case-studies-margin">
-            <div>
-              <span className="mono-tag section-eyebrow">CUSTOMER SUCCESS STORIES</span>
-              <h2 className="section-title">Real Results from Real Businesses</h2>
+              <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fit, minmax(260px, 1fr))', gap: '12px' }}>
+                {CASE_STUDIES_DATA.formatSteps.map((step, idx) => (
+                  <div 
+                    key={idx}
+                    style={{ 
+                      display: 'flex', 
+                      alignItems: 'center', 
+                      gap: '10px', 
+                      padding: '12px 16px', 
+                      background: 'var(--bg-secondary)', 
+                      borderRadius: '8px',
+                      border: '1px solid var(--border-light)'
+                    }}
+                  >
+                    <CheckCircle2 size={16} style={{ color: 'var(--brand-blue)', flexShrink: 0 }} />
+                    <span style={{ fontSize: '0.9375rem', fontWeight: 600, color: 'var(--text-primary)' }}>
+                      {step}
+                    </span>
+                  </div>
+                ))}
+              </div>
             </div>
-            <Link to="/insights/case-studies" className="section-view-all mono-tag">
-              <span>VIEW ALL STORIES</span>
-              <ArrowRight size={14} />
-            </Link>
-          </div>
 
-          <div className="featured-case-study-hero">
-            {CASE_STUDIES.filter(cs => cs.featured).map((cs) => (
-              <div key={cs.id} className="case-study-featured-card">
-                <div className="case-study-badge-row">
-                  <span className="mono-tag cs-badge">{cs.tag}</span>
-                  <span className="mono-tag cs-industry">{cs.industry}</span>
-                </div>
-                <h3 className="case-study-hero-title">{cs.title}</h3>
-                <p className="case-study-hero-desc">{cs.description}</p>
-                
-                <div className="case-study-deliverables">
-                  <span className="mono-tag deliverables-label">CORE DELIVERABLES:</span>
-                  <div className="deliverables-grid">
-                    {cs.deliverables.map((deliv, idx) => (
-                      <div key={idx} className="deliverable-item">
-                        <CheckCircle2 size={14} className="deliv-check" />
-                        <span>{deliv}</span>
-                      </div>
-                    ))}
-                  </div>
-                </div>
-
-                <div className="case-study-tech-row">
-                  <div className="tech-tags">
-                    {cs.technologies.map((t, idx) => (
-                      <span key={idx} className="tech-tag mono-tag">{t}</span>
-                    ))}
-                  </div>
-                  <Button to="/insights/case-studies" variant="primary" size="sm" icon="arrow">
-                    Read Case Study
-                  </Button>
-                </div>
+            {/* Commitment Box */}
+            <div 
+              className="commitment-card"
+              style={{
+                background: 'linear-gradient(135deg, rgba(28, 117, 189, 0.04) 0%, rgba(248, 250, 252, 0.95) 100%)',
+                border: '1px solid rgba(28, 117, 189, 0.2)',
+                borderRadius: '14px',
+                padding: '24px 28px',
+                marginBottom: '48px'
+              }}
+            >
+              <div style={{ display: 'flex', alignItems: 'center', gap: '8px', marginBottom: '10px', color: 'var(--brand-blue)' }}>
+                <ShieldCheck size={18} />
+                <span className="mono-tag" style={{ fontWeight: 700 }}>OUR COMMITMENT TO TRANSPARENCY</span>
               </div>
-            ))}
-          </div>
-
-          {/* Section 3: Architecture Playbooks & Downloads */}
-          <div className="resources-banner-box">
-            <div className="resources-banner-content">
-              <span className="mono-tag resources-eyebrow">FREE DOWNLOADS</span>
-              <h3>Get Free Implementation Checklists &amp; Migration Guides</h3>
-              <p>
-                Download step-by-step checklists, ROI calculators, and plain-English guides for moving your finance, inventory, and operations into XENedion — without disrupting your day-to-day business.
+              <p style={{ margin: 0, fontSize: '1rem', lineHeight: '1.65', color: 'var(--text-primary)' }}>
+                <strong>Commitment:</strong> {CASE_STUDIES_DATA.commitment}
               </p>
-              <div className="resources-actions">
-                <Button to="/insights/resources" variant="primary" size="md" icon="arrow">
-                  Browse Free Resources
+              <div style={{ marginTop: '18px' }}>
+                <Button to={CASE_STUDIES_DATA.ctaHref} variant="primary" size="md" icon="arrow">
+                  {CASE_STUDIES_DATA.ctaText}
                 </Button>
               </div>
             </div>
-            <div className="resources-graphic" aria-hidden="true">
-              <div className="graphic-blueprint-card">
-                <BookOpen size={20} className="blueprint-icon" />
-                <div className="blueprint-title mono-tag">ERP MIGRATION CHECKLIST</div>
-                <div className="blueprint-bar"></div>
-                <div className="blueprint-bar short"></div>
+          </div>
+
+          {/* ========================================================
+              SECTION 3: RESOURCES
+              ======================================================== */}
+          <div id="resources" style={{ scrollMarginTop: '110px' }}>
+            <div className="insights-section-header">
+              <div>
+                <span className="mono-tag section-eyebrow">RESOURCES</span>
+                <h2 className="section-title">{RESOURCES_DATA.headline}</h2>
+                <p style={{ color: 'var(--text-secondary)', fontSize: '1rem', marginTop: '6px', maxWidth: '780px' }}>
+                  {RESOURCES_DATA.lead}
+                </p>
               </div>
-              <div className="graphic-blueprint-card offset">
-                <Database size={20} className="blueprint-icon" />
-                <div className="blueprint-title mono-tag">ROI CALCULATOR GUIDE</div>
-                <div className="blueprint-bar"></div>
-                <div className="blueprint-bar medium"></div>
+              <Button to={RESOURCES_DATA.ctaHref} variant="primary" size="sm" icon="arrow">
+                {RESOURCES_DATA.ctaText}
+              </Button>
+            </div>
+
+            {/* Resource Topics You Will Find Here */}
+            <div style={{ marginBottom: '28px' }}>
+              <span className="mono-tag" style={{ color: 'var(--text-tertiary)', display: 'block', marginBottom: '10px' }}>
+                RESOURCE TOPICS YOU WILL FIND HERE:
+              </span>
+              <div style={{ display: 'flex', flexWrap: 'wrap', gap: '8px' }}>
+                {RESOURCES_DATA.topics.map((top, idx) => (
+                  <span 
+                    key={idx} 
+                    className="mono-tag"
+                    style={{ 
+                      padding: '6px 14px', 
+                      background: 'rgba(28, 117, 189, 0.06)', 
+                      border: '1px solid rgba(28, 117, 189, 0.2)', 
+                      borderRadius: '6px',
+                      color: 'var(--brand-blue)',
+                      fontSize: '0.8125rem',
+                      fontWeight: 600
+                    }}
+                  >
+                    • {top}
+                  </span>
+                ))}
+              </div>
+            </div>
+
+            {/* Downloadable Resources Cards */}
+            <div>
+              <span className="mono-tag" style={{ color: 'var(--text-tertiary)', display: 'block', marginBottom: '14px' }}>
+                DOWNLOADABLE RESOURCES:
+              </span>
+              <div className="resources-grid-list">
+                {RESOURCES_DATA.downloadables.map((item, idx) => {
+                  const isFeatured = idx === 0;
+                  return (
+                    <Link 
+                      key={item.id} 
+                      to="/contact" 
+                      className={`resource-item-card ${isFeatured ? 'featured-resource-card' : ''}`}
+                      aria-label={`Explore ${item.title}`}
+                    >
+                      <div className="resource-card-top">
+                        <div style={{ display: 'flex', alignItems: 'center', gap: '8px' }}>
+                          <span className="resource-type mono-tag">{item.category}</span>
+                          {isFeatured && <span className="featured-pill mono-tag">FEATURED GUIDE</span>}
+                        </div>
+                        <span className="resource-format mono-tag">
+                          <span>{item.format}</span>
+                        </span>
+                      </div>
+
+                      <h3 className="resource-title">{item.title}</h3>
+                      <p className="resource-desc" style={{ marginBottom: 0 }}>{item.desc}</p>
+                    </Link>
+                  );
+                })}
+              </div>
+
+              {/* Section Level CTA */}
+              <div className="resources-section-cta">
+                <Button to={RESOURCES_DATA.ctaHref} variant="primary" size="md" icon="arrow">
+                  {RESOURCES_DATA.ctaText}
+                </Button>
               </div>
             </div>
           </div>

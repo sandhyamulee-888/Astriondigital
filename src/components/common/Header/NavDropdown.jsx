@@ -18,6 +18,7 @@ import {
   Globe,
   Award,
   Handshake,
+  Shirt,
   FileText,
   TrendingUp,
   FolderKanban,
@@ -48,11 +49,13 @@ const ICON_MAP = {
   'Retail': ShoppingBag,
   'Distribution': Truck,
   'Manufacturing': Factory,
+  'Garments': Shirt,
   'Automotive': Car,
   'Other Industries': Globe,
 
   // Partners
   'ERP Partner Program': Award,
+  'Become a Partner': Handshake,
   'Partner Inquiries': Handshake,
 
   // Insights
@@ -85,15 +88,19 @@ export default function NavDropdown({
 
   // Flatten all items into a side-by-side 2-column grid
   const allItems = item.megaMenu.columns.flatMap((col) => col.items);
+  const isCompact = allItems.length <= 2;
 
   return (
     <div
-      className={`nav-dropdown-panel align-${align}`}
+      className={`nav-dropdown-panel align-${align} ${isCompact ? 'panel-compact' : ''}`}
       role="menu"
       aria-label={`${item.label} menu`}
       onMouseEnter={onMouseEnter}
       onMouseLeave={onMouseLeave}
     >
+      {/* Top visual pointer caret connected to nav button */}
+      <div className="nav-dropdown-caret" aria-hidden="true" />
+
       {/* Side-by-Side 2-Column Grid */}
       <div className="nav-dropdown-grid-2col">
         {allItems.map((subItem, itemIdx) => {

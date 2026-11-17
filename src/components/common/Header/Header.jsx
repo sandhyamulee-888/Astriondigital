@@ -105,12 +105,10 @@ export default function Header() {
                 }
 
                 // Smart positioning:
-                // About (1), Solutions (2) -> left-aligned to button
-                // Industries (3) -> centered under button
-                // Partners (4), Insights (5) -> right-aligned to button
-                let align = 'left';
-                if (index === 3) align = 'center';
-                else if (index >= 4) align = 'right';
+                // About -> left-aligned to button so it doesn't cross over the brand logo
+                // Solutions, Industries, Partners, Insights -> centered directly under their button
+                let align = 'center';
+                if (item.id === 'about') align = 'left';
 
                 return (
                   <li

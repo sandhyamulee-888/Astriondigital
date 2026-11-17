@@ -84,7 +84,7 @@ function ScrollToTop() {
     } else if (pathname.startsWith('/partners')) {
       document.title = 'Strategic Partners — Astrion Digital';
     } else if (pathname.startsWith('/insights')) {
-      document.title = 'Insights & Publications — Astrion Digital';
+      document.title = 'Insights — Knowledge That Helps Businesses Move Forward | Astrion Digital';
     } else if (pathname.startsWith('/contact')) {
       document.title = 'Book a Live Demo — Astrion Digital';
     } else {

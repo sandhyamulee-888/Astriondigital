@@ -1,7 +1,7 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
-import { ArrowUpRight } from 'lucide-react';
-import { INSIGHTS } from '../../../data/insights';
+import { ArrowUpRight, FileText, Award, BookOpen } from 'lucide-react';
+import { INSIGHTS, INSIGHTS_PAGE_DATA } from '../../../data/insights';
 import SectionHeader from '../../common/SectionHeader/SectionHeader';
 import { ScrollReveal, StaggerContainer, StaggerItem } from '../../common/Motion/ScrollReveal';
 import './InsightsSection.css';
@@ -12,19 +12,19 @@ export default function InsightsSection() {
       <div className="container">
         <ScrollReveal>
           <SectionHeader
-            label="INSIGHTS // PUBLICATIONS & RESOURCES"
-            title="Ideas for the next enterprise era."
-            description="In-depth architectural analysis, transformation playbooks, and strategic perspectives curated by Astrion technologists."
+            label="INSIGHTS // PRACTICAL KNOWLEDGE"
+            title={INSIGHTS_PAGE_DATA.headline}
+            description={INSIGHTS_PAGE_DATA.description}
             action={
               <Link to="/insights" className="arrow-link">
-                <span>View All Insights</span>
+                <span>Explore All Insights</span>
                 <ArrowUpRight size={16} />
               </Link>
             }
           />
         </ScrollReveal>
 
-        {/* Strong Editorial 3-Column Layout with Staggered Scroll Entrance */}
+        {/* 3-Column Editorial Grid for Blogs, Case Studies, and Resources */}
         <StaggerContainer className="insights-editorial-grid" staggerDelay={0.12}>
           {INSIGHTS.map((item) => (
             <StaggerItem key={item.id} className="insight-stagger-item">
@@ -40,7 +40,7 @@ export default function InsightsSection() {
 
                 <div className="insight-item-bottom">
                   <span className="insight-read-link">
-                    <span>Read Article</span>
+                    <span>Explore Section</span>
                     <ArrowUpRight size={15} />
                   </span>
                   <span className="mono-tag insight-date">{item.date}</span>
