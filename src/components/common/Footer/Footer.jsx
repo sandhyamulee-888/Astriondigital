@@ -18,7 +18,16 @@ export default function Footer() {
               />
             </Link>
             <p className="footer-company-blurb">
-              The Company Behind Intelligent Enterprise Software. Astrion Digital provides the corporate foundation and product engineering for XENedion ERP.
+              The Company Behind Intelligent Enterprise Software. Astrion Digital provides the corporate foundation and product engineering for{' '}
+              <a 
+                href="https://xenedion.com/" 
+                target="_blank" 
+                rel="noopener noreferrer"
+                className="footer-blurb-link"
+              >
+              Xenedion
+              </a>{' '}
+              ERP.
             </p>
             <div className="mono-tag" style={{ color: 'var(--brand-orange, #ff6b35)', fontSize: '0.75rem', marginTop: '6px' }}>
               Enterprise Software Products &bull; Innovation &bull; Business Technology
@@ -59,6 +68,15 @@ export default function Footer() {
           <div className="footer-col">
             <h4 className="footer-col-title mono-tag">SOLUTIONS</h4>
             <ul className="footer-links">
+              <li>
+                <a 
+                  href="https://xenedion.com/" 
+                  target="_blank" 
+                  rel="noopener noreferrer"
+                >
+                  XENedion
+                </a>
+              </li>
               <li><Link to="/solutions/erp">XENedion ERP</Link></li>
               <li><Link to="/solutions/digital-transformation">Enterprise Digital Transformation</Link></li>
               <li><Link to="/solutions/ai-intelligent-automation">AI &amp; Intelligent Automation</Link></li>

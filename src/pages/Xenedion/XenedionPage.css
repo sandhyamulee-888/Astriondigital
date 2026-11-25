@@ -1002,7 +1002,7 @@
 }
 
 .sectors-more-text {
-  font-size: 1.125rem;
+  font-size: 0.9375rem;
   font-weight: 600;
   color: var(--brand-blue, #1C75BD);
   font-style: italic;

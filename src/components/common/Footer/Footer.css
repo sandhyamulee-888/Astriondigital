@@ -49,6 +49,18 @@
   font-weight: 400;
 }
 
+.footer-blurb-link {
+  color: #38BDF8;
+  font-weight: 600;
+  text-decoration: underline;
+  text-underline-offset: 3px;
+  transition: all var(--transition-fast);
+}
+
+.footer-blurb-link:hover {
+  color: #FFFFFF;
+}
+
 .footer-identity-badge {
   color: #FF8A50;
   font-size: 0.75rem;
